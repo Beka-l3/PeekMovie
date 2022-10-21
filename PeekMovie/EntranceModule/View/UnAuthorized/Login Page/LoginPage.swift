@@ -48,7 +48,7 @@ class LoginPage: UIViewController, Colors {
             loginView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: EPConstants.largePadding),
             loginView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: EPConstants.padding),
             loginView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -EPConstants.padding),
-            loginView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -EPConstants.padding),
+            loginView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: EPConstants.largePadding),
         ])
     }
     

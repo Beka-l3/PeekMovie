@@ -43,7 +43,7 @@ class PasswordPage: UIViewController, Colors {
         view.addSubview(passwordView)
         
         NSLayoutConstraint.activate([
-            passwordView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            passwordView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: EPConstants.smallPadding),
             passwordView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: EPConstants.padding),
             passwordView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -EPConstants.padding),
             passwordView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: EPConstants.padding),

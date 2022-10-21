@@ -31,7 +31,7 @@ class RegisterPageViewModels: Colors, Fonts, Interactives, Informatives {
     }()
     
     lazy var detailLabel: UILabel = {
-        getDetailLabel(text: EPConstants.registerDetailText)
+        getTipLabel(with: EPConstants.registerDetailText, labelType: .detail)
     }()
     
     lazy var logoImage: UIImageView = {

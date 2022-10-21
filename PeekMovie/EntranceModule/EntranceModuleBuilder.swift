@@ -18,19 +18,22 @@ final class EntranceModuleBuilder {
 //    var networkClient: NetworkClient
     
     private let entrancePage: EntrancePage
-    private let authorizedPage: AuthorizedPageController
+    private let authorizedPage: AuthorizedPage
     private let unAuthorizedPage: LoginPage
     
     private let passwordPage: PasswordPage
-    private let registerPage: RegisterPageController
+    private let registerPage: RegisterPage
+    private let waitingPage: WaitingPage
     
     init(isLoggedIn: Bool) {
         entrancePage = EntrancePage()
-        authorizedPage = AuthorizedPageController()
+        view = entrancePage
+        
+        authorizedPage = AuthorizedPage()
         unAuthorizedPage = LoginPage()
         passwordPage = PasswordPage()
-        registerPage = RegisterPageController()
-        view = entrancePage
+        registerPage = RegisterPage()
+        waitingPage = WaitingPage()
         
         presenter = EntranceModulePresenter(
             entrancePage: entrancePage,
@@ -38,7 +41,8 @@ final class EntranceModuleBuilder {
             unAuthorizedPage: unAuthorizedPage,
             isLoggedIn: isLoggedIn,
             passwordPage: passwordPage,
-            registerPage: registerPage
+            registerPage: registerPage,
+            waitingPage: waitingPage
         )
         presenter.appCoordinator = appCoordinator
         
@@ -46,5 +50,7 @@ final class EntranceModuleBuilder {
         unAuthorizedPage.presenter = presenter
         passwordPage.presenter = presenter
         registerPage.presenter = presenter
+        authorizedPage.presenter = presenter
+        waitingPage.presenter = presenter
     }
 }

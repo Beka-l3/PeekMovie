@@ -12,7 +12,7 @@ protocol RegisterPagePresenter: AnyObject {
     func checkRegistrationData(with id: PeekID)
 }
 
-class RegisterPageController: UIViewController, Colors {
+class RegisterPage: UIViewController, Colors {
     
     weak var presenter: RegisterPagePresenter?
     private var registerViewModels: RegisterPageViewModels
@@ -45,7 +45,7 @@ class RegisterPageController: UIViewController, Colors {
         view.addSubview(registerView)
         
         NSLayoutConstraint.activate([
-            registerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            registerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: EPConstants.smallPadding),
             registerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: EPConstants.padding),
             registerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -EPConstants.padding),
             registerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: EPConstants.padding)
@@ -67,7 +67,7 @@ class RegisterPageController: UIViewController, Colors {
     }
 }
 
-extension RegisterPageController: UITextFieldDelegate {
+extension RegisterPage: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         setInputFieldsState(with: true)
     }

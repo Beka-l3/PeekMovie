@@ -9,6 +9,7 @@ import UIKit
 protocol Interactives: Colors, Fonts {
     func getFocusButton(with title: String) -> UIButton
     func getSecondaryButton(with title: String) -> UIButton
+    func getTeritaryButton(with title: String, isBold: Bool) -> UIButton
     func getInputTextView(with placeholder: String) -> UITextField
 }
 
@@ -18,7 +19,7 @@ extension Interactives {
         b.setTitle(title, for: .normal)
         b.setTitleColor(black, for: .normal)
         b.backgroundColor = yellow
-        b.titleLabel?.font = body
+        b.titleLabel?.font = bodyFont
         b.layer.cornerRadius = IConstants.cornerRadius
         b.titleLabel?.layer.shadowColor = black.cgColor
         b.titleLabel?.layer.shadowOffset = IConstants.shadowOffset
@@ -37,7 +38,7 @@ extension Interactives {
         b.setTitle(title, for: .normal)
         b.setTitleColor(white, for: .normal)
         b.backgroundColor = black
-        b.titleLabel?.font = body
+        b.titleLabel?.font = bodyFont
         b.layer.cornerRadius = IConstants.cornerRadius
         b.titleLabel?.layer.shadowColor = white.cgColor
         b.titleLabel?.layer.shadowOffset = IConstants.shadowOffset
@@ -49,6 +50,16 @@ extension Interactives {
         return b
     }
     
+    func getTeritaryButton(with title: String, isBold: Bool = false) -> UIButton {
+        let b = UIButton(type: .system)
+        b.setTitle(title, for: .normal)
+        b.setTitleColor(yellow, for: .normal)
+        b.backgroundColor = black
+        b.titleLabel?.font = isBold ? detailBoldFont : detailFont
+        b.translatesAutoresizingMaskIntoConstraints = false
+        return b
+    }
+    
     func getInputTextView(with placeholder: String) -> UITextField {
         let i = UITextField()
         let placeholderText = NSAttributedString(
@@ -56,7 +67,7 @@ extension Interactives {
             attributes: [NSAttributedString.Key.foregroundColor: grey])
         i.attributedPlaceholder = placeholderText
         i.backgroundColor = white
-        i.font = body
+        i.font = bodyFont
         i.textColor = black
         i.textAlignment = .left
         
@@ -72,29 +83,35 @@ extension Interactives {
 
 }
 
+enum InformativeType {
+    case detail, tip, header
+}
+
 protocol Informatives: Colors, Fonts {
-    func getTipLabel(with text: String) -> UILabel
-    func getDetailLabel(text: String, detail: String) -> UILabel
+    func getTipLabel(with text: String, detail: String, labelType: InformativeType) -> UILabel
 }
 
 extension Informatives {
-    func getTipLabel(with text: String) -> UILabel {
+    func getTipLabel(with text: String, detail: String = EPConstants.emptyText, labelType: InformativeType = .tip) -> UILabel {
         let l = UILabel()
-        l.text = text
-        l.textColor = white
-        l.font = headlineBold
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
-    }
-    
-    func getDetailLabel(text: String, detail: String = EPConstants.emptyText) -> UILabel {
-        let l = UILabel()
+        var font: UIFont
+        var color: UIColor = white
+        switch labelType {
+        case .detail:
+            font = detailFont
+            color = semiWhite
+        case .tip:
+            font = tipFont
+        case .header:
+            font = headerFont
+        }
+        
         let str = text + detail
         let myMutableString = NSMutableAttributedString(
             string: str,
             attributes: [
-                NSAttributedString.Key.foregroundColor: semiWhite,
-                NSAttributedString.Key.font : infoFont
+                NSAttributedString.Key.foregroundColor: color,
+                NSAttributedString.Key.font : font
             ]
         )
         myMutableString.addAttribute(

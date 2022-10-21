@@ -11,26 +11,29 @@ import UIKit
 class EntranceModulePresenter {
     
     var entrancePage: EntrancePage
-    var authorizedPage: AuthorizedPageController
+    var authorizedPage: AuthorizedPage
     var unAuthorizedPage: LoginPage
     var isLoggedIn: Bool
     
     var appCoordinator: AppCoordinator?
     var passwordPage: PasswordPage
-    var registerPage: RegisterPageController
+    var registerPage: RegisterPage
+    var waitingPage: WaitingPage
     
     init(entrancePage: EntrancePage,
-         authorizedPage: AuthorizedPageController,
+         authorizedPage: AuthorizedPage,
          unAuthorizedPage: LoginPage,
          isLoggedIn: Bool,
          passwordPage: PasswordPage,
-         registerPage: RegisterPageController) {
+         registerPage: RegisterPage,
+         waitingPage: WaitingPage) {
         self.entrancePage = entrancePage
         self.authorizedPage = authorizedPage
         self.unAuthorizedPage = unAuthorizedPage
         self.isLoggedIn = isLoggedIn
         self.passwordPage = passwordPage
         self.registerPage = registerPage
+        self.waitingPage = waitingPage
     }
     
     private func pushViewController(with viewController: UIViewController?) {
@@ -38,9 +41,18 @@ class EntranceModulePresenter {
         entrancePage.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    private func popCurrentViewController() {
+        entrancePage.navigationController?.popViewController(animated: true)
+    }
+    
     private func userAuthorized() {
         entrancePage.navigationController?.popToRootViewController(animated: true)
         pushViewController(with: authorizedPage)
+    }
+    
+    private func userUnAuthorized() {
+        entrancePage.navigationController?.popToRootViewController(animated: true)
+        pushViewController(with: unAuthorizedPage)
     }
     
 }
@@ -82,5 +94,28 @@ extension EntranceModulePresenter: RegisterPagePresenter {
         } else {
             registerPage.setInputFieldsState(with: false)
         }
+    }
+}
+
+extension EntranceModulePresenter: AuthorizedPagePresenter {
+    func pushWaitingRoom(with roomId: String, isAdmin: Bool) {
+        print("push waiting room")
+        waitingPage.setInitialData(roomId: roomId, isAdmin: isAdmin)
+        pushViewController(with: waitingPage)
+    }
+    
+    func logOut() {
+        print("Log out")
+        userUnAuthorized()
+    }
+}
+
+extension EntranceModulePresenter: WaitingRoomPresenter {
+    func cancelWaiting() {
+        popCurrentViewController()
+    }
+    
+    func startTheSession(with roomId: String) {
+        print("Start the seesion \(roomId)")
     }
 }

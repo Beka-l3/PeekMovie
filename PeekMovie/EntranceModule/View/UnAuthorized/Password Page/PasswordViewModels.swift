@@ -24,7 +24,7 @@ class PasswordViewModels: Colors, Fonts, Interactives, Informatives {
     
     lazy var detailLabel: UILabel = {
         let username = "Ezpzbaby"
-        let l = getDetailLabel(text: EPConstants.passwordDetailText, detail: username)
+        let l = getTipLabel(with: EPConstants.passwordDetailText, detail: username, labelType: .detail)
         return l
     }()
     
@@ -48,14 +48,8 @@ class PasswordViewModels: Colors, Fonts, Interactives, Informatives {
         return s
     }()
     
-    lazy var infomativeButton: UIButton = {
-        let b = UIButton(type: .system)
-        b.setTitle(EPConstants.informativeButtonTitle, for: .normal)
-        b.setTitleColor(yellow, for: .normal)
-        b.backgroundColor = black
-        b.titleLabel?.font = infoFont
-        b.translatesAutoresizingMaskIntoConstraints = false
-        return b
+    lazy var forgotPasswordButton: UIButton = {
+        getTeritaryButton(with: EPConstants.forgotPasswordButtonTitle)
     }()
     
     lazy var passwordView: UIView = {
@@ -65,7 +59,7 @@ class PasswordViewModels: Colors, Fonts, Interactives, Informatives {
         v.addSubview(tipLabel)
         v.addSubview(detailLabel)
         v.addSubview(passwordInput)
-        v.addSubview(infomativeButton)
+        v.addSubview(forgotPasswordButton)
         v.addSubview(continueButton)
         
         NSLayoutConstraint.activate([
@@ -87,8 +81,8 @@ class PasswordViewModels: Colors, Fonts, Interactives, Informatives {
             passwordInput.trailingAnchor.constraint(equalTo: v.safeAreaLayoutGuide.trailingAnchor),
             passwordInput.topAnchor.constraint(equalTo: detailLabel.bottomAnchor, constant: EPConstants.padding),
             
-            infomativeButton.leadingAnchor.constraint(equalTo: v.safeAreaLayoutGuide.leadingAnchor),
-            infomativeButton.topAnchor.constraint(equalTo: passwordInput.bottomAnchor, constant: EPConstants.smallPadding),
+            forgotPasswordButton.leadingAnchor.constraint(equalTo: v.safeAreaLayoutGuide.leadingAnchor),
+            forgotPasswordButton.topAnchor.constraint(equalTo: passwordInput.bottomAnchor, constant: EPConstants.smallPadding),
             
             continueButton.heightAnchor.constraint(equalToConstant: EPConstants.interactiveSize.height),
             continueButton.leadingAnchor.constraint(equalTo: v.safeAreaLayoutGuide.leadingAnchor),

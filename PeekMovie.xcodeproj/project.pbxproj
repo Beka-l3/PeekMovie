@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A49312902A77100545946 /* WaitingPageAnimation.swift */; };
 		073B584D28F97B20000EE21F /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B584C28F97B1F000EE21F /* RegisterPage.swift */; };
 		073B585228F97C30000EE21F /* RegisterPageViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B585128F97C30000EE21F /* RegisterPageViewModels.swift */; };
 		073B585428F97CA8000EE21F /* PeekID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B585328F97CA8000EE21F /* PeekID.swift */; };
@@ -33,9 +34,13 @@
 		07EB1CC228FD48100031598A /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CBE28FD48100031598A /* HTTPRequest.swift */; };
 		07EB1CC328FD48100031598A /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CBF28FD48100031598A /* HTTPError.swift */; };
 		07EB1CC428FD48100031598A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CC028FD48100031598A /* HTTPMethod.swift */; };
+		07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CC728FDE0680031598A /* WaitingPage.swift */; };
+		07EB1CCA28FDE6EB0031598A /* WaitingRoomViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CC928FDE6EB0031598A /* WaitingRoomViewModels.swift */; };
+		07EB1CCC28FE219C0031598A /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CCB28FE219C0031598A /* Animations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		073A49312902A77100545946 /* WaitingPageAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPageAnimation.swift; sourceTree = "<group>"; };
 		073B584C28F97B1F000EE21F /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
 		073B585128F97C30000EE21F /* RegisterPageViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewModels.swift; sourceTree = "<group>"; };
 		073B585328F97CA8000EE21F /* PeekID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekID.swift; sourceTree = "<group>"; };
@@ -64,6 +69,9 @@
 		07EB1CBE28FD48100031598A /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		07EB1CBF28FD48100031598A /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		07EB1CC028FD48100031598A /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		07EB1CC728FDE0680031598A /* WaitingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPage.swift; sourceTree = "<group>"; };
+		07EB1CC928FDE6EB0031598A /* WaitingRoomViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomViewModels.swift; sourceTree = "<group>"; };
+		07EB1CCB28FE219C0031598A /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +154,8 @@
 		0788F42828F83348006F447F /* Authorized */ = {
 			isa = PBXGroup;
 			children = (
-				07DBA84228F3F734000A1312 /* AuthorizedPage.swift */,
-				07DBA85928F55E3B000A1312 /* AuthorizedPageViewModels.swift */,
+				07EB1CC528FD87850031598A /* Join page */,
+				07EB1CC628FDE04D0031598A /* Waiting page */,
 			);
 			path = Authorized;
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				07DBA85C28F55E77000A1312 /* DesignProtocols.swift */,
+				07EB1CCB28FE219C0031598A /* Animations.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +246,25 @@
 				07EB1CBE28FD48100031598A /* HTTPRequest.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		07EB1CC528FD87850031598A /* Join page */ = {
+			isa = PBXGroup;
+			children = (
+				07DBA84228F3F734000A1312 /* AuthorizedPage.swift */,
+				07DBA85928F55E3B000A1312 /* AuthorizedPageViewModels.swift */,
+			);
+			path = "Join page";
+			sourceTree = "<group>";
+		};
+		07EB1CC628FDE04D0031598A /* Waiting page */ = {
+			isa = PBXGroup;
+			children = (
+				07EB1CC728FDE0680031598A /* WaitingPage.swift */,
+				07EB1CC928FDE6EB0031598A /* WaitingRoomViewModels.swift */,
+				073A49312902A77100545946 /* WaitingPageAnimation.swift */,
+			);
+			path = "Waiting page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,10 +338,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07EB1CCA28FDE6EB0031598A /* WaitingRoomViewModels.swift in Sources */,
 				07D401BD28F890F400BF3F55 /* EntrancePage.swift in Sources */,
 				0788F42428F82B19006F447F /* LoginPage.swift in Sources */,
 				0788F42628F8321F006F447F /* LoginViewModels.swift in Sources */,
 				0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */,
+				07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */,
 				073B584D28F97B20000EE21F /* RegisterPage.swift in Sources */,
 				07EB1CB928FD47950031598A /* NetworkClient.swift in Sources */,
 				07DBA85A28F55E3B000A1312 /* AuthorizedPageViewModels.swift in Sources */,
@@ -321,6 +351,7 @@
 				07EB1CBB28FD47C90031598A /* NrtworkClientProtocol.swift in Sources */,
 				07EB1CC128FD48100031598A /* HTTPNetworkResponse.swift in Sources */,
 				073B585628FA155F000EE21F /* Constants.swift in Sources */,
+				073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */,
 				0788F42228F829B5006F447F /* EntranceModuleBuilder.swift in Sources */,
 				07EB1CC328FD48100031598A /* HTTPError.swift in Sources */,
 				07DBA85328F3F830000A1312 /* AppCoordinator.swift in Sources */,
@@ -328,6 +359,7 @@
 				073B585428F97CA8000EE21F /* PeekID.swift in Sources */,
 				07DBA85D28F55E77000A1312 /* DesignProtocols.swift in Sources */,
 				07DBA84328F3F734000A1312 /* AuthorizedPage.swift in Sources */,
+				07EB1CCC28FE219C0031598A /* Animations.swift in Sources */,
 				07DBA83F28F3F734000A1312 /* AppDelegate.swift in Sources */,
 				07EB1CC228FD48100031598A /* HTTPRequest.swift in Sources */,
 				07EB1CC428FD48100031598A /* HTTPMethod.swift in Sources */,
@@ -487,6 +519,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -498,7 +531,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -515,6 +548,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -526,7 +560,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
