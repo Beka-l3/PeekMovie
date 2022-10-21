@@ -28,8 +28,8 @@ final class AppCoordinator {
 
 extension AppCoordinator: AppDelegateEntrancePage {
     func getEntrancePage() -> UIViewController {
-//        entranceModule = EntranceModuleBuilder(isLoggedIn: isLoggedIn)
-        entranceModule = EntranceModuleBuilder(isLoggedIn: true)
+        entranceModule = EntranceModuleBuilder(isLoggedIn: isLoggedIn)
+//        entranceModule = EntranceModuleBuilder(isLoggedIn: true)
         entranceModule?.appCoordinator = self
         guard let entranceModule = entranceModule else {
             return LoginPage()
