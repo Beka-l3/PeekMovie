@@ -20,15 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         
         let appCoordinator = AppCoordinator()
+        appCoordinator.appDelegate = self
         let appDelegateEntrancePage: AppDelegateEntrancePage = appCoordinator
         
-        let navigationController = UINavigationController(rootViewController: appDelegateEntrancePage.getEntrancePage())
-        window?.rootViewController = navigationController
+//        let navigationController = UINavigationController(rootViewController: appDelegateEntrancePage.getEntrancePage())
+        window?.rootViewController = appDelegateEntrancePage.getEntrancePage()
         window?.makeKeyAndVisible()
         
         return true
     }
-
 }
 
+extension AppDelegate: AppCoordinatorDelegate {
+    func setModule(view: UIViewController) {
+        print("set Module App Delegate")
+        window?.rootViewController = view
+        window?.makeKeyAndVisible()
+        
+    }
+}
 

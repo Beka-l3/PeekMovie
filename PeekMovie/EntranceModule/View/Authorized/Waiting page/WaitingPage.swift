@@ -58,9 +58,9 @@ class WaitingPage: UIViewController, Colors {
     }
     
     @objc func handleStartButton() {
-        let _ = "H2EN84"
+        let roomId = "H2EN84"
 
-//        presenter?.startTheSession(with: roomId)
+        presenter?.startTheSession(with: roomId)
     }
     
     func setInitialData(roomId: String, isAdmin: Bool) {

@@ -8,36 +8,41 @@
 import UIKit
 
 
-class EntranceModulePresenter {
+final class EntranceModulePresenter {
     
     var entrancePage: EntrancePage
     var authorizedPage: AuthorizedPage
     var unAuthorizedPage: LoginPage
-    var isLoggedIn: Bool
     
     var appCoordinator: AppCoordinator?
     var passwordPage: PasswordPage
     var registerPage: RegisterPage
     var waitingPage: WaitingPage
     
+    var isLoggedIn: Bool {
+        get {
+            let username = UserDefaults.standard.string(forKey: Constants.usernameKey) ?? ""
+            let password = UserDefaults.standard.string(forKey: Constants.passwordKey) ?? ""
+            return !password.isEmpty && !username.isEmpty
+        }
+    }
+    
     init(entrancePage: EntrancePage,
          authorizedPage: AuthorizedPage,
          unAuthorizedPage: LoginPage,
-         isLoggedIn: Bool,
          passwordPage: PasswordPage,
          registerPage: RegisterPage,
          waitingPage: WaitingPage) {
         self.entrancePage = entrancePage
         self.authorizedPage = authorizedPage
         self.unAuthorizedPage = unAuthorizedPage
-        self.isLoggedIn = isLoggedIn
         self.passwordPage = passwordPage
         self.registerPage = registerPage
         self.waitingPage = waitingPage
     }
     
     private func pushViewController(with viewController: UIViewController?) {
-        let viewController = viewController == nil ? (isLoggedIn ? authorizedPage : unAuthorizedPage) : viewController!
+        let viewController = viewController ?? (isLoggedIn ? authorizedPage : unAuthorizedPage)
         entrancePage.navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -55,6 +60,16 @@ class EntranceModulePresenter {
         pushViewController(with: unAuthorizedPage)
     }
     
+}
+
+
+// MARK: -- ⬇️ EXTENSIONS ⬇️
+
+extension EntranceModulePresenter {
+    enum Constants {
+        static let usernameKey: String = "UsernameKey"
+        static let passwordKey: String = "PasswordKey"
+    }
 }
 
 extension EntranceModulePresenter: EntrancePagePresenter {
@@ -117,5 +132,6 @@ extension EntranceModulePresenter: WaitingRoomPresenter {
     
     func startTheSession(with roomId: String) {
         print("Start the seesion \(roomId)")
+        appCoordinator?.setSessionModule()
     }
 }

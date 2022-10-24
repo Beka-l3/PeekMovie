@@ -13,6 +13,7 @@ final class EntranceModuleBuilder {
     
     var view: UIViewController
     var presenter: EntranceModulePresenter
+    let navigationController: UINavigationController
     
     var appCoordinator: AppCoordinator?
 //    var networkClient: NetworkClient
@@ -25,9 +26,10 @@ final class EntranceModuleBuilder {
     private let registerPage: RegisterPage
     private let waitingPage: WaitingPage
     
-    init(isLoggedIn: Bool) {
+    init() {
         entrancePage = EntrancePage()
-        view = entrancePage
+        navigationController = UINavigationController(rootViewController: entrancePage)
+        view = navigationController
         
         authorizedPage = AuthorizedPage()
         unAuthorizedPage = LoginPage()
@@ -39,12 +41,11 @@ final class EntranceModuleBuilder {
             entrancePage: entrancePage,
             authorizedPage: authorizedPage,
             unAuthorizedPage: unAuthorizedPage,
-            isLoggedIn: isLoggedIn,
             passwordPage: passwordPage,
             registerPage: registerPage,
             waitingPage: waitingPage
         )
-        presenter.appCoordinator = appCoordinator
+//        presenter.appCoordinator = appCoordinator
         
         entrancePage.presenter = presenter
         unAuthorizedPage.presenter = presenter

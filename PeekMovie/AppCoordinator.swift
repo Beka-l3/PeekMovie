@@ -9,10 +9,16 @@ import Foundation
 import UIKit
 
 
+protocol AppCoordinatorDelegate {
+    func setModule(view: UIViewController)
+}
+
 
 final class AppCoordinator {
     
-    var entranceModule: EntranceModuleBuilder?
+    var appDelegate: AppCoordinatorDelegate?
+    var entranceModule: EntranceModuleBuilder
+    var sessionModule: SessionModuleBuilder
     
     var isLoggedIn: Bool {
         get {
@@ -23,19 +29,29 @@ final class AppCoordinator {
         }
     }
     
-    init() {}
+    init() {
+        self.entranceModule = EntranceModuleBuilder()
+        self.sessionModule = SessionModuleBuilder()
+        
+        entranceModule.appCoordinator = self
+        entranceModule.presenter.appCoordinator = self
+    }
+    
+    func setSessionModule() {
+        print("Set session module")
+        appDelegate?.setModule(view: sessionModule.view)
+    }
+    
+    func setEntranceModule() {
+        print("Set session module")
+        appDelegate?.setModule(view: entranceModule.view)
+    }
 }
 
 extension AppCoordinator: AppDelegateEntrancePage {
     func getEntrancePage() -> UIViewController {
-        entranceModule = EntranceModuleBuilder(isLoggedIn: isLoggedIn)
-//        entranceModule = EntranceModuleBuilder(isLoggedIn: true)
-        entranceModule?.appCoordinator = self
-        guard let entranceModule = entranceModule else {
-            return LoginPage()
-        }
-        
         return entranceModule.view
+//        return sessionModule.view
     }
 }
 
