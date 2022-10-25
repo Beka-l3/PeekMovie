@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol AppDelegateEntrancePage {
-    func getEntrancePage() -> UIViewController
+protocol AppDelegateLogoPage {
+    func getLogoPage() -> UIViewController
 }
 
 @main
@@ -19,24 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         
-        let appCoordinator = AppCoordinator()
-        appCoordinator.appDelegate = self
-        let appDelegateEntrancePage: AppDelegateEntrancePage = appCoordinator
+        let username = UserDefaults.standard.string(forKey: GConstants.usernameKey) ?? ""
+        let password = UserDefaults.standard.string(forKey: GConstants.passwordKey) ?? ""
+        let isLoggedIn = !password.isEmpty && !username.isEmpty
         
-//        let navigationController = UINavigationController(rootViewController: appDelegateEntrancePage.getEntrancePage())
-        window?.rootViewController = appDelegateEntrancePage.getEntrancePage()
+        let appCoordinator = AppCoordinator(isLoggedIn: isLoggedIn)
+        
+        let navigationController = UINavigationController(rootViewController: appCoordinator.getLogoPage())
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
         return true
     }
 }
-
-extension AppDelegate: AppCoordinatorDelegate {
-    func setModule(view: UIViewController) {
-        print("set Module App Delegate")
-        window?.rootViewController = view
-        window?.makeKeyAndVisible()
-        
-    }
-}
-

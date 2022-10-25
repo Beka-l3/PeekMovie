@@ -9,56 +9,71 @@ import Foundation
 import UIKit
 
 
-protocol AppCoordinatorDelegate {
-    func setModule(view: UIViewController)
-}
-
-
 final class AppCoordinator {
     
-    var appDelegate: AppCoordinatorDelegate?
-    var entranceModule: EntranceModuleBuilder
-    var sessionModule: SessionModuleBuilder
-    
-    var isLoggedIn: Bool {
-        get {
-            let username = UserDefaults.standard.string(forKey: Constants.usernameKey) ?? ""
-            let password = UserDefaults.standard.string(forKey: Constants.passwordKey) ?? ""
-            
-            return !password.isEmpty && !username.isEmpty
-        }
-    }
-    
-    init() {
-        self.entranceModule = EntranceModuleBuilder()
+    private var logoPage: LogoPage
+    private var entranceModule: EntranceModuleBuilder
+    private var sessionModule: SessionModuleBuilder
+        
+    init(isLoggedIn: Bool) {
+        self.logoPage = LogoPage()
+        self.entranceModule = EntranceModuleBuilder(isLoggedIn: isLoggedIn)
         self.sessionModule = SessionModuleBuilder()
+        self.logoPage.appCoordinator = self
         
         entranceModule.appCoordinator = self
         entranceModule.presenter.appCoordinator = self
     }
     
-    func setSessionModule() {
-        print("Set session module")
-        appDelegate?.setModule(view: sessionModule.view)
+    private func popToRootViewController() {
+        logoPage.navigationController?.popToRootViewController(animated: true)
     }
     
-    func setEntranceModule() {
+    private func pushViewController(with vc: UIViewController) {
+        logoPage.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func popLast() {
+        logoPage.navigationController?.popViewController(animated: true)
+    }
+    
+    private func setEntranceModule() {
         print("Set session module")
-        appDelegate?.setModule(view: entranceModule.view)
+        popToRootViewController()
+        logoPage.navigationController?.pushViewController(entranceModule.view, animated: true)
+    }
+    
+    private func setSessionModule() {
+        print("Set session module")
+        popToRootViewController()
+        logoPage.navigationController?.pushViewController(sessionModule.view, animated: true)
     }
 }
 
-extension AppCoordinator: AppDelegateEntrancePage {
-    func getEntrancePage() -> UIViewController {
-        return entranceModule.view
-//        return sessionModule.view
+extension AppCoordinator: AppDelegateLogoPage {
+    func getLogoPage() -> UIViewController {
+        return logoPage
     }
 }
 
+extension AppCoordinator: LogoPageDelegate {
+    func pushEntrancePage() {
+        print("Logo page delegate")
+        setEntranceModule()
+    }
+}
 
-extension AppCoordinator {
-    enum Constants {
-        static let usernameKey: String = "UsernameKey"
-        static let passwordKey: String = "PasswordKey"
+extension AppCoordinator: EntranceModuleDelegate {
+    func pushViewController(with vc: UIViewController, popToRoot: Bool) {
+        if popToRoot { popToRootViewController() }
+        pushViewController(with: vc)
+    }
+    
+    func popCurrentViewController() {
+        popLast()
+    }
+    
+    func sessionStarted() {
+        setSessionModule()
     }
 }

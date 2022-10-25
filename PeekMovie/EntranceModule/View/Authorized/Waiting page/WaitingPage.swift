@@ -9,7 +9,7 @@ import UIKit
 
 
 protocol WaitingRoomPresenter: AnyObject {
-    func cancelWaiting()
+    func cancelWaiting(isAdmin: Bool)
     func startTheSession(with roomId: String)
 }
 
@@ -54,7 +54,7 @@ class WaitingPage: UIViewController, Colors {
     }
     
     @objc func handleCancelButton() {
-        presenter?.cancelWaiting()
+        presenter?.cancelWaiting(isAdmin: isAdmin)
     }
     
     @objc func handleStartButton() {

@@ -7,13 +7,14 @@
 
 import UIKit
 
-protocol EntrancePagePresenter: AnyObject {
+
+protocol LogoPageDelegate: AnyObject {
     func pushEntrancePage()
 }
 
-class EntrancePage: UIViewController, Colors, Animations {
+class LogoPage: UIViewController, Colors, Animations {
     
-    weak var presenter: EntrancePagePresenter?
+    weak var appCoordinator: LogoPageDelegate?
     
     private lazy var logoImage: UIImageView = {
         let i = UIImageView()
@@ -67,7 +68,7 @@ class EntrancePage: UIViewController, Colors, Animations {
         let keyframeAnimationOptions: UIView.KeyframeAnimationOptions = UIView.KeyframeAnimationOptions(rawValue: animationOptions.rawValue)
         UIView.animateKeyframes(withDuration: duration, delay: delay, options: [keyframeAnimationOptions], animations: animations) { [weak self] _ in
             guard let self = self else {return}
-            self.presenter?.pushEntrancePage()
+            self.appCoordinator?.pushEntrancePage()
         }
     }
     

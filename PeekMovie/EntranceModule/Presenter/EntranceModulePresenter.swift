@@ -8,32 +8,27 @@
 import UIKit
 
 
+protocol EntranceModuleDelegate {
+    func pushViewController(with vc: UIViewController, popToRoot: Bool)
+    func popCurrentViewController()
+    func sessionStarted()
+}
+
 final class EntranceModulePresenter {
+    var appCoordinator: EntranceModuleDelegate?
     
-    var entrancePage: EntrancePage
-    var authorizedPage: AuthorizedPage
-    var unAuthorizedPage: LoginPage
+    private var authorizedPage: AuthorizedPage
+    private var unAuthorizedPage: LoginPage
+    private var passwordPage: PasswordPage
+    private var registerPage: RegisterPage
+    private var waitingPage: WaitingPage
     
-    var appCoordinator: AppCoordinator?
-    var passwordPage: PasswordPage
-    var registerPage: RegisterPage
-    var waitingPage: WaitingPage
-    
-    var isLoggedIn: Bool {
-        get {
-            let username = UserDefaults.standard.string(forKey: Constants.usernameKey) ?? ""
-            let password = UserDefaults.standard.string(forKey: Constants.passwordKey) ?? ""
-            return !password.isEmpty && !username.isEmpty
-        }
-    }
-    
-    init(entrancePage: EntrancePage,
-         authorizedPage: AuthorizedPage,
-         unAuthorizedPage: LoginPage,
-         passwordPage: PasswordPage,
-         registerPage: RegisterPage,
-         waitingPage: WaitingPage) {
-        self.entrancePage = entrancePage
+    init(
+        authorizedPage: AuthorizedPage,
+        unAuthorizedPage: LoginPage,
+        passwordPage: PasswordPage,
+        registerPage: RegisterPage,
+        waitingPage: WaitingPage) {
         self.authorizedPage = authorizedPage
         self.unAuthorizedPage = unAuthorizedPage
         self.passwordPage = passwordPage
@@ -41,61 +36,31 @@ final class EntranceModulePresenter {
         self.waitingPage = waitingPage
     }
     
-    private func pushViewController(with viewController: UIViewController?) {
-        let viewController = viewController ?? (isLoggedIn ? authorizedPage : unAuthorizedPage)
-        entrancePage.navigationController?.pushViewController(viewController, animated: true)
+    func getEntrancePage(isLoggedIn: Bool) -> UIViewController {
+        return isLoggedIn ? authorizedPage : unAuthorizedPage
     }
-    
-    private func popCurrentViewController() {
-        entrancePage.navigationController?.popViewController(animated: true)
-    }
-    
-    private func userAuthorized() {
-        entrancePage.navigationController?.popToRootViewController(animated: true)
-        pushViewController(with: authorizedPage)
-    }
-    
-    private func userUnAuthorized() {
-        entrancePage.navigationController?.popToRootViewController(animated: true)
-        pushViewController(with: unAuthorizedPage)
-    }
-    
 }
 
 
 // MARK: -- ⬇️ EXTENSIONS ⬇️
-
-extension EntranceModulePresenter {
-    enum Constants {
-        static let usernameKey: String = "UsernameKey"
-        static let passwordKey: String = "PasswordKey"
-    }
-}
-
-extension EntranceModulePresenter: EntrancePagePresenter {
-    func pushEntrancePage() {
-        pushViewController(with: nil)
-    }
-}
-
 extension EntranceModulePresenter: LoginPagePresenter {
     func checkUsername(with username: String) {
         if username == "Ezpzbaby" {
-            pushViewController(with: passwordPage)
+            appCoordinator?.pushViewController(with: passwordPage, popToRoot: false)
         } else {
             unAuthorizedPage.setInputFieldWith(with: false)
         }
     }
     
     func openRegisterPage() {
-        pushViewController(with: registerPage)
+        appCoordinator?.pushViewController(with: registerPage, popToRoot: false)
     }
 }
 
 extension EntranceModulePresenter: PasswordPagePresenter {
     func checkPassword(with password: String) {
         if password == "Password" {
-            userAuthorized()
+            appCoordinator?.pushViewController(with: authorizedPage, popToRoot: true)
         } else {
             passwordPage.setInputFieldWith(with: false)
         }
@@ -105,7 +70,7 @@ extension EntranceModulePresenter: PasswordPagePresenter {
 extension EntranceModulePresenter: RegisterPagePresenter {
     func checkRegistrationData(with id: PeekID) {
         if id.username == "Ezpzbaby" {
-            userAuthorized()
+            appCoordinator?.pushViewController(with: authorizedPage, popToRoot: true)
         } else {
             registerPage.setInputFieldsState(with: false)
         }
@@ -116,22 +81,22 @@ extension EntranceModulePresenter: AuthorizedPagePresenter {
     func pushWaitingRoom(with roomId: String, isAdmin: Bool) {
         print("push waiting room")
         waitingPage.setInitialData(roomId: roomId, isAdmin: isAdmin)
-        pushViewController(with: waitingPage)
+        appCoordinator?.pushViewController(with: waitingPage, popToRoot: false)
     }
     
     func logOut() {
         print("Log out")
-        userUnAuthorized()
+        appCoordinator?.pushViewController(with: unAuthorizedPage, popToRoot: true)
     }
 }
 
 extension EntranceModulePresenter: WaitingRoomPresenter {
-    func cancelWaiting() {
-        popCurrentViewController()
+    func cancelWaiting(isAdmin: Bool) {
+        appCoordinator?.popCurrentViewController()
     }
     
     func startTheSession(with roomId: String) {
         print("Start the seesion \(roomId)")
-        appCoordinator?.setSessionModule()
+        appCoordinator?.sessionStarted()
     }
 }

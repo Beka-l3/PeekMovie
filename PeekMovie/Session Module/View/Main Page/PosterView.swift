@@ -15,4 +15,10 @@ class PosterViewPage: UIViewController, Colors {
         
         view.backgroundColor = .systemPurple
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.isNavigationBarHidden = true
+    }
 }
