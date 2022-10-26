@@ -11,4 +11,5 @@ import Foundation
 enum GConstants {
     static let usernameKey: String = "UsernameKey"
     static let passwordKey: String = "PasswordKey"
+    static let roomIdKey: String = "RoomIdKey"
 }

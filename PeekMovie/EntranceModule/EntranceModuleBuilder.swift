@@ -14,7 +14,6 @@ final class EntranceModuleBuilder {
     var view: UIViewController
     var presenter: EntranceModulePresenter
     
-    var appCoordinator: AppCoordinator?
 //    var networkClient: NetworkClient
     
     private let authorizedPage: AuthorizedPage

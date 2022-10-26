@@ -21,8 +21,9 @@ final class AppCoordinator {
         self.sessionModule = SessionModuleBuilder()
         self.logoPage.appCoordinator = self
         
-        entranceModule.appCoordinator = self
         entranceModule.presenter.appCoordinator = self
+        sessionModule.presenter.appCoordinator = self
+        
     }
     
     private func popToRootViewController() {
@@ -50,6 +51,8 @@ final class AppCoordinator {
     }
 }
 
+// MARK: -- ⬇️ EXTENSIONS ⬇️
+
 extension AppCoordinator: AppDelegateLogoPage {
     func getLogoPage() -> UIViewController {
         return logoPage
@@ -59,7 +62,8 @@ extension AppCoordinator: AppDelegateLogoPage {
 extension AppCoordinator: LogoPageDelegate {
     func pushEntrancePage() {
         print("Logo page delegate")
-        setEntranceModule()
+//        setEntranceModule()
+        setSessionModule()
     }
 }
 
@@ -76,4 +80,8 @@ extension AppCoordinator: EntranceModuleDelegate {
     func sessionStarted() {
         setSessionModule()
     }
+}
+
+extension AppCoordinator: SessionModuleDelegate {
+    
 }

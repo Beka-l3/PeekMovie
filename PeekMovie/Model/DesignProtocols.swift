@@ -28,16 +28,32 @@ extension Fonts {
 
 protocol Colors {
     var black: UIColor {get}
+    var semiBlack: UIColor {get}
+    var clearBlack: UIColor {get}
+    
     var white: UIColor {get}
     var semiWhite: UIColor {get}
+    var clearWhite: UIColor {get}
+    
     var grey: UIColor {get}
+    
     var yellow: UIColor {get}
+    var semiYellow: UIColor {get}
+    var clearYellow: UIColor {get}
 }
 
 extension Colors {
     var black: UIColor {UIColor(red: 0, green: 0, blue: 0, alpha: 1)}
+    var semiBlack: UIColor {UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)}
+    var clearBlack: UIColor {UIColor(red: 0, green: 0, blue: 0, alpha: 0)}
+    
     var white: UIColor {UIColor(red: 1, green: 1, blue: 1, alpha: 1)}
     var semiWhite: UIColor {UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)}
+    var clearWhite: UIColor {UIColor(red: 1, green: 1, blue: 1, alpha: 0)}
+    
     var grey: UIColor {UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)}
+    
     var yellow: UIColor {UIColor(red: 245.0/255.0, green: 250.0/255.0, blue: 25.0/255.0, alpha: 1)}
+    var semiYellow: UIColor {UIColor(red: 245.0/255.0, green: 250.0/255.0, blue: 25.0/255.0, alpha: 0.5)}
+    var clearYellow: UIColor {UIColor(red: 245.0/255.0, green: 250.0/255.0, blue: 25.0/255.0, alpha: 0)}
 }

@@ -23,7 +23,10 @@ final class SessionModuleBuilder: Colors {
         self.view = UITabBarController()
         self.view.setViewControllers([mainPage, secondaryPage], animated: true)
         
-        self.presenter = SessionModulePresenter()
+        self.presenter = SessionModulePresenter(
+            mainPage: mainPage,
+            secondaryPage: secondaryPage
+        )
         
         setTabBarItems()
     }
