@@ -11,9 +11,11 @@ import UIKit
 class MovieInfoStackViewModel: Colors, FadingLayers, MovieInfoViews {
     
     lazy var movieTitleLabel: UILabel = { getLabel(ofSize: 32, text: "Movie title: additional informative title") }()
+    lazy var movieYear: UILabel = { getLabel(ofSize: 24, text: "2019") }()
     
     lazy var movieTitleScrollView: UIScrollView = {
         let s = UIScrollView()
+        movieYear.textAlignment = .right
         s.addSubview(movieTitleLabel)
         s.showsHorizontalScrollIndicator = false
         NSLayoutConstraint.activate([
@@ -26,12 +28,7 @@ class MovieInfoStackViewModel: Colors, FadingLayers, MovieInfoViews {
     }()
     
     lazy var movieTitleView: UIView = {
-        let v = UIView()
-        
-        let mask = getFadingLayer3(from: .left, locations: [0.8, 0.9, 1])
-        mask.frame.origin = .zero
-        mask.frame.size = CGSize(width: 250, height: 42)
-        v.layer.mask = mask
+        let v = UIView()    
         
         v.addSubview(movieTitleScrollView)
         NSLayoutConstraint.activate([
@@ -47,7 +44,6 @@ class MovieInfoStackViewModel: Colors, FadingLayers, MovieInfoViews {
         return v
     }()
     
-    lazy var movieYear: UILabel = { getLabel(ofSize: 24, text: "2019") }()
     lazy var titleAndYear: UIStackView = { getStack(views: [movieTitleView, movieYear]) }()
     
     lazy var directorLabel: UILabel = { getLabel(ofSize: 20, text: "Director") }()
