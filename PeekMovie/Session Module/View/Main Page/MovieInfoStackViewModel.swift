@@ -10,6 +10,7 @@ import UIKit
 
 class MovieInfoStackViewModel: Colors, FadingLayers, MovieInfoViews {
     
+    // MARK: PLEASE FIX ME
     lazy var movieTitleLabel: UILabel = { getLabel(ofSize: 32, text: "Movie title: additional informative title") }()
     lazy var movieYear: UILabel = { getLabel(ofSize: 24, text: "2019") }()
     

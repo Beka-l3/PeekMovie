@@ -49,7 +49,11 @@ class PosterViewPage: UIViewController, Colors {
         let posterViewSize = CGSize(width: view.frame.width, height: view.safeAreaLayoutGuide.layoutFrame.height - 8)
         let scale = posterViewSize.height / posterViewModels.posterImage.image!.size.height
         let newSize = CGSize(width: posterViewModels.posterImage.image!.size.width * scale, height: posterViewModels.posterImage.image!.size.height * scale)
-        let offset = newSize.width - posterViewSize.width
+        var offset: CGFloat = .zero
+        if posterViewModels.posterImage.frame.origin == .zero {
+            offset = newSize.width - posterViewSize.width
+        }
+        
         
         UIView.animate(withDuration: 12, delay: 1, options: [.repeat, .autoreverse]) {
             self.posterViewModels.posterImage.frame.origin = CGPoint(x: -offset, y: 0)
@@ -92,9 +96,34 @@ class PosterViewPage: UIViewController, Colors {
         // MARK: FIX ME PLEASE
         let opacity = posterViewModels.movieInfoView.scrollView.layer.opacity
         
+        if opacity == 1 {
+            pauseLayer(layer: posterViewModels.posterImage.layer)
+        } else {
+            resumeLayer(layer: posterViewModels.posterImage.layer)
+        }
+        
+//        print(posterViewModels.posterImage.layer.speed)
+//        posterViewModels.posterImage.layer.speed = posterViewModels.posterImage.layer.speed == 0 ? 1 : 0
+//        print(posterViewModels.posterImage.frame.origin)
+        
         UIView.animate(withDuration: 0.8, delay: 0, options: []) {
             self.posterViewModels.movieInfoView.scrollView.layer.opacity = 1 - opacity
 //            self.posterViewModels.movieInfoView.whiteFadeBackground.opacity = 1 - opacity
         }
+    }
+    
+    func pauseLayer(layer: CALayer) {
+        let pausedTime: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil)
+        layer.speed = 0.0
+        layer.timeOffset = pausedTime
+    }
+
+    func resumeLayer(layer: CALayer) {
+        let pausedTime: CFTimeInterval = layer.timeOffset
+        layer.speed = 1.0
+        layer.timeOffset = 0.0
+        layer.beginTime = 0.0
+        let timeSincePause: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
+        layer.beginTime = timeSincePause
     }
 }
