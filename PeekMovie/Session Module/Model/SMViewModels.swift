@@ -46,17 +46,17 @@ extension FadingLayers {
 }
 
 protocol MovieInfoViews: Colors {
-    func getLabel(ofSize: CGFloat, text: String, lines: Int) -> UILabel
+    func getLabel(font: UIFont, text: String, lines: Int) -> UILabel
     func getStack(views: [UIView], axis: NSLayoutConstraint.Axis, spacing: CGFloat, isEqual: Bool) -> UIStackView
 }
 
 extension MovieInfoViews {
-    func getLabel(ofSize: CGFloat, text: String, lines: Int = 1) -> UILabel {
+    func getLabel(font: UIFont, text: String, lines: Int = 1) -> UILabel {
         let l = UILabel()
         l.text = text
         l.numberOfLines = lines
         l.textColor = black
-        l.font = .systemFont(ofSize: ofSize)
+        l.font = font
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
     }

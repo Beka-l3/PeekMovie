@@ -11,19 +11,23 @@ import UIKit
 protocol Fonts {
     var detailFont: UIFont {get}
     var detailBoldFont: UIFont {get}
+    var descriptionFont: UIFont {get}
     var tipFont: UIFont {get}
     var bodyFont: UIFont {get}
     var headerFont: UIFont {get}
     var titleFont: UIFont {get}
+    var largeTitleFont: UIFont {get}
 }
 
 extension Fonts {
     var detailFont: UIFont {UIFont.systemFont(ofSize: 14)}
     var detailBoldFont: UIFont {UIFont.boldSystemFont(ofSize: 14)}
+    var descriptionFont: UIFont {UIFont.systemFont(ofSize: 16)}
     var tipFont: UIFont {UIFont.boldSystemFont(ofSize: 18)}
     var bodyFont: UIFont {UIFont.systemFont(ofSize: 20)}
     var headerFont: UIFont { UIFont.boldSystemFont(ofSize: 24) }
-    var titleFont: UIFont {UIFont.systemFont(ofSize: 56)}
+    var titleFont: UIFont {UIFont.systemFont(ofSize: 32)}
+    var largeTitleFont: UIFont {UIFont.systemFont(ofSize: 56)}
 }
 
 protocol Colors {

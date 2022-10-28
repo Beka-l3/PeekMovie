@@ -34,31 +34,38 @@ final class PosterViewModels: Colors, Fonts, FadingLayers {
     lazy var posterView: UIView = {
         let v = UIView()
         v.addSubview(posterImage)
+        v.layer.addSublayer(yellowFadeBottom)
         v.addSubview(movieInfoView.infoView)
+        v.layer.addSublayer(darkFadeTop)
+        v.addSubview(infoButton)
         NSLayoutConstraint.activate([
             movieInfoView.infoView.leadingAnchor.constraint(equalTo: v.leadingAnchor),
             movieInfoView.infoView.trailingAnchor.constraint(equalTo: v.trailingAnchor),
             movieInfoView.infoView.bottomAnchor.constraint(equalTo: v.bottomAnchor),
+            
+            infoButton.widthAnchor.constraint(equalToConstant: 20),
+            infoButton.heightAnchor.constraint(equalToConstant: 20),
+            infoButton.trailingAnchor.constraint(equalTo: v.trailingAnchor, constant: -16),
+            infoButton.topAnchor.constraint(equalTo: v.topAnchor, constant: 16),
         ])
-        
-        v.layer.addSublayer(darkFadeTop)
         v.backgroundColor = clearBlack
-        v.clipsToBounds = true
-//        v.layer.cornerRadius = 32
-//        v.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
     
     
     func setupLayers(size: CGSize) {
-        let darkFadeTopSize = CGSize(width: size.width, height: size.height * 0.2)
         darkFadeTop.frame.origin = .zero
-        darkFadeTop.frame.size = darkFadeTopSize
+        darkFadeTop.frame.size = CGSize(width: size.width, height: size.height * 0.2)
+        
+        let yellowFadeHeight = CGFloat(8)
+        yellowFadeBottom.frame.size = CGSize(width: size.width, height: yellowFadeHeight)
+        yellowFadeBottom.frame.origin = CGPoint(x: .zero, y: size.height - yellowFadeHeight)
+        yellowFadeBottom.isHidden = true
         
         movieInfoView.infoView.heightAnchor.constraint(equalToConstant: size.height * 0.6).isActive = true
         movieInfoView.setupLayers(
-            frameSize: CGSize(width: size.width, height: size.height * 0.6),
+            size: CGSize(width: size.width, height: size.height * 0.6),
             contentSize: CGSize(width: size.width, height: size.height * 1.2)
         )
     }
