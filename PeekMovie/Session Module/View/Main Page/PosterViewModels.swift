@@ -22,7 +22,6 @@ final class PosterViewModels: Colors, Fonts, FadingLayers {
     
     lazy var infoButton: UIButton = {
         let b = UIButton(type: .system)
-//        b.frame = CGRect(x: 300, y: 500, width: 20, height: 20)
         b.setTitle("i", for: .normal)
         b.titleLabel?.font = .boldSystemFont(ofSize: 12)
         b.setTitleColor(black, for: .normal)
@@ -34,7 +33,6 @@ final class PosterViewModels: Colors, Fonts, FadingLayers {
     
     lazy var posterView: UIView = {
         let v = UIView()
-        
         v.addSubview(posterImage)
         v.addSubview(movieInfoView.infoView)
         NSLayoutConstraint.activate([
@@ -44,12 +42,10 @@ final class PosterViewModels: Colors, Fonts, FadingLayers {
         ])
         
         v.layer.addSublayer(darkFadeTop)
-        
         v.backgroundColor = clearBlack
         v.clipsToBounds = true
 //        v.layer.cornerRadius = 32
 //        v.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()

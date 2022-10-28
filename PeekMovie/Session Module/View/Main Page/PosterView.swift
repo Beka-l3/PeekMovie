@@ -30,7 +30,7 @@ class PosterViewPage: UIViewController, Colors {
         setupViews()
         posterViewModels.infoButton.addTarget(self, action: #selector(handleInfoButton), for: .touchUpInside)
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handlePress))
-        longPress.minimumPressDuration = .zero
+        longPress.minimumPressDuration = 0.2
         view.addGestureRecognizer(longPress)
     }
     
