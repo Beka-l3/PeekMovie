@@ -22,7 +22,7 @@ final class PosterViewModels: Colors, Fonts, FadingLayers {
     
     lazy var infoButton: UIButton = {
         let b = UIButton(type: .system)
-        b.setTitle("i", for: .normal)
+        b.setTitle("H", for: .normal)
         b.titleLabel?.font = .boldSystemFont(ofSize: 12)
         b.setTitleColor(black, for: .normal)
         b.backgroundColor = yellow
@@ -56,23 +56,23 @@ final class PosterViewModels: Colors, Fonts, FadingLayers {
     
     func setupLayers(size: CGSize) {
         darkFadeTop.frame.origin = .zero
-        darkFadeTop.frame.size = CGSize(width: size.width, height: size.height * 0.2)
+        darkFadeTop.frame.size = CGSize(width: size.width, height: 50)
         
         let yellowFadeHeight = CGFloat(8)
         yellowFadeBottom.frame.size = CGSize(width: size.width, height: yellowFadeHeight)
         yellowFadeBottom.frame.origin = CGPoint(x: .zero, y: size.height - yellowFadeHeight)
         yellowFadeBottom.isHidden = true
         
-        movieInfoView.infoView.heightAnchor.constraint(equalToConstant: size.height * 0.6).isActive = true
+        movieInfoView.infoView.heightAnchor.constraint(equalToConstant: size.height * 0.4).isActive = true
         movieInfoView.setupLayers(
-            size: CGSize(width: size.width, height: size.height * 0.6),
-            contentSize: CGSize(width: size.width, height: size.height * 1.2)
+            size: CGSize(width: size.width, height: size.height * 0.4),
+            contentSize: CGSize(width: size.width, height: size.height * 0.8)
         )
     }
     
     func setData(frameSize: CGSize) {
         // MARK: FIX ME PLEASE
-        let image = UIImage(named: "1917")!
+        let image = UIImage(named: "moon")!
         let scale = frameSize.height / image.size.height
         let newSize = CGSize(width: image.size.width * scale, height: image.size.height * scale)
         

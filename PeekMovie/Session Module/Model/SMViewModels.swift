@@ -16,21 +16,40 @@ enum GradientDirectionFrom {
 }
 
 protocol FadingLayers: Colors {
+    func getFadingLayer2(from: GradientDirectionFrom, locations: [NSNumber], color: ColorForFade, zPos: CGFloat) -> CAGradientLayer
     func getFadingLayer3(from: GradientDirectionFrom, locations: [NSNumber], color: ColorForFade, zPos: CGFloat) -> CAGradientLayer
 }
 
 extension FadingLayers {
+    func getFadingLayer2(from: GradientDirectionFrom = .bottom, locations: [NSNumber], color: ColorForFade = .white, zPos: CGFloat = 0) -> CAGradientLayer {
+        let g = CAGradientLayer()
+        
+        let (full, clear): (UIColor, UIColor)
+        switch color {
+        case .black: (full, clear) = (black, clearBlack)
+        case .white: (full, clear) = (white, clearWhite)
+        case .yellow: (full, clear) = (yellow, clearYellow)
+        }
+        
+        g.type = .axial
+        if from == .left || from == .right {
+            g.startPoint = CGPoint(x: 0, y: 1)
+            g.endPoint = CGPoint(x: 1, y: 1)
+        }
+        g.colors = (from == .bottom || from == .right) ?  [clear.cgColor, full.cgColor] : [full.cgColor, clear.cgColor]
+        g.locations = locations
+        g.zPosition = zPos
+        return g
+    }
+    
     func getFadingLayer3(from: GradientDirectionFrom = .bottom, locations: [NSNumber], color: ColorForFade = .white, zPos: CGFloat = 0) -> CAGradientLayer {
         let g = CAGradientLayer()
         
         let (full, semi, clear): (UIColor, UIColor, UIColor)
         switch color {
-        case .black:
-            (full, semi, clear) = (black, semiBlack, clearBlack)
-        case .white:
-            (full, semi, clear) = (white, semiWhite, clearWhite)
-        case .yellow:
-            (full, semi, clear) = (yellow, semiYellow, clearYellow)
+        case .black: (full, semi, clear) = (black, semiBlack, clearBlack)
+        case .white: (full, semi, clear) = (white, semiWhite, clearWhite)
+        case .yellow: (full, semi, clear) = (yellow, semiYellow, clearYellow)
         }
         
         g.type = .axial
@@ -46,16 +65,16 @@ extension FadingLayers {
 }
 
 protocol MovieInfoViews: Colors {
-    func getLabel(font: UIFont, text: String, lines: Int) -> UILabel
+    func getLabel(font: UIFont, text: String, color: UIColor, lines: Int) -> UILabel
     func getStack(views: [UIView], axis: NSLayoutConstraint.Axis, spacing: CGFloat, isEqual: Bool) -> UIStackView
 }
 
 extension MovieInfoViews {
-    func getLabel(font: UIFont, text: String, lines: Int = 1) -> UILabel {
+    func getLabel(font: UIFont, text: String, color: UIColor = .white, lines: Int = 1) -> UILabel {
         let l = UILabel()
         l.text = text
         l.numberOfLines = lines
-        l.textColor = black
+        l.textColor = color
         l.font = font
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
@@ -71,5 +90,4 @@ extension MovieInfoViews {
         s.translatesAutoresizingMaskIntoConstraints = false
         return s
     }
-    
 }

@@ -57,9 +57,19 @@ class PosterViewPage: UIViewController, Colors {
     }
     
     @objc func handleInfoButton() {
-        let opacity = posterViewModels.movieInfoView.scrollView.layer.opacity
+//        let opacity = posterViewModels.movieInfoView.scrollView.layer.opacity
+        let anim = CABasicAnimation(keyPath: "opacity")
+        anim.toValue = 1 - self.posterViewModels.darkFadeTop.opacity
+        anim.duration = 0.8
+        anim.fillMode = .forwards
+        anim.isRemovedOnCompletion = false
+        self.posterViewModels.darkFadeTop.add(anim, forKey: "opacityAnim")
+        
         UIView.animate(withDuration: 0.8, delay: .zero, options: []) {
-            self.posterViewModels.movieInfoView.scrollView.layer.opacity = 1 - opacity
+            self.posterViewModels.movieInfoView.scrollView.layer.opacity = 1 - self.posterViewModels.movieInfoView.scrollView.layer.opacity
+            self.posterViewModels.infoButton.layer.opacity = 1.25 - self.posterViewModels.infoButton.layer.opacity
+        } completion: { done in
+            self.posterViewModels.darkFadeTop.opacity = 1 - self.posterViewModels.darkFadeTop.opacity
         }
     }
     
@@ -68,7 +78,7 @@ class PosterViewPage: UIViewController, Colors {
         let posterView = posterViewModels.posterView
         view.addSubview(posterView)
         NSLayoutConstraint.activate([
-            posterView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -8),
+            posterView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             posterView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             posterView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             posterView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),

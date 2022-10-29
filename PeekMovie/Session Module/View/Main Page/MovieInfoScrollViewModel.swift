@@ -11,8 +11,8 @@ import UIKit
 class MoviewInfoScrollViewModel: Colors, FadingLayers {
     
     lazy var infoStackViewModel: MovieInfoStackViewModel = { MovieInfoStackViewModel() }()
-    lazy var whiteFadeScrollBackground: CAGradientLayer = { getFadingLayer3(locations: [0.1, 0.2, 0.3]) }()
-    lazy var maskLayerTop: CAGradientLayer = { getFadingLayer3(locations: [0.1, 0.2, 0.3], color: .black) }()
+    lazy var whiteFadeScrollBackground: CAGradientLayer = { getFadingLayer3(locations: [0.05, 0.15, 0.4], color: .black) }()
+    lazy var maskLayerTop: CAGradientLayer = { getFadingLayer2(locations: [0, 0.1], color: .black) }()
     
     lazy var scrollView: UIScrollView = {
         let s = UIScrollView()
@@ -26,7 +26,6 @@ class MoviewInfoScrollViewModel: Colors, FadingLayers {
     lazy var infoView: UIView = {
         let v = UIView()
         v.layer.mask = maskLayerTop
-        
         v.addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: v.topAnchor),
@@ -41,7 +40,7 @@ class MoviewInfoScrollViewModel: Colors, FadingLayers {
     func setupLayers(size: CGSize, contentSize: CGSize) {
         NSLayoutConstraint.activate([
             infoStackViewModel.mainStackView.widthAnchor.constraint(equalToConstant: size.width - 32),
-            infoStackViewModel.mainStackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: size.height * 0.4),
+            infoStackViewModel.mainStackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: size.height * 0.2),
             infoStackViewModel.mainStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
             scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: infoStackViewModel.mainStackView.bottomAnchor, constant: 32),
         ])
