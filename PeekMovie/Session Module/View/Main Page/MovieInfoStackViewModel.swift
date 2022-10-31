@@ -55,7 +55,7 @@ class MovieInfoStackViewModel: Fonts, Colors, FadingLayers, MovieInfoViews {
     lazy var countryNameLabel: UILabel = { getLabel(font: bodyFont, text: "Kazakhstan") }()
     lazy var country: UIStackView = { getStack(views: [countryLabel, countryNameLabel], isEqual: true) }()
     
-    lazy var description: UILabel = {getLabel(font: descriptionFont, text: "Two soldiers, assigned the task of delivering a critical message to another battalion, risk their lives for the job in order to prevent them from stepping right into a deadly ambush.\n\nApril 6th, 1917. As an infantry battalion assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and deliver a message that will stop 1,600 men from walking straight into a deadly trap.", lines: .zero)  }()
+    lazy var description: UILabel = { getLabel(font: descriptionFont, text: "Two soldiers, assigned the task of delivering a critical message to another battalion, risk their lives for the job in order to prevent them from stepping right into a deadly ambush.\n\nApril 6th, 1917. As an infantry battalion assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and deliver a message that will stop 1,600 men from walking straight into a deadly trap.", lines: .zero)  }()
     
     lazy var mainStackView: UIStackView = {
         getStack(views: [titleAndYear, director, country, description], axis: .vertical, spacing: 16)

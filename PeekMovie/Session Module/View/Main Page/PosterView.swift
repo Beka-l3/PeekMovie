@@ -32,32 +32,32 @@ class PosterViewPage: UIViewController, Colors {
         posterViewModels.infoButton.addTarget(self, action: #selector(handleInfoButton), for: .touchUpInside)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func viewWillLayoutSubviews() { super.viewWillLayoutSubviews()
         setupLayers()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidAppear(_ animated: Bool) { super.viewDidAppear(animated)
         setPosterImageAnimation()
     }
     
 //  MARK: - objc
     @objc func handlePressAndHold(gesture: UILongPressGestureRecognizer) {
-        if gesture.state == .began {
-            posterViewModels.posterImage.layer.pauseLayer()
-        } else if gesture.state == .ended {
-            posterViewModels.posterImage.layer.resumeLayer()
+        if gesture.state == .began { posterViewModels.posterImage.layer.pauseLayer() }
+        else if gesture.state == .ended { posterViewModels.posterImage.layer.resumeLayer() }
+    }
+    
+    @objc func handleSwipe(gesture: UISwipeGestureRecognizer) {
+        if gesture.state == .ended {
+            if gesture.direction == .left { animateSwipe(fade: self.posterViewModels.likeFade, label: self.posterViewModels.likeLabel) }
+            else if gesture.direction == .right { animateSwipe(fade: self.posterViewModels.disLikeFade, label: self.posterViewModels.disLikeLabel) }
         }
     }
     
     @objc func handleInfoButton() {
-//        let opacity = posterViewModels.movieInfoView.scrollView.layer.opacity
         let anim = CABasicAnimation(keyPath: "opacity")
         anim.toValue = 1 - self.posterViewModels.darkFadeTop.opacity
         anim.duration = 0.8
@@ -89,16 +89,42 @@ class PosterViewPage: UIViewController, Colors {
 //      MARK: FIX ME
         let posterViewSize = CGSize(width: view.frame.width, height: view.safeAreaLayoutGuide.layoutFrame.height)
         posterViewModels.setupLayers(size: posterViewSize)
-        posterViewModels.setData(frameSize: posterViewSize)
+        posterViewModels.setData(size: posterViewSize)
     }
     
     private func setGestureRecognizer() {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handlePressAndHold))
-        longPress.minimumPressDuration = 0.2
-        view.addGestureRecognizer(longPress)
+        longPress.minimumPressDuration = .zero
+        posterViewModels.receiver.addGestureRecognizer(longPress)
+        
+        let rightSwipe = UISwipeGestureRecognizer (target: self, action: #selector(handleSwipe))
+        rightSwipe.direction = .right
+        view.addGestureRecognizer(rightSwipe)
+        
+        let leftSwipe = UISwipeGestureRecognizer (target: self, action: #selector(handleSwipe))
+        leftSwipe.direction = .left
+        view.addGestureRecognizer(leftSwipe)
+        
+    }
+    
+    private func animateSwipe(fade: CAGradientLayer, label: UILabel) {
+        let initialOrigin = fade.frame.origin
+        fade.opacity = 1
+        UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseInOut]) {
+            fade.frame.origin = .zero
+            label.layer.opacity = 1
+        } completion: { done in
+            UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseInOut]) {
+                fade.opacity = 0
+                label.layer.opacity = 0
+            } completion: { _ in
+                fade.frame.origin = initialOrigin
+            }
+        }
     }
     
     private func setPosterImageAnimation() {
+//MARK: - FIX ME
         let posterViewSize = CGSize(width: view.frame.width, height: view.safeAreaLayoutGuide.layoutFrame.height)
         let scale = posterViewSize.height / posterViewModels.posterImage.image!.size.height
         let newSize = CGSize(width: posterViewModels.posterImage.image!.size.width * scale, height: posterViewModels.posterImage.image!.size.height * scale)
@@ -116,6 +142,7 @@ class PosterViewPage: UIViewController, Colors {
         UIView.animate(withDuration: 12, delay: 1, options: [.repeat, .autoreverse]) { [weak self] in
             self?.posterViewModels.posterImage.frame.origin = newOrigin
         }
+//MARK: FIX ME -
     }
 }
 
