@@ -9,7 +9,6 @@ import UIKit
 
 
 final class PosterViewModels: Colors, Fonts, MovieInfoViews, FadingLayers {
-    
     lazy var movieRatingLabel: UILabel = { getLabel(font: titleFont, text: "0.0", color: yellow) }()
     lazy var movieInfoView: MoviewInfoScrollViewModel = { MoviewInfoScrollViewModel() }()
     lazy var darkFadeTop: CAGradientLayer = { getFadingLayer3(from: .top, locations: [0.1, 0.55, 1], color: .black) }()
@@ -18,19 +17,14 @@ final class PosterViewModels: Colors, Fonts, MovieInfoViews, FadingLayers {
     lazy var disLikeFade: CAGradientLayer = { getFadingLayer2(from: .left, locations: [0, 1], color: .black) }()
     lazy var likeLabel: UILabel = { getLabel(font: largeTitleFont, text: "Like", color: black) }()
     lazy var disLikeLabel: UILabel = { getLabel(font: largeTitleFont, text: "disLike", color: semiWhite) }()
-    
+    lazy var receiver: UIView = { UIView() }()
     lazy var posterImage: UIImageView = {
         let i = UIImageView()
         i.frame.origin = .zero
         i.backgroundColor = black
         i.contentMode = .scaleAspectFill
+        receiver.translatesAutoresizingMaskIntoConstraints = false
         return i
-    }()
-    
-    lazy var receiver: UIView = {
-        let v = UIView()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        return v
     }()
     
     lazy var infoButton: UIButton = {
@@ -60,21 +54,17 @@ final class PosterViewModels: Colors, Fonts, MovieInfoViews, FadingLayers {
         NSLayoutConstraint.activate([
             movieRatingLabel.topAnchor.constraint(equalTo: v.topAnchor, constant: 16),
             movieRatingLabel.leadingAnchor.constraint(equalTo: v.leadingAnchor, constant: 16),
-            
             receiver.topAnchor.constraint(equalTo: v.topAnchor),
             receiver.leadingAnchor.constraint(equalTo: v.leadingAnchor),
             receiver.trailingAnchor.constraint(equalTo: v.trailingAnchor),
             receiver.bottomAnchor.constraint(equalTo: v.bottomAnchor),
-            
             movieInfoView.infoView.leadingAnchor.constraint(equalTo: v.leadingAnchor),
             movieInfoView.infoView.trailingAnchor.constraint(equalTo: v.trailingAnchor),
             movieInfoView.infoView.bottomAnchor.constraint(equalTo: v.bottomAnchor),
-            
             infoButton.widthAnchor.constraint(equalToConstant: 20),
             infoButton.heightAnchor.constraint(equalToConstant: 20),
             infoButton.trailingAnchor.constraint(equalTo: v.trailingAnchor, constant: -16),
             infoButton.topAnchor.constraint(equalTo: v.topAnchor, constant: 16),
-            
             likeLabel.centerXAnchor.constraint(equalTo: v.centerXAnchor),
             likeLabel.centerYAnchor.constraint(equalTo: v.centerYAnchor),
             disLikeLabel.centerXAnchor.constraint(equalTo: v.centerXAnchor),
@@ -85,17 +75,13 @@ final class PosterViewModels: Colors, Fonts, MovieInfoViews, FadingLayers {
         return v
     }()
     
-    
     func setupLayers(size: CGSize) {
         likeLabel.layer.opacity = 0
         disLikeLabel.layer.opacity = 0
-        
         darkFadeTop.frame.origin = .zero
         darkFadeTop.frame.size = CGSize(width: size.width, height: 50)
-        
         likeFade.frame.origin = CGPoint(x: size.width, y: 0)
         likeFade.frame.size = size
-        
         disLikeFade.frame.origin = CGPoint(x: -size.width, y: 0)
         disLikeFade.frame.size = size
         
@@ -103,7 +89,6 @@ final class PosterViewModels: Colors, Fonts, MovieInfoViews, FadingLayers {
         yellowFadeBottom.frame.size = CGSize(width: size.width, height: yellowFadeHeight)
         yellowFadeBottom.frame.origin = CGPoint(x: .zero, y: size.height - yellowFadeHeight)
         yellowFadeBottom.isHidden = true
-        
         movieInfoView.infoView.heightAnchor.constraint(equalToConstant: size.height * 0.4).isActive = true
         movieInfoView.setupLayers(
             size: CGSize(width: size.width, height: size.height * 0.4),
@@ -112,15 +97,10 @@ final class PosterViewModels: Colors, Fonts, MovieInfoViews, FadingLayers {
     }
     
     func setData(size: CGSize, movie: Movie, animate: Bool = false) {
-        // MARK: FIX ME PLEASE
         movieInfoView.infoStackViewModel.setData(movie: movie)
         
-        UIView.transition(with: movieRatingLabel, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in
-            self?.movieRatingLabel.text = String(movie.rating)
-        }
-        UIView.transition(with: posterImage, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in
-            self?.posterImage.image = nil
-        }
+        UIView.transition(with: movieRatingLabel, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in self?.movieRatingLabel.text = String(movie.rating) }
+        UIView.transition(with: posterImage, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in self?.posterImage.image = nil }
         UIView.transition(with: posterImage, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in
             self?.posterImage.image = UIImage(named: movie.img)!
         } completion: { [weak self] done in
