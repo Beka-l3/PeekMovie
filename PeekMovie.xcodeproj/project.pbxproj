@@ -27,6 +27,7 @@
 		0788F42628F8321F006F447F /* LoginViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42528F8321F006F447F /* LoginViewModels.swift */; };
 		079E5EB829092EC8006AF238 /* MovieInfoScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5EB729092EC8006AF238 /* MovieInfoScrollViewModel.swift */; };
 		079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5EB92909753C006AF238 /* MovieInfoStackViewModel.swift */; };
+		07C8212F291019E000B055D0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8212E291019E000B055D0 /* Movie.swift */; };
 		07D401B928F8641700BF3F55 /* PasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D401B828F8641700BF3F55 /* PasswordPage.swift */; };
 		07D401BB28F8653D00BF3F55 /* PasswordViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D401BA28F8653D00BF3F55 /* PasswordViewModels.swift */; };
 		07D401BD28F890F400BF3F55 /* LogoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D401BC28F890F400BF3F55 /* LogoPage.swift */; };
@@ -70,6 +71,7 @@
 		0788F42528F8321F006F447F /* LoginViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModels.swift; sourceTree = "<group>"; };
 		079E5EB729092EC8006AF238 /* MovieInfoScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoScrollViewModel.swift; sourceTree = "<group>"; };
 		079E5EB92909753C006AF238 /* MovieInfoStackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoStackViewModel.swift; sourceTree = "<group>"; };
+		07C8212E291019E000B055D0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		07D401B828F8641700BF3F55 /* PasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPage.swift; sourceTree = "<group>"; };
 		07D401BA28F8653D00BF3F55 /* PasswordViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModels.swift; sourceTree = "<group>"; };
 		07D401BC28F890F400BF3F55 /* LogoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoPage.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				077B2EDD29080E680087504C /* SMConstants.swift */,
 				077B2EDF29080E970087504C /* SMViewModels.swift */,
+				07C8212E291019E000B055D0 /* Movie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C8212F291019E000B055D0 /* Movie.swift in Sources */,
 				07EB1CCA28FDE6EB0031598A /* WaitingRoomViewModels.swift in Sources */,
 				077B2EDE29080E680087504C /* SMConstants.swift in Sources */,
 				07D401BD28F890F400BF3F55 /* LogoPage.swift in Sources */,

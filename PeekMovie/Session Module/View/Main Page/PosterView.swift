@@ -14,9 +14,11 @@ protocol PosterViewDelegate: AnyObject {
 
 class PosterViewPage: UIViewController, Colors {
     
+    private var movies = Movies()
+    
     weak var presenter: PosterViewDelegate?
     private var posterViewModels: PosterViewModels
-    
+    private var posterViewSize: CGSize { get { CGSize(width: view.safeAreaLayoutGuide.layoutFrame.width, height: view.safeAreaLayoutGuide.layoutFrame.height) } }
     init() {
         self.posterViewModels = PosterViewModels()
         super.init(nibName: nil, bundle: nil)
@@ -24,24 +26,20 @@ class PosterViewPage: UIViewController, Colors {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
 //  MARK: - lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidLoad() { super.viewDidLoad()
         view.backgroundColor = black
         setupViews()
         setGestureRecognizer()
         posterViewModels.infoButton.addTarget(self, action: #selector(handleInfoButton), for: .touchUpInside)
     }
-    
     override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
     }
-    
     override func viewWillLayoutSubviews() { super.viewWillLayoutSubviews()
         setupLayers()
     }
-    
     override func viewDidAppear(_ animated: Bool) { super.viewDidAppear(animated)
-        setPosterImageAnimation()
+        posterViewModels.animatePosterImage(size: posterViewSize)
     }
     
 //  MARK: - objc
@@ -65,10 +63,13 @@ class PosterViewPage: UIViewController, Colors {
         anim.isRemovedOnCompletion = false
         self.posterViewModels.darkFadeTop.add(anim, forKey: "opacityAnim")
         
-        UIView.animate(withDuration: 0.8, delay: .zero, options: []) {
+        UIView.animate(withDuration: 0.8, delay: .zero, options: []) { [weak self] in
+            guard let self = self else {return}
+            self.posterViewModels.movieRatingLabel.layer.opacity = 1 - self.posterViewModels.movieRatingLabel.layer.opacity
             self.posterViewModels.movieInfoView.scrollView.layer.opacity = 1 - self.posterViewModels.movieInfoView.scrollView.layer.opacity
             self.posterViewModels.infoButton.layer.opacity = 1.25 - self.posterViewModels.infoButton.layer.opacity
-        } completion: { done in
+        } completion: { [weak self] done in
+            guard let self = self else {return}
             self.posterViewModels.darkFadeTop.opacity = 1 - self.posterViewModels.darkFadeTop.opacity
         }
     }
@@ -86,10 +87,8 @@ class PosterViewPage: UIViewController, Colors {
     }
     
     private func setupLayers() {
-//      MARK: FIX ME
-        let posterViewSize = CGSize(width: view.frame.width, height: view.safeAreaLayoutGuide.layoutFrame.height)
         posterViewModels.setupLayers(size: posterViewSize)
-        posterViewModels.setData(size: posterViewSize)
+        posterViewModels.setData(size: posterViewSize, movie: movies.getMovie())
     }
     
     private func setGestureRecognizer() {
@@ -104,7 +103,6 @@ class PosterViewPage: UIViewController, Colors {
         let leftSwipe = UISwipeGestureRecognizer (target: self, action: #selector(handleSwipe))
         leftSwipe.direction = .left
         view.addGestureRecognizer(leftSwipe)
-        
     }
     
     private func animateSwipe(fade: CAGradientLayer, label: UILabel) {
@@ -113,36 +111,17 @@ class PosterViewPage: UIViewController, Colors {
         UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseInOut]) {
             fade.frame.origin = .zero
             label.layer.opacity = 1
-        } completion: { done in
+        } completion: { _ in
             UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseInOut]) {
                 fade.opacity = 0
                 label.layer.opacity = 0
-            } completion: { _ in
+            } completion: { [weak self] done in
                 fade.frame.origin = initialOrigin
+                
+                guard let self = self else {return}
+                if done {self.posterViewModels.setData(size: self.posterViewSize, movie: self.movies.getMovie(), animate: true)}
             }
         }
-    }
-    
-    private func setPosterImageAnimation() {
-//MARK: - FIX ME
-        let posterViewSize = CGSize(width: view.frame.width, height: view.safeAreaLayoutGuide.layoutFrame.height)
-        let scale = posterViewSize.height / posterViewModels.posterImage.image!.size.height
-        let newSize = CGSize(width: posterViewModels.posterImage.image!.size.width * scale, height: posterViewModels.posterImage.image!.size.height * scale)
-        var offset: CGFloat = .zero
-        var newOrigin: CGPoint = .zero
-        
-        if posterViewModels.posterImage.image!.size.width > posterViewSize.width {
-            if posterViewModels.posterImage.frame.origin == .zero { offset = newSize.width - posterViewSize.width }
-            newOrigin = CGPoint(x: -offset, y: .zero)
-        } else {
-            if posterViewModels.posterImage.frame.origin == .zero { offset = newSize.height - posterViewSize.height }
-            newOrigin = CGPoint(x: .zero, y: -offset)
-        }
-        
-        UIView.animate(withDuration: 12, delay: 1, options: [.repeat, .autoreverse]) { [weak self] in
-            self?.posterViewModels.posterImage.frame.origin = newOrigin
-        }
-//MARK: FIX ME -
+        movies.increase()
     }
 }
-

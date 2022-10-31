@@ -12,7 +12,7 @@ class MovieInfoStackViewModel: Fonts, Colors, FadingLayers, MovieInfoViews {
     // MARK: PLEASE FIX ME
     lazy var movieTitleLabel: UILabel = { getLabel(font: titleFont, text: "Movie title: additional informative title") }()
     lazy var movieTitleMask: CAGradientLayer = { getFadingLayer3(from: .left, locations: [0.8, 0.9, 1]) }()
-    lazy var movieYear: UILabel = { getLabel(font: headerFont, text: "2019") }()
+    lazy var movieYear: UILabel = { getLabel(font: headerFont, text: "0000") }()
     
     lazy var movieTitleScrollView: UIScrollView = {
         let s = UIScrollView()
@@ -55,7 +55,7 @@ class MovieInfoStackViewModel: Fonts, Colors, FadingLayers, MovieInfoViews {
     lazy var countryNameLabel: UILabel = { getLabel(font: bodyFont, text: "Kazakhstan") }()
     lazy var country: UIStackView = { getStack(views: [countryLabel, countryNameLabel], isEqual: true) }()
     
-    lazy var description: UILabel = { getLabel(font: descriptionFont, text: "Two soldiers, assigned the task of delivering a critical message to another battalion, risk their lives for the job in order to prevent them from stepping right into a deadly ambush.\n\nApril 6th, 1917. As an infantry battalion assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and deliver a message that will stop 1,600 men from walking straight into a deadly trap.", lines: .zero)  }()
+    lazy var description: UILabel = { getLabel(font: descriptionFont, text: "Movie description", lines: .zero)  }()
     
     lazy var mainStackView: UIStackView = {
         getStack(views: [titleAndYear, director, country, description], axis: .vertical, spacing: 16)
@@ -65,5 +65,12 @@ class MovieInfoStackViewModel: Fonts, Colors, FadingLayers, MovieInfoViews {
         movieTitleMask.frame.origin = .zero
         movieTitleMask.frame.size = CGSize(width: size.width - 32 - 68, height: 42)
         movieTitleView.layer.mask = movieTitleMask
+    }
+    
+    func setData(movie: Movie) {
+        UIView.transition(with: movieTitleLabel, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in self?.movieTitleLabel.text = movie.title }
+        UIView.transition(with: movieYear, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in self?.movieYear.text = String(movie.year) }
+        UIView.transition(with: directorNameLabel, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in self?.directorNameLabel.text = movie.prod }
+        UIView.transition(with: description, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in self?.description.text = movie.summary }
     }
 }

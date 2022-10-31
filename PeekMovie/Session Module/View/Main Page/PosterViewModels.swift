@@ -10,6 +10,7 @@ import UIKit
 
 final class PosterViewModels: Colors, Fonts, MovieInfoViews, FadingLayers {
     
+    lazy var movieRatingLabel: UILabel = { getLabel(font: titleFont, text: "0.0", color: yellow) }()
     lazy var movieInfoView: MoviewInfoScrollViewModel = { MoviewInfoScrollViewModel() }()
     lazy var darkFadeTop: CAGradientLayer = { getFadingLayer3(from: .top, locations: [0.1, 0.55, 1], color: .black) }()
     lazy var yellowFadeBottom: CAGradientLayer = { getFadingLayer3(locations: [0.1, 0.55, 1], color: .yellow) }()
@@ -20,7 +21,8 @@ final class PosterViewModels: Colors, Fonts, MovieInfoViews, FadingLayers {
     
     lazy var posterImage: UIImageView = {
         let i = UIImageView()
-        i.isUserInteractionEnabled = true
+        i.frame.origin = .zero
+        i.backgroundColor = black
         i.contentMode = .scaleAspectFill
         return i
     }()
@@ -49,12 +51,16 @@ final class PosterViewModels: Colors, Fonts, MovieInfoViews, FadingLayers {
         v.layer.addSublayer(yellowFadeBottom)
         v.addSubview(movieInfoView.infoView)
         v.layer.addSublayer(darkFadeTop)
+        v.addSubview(movieRatingLabel)
         v.addSubview(infoButton)
         v.layer.addSublayer(likeFade)
         v.layer.addSublayer(disLikeFade)
         v.addSubview(likeLabel)
         v.addSubview(disLikeLabel)
         NSLayoutConstraint.activate([
+            movieRatingLabel.topAnchor.constraint(equalTo: v.topAnchor, constant: 16),
+            movieRatingLabel.leadingAnchor.constraint(equalTo: v.leadingAnchor, constant: 16),
+            
             receiver.topAnchor.constraint(equalTo: v.topAnchor),
             receiver.leadingAnchor.constraint(equalTo: v.leadingAnchor),
             receiver.trailingAnchor.constraint(equalTo: v.trailingAnchor),
@@ -105,16 +111,36 @@ final class PosterViewModels: Colors, Fonts, MovieInfoViews, FadingLayers {
         )
     }
     
-    func setData(size: CGSize) {
+    func setData(size: CGSize, movie: Movie, animate: Bool = false) {
         // MARK: FIX ME PLEASE
-        let image = UIImage(named: "us")!
+        movieInfoView.infoStackViewModel.setData(movie: movie)
+        
+        UIView.transition(with: movieRatingLabel, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in
+            self?.movieRatingLabel.text = String(movie.rating)
+        }
+        UIView.transition(with: posterImage, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in
+            self?.posterImage.image = nil
+        }
+        UIView.transition(with: posterImage, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in
+            self?.posterImage.image = UIImage(named: movie.img)!
+        } completion: { [weak self] done in
+            animate ? self?.animatePosterImage(size: size, isNew: true) : nil
+        }
+    }
+    
+    func animatePosterImage(size: CGSize, isNew: Bool = false) {
+        let image = posterImage.image!
         let scale = size.height / image.size.height
         let newSize = CGSize(width: image.size.width * scale, height: image.size.height * scale)
-        
-        posterImage.image = image
-        posterImage.frame.origin = .zero
+        if isNew { posterImage.frame.origin = .zero }
         posterImage.frame.size = newSize
         
+        var offset: CGFloat = .zero
+        if posterImage.frame.origin == .zero { offset = newSize.width - size.width }
+        let newOrigin = CGPoint(x: -offset, y: .zero)
         
+        UIView.animate(withDuration: 12, delay: 1, options: [.repeat, .autoreverse]) { [weak self] in
+            self?.posterImage.frame.origin = newOrigin
+        }
     }
 }
