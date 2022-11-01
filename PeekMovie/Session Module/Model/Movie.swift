@@ -28,7 +28,7 @@ extension PosterViewPage {
                     title: "Us",
                     summary: "Adelaide Wilson and her family are attacked by mysterious figures dressed in red. Upon closer inspection, the Wilsons realise that the intruders are exact lookalikes of them.\n\nUs is a 2019 American horror film written and directed by Jordan Peele, starring Lupita Nyong'o, Winston Duke, Elisabeth Moss, and Tim Heidecker. The film follows Adelaide Wilson (Nyong'o) and her family, who are attacked by a group of menacing doppelgängers.\n\nThe project was announced in February 2018, and much of the cast joined in the following months. Peele produced the film alongside Jason Blum and Sean McKittrick (the trio previously having collaborated on Get Out and BlacKkKlansman), as well as Ian Cooper. Filming took place in California, mostly in Los Angeles, Pasadena and Santa Cruz, from July to October 2018.",
                     year: 2019,
-                    prod: "Jordan Peele"
+                    prod: "Jordan Peele, Jordan Peele, Jordan Peele, Jordan Peele"
                 ),
                 Movie(
                     movieId: "movieId2",

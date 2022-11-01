@@ -13,7 +13,6 @@ class MovieInfoStackViewModel: Fonts, Colors, FadingLayers, MovieInfoViews {
     lazy var movieTitleLabel: UILabel = { getLabel(font: titleFont, text: "Movie title: additional informative title") }()
     lazy var movieTitleMask: CAGradientLayer = { getFadingLayer3(from: .left, locations: [0.8, 0.9, 1]) }()
     lazy var movieYear: UILabel = { getLabel(font: headerFont, text: "0000") }()
-    
     lazy var movieTitleScrollView: UIScrollView = {
         let s = UIScrollView()
         movieYear.textAlignment = .right
@@ -48,7 +47,7 @@ class MovieInfoStackViewModel: Fonts, Colors, FadingLayers, MovieInfoViews {
     lazy var titleAndYear: UIStackView = { getStack(views: [movieTitleView, movieYear]) }()
     
     lazy var directorLabel: UILabel = { getLabel(font: bodyFont, text: "Director") }()
-    lazy var directorNameLabel: UILabel = { getLabel(font: bodyFont, text: "Direcor's name") }()
+    lazy var directorNameLabel: UILabel = { getLabel(font: bodyFont, text: "Direcor's name", lines: .zero) }()
     lazy var director: UIStackView = { getStack(views: [directorLabel, directorNameLabel], isEqual: true) }()
     
     lazy var countryLabel: UILabel = { getLabel(font: bodyFont, text: "Country") }()
@@ -62,6 +61,12 @@ class MovieInfoStackViewModel: Fonts, Colors, FadingLayers, MovieInfoViews {
     }()
     
     func setupLayers(size: CGSize) {
+        NSLayoutConstraint.activate([
+            directorLabel.widthAnchor.constraint(equalToConstant: 120),
+            countryLabel.widthAnchor.constraint(equalToConstant: 120),
+        ])
+        countryNameLabel.textAlignment = .right
+        directorNameLabel.textAlignment = .right
         movieTitleMask.frame.origin = .zero
         movieTitleMask.frame.size = CGSize(width: size.width - 32 - 68, height: 42)
         movieTitleView.layer.mask = movieTitleMask

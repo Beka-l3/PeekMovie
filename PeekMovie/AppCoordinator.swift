@@ -39,13 +39,11 @@ final class AppCoordinator {
     }
     
     private func setEntranceModule() {
-        print("Set session module")
         popToRootViewController()
         logoPage.navigationController?.pushViewController(entranceModule.view, animated: true)
     }
     
     private func setSessionModule() {
-        print("Set session module")
         popToRootViewController()
         logoPage.navigationController?.pushViewController(sessionModule.view, animated: true)
     }
@@ -61,7 +59,6 @@ extension AppCoordinator: AppDelegateLogoPage {
 
 extension AppCoordinator: LogoPageDelegate {
     func pushEntrancePage() {
-        print("Logo page delegate")
 //        setEntranceModule()
         setSessionModule()
     }
