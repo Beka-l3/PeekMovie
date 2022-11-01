@@ -11,19 +11,22 @@ import UIKit
 
 final class AppCoordinator {
     
-    private var logoPage: LogoPage
-    private var entranceModule: EntranceModuleBuilder
-    private var sessionModule: SessionModuleBuilder
+    private let logoPage: LogoPage
+    private let entranceModule: EntranceModuleBuilder
+    private let sessionModule: SessionModuleBuilder
+    private let networkClient: NetworkClientImplementation
+    private let networkService: NetworkServiceImplementation
         
     init(isLoggedIn: Bool) {
         self.logoPage = LogoPage()
         self.entranceModule = EntranceModuleBuilder(isLoggedIn: isLoggedIn)
         self.sessionModule = SessionModuleBuilder()
-        self.logoPage.appCoordinator = self
+        self.networkClient = NetworkClientImplementation(urlSession: .init(configuration: .default))
+        self.networkService = NetworkServiceImplementation(networkClient: self.networkClient)
         
+        self.logoPage.appCoordinator = self
         entranceModule.presenter.appCoordinator = self
         sessionModule.presenter.appCoordinator = self
-        
     }
     
     private func popToRootViewController() {

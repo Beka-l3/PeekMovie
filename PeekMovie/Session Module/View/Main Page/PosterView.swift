@@ -120,8 +120,7 @@ class PosterViewPage: UIViewController, Colors {
                 
                 guard let self = self else {return}
                 if done {self.posterViewModels.setData(size: self.posterViewSize, movie: self.movies.getMovie(), animate: true)}
-                let desiredOffset = CGPoint(x: 0, y: -self.posterViewModels.movieInfoView.scrollView.contentInset.top)
-                self.posterViewModels.movieInfoView.scrollView.setContentOffset(desiredOffset, animated: true)
+                self.posterViewModels.movieInfoView.scrollView.setContentOffset(.zero, animated: true)
             }
         }
         movies.increase()
