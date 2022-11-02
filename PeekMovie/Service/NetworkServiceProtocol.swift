@@ -17,4 +17,15 @@ protocol NetworkService: AnyObject {
         completion: @escaping (Result<TokenDTO, HTTPError>) -> Void
     ) -> Cancellable?
     
+    @discardableResult
+    func login(
+        credentials: PeekID,
+        completion: @escaping (Result<TokenDTO, HTTPError>) -> Void
+    ) -> Cancellable?
+    
+    @discardableResult
+    func checkUsername(
+        credentials: PeekID,
+        completion: @escaping (Result<String, HTTPError>) -> Void
+    ) -> Cancellable?
 }

@@ -15,7 +15,6 @@
 		073B585828FA1698000EE21F /* EMViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B585728FA1698000EE21F /* EMViewModels.swift */; };
 		0758C2E6291174F800E48140 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2E5291174F800E48140 /* NetworkServiceProtocol.swift */; };
 		0758C2E82911752200E48140 /* NetworkServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2E72911752200E48140 /* NetworkServiceImplementation.swift */; };
-		0758C2EA2911770800E48140 /* RegistrationFormDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2E92911770800E48140 /* RegistrationFormDTO.swift */; };
 		0758C2EC2911777300E48140 /* TokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2EB2911777300E48140 /* TokenDTO.swift */; };
 		077B2ECD29069A060087504C /* SessionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ECC29069A060087504C /* SessionModuleBuilder.swift */; };
 		077B2ED229069A4B0087504C /* SessionModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ED129069A4B0087504C /* SessionModulePresenter.swift */; };
@@ -52,6 +51,7 @@
 		07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CC728FDE0680031598A /* WaitingPage.swift */; };
 		07EB1CCA28FDE6EB0031598A /* WaitingRoomViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CC928FDE6EB0031598A /* WaitingRoomViewModels.swift */; };
 		07EB1CCC28FE219C0031598A /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CCB28FE219C0031598A /* Animations.swift */; };
+		07F8930E29127B5200E8FDD4 /* RegistrationFormDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +63,6 @@
 		073B585728FA1698000EE21F /* EMViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMViewModels.swift; sourceTree = "<group>"; };
 		0758C2E5291174F800E48140 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		0758C2E72911752200E48140 /* NetworkServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImplementation.swift; sourceTree = "<group>"; };
-		0758C2E92911770800E48140 /* RegistrationFormDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFormDTO.swift; sourceTree = "<group>"; };
 		0758C2EB2911777300E48140 /* TokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDTO.swift; sourceTree = "<group>"; };
 		077B2ECC29069A060087504C /* SessionModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModuleBuilder.swift; sourceTree = "<group>"; };
 		077B2ED129069A4B0087504C /* SessionModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModulePresenter.swift; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		07EB1CC728FDE0680031598A /* WaitingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPage.swift; sourceTree = "<group>"; };
 		07EB1CC928FDE6EB0031598A /* WaitingRoomViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomViewModels.swift; sourceTree = "<group>"; };
 		07EB1CCB28FE219C0031598A /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFormDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +155,9 @@
 		0758C2E42911610100E48140 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0758C2E92911770800E48140 /* RegistrationFormDTO.swift */,
+				073B585328F97CA8000EE21F /* PeekID.swift */,
 				0758C2EB2911777300E48140 /* TokenDTO.swift */,
+				07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,7 +233,6 @@
 		0788F41C28F82967006F447F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				073B585328F97CA8000EE21F /* PeekID.swift */,
 				073B585528FA155F000EE21F /* EMConstants.swift */,
 				073B585728FA1698000EE21F /* EMViewModels.swift */,
 			);
@@ -459,6 +459,7 @@
 				07EB1CBB28FD47C90031598A /* NrtworkClientProtocol.swift in Sources */,
 				079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */,
 				0758C2EC2911777300E48140 /* TokenDTO.swift in Sources */,
+				07F8930E29127B5200E8FDD4 /* RegistrationFormDTO.swift in Sources */,
 				07EB1CC128FD48100031598A /* HTTPNetworkResponse.swift in Sources */,
 				073B585628FA155F000EE21F /* EMConstants.swift in Sources */,
 				073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */,
@@ -470,7 +471,6 @@
 				073B585828FA1698000EE21F /* EMViewModels.swift in Sources */,
 				077B2ECD29069A060087504C /* SessionModuleBuilder.swift in Sources */,
 				073B585428F97CA8000EE21F /* PeekID.swift in Sources */,
-				0758C2EA2911770800E48140 /* RegistrationFormDTO.swift in Sources */,
 				07DBA85D28F55E77000A1312 /* DesignProtocols.swift in Sources */,
 				077B2EDC29080E2C0087504C /* PosterViewModels.swift in Sources */,
 				07DBA84328F3F734000A1312 /* AuthorizedPage.swift in Sources */,

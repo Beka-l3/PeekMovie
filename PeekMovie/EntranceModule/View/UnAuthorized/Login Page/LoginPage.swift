@@ -73,6 +73,10 @@ class LoginPage: UIViewController, Colors {
             attributes: [NSAttributedString.Key.foregroundColor: color])
         loginViewModels.usernameInput.attributedPlaceholder = placeholderText
     }
+    
+    func somethingWentWrong() {
+        print("Something went wrong. Try again!")
+    }
 }
 
 

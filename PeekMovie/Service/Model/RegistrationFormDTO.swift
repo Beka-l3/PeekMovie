@@ -2,8 +2,10 @@
 //  RegistrationFormDTO.swift
 //  PeekMovie
 //
-//  Created by Bekzhan Talgat on 01.11.2022.
+//  Created by Bekzhan Talgat on 02.11.2022.
 //
+
+import Foundation
 
 struct RegistrationFormDTO: Decodable {
     let username: String

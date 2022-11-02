@@ -8,14 +8,7 @@
 import UIKit
 
 
-protocol LogoPageDelegate: AnyObject {
-    func pushEntrancePage()
-}
-
 class LogoPage: UIViewController, Colors, Animations {
-    
-    weak var appCoordinator: LogoPageDelegate?
-    
     private lazy var logoImage: UIImageView = {
         let i = UIImageView()
         i.image = EPConstants.logoImage
@@ -65,11 +58,8 @@ class LogoPage: UIViewController, Colors, Animations {
             center: view.center
         )
         let animationOptions: UIView.AnimationOptions = .curveLinear
-        let keyframeAnimationOptions: UIView.KeyframeAnimationOptions = UIView.KeyframeAnimationOptions(rawValue: animationOptions.rawValue)
-        UIView.animateKeyframes(withDuration: duration, delay: delay, options: [keyframeAnimationOptions], animations: animations) { [weak self] _ in
-            guard let self = self else {return}
-            self.appCoordinator?.pushEntrancePage()
-        }
+        let keyframeAnimationOption: UIView.KeyframeAnimationOptions = UIView.KeyframeAnimationOptions(rawValue: animationOptions.rawValue)
+        UIView.animateKeyframes(withDuration: duration, delay: delay, options: [.repeat, keyframeAnimationOption], animations: animations)
     }
     
     private func getCircle(with radius: CGFloat, zPos: CGFloat) -> UIView {

@@ -67,6 +67,10 @@ class PasswordPage: UIViewController, Colors {
             attributes: [NSAttributedString.Key.foregroundColor: color])
         passwordViewModels.passwordInput.attributedPlaceholder = placeholderText
     }
+    
+    func somethingWentWrong() {
+        print("Something went wrong. Try again!")
+    }
 }
 
 extension PasswordPage: UITextFieldDelegate {

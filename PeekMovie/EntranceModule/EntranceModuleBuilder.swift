@@ -23,7 +23,7 @@ final class EntranceModuleBuilder {
     private let registerPage: RegisterPage
     private let waitingPage: WaitingPage
     
-    init(isLoggedIn: Bool) {
+    init(isLoggedIn: Bool, networkService: NetworkService) {
         authorizedPage = AuthorizedPage()
         unAuthorizedPage = LoginPage()
         passwordPage = PasswordPage()
@@ -35,7 +35,8 @@ final class EntranceModuleBuilder {
             unAuthorizedPage: unAuthorizedPage,
             passwordPage: passwordPage,
             registerPage: registerPage,
-            waitingPage: waitingPage
+            waitingPage: waitingPage,
+            networkService: networkService
         )
         view = presenter.getEntrancePage(isLoggedIn: isLoggedIn)
         

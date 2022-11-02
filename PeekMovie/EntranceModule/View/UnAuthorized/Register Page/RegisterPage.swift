@@ -9,7 +9,7 @@ import UIKit
 
 
 protocol RegisterPagePresenter: AnyObject {
-    func checkRegistrationData(with id: PeekID)
+    func checkRegistrationData(with id: RegistrationFormDTO)
 }
 
 class RegisterPage: UIViewController, Colors {
@@ -53,7 +53,7 @@ class RegisterPage: UIViewController, Colors {
     }
     
     @objc func handleRegisterButton() {
-        let id = PeekID(
+        let id = RegistrationFormDTO(
             username: registerViewModels.usernameInput.text ?? EPConstants.emptyText,
             email: registerViewModels.emailInput.text ?? EPConstants.emptyText,
             password: registerViewModels.passwordInput.text ?? EPConstants.emptyText
@@ -64,6 +64,10 @@ class RegisterPage: UIViewController, Colors {
     
     func setInputFieldsState(with state: Bool) {
         print("Something is incorrect =)")
+    }
+    
+    func somethingWentWrong() {
+        print("Something went wrong. Try again!")
     }
 }
 

@@ -12,19 +12,18 @@ import UIKit
 final class AppCoordinator {
     
     private let logoPage: LogoPage
+    private let networkClient: NetworkClient
+    private let networkService: NetworkService
     private let entranceModule: EntranceModuleBuilder
     private let sessionModule: SessionModuleBuilder
-    private let networkClient: NetworkClientImplementation
-    private let networkService: NetworkServiceImplementation
-        
-    init(isLoggedIn: Bool) {
-        self.logoPage = LogoPage()
-        self.entranceModule = EntranceModuleBuilder(isLoggedIn: isLoggedIn)
+    
+    init(isLoggedIn: Bool, logoPage: LogoPage, networkClient: NetworkClient, networkService: NetworkService) {
+        self.logoPage = logoPage
+        self.networkClient = networkClient
+        self.networkService = networkService
+        self.entranceModule = EntranceModuleBuilder(isLoggedIn: isLoggedIn, networkService: networkService)
         self.sessionModule = SessionModuleBuilder()
-        self.networkClient = NetworkClientImplementation(urlSession: .init(configuration: .default))
-        self.networkService = NetworkServiceImplementation(networkClient: self.networkClient)
         
-        self.logoPage.appCoordinator = self
         entranceModule.presenter.appCoordinator = self
         sessionModule.presenter.appCoordinator = self
     }
@@ -55,15 +54,9 @@ final class AppCoordinator {
 // MARK: -- ⬇️ EXTENSIONS ⬇️
 
 extension AppCoordinator: AppDelegateLogoPage {
-    func getLogoPage() -> UIViewController {
-        return logoPage
-    }
-}
-
-extension AppCoordinator: LogoPageDelegate {
     func pushEntrancePage() {
-//        setEntranceModule()
-        setSessionModule()
+        setEntranceModule()
+//        setSessionModule()
     }
 }
 

@@ -11,6 +11,5 @@ enum PeekIDRegistrationError: Error {
 
 struct PeekID {
     let username: String
-    let email: String
     let password: String
 }
