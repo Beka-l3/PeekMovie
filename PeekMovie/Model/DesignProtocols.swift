@@ -40,6 +40,8 @@ protocol Colors {
     var clearWhite: UIColor {get}
     
     var grey: UIColor {get}
+    var semiGrey: UIColor {get}
+    var darkGrey: UIColor {get}
     
     var yellow: UIColor {get}
     var semiYellow: UIColor {get}
@@ -55,7 +57,9 @@ extension Colors {
     var semiWhite: UIColor {UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)}
     var clearWhite: UIColor {UIColor(red: 1, green: 1, blue: 1, alpha: 0)}
     
-    var grey: UIColor {UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)}
+    var grey: UIColor {UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)}
+    var semiGrey: UIColor {UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)}
+    var darkGrey: UIColor {UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1)}
     
     var yellow: UIColor {UIColor(red: 245.0/255.0, green: 250.0/255.0, blue: 25.0/255.0, alpha: 1)}
     var semiYellow: UIColor {UIColor(red: 245.0/255.0, green: 250.0/255.0, blue: 25.0/255.0, alpha: 0.5)}

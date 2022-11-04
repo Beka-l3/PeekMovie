@@ -12,10 +12,11 @@ protocol RegisterPagePresenter: AnyObject {
     func checkRegistrationData(with id: RegistrationFormDTO)
 }
 
-class RegisterPage: UIViewController, Colors {
+class RegisterPage: UIViewController, Colors, Informatives {
     
     weak var presenter: RegisterPagePresenter?
     private var registerViewModels: RegisterPageViewModels
+    private lazy var infoPopLabel: UILabel = { getInfoPop() }()
     
     init() {
         self.registerViewModels = RegisterPageViewModels()
@@ -38,12 +39,13 @@ class RegisterPage: UIViewController, Colors {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.tintColor = yellow
+        infoPopLabel.center = EPConstants.infoPopCenter
     }
     
     private func setupViews() {
         let registerView = registerViewModels.registerView
         view.addSubview(registerView)
-        
+        view.addSubview(infoPopLabel)
         NSLayoutConstraint.activate([
             registerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: EPConstants.smallPadding),
             registerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: EPConstants.padding),
@@ -66,8 +68,13 @@ class RegisterPage: UIViewController, Colors {
         print("Something is incorrect =)")
     }
     
-    func somethingWentWrong() {
-        print("Something went wrong. Try again!")
+    func popInfoLabel(type: InfoPopType) {
+        infoPopLabel.attributedText = getAttributedText(
+            text: "Try again!",
+            detail: "Something went wrong.",
+            type: .wrong
+        )
+        animateInfoPop(label: infoPopLabel)
     }
 }
 

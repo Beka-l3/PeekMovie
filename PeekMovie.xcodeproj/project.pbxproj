@@ -30,6 +30,7 @@
 		0788F42628F8321F006F447F /* LoginViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42528F8321F006F447F /* LoginViewModels.swift */; };
 		079E5EB829092EC8006AF238 /* MovieInfoScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5EB729092EC8006AF238 /* MovieInfoScrollViewModel.swift */; };
 		079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5EB92909753C006AF238 /* MovieInfoStackViewModel.swift */; };
+		07B7F8642913CAE000A1A9EC /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B7F8632913CADF00A1A9EC /* MockNetworkService.swift */; };
 		07C8212F291019E000B055D0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8212E291019E000B055D0 /* Movie.swift */; };
 		07D401B928F8641700BF3F55 /* PasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D401B828F8641700BF3F55 /* PasswordPage.swift */; };
 		07D401BB28F8653D00BF3F55 /* PasswordViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D401BA28F8653D00BF3F55 /* PasswordViewModels.swift */; };
@@ -42,7 +43,7 @@
 		07DBA85328F3F830000A1312 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DBA85228F3F830000A1312 /* AppCoordinator.swift */; };
 		07DBA85A28F55E3B000A1312 /* AuthorizedPageViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DBA85928F55E3B000A1312 /* AuthorizedPageViewModels.swift */; };
 		07DBA85D28F55E77000A1312 /* DesignProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DBA85C28F55E77000A1312 /* DesignProtocols.swift */; };
-		07EB1CB928FD47950031598A /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CB828FD47950031598A /* NetworkClient.swift */; };
+		07EB1CB928FD47950031598A /* NetworkClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CB828FD47950031598A /* NetworkClientImplementation.swift */; };
 		07EB1CBB28FD47C90031598A /* NrtworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CBA28FD47C90031598A /* NrtworkClientProtocol.swift */; };
 		07EB1CC128FD48100031598A /* HTTPNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CBD28FD48100031598A /* HTTPNetworkResponse.swift */; };
 		07EB1CC228FD48100031598A /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CBE28FD48100031598A /* HTTPRequest.swift */; };
@@ -78,6 +79,7 @@
 		0788F42528F8321F006F447F /* LoginViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModels.swift; sourceTree = "<group>"; };
 		079E5EB729092EC8006AF238 /* MovieInfoScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoScrollViewModel.swift; sourceTree = "<group>"; };
 		079E5EB92909753C006AF238 /* MovieInfoStackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoStackViewModel.swift; sourceTree = "<group>"; };
+		07B7F8632913CADF00A1A9EC /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		07C8212E291019E000B055D0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		07D401B828F8641700BF3F55 /* PasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPage.swift; sourceTree = "<group>"; };
 		07D401BA28F8653D00BF3F55 /* PasswordViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModels.swift; sourceTree = "<group>"; };
@@ -92,7 +94,7 @@
 		07DBA85228F3F830000A1312 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		07DBA85928F55E3B000A1312 /* AuthorizedPageViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedPageViewModels.swift; sourceTree = "<group>"; };
 		07DBA85C28F55E77000A1312 /* DesignProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignProtocols.swift; sourceTree = "<group>"; };
-		07EB1CB828FD47950031598A /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		07EB1CB828FD47950031598A /* NetworkClientImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientImplementation.swift; sourceTree = "<group>"; };
 		07EB1CBA28FD47C90031598A /* NrtworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NrtworkClientProtocol.swift; sourceTree = "<group>"; };
 		07EB1CBD28FD48100031598A /* HTTPNetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPNetworkResponse.swift; sourceTree = "<group>"; };
 		07EB1CBE28FD48100031598A /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				0758C2E42911610100E48140 /* Model */,
 				0758C2E5291174F800E48140 /* NetworkServiceProtocol.swift */,
 				0758C2E72911752200E48140 /* NetworkServiceImplementation.swift */,
+				07B7F8632913CADF00A1A9EC /* MockNetworkService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -332,7 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				07EB1CBC28FD48050031598A /* Model */,
-				07EB1CB828FD47950031598A /* NetworkClient.swift */,
+				07EB1CB828FD47950031598A /* NetworkClientImplementation.swift */,
 				07EB1CBA28FD47C90031598A /* NrtworkClientProtocol.swift */,
 			);
 			path = Network;
@@ -452,7 +455,7 @@
 				07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */,
 				073B584D28F97B20000EE21F /* RegisterPage.swift in Sources */,
 				0758C2E6291174F800E48140 /* NetworkServiceProtocol.swift in Sources */,
-				07EB1CB928FD47950031598A /* NetworkClient.swift in Sources */,
+				07EB1CB928FD47950031598A /* NetworkClientImplementation.swift in Sources */,
 				07DBA85A28F55E3B000A1312 /* AuthorizedPageViewModels.swift in Sources */,
 				077B2EE029080E970087504C /* SMViewModels.swift in Sources */,
 				073B585228F97C30000EE21F /* RegisterPageViewModels.swift in Sources */,
@@ -480,6 +483,7 @@
 				07EB1CC428FD48100031598A /* HTTPMethod.swift in Sources */,
 				07D401B928F8641700BF3F55 /* PasswordPage.swift in Sources */,
 				07D401BB28F8653D00BF3F55 /* PasswordViewModels.swift in Sources */,
+				07B7F8642913CAE000A1A9EC /* MockNetworkService.swift in Sources */,
 				077B2EDA2907BB450087504C /* Global Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

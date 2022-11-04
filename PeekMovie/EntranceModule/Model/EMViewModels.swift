@@ -84,11 +84,16 @@ extension Interactives {
 }
 
 enum InformativeType {
-    case detail, tip, header
+    case detail, tip, header, wrong, correct
+}
+
+enum InfoPopType {
+    case incorrectInput, adminOut, roomStart, internetConnectionIssue, unknown
 }
 
 protocol Informatives: Colors, Fonts {
     func getTipLabel(with text: String, detail: String, labelType: InformativeType) -> UILabel
+    func getInfoPop() -> UILabel
 }
 
 extension Informatives {
@@ -104,6 +109,8 @@ extension Informatives {
             font = tipFont
         case .header:
             font = headerFont
+        default:
+            font = tipFont
         }
         
         let str = text + detail
@@ -127,6 +134,64 @@ extension Informatives {
         l.attributedText = myMutableString
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
+    }
+    
+    func getInfoPop() -> UILabel {
+        let l = UILabel()
+        l.frame.size = CGSize(width: 180, height: 50)
+        l.backgroundColor = darkGrey
+        l.layer.cornerRadius = 25
+        l.clipsToBounds = true
+        l.layer.borderColor = semiGrey.cgColor
+        l.layer.borderWidth = 1
+        l.numberOfLines = .zero
+        l.textAlignment = .center
+        
+        return l
+    }
+    
+    func getAttributedText(text: String, detail: String, type: InformativeType = .tip) -> NSAttributedString {
+        var color: UIColor = yellow
+        if type == .correct { color = .systemGreen }
+        if type == .wrong { color = .systemRed }
+        
+        let str = "\(text)\n\(detail)"
+        let myMutableString = NSMutableAttributedString(
+            string: str,
+            attributes: [
+                NSAttributedString.Key.foregroundColor: color,
+                NSAttributedString.Key.font : detailBoldFont
+            ]
+        )
+        myMutableString.addAttribute(
+            NSAttributedString.Key.foregroundColor,
+            value: grey,
+            range: NSRange(
+                location: str.count - detail.count,
+                length:detail.count
+            )
+        )
+        myMutableString.addAttribute(
+            NSAttributedString.Key.font,
+            value: detailFont,
+            range: NSRange(
+                location: str.count - detail.count,
+                length:detail.count
+            )
+        )
+        
+        return myMutableString
+    }
+    
+    func animateInfoPop(label l: UILabel) {
+        let initialCenter = l.center
+        UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseInOut]) {
+            l.center = CGPoint(x: initialCenter.x, y: 80)
+        } completion: { done in
+            UIView.animate(withDuration: 0.8, delay: 3, options: [.curveEaseInOut]) {
+                l.center = initialCenter
+            }
+        }
     }
 }
 

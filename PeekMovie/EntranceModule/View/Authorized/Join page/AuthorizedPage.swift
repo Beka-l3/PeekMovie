@@ -12,10 +12,11 @@ protocol AuthorizedPagePresenter: AnyObject {
     func logOut()
 }
 
-class AuthorizedPage: UIViewController, Colors {
+class AuthorizedPage: UIViewController, Colors, Informatives {
 
     weak var presenter: AuthorizedPagePresenter?
     private let joinRoomView: AuthorizedPageViewModels
+    private lazy var infoPopLabel: UILabel = { getInfoPop() }()
     
     init() {
         self.joinRoomView = AuthorizedPageViewModels()
@@ -26,7 +27,6 @@ class AuthorizedPage: UIViewController, Colors {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = black
-        
         setupViews()
         joinRoomView.roomIdInput.delegate = self
         joinRoomView.joinButton.addTarget(self, action: #selector(handleJoinButton), for: .touchUpInside)
@@ -36,14 +36,14 @@ class AuthorizedPage: UIViewController, Colors {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.isNavigationBarHidden = true
+        infoPopLabel.center = EPConstants.infoPopCenter
     }
 
     private func setupViews() {
         let joinView = joinRoomView.joinRoomView
         view.addSubview(joinView)
-        
+        view.addSubview(infoPopLabel)
         NSLayoutConstraint.activate([
             joinView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: EPConstants.smallPadding),
             joinView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: EPConstants.padding),
@@ -74,6 +74,15 @@ class AuthorizedPage: UIViewController, Colors {
             string: placeholder,
             attributes: [NSAttributedString.Key.foregroundColor: color])
         joinRoomView.roomIdInput.attributedPlaceholder = placeholderText
+    }
+    
+    func popInfoLabel(type: InfoPopType) {
+        infoPopLabel.attributedText = getAttributedText(
+            text: "Try again!",
+            detail: "Something went wrong.",
+            type: .wrong
+        )
+        animateInfoPop(label: infoPopLabel)
     }
 }
 

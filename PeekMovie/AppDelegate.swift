@@ -31,23 +31,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let password = UserDefaults.standard.string(forKey: GConstants.passwordKey) ?? ""
         var isLoggedIn = !password.isEmpty && !username.isEmpty
         
-        if isLoggedIn {
-            networkService.login(
-                credentials: PeekID(
-                    username: username,
-                    password: password
-                )
-            ) { result in
-                switch result {
-                case .success(let token):
-                    isLoggedIn = true
-                    UserDefaults.standard.set(token.token, forKey: GConstants.tokenKey)
-                case .failure(let error):
-                    isLoggedIn = false
-                    print(error)
-                }
-            }
-        }
+//        if isLoggedIn {
+//            networkService.login(
+//                credentials: PeekID(
+//                    username: username,
+//                    password: password
+//                )
+//            ) { result in
+//                switch result {
+//                case .success(let token):
+//                    isLoggedIn = true
+//                    UserDefaults.standard.set(token.token, forKey: GConstants.tokenKey)
+//                case .failure(let error):
+//                    isLoggedIn = false
+//                    print(error)
+//                }
+//            }
+//        }
         
         let appCoordinator = AppCoordinator(
             isLoggedIn: isLoggedIn,
@@ -55,13 +55,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             networkClient: networkClient,
             networkService: networkService
         )
-//        DispatchQueue.global().async {
-//            sleep(3)
-//            DispatchQueue.main.async {
-//                appCoordinator.pushEntrancePage()
-//            }
-//        }
-        appCoordinator.pushEntrancePage()
+        DispatchQueue.global().async {
+            sleep(3)
+            DispatchQueue.main.async {
+                appCoordinator.pushEntrancePage()
+            }
+        }
+//        appCoordinator.pushEntrancePage()
         
         return true
     }

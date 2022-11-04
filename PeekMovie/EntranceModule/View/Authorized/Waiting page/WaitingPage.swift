@@ -13,7 +13,7 @@ protocol WaitingRoomPresenter: AnyObject {
     func startTheSession(with roomId: String)
 }
 
-class WaitingPage: UIViewController, Colors {
+class WaitingPage: UIViewController, Colors, Informatives {
     
     weak var presenter: WaitingRoomPresenter?
     private var isAdmin: Bool
@@ -22,6 +22,7 @@ class WaitingPage: UIViewController, Colors {
         CGPoint(x: view.center.x - EPConstants.padding, y: view.center.y * 1.4)
     }()
     private var animations = {}
+    private lazy var infoPopLabel: UILabel = {getInfoPop()}()
     
     init() {
         self.isAdmin = false
@@ -30,8 +31,7 @@ class WaitingPage: UIViewController, Colors {
     }
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidLoad() { super.viewDidLoad()
         view.backgroundColor = black
         
         setupViews()
@@ -41,10 +41,14 @@ class WaitingPage: UIViewController, Colors {
         waitingViewModels.startAnimation()
     }
     
+    override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated)
+        infoPopLabel.center = EPConstants.infoPopCenter
+    }
+    
     private func setupViews() {
         let waitingView = waitingViewModels.waitingView
         view.addSubview(waitingView)
-        
+        view.addSubview(infoPopLabel)
         NSLayoutConstraint.activate([
             waitingView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             waitingView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: EPConstants.padding),
@@ -71,5 +75,14 @@ class WaitingPage: UIViewController, Colors {
     
     func startTheSession() {
         print("Start the session")
+    }
+    
+    func popInfoLabel(type: InfoPopType) {
+        infoPopLabel.attributedText = getAttributedText(
+            text: "Try again!",
+            detail: "Something went wrong.",
+            type: .wrong
+        )
+        animateInfoPop(label: infoPopLabel)
     }
 }

@@ -12,10 +12,11 @@ protocol PasswordPagePresenter: AnyObject {
     func checkPassword(with password: String)
 }
 
-class PasswordPage: UIViewController, Colors {
+class PasswordPage: UIViewController, Colors, Informatives {
     
     weak var presenter: PasswordPagePresenter?
     private let passwordViewModels: PasswordViewModels
+    private lazy var infoPopLabel: UILabel = { getInfoPop() }()
     
     init() {
         passwordViewModels = PasswordViewModels()
@@ -36,11 +37,13 @@ class PasswordPage: UIViewController, Colors {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.tintColor = yellow
+        infoPopLabel.center = EPConstants.infoPopCenter
     }
     
     private func setupViews() {
         let passwordView = passwordViewModels.passwordView
         view.addSubview(passwordView)
+        view.addSubview(infoPopLabel)
         
         NSLayoutConstraint.activate([
             passwordView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: EPConstants.smallPadding),
@@ -68,8 +71,13 @@ class PasswordPage: UIViewController, Colors {
         passwordViewModels.passwordInput.attributedPlaceholder = placeholderText
     }
     
-    func somethingWentWrong() {
-        print("Something went wrong. Try again!")
+    func popInfoLabel(type: InfoPopType) {
+        infoPopLabel.attributedText = getAttributedText(
+            text: "Try again!",
+            detail: "Something went wrong.",
+            type: .wrong
+        )
+        animateInfoPop(label: infoPopLabel)
     }
 }
 

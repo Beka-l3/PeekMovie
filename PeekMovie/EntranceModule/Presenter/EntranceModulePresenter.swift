@@ -49,33 +49,34 @@ final class EntranceModulePresenter {
 // MARK: -- ⬇️ EXTENSIONS ⬇️
 extension EntranceModulePresenter: LoginPagePresenter {
     func checkUsername(with username: String) {
-        networkService.checkUsername(
-            credentials: PeekID(
-                username: username,
-                password: ""
-            )
-        ) { [weak self] result in
-            guard let self = self else {
-                self?.unAuthorizedPage.somethingWentWrong()
-                return
-            }
-
-            switch result {
-            case .success(let str):
-                print(str)
-                UserDefaults.standard.set(username, forKey: GConstants.usernameKey)
-                self.appCoordinator?.pushViewController(with: self.passwordPage, popToRoot: false)
-            case .failure(let error):
-                print(error)
-                self.unAuthorizedPage.setInputFieldWith(with: false)
-            }
-        }
-        
-//        if username == "Ezpzbaby" {
-//            appCoordinator?.pushViewController(with: passwordPage, popToRoot: false)
-//        } else {
-//            unAuthorizedPage.setInputFieldWith(with: false)
+//        networkService.checkUsername(
+//            credentials: PeekID(
+//                username: username,
+//                password: ""
+//            )
+//        ) { [weak self] result in
+//            guard let self = self else {
+//                self?.unAuthorizedPage.popInfoLabel(type: .unknown)
+//                return
+//            }
+//
+//            switch result {
+//            case .success(let str):
+//                print(str)
+//                UserDefaults.standard.set(username, forKey: GConstants.usernameKey)
+//                self.appCoordinator?.pushViewController(with: self.passwordPage, popToRoot: false)
+//            case .failure(let error):
+//                print(error)
+//                self.unAuthorizedPage.setInputFieldWith(with: false)
+//            }
 //        }
+        
+        if username == "Ezpzbaby" {
+            appCoordinator?.pushViewController(with: passwordPage, popToRoot: false)
+        } else {
+//            unAuthorizedPage.somethingWentWrong()
+            unAuthorizedPage.setInputFieldWith(with: false)
+        }
     }
     
     func openRegisterPage() {
@@ -85,72 +86,72 @@ extension EntranceModulePresenter: LoginPagePresenter {
 
 extension EntranceModulePresenter: PasswordPagePresenter {
     func checkPassword(with password: String) {
-        guard let username = UserDefaults.standard.string(forKey: GConstants.usernameKey) else {
-            registerPage.somethingWentWrong()
-            DispatchQueue.global().async { [weak self] in
-                sleep(3)
-                DispatchQueue.main.async {
-                    self?.appCoordinator?.popCurrentViewController()
-                }
-            }
-            return
-        }
-
-        networkService.login(
-            credentials: PeekID(
-                username: username,
-                password: password
-            )
-        ) { [weak self] result in
-            guard let self = self else {
-                self?.passwordPage.somethingWentWrong()
-                return
-            }
-
-            switch result {
-            case .success(let token):
-                UserDefaults.standard.set(password, forKey: GConstants.passwordKey)
-                UserDefaults.standard.set(token.token, forKey: GConstants.tokenKey)
-                self.appCoordinator?.pushViewController(with: self.authorizedPage, popToRoot: true)
-            case .failure(let error):
-                print(error)
-                self.passwordPage.setInputFieldWith(with: false)
-            }
-        }
-        
-//        if password == "Password" {
-//            appCoordinator?.pushViewController(with: authorizedPage, popToRoot: true)
-//        } else {
-//            passwordPage.setInputFieldWith(with: false)
+//        guard let username = UserDefaults.standard.string(forKey: GConstants.usernameKey) else {
+//            registerPage.popInfoLabel(type: .unknown)
+//            DispatchQueue.global().async { [weak self] in
+//                sleep(3)
+//                DispatchQueue.main.async {
+//                    self?.appCoordinator?.popCurrentViewController()
+//                }
+//            }
+//            return
 //        }
+//
+//        networkService.login(
+//            credentials: PeekID(
+//                username: username,
+//                password: password
+//            )
+//        ) { [weak self] result in
+//            guard let self = self else {
+//                self?.passwordPage.somethingWentWrong()
+//                return
+//            }
+//
+//            switch result {
+//            case .success(let token):
+//                UserDefaults.standard.set(password, forKey: GConstants.passwordKey)
+//                UserDefaults.standard.set(token.token, forKey: GConstants.tokenKey)
+//                self.appCoordinator?.pushViewController(with: self.authorizedPage, popToRoot: true)
+//            case .failure(let error):
+//                print(error)
+//                self.passwordPage.setInputFieldWith(with: false)
+//            }
+//        }
+        
+        if password == "Password" {
+            appCoordinator?.pushViewController(with: authorizedPage, popToRoot: true)
+        } else {
+            passwordPage.setInputFieldWith(with: false)
+        }
     }
 }
 
 extension EntranceModulePresenter: RegisterPagePresenter {
     func checkRegistrationData(with form: RegistrationFormDTO) {
-        networkService.register(credentials: form) { [weak self] result in
-            guard let self = self else {
-                self?.registerPage.somethingWentWrong()
-                return
-            }
-            
-            switch result {
-            case .success(let token):
-                print(token)
-                UserDefaults.standard.set(token.token, forKey: GConstants.tokenKey)
-                self.appCoordinator?.pushViewController(with: self.authorizedPage, popToRoot: true)
-            case .failure(let error):
-                print(error)
-                self.registerPage.setInputFieldsState(with: false)
-            }
-        }
-        
-        
-//        if form.username == "Ezpzbaby" {
-//            appCoordinator?.pushViewController(with: authorizedPage, popToRoot: true)
-//        } else {
-//            registerPage.setInputFieldsState(with: false)
+//        networkService.register(credentials: form) { [weak self] result in
+//            guard let self = self else {
+//                self?.registerPage.popInfoLabel(type: .unknown)
+//                return
+//            }
+//
+//            switch result {
+//            case .success(let token):
+//                print(token)
+//                UserDefaults.standard.set(token.token, forKey: GConstants.tokenKey)
+//                self.appCoordinator?.pushViewController(with: self.authorizedPage, popToRoot: true)
+//            case .failure(let error):
+//                print(error)
+//                self.registerPage.setInputFieldsState(with: false)
+//            }
 //        }
+        
+        
+        if form.username == "Ezpzbaby" {
+            appCoordinator?.pushViewController(with: authorizedPage, popToRoot: true)
+        } else {
+            registerPage.setInputFieldsState(with: false)
+        }
     }
 }
 

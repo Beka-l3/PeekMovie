@@ -13,10 +13,11 @@ protocol LoginPagePresenter: AnyObject {
     func openRegisterPage()
 }
 
-class LoginPage: UIViewController, Colors {
+class LoginPage: UIViewController, Colors, Informatives {
     
     weak var presenter: LoginPagePresenter?
     private let loginViewModels: LoginViewModels
+    private lazy var infoPopLabel: UILabel = { getInfoPop() }()
     
     init() {
         loginViewModels = LoginViewModels()
@@ -38,11 +39,14 @@ class LoginPage: UIViewController, Colors {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+        
+        infoPopLabel.center = EPConstants.infoPopCenter
     }
     
     private func setupViews() {
         let loginView = loginViewModels.loginView
         view.addSubview(loginView)
+        view.addSubview(infoPopLabel)
         
         NSLayoutConstraint.activate([
             loginView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: EPConstants.largePadding),
@@ -73,9 +77,14 @@ class LoginPage: UIViewController, Colors {
             attributes: [NSAttributedString.Key.foregroundColor: color])
         loginViewModels.usernameInput.attributedPlaceholder = placeholderText
     }
-    
-    func somethingWentWrong() {
-        print("Something went wrong. Try again!")
+
+    func popInfoLabel(type: InfoPopType) {
+        infoPopLabel.attributedText = getAttributedText(
+            text: "Try again!",
+            detail: "Something went wrong.",
+            type: .wrong
+        )
+        animateInfoPop(label: infoPopLabel)
     }
 }
 

@@ -38,7 +38,6 @@ struct NetworkClientImplementation: NetworkClient {
                         NetworkClientImplementation.executeCompletionOnMainThread {
                             completion(.failure(HTTPError.decodingFailed))
                         }
-
                         return
                     }
 

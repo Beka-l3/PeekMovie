@@ -63,6 +63,8 @@ enum EPConstants {
     static let expandedMiddleCircleSize = CGSize(width: 95, height: 95)
     static let expandedOuterCircleSize = CGSize(width: 125, height: 125)
     
+    static let infoPopCenter = CGPoint(x: UIScreen.main.bounds.width/2, y: -40)
+    
     static let logoImage: UIImage = UIImage(named: "Logo")!
 }
 
