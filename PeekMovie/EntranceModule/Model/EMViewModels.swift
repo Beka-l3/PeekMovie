@@ -160,7 +160,7 @@ extension Informatives {
             string: str,
             attributes: [
                 NSAttributedString.Key.foregroundColor: color,
-                NSAttributedString.Key.font : detailBoldFont
+                NSAttributedString.Key.font : infoBoldFont
             ]
         )
         myMutableString.addAttribute(
@@ -173,7 +173,7 @@ extension Informatives {
         )
         myMutableString.addAttribute(
             NSAttributedString.Key.font,
-            value: detailFont,
+            value: infoFont,
             range: NSRange(
                 location: str.count - detail.count,
                 length:detail.count

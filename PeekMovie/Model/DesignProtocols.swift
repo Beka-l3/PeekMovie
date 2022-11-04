@@ -9,6 +9,8 @@ import UIKit
 
 
 protocol Fonts {
+    var infoFont: UIFont {get}
+    var infoBoldFont: UIFont {get}
     var detailFont: UIFont {get}
     var detailBoldFont: UIFont {get}
     var descriptionFont: UIFont {get}
@@ -20,6 +22,8 @@ protocol Fonts {
 }
 
 extension Fonts {
+    var infoFont: UIFont {UIFont.systemFont(ofSize: 11)}
+    var infoBoldFont: UIFont {UIFont.boldSystemFont(ofSize: 11)}
     var detailFont: UIFont {UIFont.systemFont(ofSize: 14)}
     var detailBoldFont: UIFont {UIFont.boldSystemFont(ofSize: 14)}
     var descriptionFont: UIFont {UIFont.systemFont(ofSize: 16)}

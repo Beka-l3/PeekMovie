@@ -157,13 +157,17 @@ extension EntranceModulePresenter: RegisterPagePresenter {
 
 extension EntranceModulePresenter: AuthorizedPagePresenter {
     func pushWaitingRoom(with roomId: String, isAdmin: Bool) {
-        print("push waiting room")
-        waitingPage.setInitialData(roomId: roomId, isAdmin: isAdmin)
-        appCoordinator?.pushViewController(with: waitingPage, popToRoot: false)
+        if !isAdmin && roomId != "Q1WE23" {
+            authorizedPage.popInfoLabel(type: .incorrectInput)
+            authorizedPage.setInputFieldWith(with: false)
+        } else {
+            waitingPage.setInitialData(roomId: roomId, isAdmin: isAdmin)
+            appCoordinator?.pushViewController(with: waitingPage, popToRoot: false)
+        }
+        
     }
     
     func logOut() {
-        print("Log out")
         appCoordinator?.pushViewController(with: unAuthorizedPage, popToRoot: true)
     }
 }
@@ -174,7 +178,6 @@ extension EntranceModulePresenter: WaitingRoomPresenter {
     }
     
     func startTheSession(with roomId: String) {
-        print("Start the seesion \(roomId)")
         appCoordinator?.sessionStarted()
     }
 }

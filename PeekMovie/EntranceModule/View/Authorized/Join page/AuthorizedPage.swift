@@ -78,8 +78,8 @@ class AuthorizedPage: UIViewController, Colors, Informatives {
     
     func popInfoLabel(type: InfoPopType) {
         infoPopLabel.attributedText = getAttributedText(
-            text: "Try again!",
-            detail: "Something went wrong.",
+            text: "Incorrect input",
+            detail: "Check correctness of RoomId",
             type: .wrong
         )
         animateInfoPop(label: infoPopLabel)
