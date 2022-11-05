@@ -61,13 +61,20 @@ extension EntranceModulePresenter: LoginPagePresenter {
 //            }
 //
 //            switch result {
-//            case .success(let str):
-//                print(str)
-//                UserDefaults.standard.set(username, forKey: GConstants.usernameKey)
-//                self.appCoordinator?.pushViewController(with: self.passwordPage, popToRoot: false)
+//            case .success(let response):
+//                if let data = response.data {
+//                    print(data)
+//                    UserDefaults.standard.set(username, forKey: GConstants.usernameKey)
+//                    self.appCoordinator?.pushViewController(with: self.passwordPage, popToRoot: false)
+//                } else if let error = response.error {
+//                    print(error)
+//                    self.unAuthorizedPage.setInputFieldWith(with: false)
+//                } else {
+//                    print("Server response error")
+//                }
+//
 //            case .failure(let error):
 //                print(error)
-//                self.unAuthorizedPage.setInputFieldWith(with: false)
 //            }
 //        }
         
@@ -96,7 +103,7 @@ extension EntranceModulePresenter: PasswordPagePresenter {
 //            }
 //            return
 //        }
-//
+
 //        networkService.login(
 //            credentials: PeekID(
 //                username: username,
@@ -109,13 +116,19 @@ extension EntranceModulePresenter: PasswordPagePresenter {
 //            }
 //
 //            switch result {
-//            case .success(let token):
-//                UserDefaults.standard.set(password, forKey: GConstants.passwordKey)
-//                UserDefaults.standard.set(token.token, forKey: GConstants.tokenKey)
-//                self.appCoordinator?.pushViewController(with: self.authorizedPage, popToRoot: true)
+//            case .success(let response):
+//                if let data = response.data {
+//                    UserDefaults.standard.set(password, forKey: GConstants.passwordKey)
+//                    UserDefaults.standard.set(data.token, forKey: GConstants.tokenKey)
+//                    self.appCoordinator?.pushViewController(with: self.authorizedPage, popToRoot: true)
+//                } else if let error = response.error {
+//                    print(error)
+//                    self.passwordPage.setInputFieldWith(with: false)
+//                } else {
+//                    print("Server response error")
+//                }
 //            case .failure(let error):
 //                print(error)
-//                self.passwordPage.setInputFieldWith(with: false)
 //            }
 //        }
         
@@ -129,23 +142,36 @@ extension EntranceModulePresenter: PasswordPagePresenter {
 
 extension EntranceModulePresenter: RegisterPagePresenter {
     func checkRegistrationData(with form: RegistrationFormDTO) {
-//        networkService.register(credentials: form) { [weak self] result in
+        
+//        networkService.register(
+//            credentials: RegistrationFormDTO(
+//                username: form.username,
+//                email: form.email,
+//                password: form.password
+//            )
+//        ) { [weak self] result in
 //            guard let self = self else {
 //                self?.registerPage.popInfoLabel(type: .unknown)
 //                return
 //            }
 //
 //            switch result {
-//            case .success(let token):
-//                print(token)
-//                UserDefaults.standard.set(token.token, forKey: GConstants.tokenKey)
-//                self.appCoordinator?.pushViewController(with: self.authorizedPage, popToRoot: true)
+//            case .success(let response):
+//                if let data = response.data {
+//                    UserDefaults.standard.set(form.username, forKey: GConstants.usernameKey)
+//                    UserDefaults.standard.set(form.password, forKey: GConstants.passwordKey)
+//                    UserDefaults.standard.set(data.token, forKey: GConstants.tokenKey)
+//                    self.appCoordinator?.pushViewController(with: self.authorizedPage, popToRoot: true)
+//                } else if let error = response.error {
+//                    print(error)
+//                    self.registerPage.setInputFieldsState(with: false)
+//                } else {
+//                    print("Server bad response")
+//                }
 //            case .failure(let error):
 //                print(error)
-//                self.registerPage.setInputFieldsState(with: false)
 //            }
 //        }
-        
         
         if form.username == "Ezpzbaby" {
             appCoordinator?.pushViewController(with: authorizedPage, popToRoot: true)

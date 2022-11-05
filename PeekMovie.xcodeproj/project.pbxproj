@@ -30,7 +30,8 @@
 		0788F42628F8321F006F447F /* LoginViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42528F8321F006F447F /* LoginViewModels.swift */; };
 		079E5EB829092EC8006AF238 /* MovieInfoScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5EB729092EC8006AF238 /* MovieInfoScrollViewModel.swift */; };
 		079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5EB92909753C006AF238 /* MovieInfoStackViewModel.swift */; };
-		07B7F8642913CAE000A1A9EC /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B7F8632913CADF00A1A9EC /* MockNetworkService.swift */; };
+		07A66F2B2916CB2F003BB6B9 /* ErrorDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A66F2A2916CB2F003BB6B9 /* ErrorDTO.swift */; };
+		07A66F2D2916CB51003BB6B9 /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A66F2C2916CB51003BB6B9 /* ResponseDTO.swift */; };
 		07C8212F291019E000B055D0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8212E291019E000B055D0 /* Movie.swift */; };
 		07D401B928F8641700BF3F55 /* PasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D401B828F8641700BF3F55 /* PasswordPage.swift */; };
 		07D401BB28F8653D00BF3F55 /* PasswordViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D401BA28F8653D00BF3F55 /* PasswordViewModels.swift */; };
@@ -79,7 +80,8 @@
 		0788F42528F8321F006F447F /* LoginViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModels.swift; sourceTree = "<group>"; };
 		079E5EB729092EC8006AF238 /* MovieInfoScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoScrollViewModel.swift; sourceTree = "<group>"; };
 		079E5EB92909753C006AF238 /* MovieInfoStackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoStackViewModel.swift; sourceTree = "<group>"; };
-		07B7F8632913CADF00A1A9EC /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		07A66F2A2916CB2F003BB6B9 /* ErrorDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDTO.swift; sourceTree = "<group>"; };
+		07A66F2C2916CB51003BB6B9 /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
 		07C8212E291019E000B055D0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		07D401B828F8641700BF3F55 /* PasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPage.swift; sourceTree = "<group>"; };
 		07D401BA28F8653D00BF3F55 /* PasswordViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModels.swift; sourceTree = "<group>"; };
@@ -150,7 +152,6 @@
 				0758C2E42911610100E48140 /* Model */,
 				0758C2E5291174F800E48140 /* NetworkServiceProtocol.swift */,
 				0758C2E72911752200E48140 /* NetworkServiceImplementation.swift */,
-				07B7F8632913CADF00A1A9EC /* MockNetworkService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -158,9 +159,11 @@
 		0758C2E42911610100E48140 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				07A66F2A2916CB2F003BB6B9 /* ErrorDTO.swift */,
 				073B585328F97CA8000EE21F /* PeekID.swift */,
 				0758C2EB2911777300E48140 /* TokenDTO.swift */,
 				07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */,
+				07A66F2C2916CB51003BB6B9 /* ResponseDTO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				07F8930E29127B5200E8FDD4 /* RegistrationFormDTO.swift in Sources */,
 				07EB1CC128FD48100031598A /* HTTPNetworkResponse.swift in Sources */,
 				073B585628FA155F000EE21F /* EMConstants.swift in Sources */,
+				07A66F2D2916CB51003BB6B9 /* ResponseDTO.swift in Sources */,
 				073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */,
 				0788F42228F829B5006F447F /* EntranceModuleBuilder.swift in Sources */,
 				079E5EB829092EC8006AF238 /* MovieInfoScrollViewModel.swift in Sources */,
@@ -472,6 +476,7 @@
 				07EB1CC328FD48100031598A /* HTTPError.swift in Sources */,
 				07DBA85328F3F830000A1312 /* AppCoordinator.swift in Sources */,
 				073B585828FA1698000EE21F /* EMViewModels.swift in Sources */,
+				07A66F2B2916CB2F003BB6B9 /* ErrorDTO.swift in Sources */,
 				077B2ECD29069A060087504C /* SessionModuleBuilder.swift in Sources */,
 				073B585428F97CA8000EE21F /* PeekID.swift in Sources */,
 				07DBA85D28F55E77000A1312 /* DesignProtocols.swift in Sources */,
@@ -483,7 +488,6 @@
 				07EB1CC428FD48100031598A /* HTTPMethod.swift in Sources */,
 				07D401B928F8641700BF3F55 /* PasswordPage.swift in Sources */,
 				07D401BB28F8653D00BF3F55 /* PasswordViewModels.swift in Sources */,
-				07B7F8642913CAE000A1A9EC /* MockNetworkService.swift in Sources */,
 				077B2EDA2907BB450087504C /* Global Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

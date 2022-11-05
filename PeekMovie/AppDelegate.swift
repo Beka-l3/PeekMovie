@@ -39,13 +39,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                )
 //            ) { result in
 //                switch result {
-//                case .success(let token):
-//                    isLoggedIn = true
-//                    UserDefaults.standard.set(token.token, forKey: GConstants.tokenKey)
+//                case .success(let response):
+//                    if let data = response.data {
+//                        isLoggedIn = true
+//                        UserDefaults.standard.set(data.token, forKey: GConstants.tokenKey)
+//                    } else if let error = response.error {
+//                        print(error)
+//                    } else {
+//                        print("Server response error")
+//                    }
 //                case .failure(let error):
 //                    isLoggedIn = false
 //                    print(error)
 //                }
+//
 //            }
 //        }
         

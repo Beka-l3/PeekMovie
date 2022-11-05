@@ -20,7 +20,7 @@ final class NetworkServiceImplementation: NetworkService {
     @discardableResult
     func register(
         credentials: RegistrationFormDTO,
-        completion: @escaping (Result<TokenDTO, HTTPError>) -> Void
+        completion: @escaping (Result<ResponseDTO<TokenDTO>, HTTPError>) -> Void
     ) -> Cancellable? {
         networkClient.processRequest(
             request: createRegistrationRequest(credentials: credentials),
@@ -31,7 +31,7 @@ final class NetworkServiceImplementation: NetworkService {
     @discardableResult
     func login(
         credentials: PeekID,
-        completion: @escaping (Result<TokenDTO, HTTPError>) -> Void
+        completion: @escaping (Result<ResponseDTO<TokenDTO>, HTTPError>) -> Void
     ) -> Cancellable? {
         networkClient.processRequest(
             request: createLoginRequest(credentials: credentials),
@@ -42,7 +42,7 @@ final class NetworkServiceImplementation: NetworkService {
     @discardableResult
     func checkUsername(
         credentials: PeekID,
-        completion: @escaping (Result<String, HTTPError>) -> Void
+        completion: @escaping (Result<ResponseDTO<String>, HTTPError>) -> Void
     ) -> Cancellable? {
         networkClient.processRequest(
             request: createCheckUsernameRequest(credentials: credentials),
