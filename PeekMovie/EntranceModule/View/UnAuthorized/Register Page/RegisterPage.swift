@@ -17,6 +17,7 @@ class RegisterPage: UIViewController, Colors, Informatives {
     weak var presenter: RegisterPagePresenter?
     private var registerViewModels: RegisterPageViewModels
     private lazy var infoPopLabel: UILabel = { getInfoPop() }()
+    private lazy var activityIndicator: UIActivityIndicatorView = { getActivityIndicator() }()
     
     init() {
         self.registerViewModels = RegisterPageViewModels()
@@ -24,10 +25,8 @@ class RegisterPage: UIViewController, Colors, Informatives {
     }
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidLoad() { super.viewDidLoad()
         view.backgroundColor = black
-        
         setupViews()
         registerViewModels.usernameInput.delegate = self
         registerViewModels.emailInput.delegate = self
@@ -35,17 +34,21 @@ class RegisterPage: UIViewController, Colors, Informatives {
         registerViewModels.registerButton.addTarget(self, action: #selector(handleRegisterButton), for: .touchUpInside)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.tintColor = yellow
         infoPopLabel.center = EPConstants.infoPopCenter
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) { super.viewWillDisappear(animated)
+        changeActivityIndicatorState(toActive: false)
     }
     
     private func setupViews() {
         let registerView = registerViewModels.registerView
         view.addSubview(registerView)
         view.addSubview(infoPopLabel)
+        view.addSubview(activityIndicator)
         NSLayoutConstraint.activate([
             registerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: EPConstants.smallPadding),
             registerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: EPConstants.padding),
@@ -55,6 +58,7 @@ class RegisterPage: UIViewController, Colors, Informatives {
     }
     
     @objc func handleRegisterButton() {
+        changeActivityIndicatorState(toActive: true)
         let id = RegistrationFormDTO(
             username: registerViewModels.usernameInput.text ?? EPConstants.emptyText,
             email: registerViewModels.emailInput.text ?? EPConstants.emptyText,
@@ -64,22 +68,90 @@ class RegisterPage: UIViewController, Colors, Informatives {
         presenter?.checkRegistrationData(with: id)
     }
     
-    func setInputFieldsState(with state: Bool) {
-        print("Something is incorrect =)")
+    func setInputFieldsStateForUsername(with state: Bool) {
+        let placeholder = state ? EPConstants.usernameInputPlaceholder : EPConstants.incorrectUsernameInputPlaceholder
+        let color = state ? grey : UIColor.systemRed
+        
+        registerViewModels.usernameInput.text = EPConstants.emptyText
+        registerViewModels.usernameInput.layer.borderColor = color.cgColor
+        let placeholderText = NSAttributedString(
+            string: placeholder,
+            attributes: [NSAttributedString.Key.foregroundColor: color])
+        registerViewModels.usernameInput.attributedPlaceholder = placeholderText
     }
     
-    func popInfoLabel(type: InfoPopType) {
+    func setInputFieldsStateForPassword(with state: Bool) {
+        let placeholder = state ? EPConstants.passwordInputPlaceholder : EPConstants.incorrectPasswordInputPlaceholder
+        let color = state ? grey : UIColor.systemRed
+        
+        registerViewModels.passwordInput.text = EPConstants.emptyText
+        registerViewModels.passwordInput.layer.borderColor = color.cgColor
+        let placeholderText = NSAttributedString(
+            string: placeholder,
+            attributes: [NSAttributedString.Key.foregroundColor: color])
+        registerViewModels.passwordInput.attributedPlaceholder = placeholderText
+    }
+    
+    func setInputFieldsStateForEmail(with state: Bool) {
+        let placeholder = state ? EPConstants.emailInputPlaceholder : EPConstants.incorrectEmailInputPlaceholder
+        let color = state ? grey : UIColor.systemRed
+        
+        registerViewModels.emailInput.text = EPConstants.emptyText
+        registerViewModels.emailInput.layer.borderColor = color.cgColor
+        let placeholderText = NSAttributedString(
+            string: placeholder,
+            attributes: [NSAttributedString.Key.foregroundColor: color])
+        registerViewModels.emailInput.attributedPlaceholder = placeholderText
+    }
+    
+    func popInfoLabel(type: InfoPopType, completion: @escaping () -> Void = {}) {
+        changeActivityIndicatorState(toActive: false)
+        var text: String
+        var detail: String
+        var infoType: InformativeType = .tip
+        
+        switch type {
+        case .incorrectInput(input: .username):
+            text = InfoPops.incorrectInput
+            detail = InfoPops.checkInputs
+            setInputFieldsStateForUsername(with: false)
+        case .incorrectInput(input: .email):
+            text = InfoPops.incorrectInput
+            detail = InfoPops.checkInputs
+            setInputFieldsStateForEmail(with: false)
+        case .incorrectInput(input: .password):
+            text = InfoPops.incorrectInput
+            detail = InfoPops.checkInputs
+            setInputFieldsStateForPassword(with: false)
+        case .connectionError:
+            text = InfoPops.connectionError
+            detail = InfoPops.tryLater
+        case .serverError:
+            text = InfoPops.serverError
+            detail = InfoPops.tryLater
+        default:
+            text = InfoPops.internalError
+            detail = InfoPops.waitUpdate
+            infoType = .wrong
+        }
         infoPopLabel.attributedText = getAttributedText(
-            text: "Try again!",
-            detail: "Something went wrong.",
-            type: .wrong
+            text: text,
+            detail: detail,
+            type: infoType
         )
-        animateInfoPop(label: infoPopLabel)
+        animateInfoPop(label: infoPopLabel, completion: completion)
+    }
+    
+    func changeActivityIndicatorState(toActive: Bool) {
+        if toActive { activityIndicator.startAnimating() }
+        else { activityIndicator.stopAnimating() }
     }
 }
 
 extension RegisterPage: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        setInputFieldsState(with: true)
+        setInputFieldsStateForUsername(with: true)
+        setInputFieldsStateForPassword(with: true)
+        setInputFieldsStateForEmail(with: true)
     }
 }

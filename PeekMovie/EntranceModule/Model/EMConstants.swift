@@ -78,3 +78,20 @@ enum IConstants {
     static let padding: CGFloat = 12
 }
 
+enum InfoPops {
+    static let incorrectInput = "Incorrect input"
+    static let checkInputs = "Check correctness of inputs"
+    static let checkUsername = "Check correctness of username"
+    static let checkPassword = "Check correctness of password"
+    static let checkEmail = "Check correctness of email"
+    static let checkRoomId = "Check correctness if roomID"
+    static let userJoined = "New user joined"
+    static let userLeft = "User left the room"
+    static let roomClosed = "Room closed"
+    static let adminClosed = "Admin closed the room"
+    static let internalError = "Internal error"
+    static let waitUpdate = "Wait for further update"
+    static let serverError = "Server error"
+    static let tryLater = "Try again later"
+    static let connectionError = "Connection error"
+}

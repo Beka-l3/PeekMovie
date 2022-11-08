@@ -17,6 +17,7 @@ class AuthorizedPage: UIViewController, Colors, Informatives {
     weak var presenter: AuthorizedPagePresenter?
     private let joinRoomView: AuthorizedPageViewModels
     private lazy var infoPopLabel: UILabel = { getInfoPop() }()
+    private lazy var activityIndicator: UIActivityIndicatorView = { getActivityIndicator() }()
     
     init() {
         self.joinRoomView = AuthorizedPageViewModels()
@@ -24,8 +25,7 @@ class AuthorizedPage: UIViewController, Colors, Informatives {
     }
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidLoad() { super.viewDidLoad()
         view.backgroundColor = black
         setupViews()
         joinRoomView.roomIdInput.delegate = self
@@ -34,16 +34,20 @@ class AuthorizedPage: UIViewController, Colors, Informatives {
         joinRoomView.logOutButton.addTarget(self, action: #selector(handleLogOutButton), for: .touchUpInside)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
         infoPopLabel.center = EPConstants.infoPopCenter
     }
 
+    override func viewWillDisappear(_ animated: Bool) { super.viewWillDisappear(animated)
+        changeActivityIndicatorState(toActive: false)
+    }
+    
     private func setupViews() {
         let joinView = joinRoomView.joinRoomView
         view.addSubview(joinView)
         view.addSubview(infoPopLabel)
+        view.addSubview(activityIndicator)
         NSLayoutConstraint.activate([
             joinView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: EPConstants.smallPadding),
             joinView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: EPConstants.padding),
@@ -76,13 +80,39 @@ class AuthorizedPage: UIViewController, Colors, Informatives {
         joinRoomView.roomIdInput.attributedPlaceholder = placeholderText
     }
     
-    func popInfoLabel(type: InfoPopType) {
+    func popInfoLabel(type: InfoPopType, completion: @escaping () -> Void = {}) {
+        changeActivityIndicatorState(toActive: false)
+        var text: String
+        var detail: String
+        var infoType: InformativeType = .tip
+        
+        switch type {
+        case .incorrectInput(input: .roomId):
+            text = InfoPops.incorrectInput
+            detail = InfoPops.checkRoomId
+            setInputFieldWith(with: false)
+        case .connectionError:
+            text = InfoPops.connectionError
+            detail = InfoPops.tryLater
+        case .serverError:
+            text = InfoPops.serverError
+            detail = InfoPops.tryLater
+        default:
+            text = InfoPops.internalError
+            detail = InfoPops.waitUpdate
+            infoType = .wrong
+        }
         infoPopLabel.attributedText = getAttributedText(
-            text: "Incorrect input",
-            detail: "Check correctness of RoomId",
-            type: .wrong
+            text: text,
+            detail: detail,
+            type: infoType
         )
-        animateInfoPop(label: infoPopLabel)
+        animateInfoPop(label: infoPopLabel, completion: completion)
+    }
+    
+    func changeActivityIndicatorState(toActive: Bool) {
+        if toActive { activityIndicator.startAnimating() }
+        else { activityIndicator.stopAnimating() }
     }
 }
 

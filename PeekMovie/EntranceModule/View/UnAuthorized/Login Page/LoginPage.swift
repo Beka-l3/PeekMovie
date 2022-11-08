@@ -18,6 +18,7 @@ class LoginPage: UIViewController, Colors, Informatives {
     weak var presenter: LoginPagePresenter?
     private let loginViewModels: LoginViewModels
     private lazy var infoPopLabel: UILabel = { getInfoPop() }()
+    private lazy var activityIndicator: UIActivityIndicatorView = { getActivityIndicator() }()
     
     init() {
         loginViewModels = LoginViewModels()
@@ -26,28 +27,28 @@ class LoginPage: UIViewController, Colors, Informatives {
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidLoad() { super.viewDidLoad()
         view.backgroundColor = black
-        
         setupViews()
         loginViewModels.usernameInput.delegate = self
         loginViewModels.loginButton.addTarget(self, action: #selector(handleLoginButton), for: .touchUpInside)
         loginViewModels.registerButton.addTarget(self, action: #selector(handleRegisterButton), for: .touchUpInside)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-        
         infoPopLabel.center = EPConstants.infoPopCenter
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) { super.viewWillDisappear(animated)
+        changeActivityIndicatorState(toActive: false)
     }
     
     private func setupViews() {
         let loginView = loginViewModels.loginView
         view.addSubview(loginView)
         view.addSubview(infoPopLabel)
-        
+        view.addSubview(activityIndicator)
         NSLayoutConstraint.activate([
             loginView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: EPConstants.largePadding),
             loginView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: EPConstants.padding),
@@ -56,13 +57,13 @@ class LoginPage: UIViewController, Colors, Informatives {
         ])
     }
     
-    @objc func handleLoginButton() {
+    @objc private func handleLoginButton() {
+        changeActivityIndicatorState(toActive: true)
         let username = loginViewModels.usernameInput.text ?? EPConstants.emptyText
-        print(username)
         presenter?.checkUsername(with: username)
     }
     
-    @objc func handleRegisterButton() {
+    @objc private func handleRegisterButton() {
         presenter?.openRegisterPage()
     }
     
@@ -78,16 +79,41 @@ class LoginPage: UIViewController, Colors, Informatives {
         loginViewModels.usernameInput.attributedPlaceholder = placeholderText
     }
 
-    func popInfoLabel(type: InfoPopType) {
+    func popInfoLabel(type: InfoPopType, completion: @escaping () -> Void = {}) {
+        changeActivityIndicatorState(toActive: false)
+        var text: String
+        var detail: String
+        var infoType: InformativeType = .tip
+        
+        switch type {
+        case .incorrectInput(input: .username):
+            text = InfoPops.incorrectInput
+            detail = InfoPops.checkUsername
+            setInputFieldWith(with: false)
+        case .connectionError:
+            text = InfoPops.connectionError
+            detail = InfoPops.tryLater
+        case .serverError:
+            text = InfoPops.serverError
+            detail = InfoPops.tryLater
+        default:
+            text = InfoPops.internalError
+            detail = InfoPops.waitUpdate
+            infoType = .wrong
+        }
         infoPopLabel.attributedText = getAttributedText(
-            text: "Try again!",
-            detail: "Something went wrong.",
-            type: .wrong
+            text: text,
+            detail: detail,
+            type: infoType
         )
-        animateInfoPop(label: infoPopLabel)
+        animateInfoPop(label: infoPopLabel, completion: completion)
+    }
+    
+    func changeActivityIndicatorState(toActive: Bool) {
+        if toActive { activityIndicator.startAnimating() }
+        else { activityIndicator.stopAnimating() }
     }
 }
-
 
 extension LoginPage: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
