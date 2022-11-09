@@ -69,6 +69,7 @@ class RegisterPage: UIViewController, Colors, Informatives {
     }
     
     func setInputFieldsStateForUsername(with state: Bool) {
+        if state && !(registerViewModels.usernameInput.text?.isEmpty ?? true) { return }
         let placeholder = state ? EPConstants.usernameInputPlaceholder : EPConstants.incorrectUsernameInputPlaceholder
         let color = state ? grey : UIColor.systemRed
         
@@ -81,6 +82,7 @@ class RegisterPage: UIViewController, Colors, Informatives {
     }
     
     func setInputFieldsStateForPassword(with state: Bool) {
+        if state && !(registerViewModels.passwordInput.text?.isEmpty ?? true) { return }
         let placeholder = state ? EPConstants.passwordInputPlaceholder : EPConstants.incorrectPasswordInputPlaceholder
         let color = state ? grey : UIColor.systemRed
         
@@ -93,6 +95,7 @@ class RegisterPage: UIViewController, Colors, Informatives {
     }
     
     func setInputFieldsStateForEmail(with state: Bool) {
+        if state && !(registerViewModels.emailInput.text?.isEmpty ?? true) { return }
         let placeholder = state ? EPConstants.emailInputPlaceholder : EPConstants.incorrectEmailInputPlaceholder
         let color = state ? grey : UIColor.systemRed
         

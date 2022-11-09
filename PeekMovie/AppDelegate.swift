@@ -25,36 +25,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let networkClient = NetworkClientImplementation(urlSession: .init(configuration: .default))
-        let networkService = NetworkServiceImplementation(networkClient: networkClient)
+        let networkService = MockNetworkService()
+//        let networkService = NetworkServiceImplementation(networkClient: networkClient)
         
         let username = UserDefaults.standard.string(forKey: GConstants.usernameKey) ?? ""
         let password = UserDefaults.standard.string(forKey: GConstants.passwordKey) ?? ""
         var isLoggedIn = !password.isEmpty && !username.isEmpty
         
-//        if isLoggedIn {
-//            networkService.login(
-//                credentials: PeekID(
-//                    username: username,
-//                    password: password
-//                )
-//            ) { result in
-//                switch result {
-//                case .success(let response):
-//                    if let data = response.data {
-//                        isLoggedIn = true
-//                        UserDefaults.standard.set(data.token, forKey: GConstants.tokenKey)
-//                    } else if let error = response.error {
-//                        print(error)
-//                    } else {
-//                        print("Server response error")
-//                    }
-//                case .failure(let error):
-//                    isLoggedIn = false
-//                    print(error)
-//                }
-//
-//            }
-//        }
+        if isLoggedIn {
+            networkService.login(
+                credentials: PeekID(
+                    username: username,
+                    password: password
+                )
+            ) { result in
+                switch result {
+                case .success(let response):
+                    if let data = response.data {
+                        isLoggedIn = true
+                        UserDefaults.standard.set(data.token, forKey: GConstants.tokenKey)
+                    } else if let error = response.error {
+                        print(error)
+                    } else {
+                        print("Server response error")
+                    }
+                case .failure(let error):
+                    isLoggedIn = false
+                    print(error)
+                }
+            }
+        }
         
         let appCoordinator = AppCoordinator(
             isLoggedIn: isLoggedIn,
@@ -62,13 +62,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             networkClient: networkClient,
             networkService: networkService
         )
-        DispatchQueue.global().async {
-            sleep(3)
-            DispatchQueue.main.async {
-                appCoordinator.pushEntrancePage()
-            }
-        }
-//        appCoordinator.pushEntrancePage()
+//        DispatchQueue.global().async {
+//            sleep(3)
+//            DispatchQueue.main.async {
+//                appCoordinator.pushEntrancePage()
+//            }
+//        }
+        appCoordinator.pushEntrancePage()
         
         return true
     }

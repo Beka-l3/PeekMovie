@@ -18,6 +18,8 @@ extension EntranceModulePresenter: AuthorizedPagePresenter {
     }
     
     func logOut() {
+        UserDefaults.standard.removeObject(forKey: GConstants.usernameKey)
+        UserDefaults.standard.removeObject(forKey: GConstants.passwordKey)
         appCoordinator?.pushViewController(with: unAuthorizedPage, popToRoot: true)
     }
 }
