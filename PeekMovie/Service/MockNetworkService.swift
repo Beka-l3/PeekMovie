@@ -97,5 +97,56 @@ final class MockNetworkService: NetworkService {
         return nil
     }
     
+    func createRoom(
+        credentials: TokenDTO,
+        completion: @escaping (Result<ResponseDTO<RoomDTO>, HTTPError>) -> Void
+    ) -> Cancellable? {
+        DispatchQueue.global().async {
+            sleep(UInt32.random(in: 0...3))
+            let alph = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            var roomId = ""
+            for _ in 0...5 { roomId.append(alph.randomElement()!) }
+            MockNetworkService.executeCompletionOnMainThread {
+                let admin = UserDefaults.standard.string(forKey: GConstants.usernameKey) ?? "ezpzbaby"
+                completion(.success(ResponseDTO(data: RoomDTO(roomId: roomId, admin: admin, users: [admin]), error: nil)))
+            }
+        }
+        return nil
+    }
+    
+    func joinRoom(
+        credentials: (token: TokenDTO, roomId: String),
+        completion: @escaping (Result<ResponseDTO<RoomDTO>, HTTPError>) -> Void
+    ) -> Cancellable? {
+        DispatchQueue.global().async {
+            sleep(UInt32.random(in: 0...3))
+            if Int.random(in: 0...99) == 0 {
+                MockNetworkService.executeCompletionOnMainThread {
+                    completion(.failure(.decodingFailed))
+                }
+            } else {
+                if Int.random(in: 0...49) == 0 {
+                    let error = ErrorDTO(error_message: ErrorMessage.username)
+                    MockNetworkService.executeCompletionOnMainThread {
+                        completion(.success(ResponseDTO(data: nil, error: error)))
+                    }
+                } else {
+                    let usersnames = ["Jake", "Beka", "Kamilka", "Asan", "Berik", "Shaxa", "Ersik", "Ulan", "Zhango", "Asya", "Zhanat", "Rohn", "Dona", "Seka", "Madi", "Tolik"]
+                    let admin = usersnames.randomElement()!
+                    var users: [String] = []
+                    for i in Int.random(in: 0...usersnames.count/2)...Int.random(in: usersnames.count/2..<usersnames.count) { users.append(usersnames[i]) }
+                    if !users.contains(admin) { users.append(admin) }
+                    print(admin, users)
+                    let roomData = RoomDTO(roomId: credentials.roomId, admin: admin, users: users)
+                    
+                    MockNetworkService.executeCompletionOnMainThread {
+                        completion(.success(ResponseDTO<RoomDTO>(data: roomData, error: nil)))
+                    }
+                }
+            }
+        }
+        
+        return nil
+    }
     
 }

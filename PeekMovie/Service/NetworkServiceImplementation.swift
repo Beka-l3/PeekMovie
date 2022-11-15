@@ -50,6 +50,28 @@ final class NetworkServiceImplementation: NetworkService {
         )
     }
     
+    @discardableResult
+    func createRoom(
+        credentials: TokenDTO,
+        completion: @escaping (Result<ResponseDTO<RoomDTO>, HTTPError>) -> Void
+    ) -> Cancellable? {
+        networkClient.processRequest(
+            request: createCreateRoomRequest(credentials: credentials),
+            completion: completion
+        )
+    }
+    
+    @discardableResult
+    func joinRoom(
+        credentials: (token: TokenDTO, roomId: String),
+        completion: @escaping (Result<ResponseDTO<RoomDTO>, HTTPError>) -> Void
+    ) -> Cancellable? {
+        networkClient.processRequest(
+            request: createJoinRoomRequest(token: credentials.token, roomId: credentials.roomId),
+            completion: completion
+        )
+    }
+    
     
     
 //  MARK: - Private methods
@@ -98,6 +120,38 @@ final class NetworkServiceImplementation: NetworkService {
             body: try? JSONSerialization.data(
                 withJSONObject: [
                     "username": credentials.username
+                ]
+            ),
+            httpMethod: .post
+        )
+    }
+    
+    private func createCreateRoomRequest(credentials: TokenDTO) -> HTTPRequest {
+        HTTPRequest(
+            route: "http://.../createRoom",
+            headers: [
+                "application/json": "Content-Type",
+                "gzip, deflate": "Accept-Encoding",
+                credentials.token: "X-authentication"
+            ],
+            body: try? JSONSerialization.data(
+                withJSONObject: []
+            ),
+            httpMethod: .post
+        )
+    }
+    
+    private func createJoinRoomRequest(token: TokenDTO, roomId: String) -> HTTPRequest {
+        HTTPRequest(
+            route: "http://.../createRoom",
+            headers: [
+                "application/json": "Content-Type",
+                "gzip, deflate": "Accept-Encoding",
+                token.token: "X-authentication"
+            ],
+            body: try? JSONSerialization.data(
+                withJSONObject: [
+                    "roomId": roomId
                 ]
             ),
             httpMethod: .post

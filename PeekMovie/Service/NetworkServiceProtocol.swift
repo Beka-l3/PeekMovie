@@ -28,4 +28,27 @@ protocol NetworkService: AnyObject {
         credentials: PeekID,
         completion: @escaping (Result<ResponseDTO<String>, HTTPError>) -> Void
     ) -> Cancellable?
+    
+    @discardableResult
+    func createRoom(
+        credentials: TokenDTO,
+        completion: @escaping (Result<ResponseDTO<RoomDTO>, HTTPError>) -> Void
+    ) -> Cancellable?
+    
+    @discardableResult
+    func joinRoom(
+        credentials: (token: TokenDTO, roomId: String),
+        completion: @escaping (Result<ResponseDTO<RoomDTO>, HTTPError>) -> Void
+    ) -> Cancellable?
+}
+
+
+protocol WebSocketService: URLSessionWebSocketDelegate {
+    var webSocket: URLSessionWebSocketTask? {get set}
+    
+    func setupWebSocket()
+    func ping(successCompletion: @escaping () -> Void, errorCompletion: @escaping () -> Void)
+    func close(isAdmin: Bool, isRoomStarded: Bool)
+    func send(message: String)
+    func receive()
 }

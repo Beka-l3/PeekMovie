@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */; };
+		070DF8CB2922C5D7002476AA /* WaitingPageWebSocketExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8CA2922C5D7002476AA /* WaitingPageWebSocketExtension.swift */; };
+		071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071A3BEF291FC3BE009A7689 /* RoomDTO.swift */; };
 		073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A49312902A77100545946 /* WaitingPageAnimation.swift */; };
 		073B584D28F97B20000EE21F /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B584C28F97B1F000EE21F /* RegisterPage.swift */; };
 		073B585228F97C30000EE21F /* RegisterPageViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B585128F97C30000EE21F /* RegisterPageViewModels.swift */; };
@@ -64,6 +67,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPagePickerViewExtension.swift; sourceTree = "<group>"; };
+		070DF8CA2922C5D7002476AA /* WaitingPageWebSocketExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPageWebSocketExtension.swift; sourceTree = "<group>"; };
+		071A3BEF291FC3BE009A7689 /* RoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDTO.swift; sourceTree = "<group>"; };
 		073A49312902A77100545946 /* WaitingPageAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPageAnimation.swift; sourceTree = "<group>"; };
 		073B584C28F97B1F000EE21F /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
 		073B585128F97C30000EE21F /* RegisterPageViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewModels.swift; sourceTree = "<group>"; };
@@ -174,11 +180,12 @@
 		0758C2E42911610100E48140 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				07A66F2A2916CB2F003BB6B9 /* ErrorDTO.swift */,
 				073B585328F97CA8000EE21F /* PeekID.swift */,
 				0758C2EB2911777300E48140 /* TokenDTO.swift */,
+				071A3BEF291FC3BE009A7689 /* RoomDTO.swift */,
 				07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */,
 				07A66F2C2916CB51003BB6B9 /* ResponseDTO.swift */,
+				07A66F2A2916CB2F003BB6B9 /* ErrorDTO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,6 +398,8 @@
 				07EB1CC728FDE0680031598A /* WaitingPage.swift */,
 				07EB1CC928FDE6EB0031598A /* WaitingRoomViewModels.swift */,
 				073A49312902A77100545946 /* WaitingPageAnimation.swift */,
+				070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */,
+				070DF8CA2922C5D7002476AA /* WaitingPageWebSocketExtension.swift */,
 			);
 			path = "Waiting page";
 			sourceTree = "<group>";
@@ -472,8 +481,10 @@
 				07D401BD28F890F400BF3F55 /* LogoPage.swift in Sources */,
 				07ABF65E291AD436007C4A52 /* ExtensionLoginPagePresenter.swift in Sources */,
 				077B2ED829069BAB0087504C /* CollectionView.swift in Sources */,
+				070DF8CB2922C5D7002476AA /* WaitingPageWebSocketExtension.swift in Sources */,
 				07ABF662291AD4BF007C4A52 /* ExtensionRegisterPagePresenter.swift in Sources */,
 				0788F42428F82B19006F447F /* LoginPage.swift in Sources */,
+				071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */,
 				0788F42628F8321F006F447F /* LoginViewModels.swift in Sources */,
 				0758C2E82911752200E48140 /* NetworkServiceImplementation.swift in Sources */,
 				0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */,
@@ -514,6 +525,7 @@
 				07ABF660291AD4A7007C4A52 /* ExtensionPasswordPagePresenter.swift in Sources */,
 				07EB1CC428FD48100031598A /* HTTPMethod.swift in Sources */,
 				07D401B928F8641700BF3F55 /* PasswordPage.swift in Sources */,
+				070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */,
 				07D401BB28F8653D00BF3F55 /* PasswordViewModels.swift in Sources */,
 				077B2EDA2907BB450087504C /* Global Constants.swift in Sources */,
 				07ABF666291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift in Sources */,

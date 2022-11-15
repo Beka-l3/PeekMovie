@@ -8,7 +8,8 @@
 import UIKit
 
 protocol AuthorizedPagePresenter: AnyObject {
-    func pushWaitingRoom(with roomId: String, isAdmin: Bool)
+    func createRoom()
+    func joinRoom(with roomId: String)
     func logOut()
 }
 
@@ -57,15 +58,18 @@ class AuthorizedPage: UIViewController, Colors, Informatives {
     }
     
     @objc func handleLogOutButton() {
+        changeActivityIndicatorState(toActive: true)
         presenter?.logOut()
     }
     
     @objc func handleJoinButton() {
-        presenter?.pushWaitingRoom(with: joinRoomView.roomIdInput.text ?? EPConstants.emptyText, isAdmin: false)
+        changeActivityIndicatorState(toActive: true)
+        presenter?.joinRoom(with: joinRoomView.roomIdInput.text ?? EPConstants.emptyText)
     }
     
     @objc func handleCreateButton() {
-        presenter?.pushWaitingRoom(with: EPConstants.emptyText, isAdmin: true)
+        changeActivityIndicatorState(toActive: true)
+        presenter?.createRoom()
     }
     
     func setInputFieldWith(with state: Bool) {

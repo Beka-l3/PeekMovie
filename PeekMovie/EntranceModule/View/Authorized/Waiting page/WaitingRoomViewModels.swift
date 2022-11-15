@@ -33,6 +33,16 @@ class WaitingRoomViewModels: Colors, Fonts, Interactives, Informatives {
         return getTipLabel(with: roomId, detail: EPConstants.emptyText, labelType: .header)
     }()
     
+    lazy var usersPickerView: UIPickerView = {
+        let p = UIPickerView()
+        p.backgroundColor = clearBlack
+        p.layer.borderColor = semiYellow.cgColor
+        p.layer.borderWidth = 1
+        p.layer.cornerRadius = EPConstants.smallPadding
+        p.translatesAutoresizingMaskIntoConstraints = false
+        return p
+    }()
+    
     lazy var startButton: UIButton = {
         let b = getTeritaryButton(with: EPConstants.startButtonTitle, isBold: true)
         b.frame.size = EPConstants.startButtonSize
@@ -80,6 +90,7 @@ class WaitingRoomViewModels: Colors, Fonts, Interactives, Informatives {
         v.addSubview(circles[2])
         v.addSubview(startButton)
         v.addSubview(secondLogoImage)
+        v.addSubview(usersPickerView)
         
         NSLayoutConstraint.activate([
             logoImage.centerXAnchor.constraint(equalTo: v.centerXAnchor),
@@ -98,6 +109,10 @@ class WaitingRoomViewModels: Colors, Fonts, Interactives, Informatives {
             
             roomIDLabel.centerYAnchor.constraint(equalTo: roomIDTextLabel.centerYAnchor),
             roomIDLabel.trailingAnchor.constraint(equalTo: v.trailingAnchor),
+            
+            usersPickerView.topAnchor.constraint(equalTo: roomIDLabel.bottomAnchor, constant: EPConstants.smallPadding),
+            usersPickerView.leadingAnchor.constraint(equalTo: v.leadingAnchor),
+            usersPickerView.trailingAnchor.constraint(equalTo: v.trailingAnchor),
             
             cancelButton.bottomAnchor.constraint(equalTo: v.bottomAnchor),
             cancelButton.leadingAnchor.constraint(equalTo: v.leadingAnchor),
@@ -136,6 +151,7 @@ class WaitingRoomViewModels: Colors, Fonts, Interactives, Informatives {
         circles[2].center = center
         startButton.center = CGPoint(x: center.x, y: center.y)
         secondLogoImage.center = CGPoint(x: center.x, y: center.y)
+        usersPickerView.heightAnchor.constraint(equalToConstant: center.y/2).isActive = true
     }
     
     func startAnimation() {
