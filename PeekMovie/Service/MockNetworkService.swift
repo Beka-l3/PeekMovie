@@ -108,7 +108,7 @@ final class MockNetworkService: NetworkService {
             for _ in 0...5 { roomId.append(alph.randomElement()!) }
             MockNetworkService.executeCompletionOnMainThread {
                 let admin = UserDefaults.standard.string(forKey: GConstants.usernameKey) ?? "ezpzbaby"
-                completion(.success(ResponseDTO(data: RoomDTO(roomId: roomId, admin: admin, users: [admin]), error: nil)))
+                completion(.success(ResponseDTO(data: RoomDTO(roomId: roomId, admin: admin, users: []), error: nil)))
             }
         }
         return nil

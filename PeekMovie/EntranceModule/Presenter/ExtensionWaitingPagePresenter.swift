@@ -8,8 +8,9 @@
 import UIKit
 
 extension EntranceModulePresenter: WaitingRoomPresenter {
-    func cancelWaiting(isAdmin: Bool) {
+    func cancelWaiting(isAdmin: Bool, didAdminClose: Bool = false) {
         appCoordinator?.popCurrentViewController()
+        if !isAdmin && didAdminClose { authorizedPage.isAdminOut = true }
     }
     
     func startTheSession(with roomId: String) {

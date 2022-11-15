@@ -16,11 +16,13 @@ protocol AuthorizedPagePresenter: AnyObject {
 class AuthorizedPage: UIViewController, Colors, Informatives {
 
     weak var presenter: AuthorizedPagePresenter?
+    var isAdminOut: Bool
     private let joinRoomView: AuthorizedPageViewModels
     private lazy var infoPopLabel: UILabel = { getInfoPop() }()
     private lazy var activityIndicator: UIActivityIndicatorView = { getActivityIndicator() }()
     
     init() {
+        self.isAdminOut = false
         self.joinRoomView = AuthorizedPageViewModels()
         super.init(nibName: nil, bundle: nil)
     }
@@ -38,6 +40,15 @@ class AuthorizedPage: UIViewController, Colors, Informatives {
     override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
         infoPopLabel.center = EPConstants.infoPopCenter
+    }
+    
+    override func viewDidAppear(_ animated: Bool) { super.viewDidAppear(animated)
+        if isAdminOut {
+            DispatchQueue.global().async { sleep(1)
+                DispatchQueue.main.async { [weak self] in self?.popInfoLabel(type: .adminOut) }
+            }
+            isAdminOut = false
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) { super.viewWillDisappear(animated)
@@ -91,6 +102,9 @@ class AuthorizedPage: UIViewController, Colors, Informatives {
         var infoType: InformativeType = .tip
         
         switch type {
+        case .adminOut:
+            text = InfoPops.roomClosed
+            detail = InfoPops.adminClosed
         case .incorrectInput(input: .roomId):
             text = InfoPops.incorrectInput
             detail = InfoPops.checkRoomId

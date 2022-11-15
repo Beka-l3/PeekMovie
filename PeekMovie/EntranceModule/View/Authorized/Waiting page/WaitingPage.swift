@@ -9,7 +9,7 @@ import UIKit
 
 
 protocol WaitingRoomPresenter: AnyObject {
-    func cancelWaiting(isAdmin: Bool)
+    func cancelWaiting(isAdmin: Bool, didAdminClose: Bool)
     func startTheSession(with roomId: String)
 }
 
@@ -77,7 +77,7 @@ class WaitingPage: UIViewController, Colors, Informatives {
     
     @objc func handleCancelButton() {
         close(isAdmin: self.isAdmin)
-        presenter?.cancelWaiting(isAdmin: isAdmin)
+        presenter?.cancelWaiting(isAdmin: isAdmin, didAdminClose: false)
     }
     
     @objc func handleStartButton() {
@@ -106,7 +106,7 @@ class WaitingPage: UIViewController, Colors, Informatives {
         case .roomStart:
             presenter?.startTheSession(with: self.roomId)
         case .adminOut:
-            presenter?.cancelWaiting(isAdmin: false)
+            presenter?.cancelWaiting(isAdmin: isAdmin, didAdminClose: true)
         case .userJoin(let username):
             text = InfoPops.welcome + username
             detail = InfoPops.userJoined
@@ -146,8 +146,9 @@ class WaitingPage: UIViewController, Colors, Informatives {
     }
     
     private func setUsernames(users: [String], admin: String) -> [String] {
+        if isAdmin { return [] }
         var u = users
-        u.remove(at: u.firstIndex(of: admin)!)
+        if let idx = u.firstIndex(of: admin) { u.remove(at: idx) }
         return [admin] + u
     }
 }
