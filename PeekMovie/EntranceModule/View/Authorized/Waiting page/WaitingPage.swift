@@ -108,14 +108,14 @@ class WaitingPage: UIViewController, Colors, Informatives {
         case .adminOut:
             presenter?.cancelWaiting(isAdmin: false)
         case .userJoin(let username):
-            text = "Welcome \(username)"
-            detail = "User joind to this room"
+            text = InfoPops.welcome + username
+            detail = InfoPops.userJoined
             usernames.append(username)
             waitingViewModels.usersPickerView.reloadAllComponents()
             waitingViewModels.usersPickerView.selectRow(usernames.count - 1, inComponent: .zero, animated: true)
         case .userLeft(let username):
-            text = "Goodbye \(username)"
-            detail = "User quit from this room"
+            text = InfoPops.goodbye + username
+            detail = InfoPops.userQuit
             if let idx = usernames.firstIndex(of: username) {
                 usernames.remove(at: idx)
                 waitingViewModels.usersPickerView.reloadAllComponents()

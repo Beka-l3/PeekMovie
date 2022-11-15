@@ -29,7 +29,7 @@ class WaitingRoomViewModels: Colors, Fonts, Interactives, Informatives {
     }()
     
     lazy var roomIDLabel: UILabel = {
-        let roomId = "H2L74"
+        let roomId = "roomid"
         return getTipLabel(with: roomId, detail: EPConstants.emptyText, labelType: .header)
     }()
     

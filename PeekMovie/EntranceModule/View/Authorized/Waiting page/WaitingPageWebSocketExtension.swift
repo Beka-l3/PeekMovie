@@ -17,10 +17,9 @@ extension WaitingPage: WebSocketService {
     
     
     func ping(successCompletion: @escaping () -> Void, errorCompletion: @escaping () -> Void) {
-        print("Ping...\n")
         webSocket?.sendPing() { error in
             if let error = error {
-                print("ping error: \(error)")
+                print("Ping error: \(error)")
                 errorCompletion()
             } else {
                 successCompletion()
@@ -62,7 +61,6 @@ extension WaitingPage: WebSocketService {
                 case .data(let data):
                     print("Got data: \(data)")
                 case .string(let str):
-                    print(str)
                     let componets = str.components(separatedBy: " ")
                     if componets[0] == "Joined" {
                         DispatchQueue.main.async {  [weak self] in
@@ -98,7 +96,6 @@ extension WaitingPage: WebSocketService {
     }
     
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didOpenWithProtocol protocol: String?) {
-        print("did open with protocol\n")
         guard let username = UserDefaults.standard.string(forKey: GConstants.usernameKey) else {return}
         ping() { [weak self] in
             self?.send(message: "Joined \(username)")
