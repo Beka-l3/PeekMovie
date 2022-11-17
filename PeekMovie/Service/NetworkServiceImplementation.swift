@@ -73,6 +73,19 @@ final class NetworkServiceImplementation: NetworkService {
     }
     
     
+//  MARK: - GET
+    @discardableResult
+    func getMovie(
+        credentials: (token: TokenDTO, roomId: String),
+        completion: @escaping (Result<MovieDTO, HTTPError>) -> Void
+    ) -> Cancellable? {
+        
+        
+        
+        return nil
+    }
+    
+    
     
 //  MARK: - Private methods
     private func createRegistrationRequest(credentials: RegistrationFormDTO) -> HTTPRequest {
@@ -142,6 +155,23 @@ final class NetworkServiceImplementation: NetworkService {
     }
     
     private func createJoinRoomRequest(token: TokenDTO, roomId: String) -> HTTPRequest {
+        HTTPRequest(
+            route: "http://.../createRoom",
+            headers: [
+                "application/json": "Content-Type",
+                "gzip, deflate": "Accept-Encoding",
+                token.token: "X-authentication"
+            ],
+            body: try? JSONSerialization.data(
+                withJSONObject: [
+                    "roomId": roomId
+                ]
+            ),
+            httpMethod: .post
+        )
+    }
+    
+    private func createGetMovieRequest(token: TokenDTO, roomId: String) -> HTTPRequest {
         HTTPRequest(
             route: "http://.../createRoom",
             headers: [

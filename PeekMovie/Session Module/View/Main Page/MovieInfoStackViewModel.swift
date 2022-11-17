@@ -72,7 +72,7 @@ class MovieInfoStackViewModel: Fonts, Colors, FadingLayers, MovieInfoViews {
         movieTitleView.layer.mask = movieTitleMask
     }
     
-    func setData(movie: Movie) {
+    func setData(movie: MovieDTO) {
         UIView.transition(with: movieTitleLabel, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in self?.movieTitleLabel.text = movie.title }
         UIView.transition(with: movieYear, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in self?.movieYear.text = String(movie.year) }
         UIView.transition(with: directorNameLabel, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in self?.directorNameLabel.text = movie.prod }

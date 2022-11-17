@@ -96,7 +96,7 @@ final class PosterViewModels: Colors, Fonts, MovieInfoViews, FadingLayers {
         )
     }
     
-    func setData(size: CGSize, movie: Movie, animate: Bool = false) {
+    func setData(size: CGSize, movie: MovieDTO, animate: Bool = false) {
         movieInfoView.infoStackViewModel.setData(movie: movie)
         
         UIView.transition(with: movieRatingLabel, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in self?.movieRatingLabel.text = String(movie.rating) }

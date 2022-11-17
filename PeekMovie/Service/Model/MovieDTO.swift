@@ -5,7 +5,7 @@
 //  Created by Bekzhan Talgat on 31.10.2022.
 //
 
-struct Movie: Codable {
+struct MovieDTO: Codable {
     let movieId: String
     let rating: Float
     let img: String
@@ -19,9 +19,9 @@ struct Movie: Codable {
 
 extension PosterViewPage {
     struct Movies {
-        let movies: [Movie] = {
-            let m: [Movie] = [
-                Movie(
+        let movies: [MovieDTO] = {
+            let m: [MovieDTO] = [
+                MovieDTO(
                     movieId: "movieId1",
                     rating: 8.4,
                     img: "us",
@@ -30,7 +30,7 @@ extension PosterViewPage {
                     year: 2019,
                     prod: "Jordan Peele, Jordan Peele, Jordan Peele, Jordan Peele"
                 ),
-                Movie(
+                MovieDTO(
                     movieId: "movieId2",
                     rating: 7.4,
                     img: "moon",
@@ -39,7 +39,7 @@ extension PosterViewPage {
                     year: 2016,
                     prod: "Barry Jenkins"
                 ),
-                Movie(
+                MovieDTO(
                     movieId: "movieId3",
                     rating: 8.2,
                     img: "1917",
@@ -48,7 +48,7 @@ extension PosterViewPage {
                     year: 2020,
                     prod: "Sam Mendes"
                 ),
-                Movie(
+                MovieDTO(
                     movieId: "movieId4",
                     rating: 5.5,
                     img: "after",
@@ -57,7 +57,7 @@ extension PosterViewPage {
                     year: 2019,
                     prod: "Jenny Gage"
                 ),
-                Movie(
+                MovieDTO(
                     movieId: "movieId5",
                     rating: 8.4,
                     img: "joker",
@@ -66,7 +66,7 @@ extension PosterViewPage {
                     year: 2019,
                     prod: "Todd Philips"
                 ),
-                Movie(
+                MovieDTO(
                     movieId: "movieId6",
                     rating: 7.9,
                     img: "boh",
@@ -80,7 +80,7 @@ extension PosterViewPage {
         }()
         private var idx = 0
         
-        func getMovie() -> Movie { movies[idx] }
+        func getMovie() -> MovieDTO { movies[idx] }
         mutating func increase() { idx = (idx+1) % movies.count }
     }
 }

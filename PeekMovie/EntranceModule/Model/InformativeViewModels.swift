@@ -18,7 +18,7 @@ enum IncorrectInput {
 
 enum InfoPopType {
     case incorrectInput(input: IncorrectInput)
-    case userJoin(username: String), userLeft(username: String), adminOut, roomStart
+    case userJoin(username: String), userLeft(username: String), adminOut, roomStart, roomCreated
     case connectionError, serverError, internalError, unknown
 }
 

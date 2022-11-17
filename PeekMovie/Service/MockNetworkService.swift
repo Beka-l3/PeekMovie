@@ -149,4 +149,13 @@ final class MockNetworkService: NetworkService {
         return nil
     }
     
+    @discardableResult
+    func getMovie(
+        credentials: (token: TokenDTO, roomId: String),
+        completion: @escaping (Result<MovieDTO, HTTPError>) -> Void
+    ) -> Cancellable? {
+        
+        return nil
+    }
+    
 }

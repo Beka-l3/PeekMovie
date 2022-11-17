@@ -27,9 +27,10 @@ extension EntranceModulePresenter: AuthorizedPagePresenter {
             switch result {
             case .success(let result):
                 if let data = result.data {
-                    self.waitingPage.setupWebSocket()
                     UserDefaults.standard.set(data.roomId, forKey: GConstants.roomIdKey)
-                    self.waitingPage.setInitialData(roomData: data, isAdmin: true)
+                    
+                    self.setupWebSocket()
+                    self.setInitialRoomData(roomData: data, isAdmin: true)
                     self.appCoordinator?.pushViewController(with: self.waitingPage, popToRoot: false)
                 } else {
                     self.authorizedPage.popInfoLabel(type: .serverError)
@@ -61,9 +62,10 @@ extension EntranceModulePresenter: AuthorizedPagePresenter {
             switch result {
             case .success(let result):
                 if let data = result.data {
-                    self.waitingPage.setupWebSocket()
                     UserDefaults.standard.set(roomId, forKey: GConstants.roomIdKey)
-                    self.waitingPage.setInitialData(roomData: data, isAdmin: false)
+                    
+                    self.setupWebSocket()
+                    self.setInitialRoomData(roomData: data, isAdmin: false)
                     self.appCoordinator?.pushViewController(with: self.waitingPage, popToRoot: false)
                 } else if let error = result.error {
                     print(error.error_message)

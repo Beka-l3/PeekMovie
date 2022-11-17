@@ -96,4 +96,6 @@ enum InfoPops {
     static let serverError = "Server error"
     static let tryLater = "Try again later"
     static let connectionError = "Connection error"
+    static let roomCreated = "Room created"
+    static let youAreAdmin = "You are admin of this room"
 }

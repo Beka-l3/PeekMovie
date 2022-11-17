@@ -9,20 +9,16 @@ import UIKit
 
 
 protocol WaitingRoomPresenter: AnyObject {
-    func cancelWaiting(isAdmin: Bool, didAdminClose: Bool)
-    func startTheSession(with roomId: String)
+    func cancelWaiting(didAdminClose: Bool)
+    func startTheSession()
+    func getIsAdmin() -> Bool
+    func getRoomMembers() -> [String]
 }
 
 class WaitingPage: UIViewController, Colors, Informatives {
     
     weak var presenter: WaitingRoomPresenter?
     
-    internal var webSocket: URLSessionWebSocketTask?
-    internal var admin: String
-    internal var usernames: [String]
-    internal var roomId: String
-    
-    private var isAdmin: Bool
     private var waitingViewModels: WaitingRoomViewModels
     private lazy var center: CGPoint = {
         CGPoint(x: view.center.x - EPConstants.padding, y: view.center.y * 1.4)
@@ -32,10 +28,6 @@ class WaitingPage: UIViewController, Colors, Informatives {
     private lazy var activityIndicator: UIActivityIndicatorView = { getActivityIndicator() }()
     
     init() {
-        self.admin = ""
-        self.usernames = []
-        self.roomId = ""
-        self.isAdmin = false
         self.waitingViewModels = WaitingRoomViewModels()
         super.init(nibName: nil, bundle: nil)
     }
@@ -76,21 +68,14 @@ class WaitingPage: UIViewController, Colors, Informatives {
     }
     
     @objc func handleCancelButton() {
-        close(isAdmin: self.isAdmin)
-        presenter?.cancelWaiting(isAdmin: isAdmin, didAdminClose: false)
+        presenter?.cancelWaiting(didAdminClose: false)
     }
     
     @objc func handleStartButton() {
-        let roomId = UserDefaults.standard.string(forKey: GConstants.roomIdKey) ?? waitingViewModels.roomIDLabel.text ?? ""
-        presenter?.startTheSession(with: roomId)
+        presenter?.startTheSession()
     }
     
     func setInitialData(roomData: RoomDTO, isAdmin: Bool) {
-        self.isAdmin = isAdmin
-        self.admin = roomData.admin
-        self.usernames = setUsernames(users: roomData.users, admin: roomData.admin)
-        self.roomId = roomData.roomId
-        
         waitingViewModels.roomIDLabel.text = roomData.roomId
         waitingViewModels.startButton.isHidden = !isAdmin
         waitingViewModels.secondLogoImage.isHidden = isAdmin
@@ -103,24 +88,23 @@ class WaitingPage: UIViewController, Colors, Informatives {
         var infoType: InformativeType = .tip
         
         switch type {
+        case .roomCreated:
+            text = InfoPops.roomCreated
+            detail = InfoPops.youAreAdmin
         case .roomStart:
-            presenter?.startTheSession(with: self.roomId)
+            presenter?.startTheSession()
         case .adminOut:
-            presenter?.cancelWaiting(isAdmin: isAdmin, didAdminClose: true)
+            presenter?.cancelWaiting(didAdminClose: true)
         case .userJoin(let username):
             text = InfoPops.welcome + username
             detail = InfoPops.userJoined
-            usernames.append(username)
             waitingViewModels.usersPickerView.reloadAllComponents()
-            waitingViewModels.usersPickerView.selectRow(usernames.count - 1, inComponent: .zero, animated: true)
+            waitingViewModels.usersPickerView.selectRow((presenter?.getRoomMembers().count ?? 1) - 1, inComponent: .zero, animated: true)
         case .userLeft(let username):
             text = InfoPops.goodbye + username
             detail = InfoPops.userQuit
-            if let idx = usernames.firstIndex(of: username) {
-                usernames.remove(at: idx)
-                waitingViewModels.usersPickerView.reloadAllComponents()
-                waitingViewModels.usersPickerView.selectRow(.zero, inComponent: .zero, animated: true)
-            }
+            waitingViewModels.usersPickerView.reloadAllComponents()
+            waitingViewModels.usersPickerView.selectRow(.zero, inComponent: .zero, animated: true)
         case .connectionError:
             text = InfoPops.connectionError
             detail = InfoPops.tryLater
@@ -143,12 +127,5 @@ class WaitingPage: UIViewController, Colors, Informatives {
     func changeActivityIndicatorState(toActive: Bool) {
         if toActive { activityIndicator.startAnimating() }
         else { activityIndicator.stopAnimating() }
-    }
-    
-    private func setUsernames(users: [String], admin: String) -> [String] {
-        if isAdmin { return [] }
-        var u = users
-        if let idx = u.firstIndex(of: admin) { u.remove(at: idx) }
-        return [admin] + u
     }
 }

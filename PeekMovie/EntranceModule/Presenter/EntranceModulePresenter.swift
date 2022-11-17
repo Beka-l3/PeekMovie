@@ -14,7 +14,7 @@ protocol EntranceModuleDelegate {
     func sessionStarted()
 }
 
-final class EntranceModulePresenter {
+final class EntranceModulePresenter: NSObject {
     var appCoordinator: EntranceModuleDelegate?
     
     internal let authorizedPage: AuthorizedPage
@@ -23,6 +23,12 @@ final class EntranceModulePresenter {
     internal let registerPage: RegisterPage
     internal let waitingPage: WaitingPage
     internal let networkService: NetworkService
+    
+    internal var isAdmin: Bool
+    internal var roomAdmin: String
+    internal var roomMembers: [String]
+    
+    internal var webSocket: URLSessionWebSocketTask?
     
     init(
         authorizedPage: AuthorizedPage,
@@ -38,10 +44,22 @@ final class EntranceModulePresenter {
         self.registerPage = registerPage
         self.waitingPage = waitingPage
         self.networkService = networkService
+        
+        self.isAdmin = false
+        self.roomAdmin = ""
+        self.roomMembers = []
     }
     
     func getEntrancePage(isLoggedIn: Bool) -> UIViewController {
         return isLoggedIn ? authorizedPage : unAuthorizedPage
+    }
+    
+    internal func setInitialRoomData(roomData: RoomDTO, isAdmin: Bool) {
+        self.isAdmin = isAdmin
+        self.roomAdmin = roomData.admin
+        self.roomMembers = roomData.users
+        
+        waitingPage.setInitialData(roomData: roomData, isAdmin: isAdmin)
     }
 }
 

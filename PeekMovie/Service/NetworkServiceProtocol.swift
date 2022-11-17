@@ -40,6 +40,12 @@ protocol NetworkService: AnyObject {
         credentials: (token: TokenDTO, roomId: String),
         completion: @escaping (Result<ResponseDTO<RoomDTO>, HTTPError>) -> Void
     ) -> Cancellable?
+    
+    @discardableResult
+    func getMovie(
+        credentials: (token: TokenDTO, roomId: String),
+        completion: @escaping (Result<MovieDTO, HTTPError>) -> Void
+    ) -> Cancellable?
 }
 
 
@@ -47,8 +53,8 @@ protocol WebSocketService: URLSessionWebSocketDelegate {
     var webSocket: URLSessionWebSocketTask? {get set}
     
     func setupWebSocket()
-    func ping(successCompletion: @escaping () -> Void, errorCompletion: @escaping () -> Void)
-    func close(isAdmin: Bool, isRoomStarded: Bool)
-    func send(message: String)
-    func receive()
+    func pingSocket(successCompletion: @escaping () -> Void, errorCompletion: @escaping () -> Void)
+    func closeSocket(isRoomStarded: Bool)
+    func sendSocket(message: String)
+    func receiveSocket()
 }

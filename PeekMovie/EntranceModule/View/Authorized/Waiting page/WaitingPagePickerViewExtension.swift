@@ -14,12 +14,14 @@ extension WaitingPage: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int { 1 }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        self.usernames.count
+        guard let presenter = self.presenter else { return .zero }
+        return presenter.getRoomMembers().count
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        guard let presenter = self.presenter else { return nil }
         let title = NSMutableAttributedString(
-            string: self.usernames[row],
+            string: presenter.getRoomMembers()[row],
             attributes: [
                 NSAttributedString.Key.foregroundColor: row == 0 ? yellow : white,
                 NSAttributedString.Key.font : row == 0 ? detailFont : infoFont
