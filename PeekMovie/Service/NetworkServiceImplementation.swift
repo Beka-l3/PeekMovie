@@ -77,7 +77,7 @@ final class NetworkServiceImplementation: NetworkService {
     @discardableResult
     func getMovie(
         credentials: (token: TokenDTO, roomId: String),
-        completion: @escaping (Result<MovieDTO, HTTPError>) -> Void
+        completion: @escaping (Result<ResponseDTO<MovieDTO>, HTTPError>) -> Void
     ) -> Cancellable? {
         
         
@@ -173,7 +173,7 @@ final class NetworkServiceImplementation: NetworkService {
     
     private func createGetMovieRequest(token: TokenDTO, roomId: String) -> HTTPRequest {
         HTTPRequest(
-            route: "http://.../createRoom",
+            route: "http://.../getMovie",
             headers: [
                 "application/json": "Content-Type",
                 "gzip, deflate": "Accept-Encoding",

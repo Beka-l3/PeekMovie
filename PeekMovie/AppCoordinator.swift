@@ -22,7 +22,7 @@ final class AppCoordinator {
         self.networkClient = networkClient
         self.networkService = networkService
         self.entranceModule = EntranceModuleBuilder(isLoggedIn: isLoggedIn, networkService: networkService)
-        self.sessionModule = SessionModuleBuilder()
+        self.sessionModule = SessionModuleBuilder(networkService: networkService)
         
         entranceModule.presenter.appCoordinator = self
         sessionModule.presenter.appCoordinator = self
@@ -55,8 +55,8 @@ final class AppCoordinator {
 
 extension AppCoordinator: AppDelegateLogoPage {
     func pushEntrancePage() {
-        setEntranceModule()
-//        setSessionModule()
+//        setEntranceModule()
+        setSessionModule()
     }
 }
 

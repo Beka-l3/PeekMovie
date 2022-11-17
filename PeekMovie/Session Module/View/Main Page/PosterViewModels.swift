@@ -96,16 +96,24 @@ final class PosterViewModels: Colors, Fonts, MovieInfoViews, FadingLayers {
         )
     }
     
-    func setData(size: CGSize, movie: MovieDTO, animate: Bool = false) {
+    func setData(size: CGSize, movie: MovieDTO/*, animate: Bool = false*/) {
         movieInfoView.infoStackViewModel.setData(movie: movie)
         
         UIView.transition(with: movieRatingLabel, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in self?.movieRatingLabel.text = String(movie.rating) }
         UIView.transition(with: posterImage, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in self?.posterImage.image = nil }
+//        UIView.transition(with: posterImage, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in
+//            self?.posterImage.image = UIImage(named: movie.img)!
+//        } completion: { [weak self] done in
+//            animate ? self?.animatePosterImage(size: size, isNew: true) : nil
+//        }
+    }
+    
+    func setPosterImage(img: UIImage/*, size: CGSize, animate: Bool = false*/) {
         UIView.transition(with: posterImage, duration: 0.8, options: .transitionCrossDissolve) { [weak self] in
-            self?.posterImage.image = UIImage(named: movie.img)!
-        } completion: { [weak self] done in
-            animate ? self?.animatePosterImage(size: size, isNew: true) : nil
-        }
+            self?.posterImage.image = img
+        } //completion: { [weak self] done in
+//            animate ? self?.animatePosterImage(size: size, isNew: true) : nil
+//        }
     }
     
     func animatePosterImage(size: CGSize, isNew: Bool = false) {

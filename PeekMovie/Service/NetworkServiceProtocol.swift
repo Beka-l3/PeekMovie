@@ -44,7 +44,7 @@ protocol NetworkService: AnyObject {
     @discardableResult
     func getMovie(
         credentials: (token: TokenDTO, roomId: String),
-        completion: @escaping (Result<MovieDTO, HTTPError>) -> Void
+        completion: @escaping (Result<ResponseDTO<MovieDTO>, HTTPError>) -> Void
     ) -> Cancellable?
 }
 

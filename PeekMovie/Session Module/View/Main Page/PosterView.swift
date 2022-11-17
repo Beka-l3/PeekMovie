@@ -9,16 +9,19 @@ import UIKit
 
 
 protocol PosterViewDelegate: AnyObject {
-    
+    func getMovie()
+    func likeMovie()
+    func dislikeMovie()
 }
 
-class PosterViewPage: UIViewController, Colors {
-    
-    private var movies = Movies()
+class PosterViewPage: UIViewController, Colors, Informatives {
     
     weak var presenter: PosterViewDelegate?
     private var posterViewModels: PosterViewModels
     private var posterViewSize: CGSize { get { CGSize(width: view.safeAreaLayoutGuide.layoutFrame.width, height: view.safeAreaLayoutGuide.layoutFrame.height) } }
+    private lazy var infoPopLabel: UILabel = {getInfoPop()}()
+    private lazy var activityIndicator: UIActivityIndicatorView = { getActivityIndicator() }()
+    
     init() {
         self.posterViewModels = PosterViewModels()
         super.init(nibName: nil, bundle: nil)
@@ -34,12 +37,18 @@ class PosterViewPage: UIViewController, Colors {
     }
     override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+        infoPopLabel.center = EPConstants.infoPopCenter
     }
     override func viewWillLayoutSubviews() { super.viewWillLayoutSubviews()
         setupLayers()
     }
     override func viewDidAppear(_ animated: Bool) { super.viewDidAppear(animated)
-        posterViewModels.animatePosterImage(size: posterViewSize)
+//        posterViewModels.animatePosterImage(size: posterViewSize)
+        presenter?.getMovie()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) { super.viewWillDisappear(animated)
+        changeActivityIndicatorState(toActive: false)
     }
     
 //  MARK: - objc
@@ -50,8 +59,8 @@ class PosterViewPage: UIViewController, Colors {
     
     @objc func handleSwipe(gesture: UISwipeGestureRecognizer) {
         if gesture.state == .ended {
-            if gesture.direction == .left { animateSwipe(fade: self.posterViewModels.likeFade, label: self.posterViewModels.likeLabel) }
-            else if gesture.direction == .right { animateSwipe(fade: self.posterViewModels.disLikeFade, label: self.posterViewModels.disLikeLabel) }
+            if gesture.direction == .left { likeMovie() }
+            else if gesture.direction == .right { dislikeMovie() }
         }
     }
     
@@ -78,6 +87,8 @@ class PosterViewPage: UIViewController, Colors {
     private func setupViews() {
         let posterView = posterViewModels.posterView
         view.addSubview(posterView)
+        view.addSubview(infoPopLabel)
+        view.addSubview(activityIndicator)
         NSLayoutConstraint.activate([
             posterView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             posterView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -87,8 +98,18 @@ class PosterViewPage: UIViewController, Colors {
     }
     
     private func setupLayers() {
+        changeActivityIndicatorState(toActive: true)
         posterViewModels.setupLayers(size: posterViewSize)
-        posterViewModels.setData(size: posterViewSize, movie: movies.getMovie())
+    }
+    
+    private func likeMovie() {
+        changeActivityIndicatorState(toActive: true)
+        animateSwipe(didLike: true, completion: presenter?.likeMovie ?? setDummyMovieData)
+    }
+    
+    private func dislikeMovie() {
+        changeActivityIndicatorState(toActive: true)
+        animateSwipe(didLike: false, completion: presenter?.dislikeMovie ?? setDummyMovieData)
     }
     
     private func setGestureRecognizer() {
@@ -105,9 +126,12 @@ class PosterViewPage: UIViewController, Colors {
         view.addGestureRecognizer(leftSwipe)
     }
     
-    private func animateSwipe(fade: CAGradientLayer, label: UILabel) {
+    private func animateSwipe(didLike: Bool, completion: @escaping () -> Void) {
+        let fade = didLike ? self.posterViewModels.likeFade : self.posterViewModels.disLikeFade
+        let label = didLike ? self.posterViewModels.likeLabel : self.posterViewModels.disLikeLabel
         let initialOrigin = fade.frame.origin
         fade.opacity = 1
+        
         UIView.animate(withDuration: 0.8, delay: 0, options: [.curveEaseInOut]) {
             fade.frame.origin = .zero
             label.layer.opacity = 1
@@ -115,14 +139,61 @@ class PosterViewPage: UIViewController, Colors {
             UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseInOut]) {
                 fade.opacity = 0
                 label.layer.opacity = 0
-            } completion: { [weak self] done in
+            } completion: { _ in
                 fade.frame.origin = initialOrigin
-                
-                guard let self = self else {return}
-                if done {self.posterViewModels.setData(size: self.posterViewSize, movie: self.movies.getMovie(), animate: true)}
-                self.posterViewModels.movieInfoView.scrollView.setContentOffset(.zero, animated: true)
             }
+            completion()
         }
-        movies.increase()
+    }
+    
+    func setNewMovieData(newMovie: MovieDTO) {
+        posterViewModels.setData(size: posterViewSize, movie: newMovie)
+        posterViewModels.movieInfoView.scrollView.setContentOffset(.zero, animated: true)
+    }
+    
+    func setDummyMovieData() {
+        changeActivityIndicatorState(toActive: false)
+        setDummyPosterImage()
+    }
+    
+    func setPosterImage(img: UIImage) {
+        changeActivityIndicatorState(toActive: false)
+        posterViewModels.setPosterImage(img: img)
+        posterViewModels.animatePosterImage(size: posterViewSize)
+    }
+    
+    func setDummyPosterImage() {
+        changeActivityIndicatorState(toActive: false)
+    }
+    
+    func popInfoLabel(type: InfoPopType, completion: @escaping () -> Void = {}) {
+        changeActivityIndicatorState(toActive: false)
+        var text = ""
+        var detail = ""
+        var infoType: InformativeType = .tip
+        
+        switch type {
+        case .connectionError:
+            text = InfoPops.connectionError
+            detail = InfoPops.tryLater
+        case .serverError:
+            text = InfoPops.serverError
+            detail = InfoPops.tryLater
+        default:
+            text = InfoPops.internalError
+            detail = InfoPops.waitUpdate
+            infoType = .wrong
+        }
+        infoPopLabel.attributedText = getAttributedText(
+            text: text,
+            detail: detail,
+            type: infoType
+        )
+        animateInfoPop(label: infoPopLabel, completion: completion)
+    }
+    
+    func changeActivityIndicatorState(toActive: Bool) {
+        if toActive { activityIndicator.startAnimating() }
+        else { activityIndicator.stopAnimating() }
     }
 }

@@ -16,7 +16,8 @@ final class SessionModuleBuilder: Colors {
     let mainPage: PosterViewPage
     let secondaryPage: CollectionViewPage
     
-    init() {
+    
+    init(networkService: NetworkService) {
         self.mainPage = PosterViewPage()
         self.secondaryPage = CollectionViewPage()
         
@@ -25,8 +26,11 @@ final class SessionModuleBuilder: Colors {
         
         self.presenter = SessionModulePresenter(
             mainPage: mainPage,
-            secondaryPage: secondaryPage
+            secondaryPage: secondaryPage,
+            networkService: networkService
         )
+        
+        mainPage.presenter = self.presenter
         
         setTabBarItems()
     }
