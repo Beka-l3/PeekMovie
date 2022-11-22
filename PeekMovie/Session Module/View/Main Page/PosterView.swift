@@ -43,8 +43,8 @@ class PosterViewPage: UIViewController, Colors, Informatives {
         setupLayers()
     }
     override func viewDidAppear(_ animated: Bool) { super.viewDidAppear(animated)
-//        posterViewModels.animatePosterImage(size: posterViewSize)
         presenter?.getMovie()
+        posterViewModels.animatePosterImage(size: posterViewSize)
     }
     
     override func viewWillDisappear(_ animated: Bool) { super.viewWillDisappear(animated)

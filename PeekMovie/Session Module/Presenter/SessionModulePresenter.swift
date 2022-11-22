@@ -22,6 +22,8 @@ final class SessionModulePresenter {
     internal var currentMovie: MovieDTO?
     internal var currentPosterImage: UIImage?
     
+    internal var likedMovies: [MovieDTO]
+    
     init(
         mainPage: PosterViewPage,
         secondaryPage: CollectionViewPage,
@@ -30,6 +32,7 @@ final class SessionModulePresenter {
         self.mainPage = mainPage
         self.secondaryPage = secondaryPage
         self.networkService = networkService
+        self.likedMovies = []
     }
     
     internal func setNewMovie(movie: MovieDTO) {

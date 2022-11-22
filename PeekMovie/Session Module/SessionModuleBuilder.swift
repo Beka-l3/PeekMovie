@@ -31,6 +31,7 @@ final class SessionModuleBuilder: Colors {
         )
         
         mainPage.presenter = self.presenter
+        secondaryPage.presenter = self.presenter
         
         setTabBarItems()
     }
@@ -38,11 +39,11 @@ final class SessionModuleBuilder: Colors {
     private func setTabBarItems() {
         view.tabBar.backgroundColor = black
         
-        mainPage.tabBarItem.title = "Login"
+        mainPage.tabBarItem.title = ""
         mainPage.tabBarItem.selectedImage = .add.withTintColor( yellow, renderingMode: .alwaysOriginal )
         mainPage.tabBarItem.image = .add.withTintColor(.systemGray)
         
-        secondaryPage.tabBarItem.title = "Join"
+        secondaryPage.tabBarItem.title = ""
         secondaryPage.tabBarItem.selectedImage = .add.withTintColor( yellow, renderingMode: .alwaysOriginal )
         secondaryPage.tabBarItem.image = .add.withTintColor(.systemGray)
     }
