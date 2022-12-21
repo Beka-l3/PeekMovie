@@ -76,7 +76,9 @@ extension AppCoordinator: EntranceModuleDelegate {
 }
 
 extension AppCoordinator: SessionModuleDelegate {
-    
+    func quitFromRoom() {
+        setEntranceModule()
+    }
 }
 
 extension CALayer {

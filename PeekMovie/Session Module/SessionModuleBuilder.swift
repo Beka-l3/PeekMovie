@@ -39,19 +39,7 @@ final class SessionModuleBuilder: Colors {
     private func setTabBarItems() {
         view.tabBar.backgroundColor = black
         
-        mainPage.tabBarItem.title = ""
-//        mainPage.tabBarItem.image = .add.withTintColor(.systemGray)
-//        mainPage.tabBarItem.image = UIImage(named: "LikeDislikeWhite")!
-//        mainPage.tabBarItem.selectedImage = .add.withTintColor( yellow, renderingMode: .alwaysOriginal )
-//        mainPage.tabBarItem.selectedImage = UIImage(named: "LikeDislikeYellow")!
-        print(UIImage.add.size)
         mainPage.tabBarItem =  UITabBarItem.init(title: "", image: UIImage(named: "LikeDislikeWhite"), selectedImage: UIImage(named: "LikeDislikeYellow"))
-        
-        secondaryPage.tabBarItem.title = ""
-//        secondaryPage.tabBarItem.image = UIImage(named: "RatingWhite")!
-//        secondaryPage.tabBarItem.selectedImage = UIImage(named: "RatingYellow")!
         secondaryPage.tabBarItem = UITabBarItem.init(title: "", image: UIImage(named: "RatingWhite"), selectedImage: UIImage(named: "RatingYellow"))
     }
-    
-    
 }

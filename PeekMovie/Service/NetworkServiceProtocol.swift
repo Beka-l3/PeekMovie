@@ -46,6 +46,12 @@ protocol NetworkService: AnyObject {
         credentials: (token: TokenDTO, roomId: String),
         completion: @escaping (Result<ResponseDTO<MovieDTO>, HTTPError>) -> Void
     ) -> Cancellable?
+    
+    @discardableResult
+    func quitFromRoom(
+        credentials: (token: TokenDTO, roomId: String),
+        completion: @escaping (Result<ResponseDTO<String>, HTTPError>) -> Void
+    ) -> Cancellable?
 }
 
 

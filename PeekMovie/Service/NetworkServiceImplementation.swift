@@ -72,6 +72,14 @@ final class NetworkServiceImplementation: NetworkService {
         )
     }
     
+    func quitFromRoom(
+        credentials: (token: TokenDTO, roomId: String),
+        completion: @escaping (Result<ResponseDTO<String>, HTTPError>) -> Void
+    ) -> Cancellable? {
+        
+        return nil
+    }
+    
     
 //  MARK: - GET
     @discardableResult

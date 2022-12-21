@@ -181,6 +181,36 @@ final class MockNetworkService: NetworkService {
         return nil
     }
     
+    func quitFromRoom(
+        credentials: (token: TokenDTO, roomId: String),
+        completion: @escaping (Result<ResponseDTO<String>, HTTPError>) -> Void
+    ) -> Cancellable? {
+        
+        DispatchQueue.global().async {
+            sleep(UInt32.random(in: 0...3))
+            if Int.random(in: 0...99) == 0 {
+                MockNetworkService.executeCompletionOnMainThread {
+                    completion(.failure(.decodingFailed))
+                }
+            } else {
+                if Int.random(in: 0...49) == 0 {
+                    let error = ErrorDTO(error_message: ErrorMessage.username)
+                    MockNetworkService.executeCompletionOnMainThread {
+                        completion(.success(ResponseDTO(data: nil, error: error)))
+                    }
+                } else {
+                    let movie = MockNetworkService.Movies.getMovie()
+                    MockNetworkService.Movies.increase()
+                    MockNetworkService.executeCompletionOnMainThread {
+                        completion(.success(ResponseDTO<String>(data: "Succeed", error: nil)))
+                    }
+                }
+            }
+        }
+        
+        return nil
+    }
+    
 }
 
 

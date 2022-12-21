@@ -11,6 +11,7 @@ import UIKit
 protocol CollectionViewDelegate: AnyObject {
     func getDataAmount() -> Int
     func getItem(at: Int) -> MovieDTO
+    func quitFromRoom()
 }
 
 class CollectionViewPage: UIViewController, Colors, Informatives {
@@ -31,6 +32,7 @@ class CollectionViewPage: UIViewController, Colors, Informatives {
         setupViews()
         collectionViewModels.collectionView.delegate = self
         collectionViewModels.collectionView.dataSource = self
+        collectionViewModels.quitButton.addTarget(self, action: #selector(handleQuitFunction), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated)
@@ -42,7 +44,12 @@ class CollectionViewPage: UIViewController, Colors, Informatives {
         changeActivityIndicatorState(toActive: false)
     }
     
-//  MARK: -
+//  MARK: - func
+    @objc func handleQuitFunction() {
+        presenter?.quitFromRoom()
+    }
+    
+//  MARK: - func
     func updateData() {
         collectionViewModels.collectionView.reloadData()
     }

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SessionModuleDelegate {
-    
+    func quitFromRoom()
 }
 
 final class SessionModulePresenter: NSObject {
@@ -72,5 +72,3 @@ final class SessionModulePresenter: NSObject {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
 }
-
-// MARK: -- ⬇️ EXTENSIONS ⬇️
