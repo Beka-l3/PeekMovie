@@ -1,23 +1,17 @@
 # Peek
 
-## Elevator speach:
+## Elevator speach
 
-For everyone
+**For** everyone  
+**Who** wants to watch a movie with friends  
+**The product** Peek  
+**Is** just made for you  
+**Which** picks a movie for you  
+**In comparison** to noone  
+**Out product** is the first in it's kind   
 
-Who wants to watch a movie with friends
-
-The product Peek
-
-Is just made for you
-
-Which picks a movie for you
-
-In comparison to noone
-
-Out product is the first in it's kind   
-
-## Figma
-https://www.figma.com/file/vF228fret7NdUPPrbk3PWq/Peek?node-id=0%3A1&t=JihehCcHYJvawI3Q-1
+## Design
+[Figma link](https://www.figma.com/file/vF228fret7NdUPPrbk3PWq/Peek?node-id=0%3A1&t=JihehCcHYJvawI3Q-1)
 
 <!--iPhone 11-->
 <!---->
