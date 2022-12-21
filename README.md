@@ -1,12 +1,19 @@
-# TodoList
+# Peek
 
 ##Elevator speach:
+
 For everyone
+
 Who wants to watch a movie with friends
+
 The product Peek
+
 Is just made for you
+
 Which picks a movie for you
+
 In comparison to noone
+
 Out product is the first in it's kind   
 
 ## Figma
