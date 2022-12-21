@@ -46,6 +46,7 @@ class CollectionViewPage: UIViewController, Colors, Informatives {
     
 //  MARK: - func
     @objc func handleQuitFunction() {
+        changeActivityIndicatorState(toActive: true)
         presenter?.quitFromRoom()
     }
     
