@@ -6,7 +6,7 @@
 **Who** wants to watch a movie with friends  
 **The product** Peek  
 **Is** just made for you  
-**Which** picks a movie to watch in a group
+**Which** picks a movie to watch in a group  
 **In comparison** to noone  
 **Our product** is the first in it's kind   
 
