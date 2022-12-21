@@ -8,7 +8,7 @@
 **Is** just made for you  
 **Which** picks a movie for you  
 **In comparison** to noone  
-**Out product** is the first in it's kind   
+**Our product** is the first in it's kind   
 
 ## Design
 [Figma link](https://www.figma.com/file/vF228fret7NdUPPrbk3PWq/Peek?node-id=0%3A1&t=JihehCcHYJvawI3Q-1)
