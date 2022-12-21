@@ -55,8 +55,8 @@ final class AppCoordinator {
 
 extension AppCoordinator: AppDelegateLogoPage {
     func pushEntrancePage() {
-//        setEntranceModule()
-        setSessionModule()
+        setEntranceModule()
+//        setSessionModule()
     }
 }
 

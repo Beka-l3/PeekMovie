@@ -19,17 +19,10 @@ class AuthorizedPageViewModels: Colors, Fonts, Interactives, Informatives {
     
     lazy var logOutButton: UIButton = {
         getTeritaryButton(with: EPConstants.logOutButtonTitle)
-//        let b = UIButton(type: .system)
-//        b.setTitle(EPConstants.logOutButtonTitle, for: .normal)
-//        b.setTitleColor(yellow, for: .normal)
-//        b.backgroundColor = black
-//        b.titleLabel?.font = detailFont
-//        b.translatesAutoresizingMaskIntoConstraints = false
-//        return b
     }()
     
     lazy var tipLabel: UILabel = {
-        let username = "Ezpzbaby"
+        let username = UserDefaults.standard.string(forKey: GConstants.usernameKey) ?? "User"
         return getTipLabel(with: EPConstants.joinTipText, detail: username)
     }()
     
@@ -94,4 +87,11 @@ class AuthorizedPageViewModels: Colors, Fonts, Interactives, Informatives {
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
+    
+    func updateViews() {
+        let username = UserDefaults.standard.string(forKey: GConstants.usernameKey) ?? "User"
+        print(username)
+        print(UserDefaults.standard.string(forKey: GConstants.usernameKey))
+        tipLabel.attributedText = getTipLabel(with: EPConstants.joinTipText, detail: username).attributedText
+    }
 }

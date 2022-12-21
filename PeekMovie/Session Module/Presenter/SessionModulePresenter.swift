@@ -11,7 +11,7 @@ protocol SessionModuleDelegate {
     
 }
 
-final class SessionModulePresenter {
+final class SessionModulePresenter: NSObject {
     
     var appCoordinator: SessionModuleDelegate?
     
@@ -21,6 +21,8 @@ final class SessionModulePresenter {
     
     internal var currentMovie: MovieDTO?
     internal var currentPosterImage: UIImage?
+    
+    internal var webSocket: URLSessionWebSocketTask?
     
     internal var likedMovies: [MovieDTO]
     

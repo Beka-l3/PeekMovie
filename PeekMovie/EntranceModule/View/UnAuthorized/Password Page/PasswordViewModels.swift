@@ -23,9 +23,8 @@ class PasswordViewModels: Colors, Fonts, Interactives, Informatives {
     }()
     
     lazy var detailLabel: UILabel = {
-        let username = "Ezpzbaby"
-        let l = getTipLabel(with: EPConstants.passwordDetailText, detail: username, labelType: .detail)
-        return l
+        let username = UserDefaults.standard.string(forKey: GConstants.usernameKey) ?? "User"
+        return getTipLabel(with: EPConstants.passwordDetailText, detail: username, labelType: .detail)
     }()
     
     lazy var logoImage: UIImageView = {
@@ -93,4 +92,9 @@ class PasswordViewModels: Colors, Fonts, Interactives, Informatives {
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
+    
+    func updateViews() {
+        let username = UserDefaults.standard.string(forKey: GConstants.usernameKey) ?? "User"
+        detailLabel.attributedText = getTipLabel(with: EPConstants.passwordDetailText, detail: username, labelType: .detail).attributedText
+    }
 }

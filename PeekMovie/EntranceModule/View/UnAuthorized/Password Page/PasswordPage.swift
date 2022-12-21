@@ -36,6 +36,7 @@ class PasswordPage: UIViewController, Colors, Informatives {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.tintColor = yellow
         infoPopLabel.center = EPConstants.infoPopCenter
+        passwordViewModels.updateViews()
     }
     
     override func viewWillDisappear(_ animated: Bool) { super.viewWillDisappear(animated)

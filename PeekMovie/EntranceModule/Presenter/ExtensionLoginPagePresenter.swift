@@ -23,7 +23,6 @@ extension EntranceModulePresenter: LoginPagePresenter {
             switch result {
             case .success(let response):
                 if let data = response.data {
-                    print(data)
                     UserDefaults.standard.set(username, forKey: GConstants.usernameKey)
                     self.appCoordinator?.pushViewController(with: self.passwordPage, popToRoot: false)
                 } else if let error = response.error {

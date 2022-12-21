@@ -22,6 +22,7 @@
 		0758C2E6291174F800E48140 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2E5291174F800E48140 /* NetworkServiceProtocol.swift */; };
 		0758C2E82911752200E48140 /* NetworkServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2E72911752200E48140 /* NetworkServiceImplementation.swift */; };
 		0758C2EC2911777300E48140 /* TokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2EB2911777300E48140 /* TokenDTO.swift */; };
+		0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0763C00A2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift */; };
 		077B2ECD29069A060087504C /* SessionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ECC29069A060087504C /* SessionModuleBuilder.swift */; };
 		077B2ED229069A4B0087504C /* SessionModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ED129069A4B0087504C /* SessionModulePresenter.swift */; };
 		077B2ED629069ADC0087504C /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ED529069ADC0087504C /* PosterView.swift */; };
@@ -30,7 +31,7 @@
 		077B2EDC29080E2C0087504C /* PosterViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2EDB29080E2C0087504C /* PosterViewModels.swift */; };
 		077B2EDE29080E680087504C /* SMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2EDD29080E680087504C /* SMConstants.swift */; };
 		077B2EE029080E970087504C /* SMViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2EDF29080E970087504C /* SMViewModels.swift */; };
-		07832A2529248C390079E1E9 /* ExtensionWebSocketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07832A2429248C390079E1E9 /* ExtensionWebSocketPresenter.swift */; };
+		07832A2529248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07832A2429248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift */; };
 		07832A27292668950079E1E9 /* ExtensionPosterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07832A26292668950079E1E9 /* ExtensionPosterViewPresenter.swift */; };
 		0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F41E28F82990006F447F /* EntranceModulePresenter.swift */; };
 		0788F42228F829B5006F447F /* EntranceModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42128F829B5006F447F /* EntranceModuleBuilder.swift */; };
@@ -87,6 +88,7 @@
 		0758C2E5291174F800E48140 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		0758C2E72911752200E48140 /* NetworkServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImplementation.swift; sourceTree = "<group>"; };
 		0758C2EB2911777300E48140 /* TokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDTO.swift; sourceTree = "<group>"; };
+		0763C00A2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSessionWebSocketPresneter.swift; sourceTree = "<group>"; };
 		077B2ECC29069A060087504C /* SessionModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModuleBuilder.swift; sourceTree = "<group>"; };
 		077B2ED129069A4B0087504C /* SessionModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModulePresenter.swift; sourceTree = "<group>"; };
 		077B2ED529069ADC0087504C /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
@@ -95,7 +97,7 @@
 		077B2EDB29080E2C0087504C /* PosterViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewModels.swift; sourceTree = "<group>"; };
 		077B2EDD29080E680087504C /* SMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMConstants.swift; sourceTree = "<group>"; };
 		077B2EDF29080E970087504C /* SMViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMViewModels.swift; sourceTree = "<group>"; };
-		07832A2429248C390079E1E9 /* ExtensionWebSocketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionWebSocketPresenter.swift; sourceTree = "<group>"; };
+		07832A2429248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionEntranceWebSocketPresenter.swift; sourceTree = "<group>"; };
 		07832A26292668950079E1E9 /* ExtensionPosterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPosterViewPresenter.swift; sourceTree = "<group>"; };
 		0788F41E28F82990006F447F /* EntranceModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModulePresenter.swift; sourceTree = "<group>"; };
 		0788F42128F829B5006F447F /* EntranceModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModuleBuilder.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				077B2ED129069A4B0087504C /* SessionModulePresenter.swift */,
 				07832A26292668950079E1E9 /* ExtensionPosterViewPresenter.swift */,
 				0731BB21292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift */,
+				0763C00A2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -292,7 +295,7 @@
 				07ABF661291AD4BF007C4A52 /* ExtensionRegisterPagePresenter.swift */,
 				07ABF663291AD4DA007C4A52 /* ExtensionAuthorizedPagePresenter.swift */,
 				07ABF665291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift */,
-				07832A2429248C390079E1E9 /* ExtensionWebSocketPresenter.swift */,
+				07832A2429248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -512,7 +515,7 @@
 				07ABF664291AD4DA007C4A52 /* ExtensionAuthorizedPagePresenter.swift in Sources */,
 				07DBA85A28F55E3B000A1312 /* AuthorizedPageViewModels.swift in Sources */,
 				077B2EE029080E970087504C /* SMViewModels.swift in Sources */,
-				07832A2529248C390079E1E9 /* ExtensionWebSocketPresenter.swift in Sources */,
+				07832A2529248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift in Sources */,
 				073B585228F97C30000EE21F /* RegisterPageViewModels.swift in Sources */,
 				07EB1CBB28FD47C90031598A /* NrtworkClientProtocol.swift in Sources */,
 				079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */,
@@ -533,6 +536,7 @@
 				07A66F2B2916CB2F003BB6B9 /* ErrorDTO.swift in Sources */,
 				077B2ECD29069A060087504C /* SessionModuleBuilder.swift in Sources */,
 				073B585428F97CA8000EE21F /* PeekID.swift in Sources */,
+				0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */,
 				07DBA85D28F55E77000A1312 /* DesignProtocols.swift in Sources */,
 				07ABF65C29193799007C4A52 /* InformativeViewModels.swift in Sources */,
 				077B2EDC29080E2C0087504C /* PosterViewModels.swift in Sources */,
