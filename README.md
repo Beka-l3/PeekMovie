@@ -1,6 +1,6 @@
 # Peek
 
-## Elevator speach
+## Elevator pitch 
 
 **For** everyone  
 **Who** wants to watch a movie with friends  
