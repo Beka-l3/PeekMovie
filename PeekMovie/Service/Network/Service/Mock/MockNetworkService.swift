@@ -8,12 +8,14 @@
 import UIKit
 
 final class MockNetworkService: NetworkService {
-    private static func executeCompletionOnMainThread(_ closure: @escaping () -> Void) {
+    internal static func executeCompletionOnMainThread(_ closure: @escaping () -> Void) {
         DispatchQueue.main.async {
             closure()
         }
     }
-    
+}
+
+extension MockNetworkService {
     func register(
         credentials: RegistrationFormDTO,
         completion: @escaping (Result<ResponseDTO<TokenDTO>, HTTPError>) -> Void
@@ -42,7 +44,11 @@ final class MockNetworkService: NetworkService {
         
         return nil
     }
+}
+
+extension MockNetworkService {
     
+    @discardableResult
     func login(
         credentials: PeekID,
         completion: @escaping (Result<ResponseDTO<TokenDTO>, HTTPError>) -> Void
@@ -70,6 +76,9 @@ final class MockNetworkService: NetworkService {
         }
         return nil
     }
+}
+
+extension MockNetworkService {
     
     func checkUsername(
         credentials: PeekID,
@@ -96,6 +105,9 @@ final class MockNetworkService: NetworkService {
         }
         return nil
     }
+}
+
+extension MockNetworkService {
     
     func createRoom(
         credentials: TokenDTO,
@@ -113,6 +125,9 @@ final class MockNetworkService: NetworkService {
         }
         return nil
     }
+}
+
+extension MockNetworkService {
     
     func joinRoom(
         credentials: (token: TokenDTO, roomId: String),
@@ -148,6 +163,9 @@ final class MockNetworkService: NetworkService {
         
         return nil
     }
+}
+
+extension MockNetworkService {
     
     @discardableResult
     func getMovie(
@@ -180,6 +198,9 @@ final class MockNetworkService: NetworkService {
         
         return nil
     }
+}
+
+extension MockNetworkService {
     
     func quitFromRoom(
         credentials: (token: TokenDTO, roomId: String),
@@ -212,7 +233,6 @@ final class MockNetworkService: NetworkService {
     }
     
 }
-
 
 extension MockNetworkService {
     struct Movies {

@@ -17,10 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let logoPage = LogoPage()
+        let LaunchPage = LaunchPage()
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        let navigationController = UINavigationController(rootViewController: logoPage)
+        let navigationController = UINavigationController(rootViewController: LaunchPage)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let appCoordinator = AppCoordinator(
             isLoggedIn: isLoggedIn,
-            logoPage: logoPage,
+            launchPage: LaunchPage,
             networkClient: networkClient,
             networkService: networkService
         )

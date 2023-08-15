@@ -8,7 +8,7 @@
 import UIKit
 
 
-class LogoPage: UIViewController, Colors, Animations {
+class LaunchPage: UIViewController, Colors, Animations {
     private lazy var logoImage: UIImageView = {
         let i = UIImageView()
         i.image = EPConstants.logoImage

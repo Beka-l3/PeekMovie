@@ -11,14 +11,14 @@ import UIKit
 
 final class AppCoordinator {
     
-    private let logoPage: LogoPage
+    private let launchPage: LaunchPage
     private let networkClient: NetworkClient
     private let networkService: NetworkService
     private let entranceModule: EntranceModuleBuilder
     private let sessionModule: SessionModuleBuilder
     
-    init(isLoggedIn: Bool, logoPage: LogoPage, networkClient: NetworkClient, networkService: NetworkService) {
-        self.logoPage = logoPage
+    init(isLoggedIn: Bool, launchPage: LaunchPage, networkClient: NetworkClient, networkService: NetworkService) {
+        self.launchPage = launchPage
         self.networkClient = networkClient
         self.networkService = networkService
         self.entranceModule = EntranceModuleBuilder(isLoggedIn: isLoggedIn, networkService: networkService)
@@ -29,25 +29,25 @@ final class AppCoordinator {
     }
     
     private func popToRootViewController() {
-        logoPage.navigationController?.popToRootViewController(animated: true)
+        launchPage.navigationController?.popToRootViewController(animated: true)
     }
     
     private func pushViewController(with vc: UIViewController) {
-        logoPage.navigationController?.pushViewController(vc, animated: true)
+        launchPage.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func popLast() {
-        logoPage.navigationController?.popViewController(animated: true)
+        launchPage.navigationController?.popViewController(animated: true)
     }
     
     private func setEntranceModule() {
         popToRootViewController()
-        logoPage.navigationController?.pushViewController(entranceModule.view, animated: true)
+        launchPage.navigationController?.pushViewController(entranceModule.view, animated: true)
     }
     
     private func setSessionModule() {
         popToRootViewController()
-        logoPage.navigationController?.pushViewController(sessionModule.view, animated: true)
+        launchPage.navigationController?.pushViewController(sessionModule.view, animated: true)
     }
 }
 
