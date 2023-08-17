@@ -8,7 +8,7 @@
 import UIKit
 
 
-protocol Fonts {
+protocol FontsOld {
     var infoFont: UIFont {get}
     var infoBoldFont: UIFont {get}
     var detailFont: UIFont {get}
@@ -21,7 +21,7 @@ protocol Fonts {
     var largeTitleFont: UIFont {get}
 }
 
-extension Fonts {
+extension FontsOld {
     var infoFont: UIFont {UIFont.systemFont(ofSize: 11)}
     var infoBoldFont: UIFont {UIFont.boldSystemFont(ofSize: 11)}
     var detailFont: UIFont {UIFont.systemFont(ofSize: 14)}
@@ -34,7 +34,7 @@ extension Fonts {
     var largeTitleFont: UIFont {UIFont.systemFont(ofSize: 56)}
 }
 
-protocol Colors {
+protocol ColorsOld {
     var black: UIColor {get}
     var semiBlack: UIColor {get}
     var clearBlack: UIColor {get}
@@ -52,7 +52,7 @@ protocol Colors {
     var clearYellow: UIColor {get}
 }
 
-extension Colors {
+extension ColorsOld {
     var black: UIColor {UIColor(red: 0, green: 0, blue: 0, alpha: 1)}
     var semiBlack: UIColor {UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)}
     var clearBlack: UIColor {UIColor(red: 0, green: 0, blue: 0, alpha: 0)}

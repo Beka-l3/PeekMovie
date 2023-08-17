@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class AuthorizedPageViewComponents: Colors, Fonts, Interactives, Informatives {
+final class AuthorizedPageViewComponents: ColorsOld, FontsOld, Interactives, Informatives {
     
     lazy var logoImage: UIImageView = {
         let i = UIImageView()

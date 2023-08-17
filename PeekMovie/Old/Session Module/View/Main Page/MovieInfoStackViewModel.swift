@@ -8,7 +8,7 @@
 import UIKit
 
 
-class MovieInfoStackViewModel: Fonts, Colors, FadingLayers, MovieInfoViews {
+class MovieInfoStackViewModel: FontsOld, ColorsOld, FadingLayers, MovieInfoViews {
     // MARK: PLEASE FIX ME
     lazy var movieTitleLabel: UILabel = { getLabel(font: titleFont, text: "Movie title: additional informative title") }()
     lazy var movieTitleMask: CAGradientLayer = { getFadingLayer3(from: .left, locations: [0.8, 0.9, 1]) }()

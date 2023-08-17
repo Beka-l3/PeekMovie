@@ -22,7 +22,7 @@ enum InfoPopType {
     case connectionError, serverError, internalError, unknown
 }
 
-protocol Informatives: Colors, Fonts {
+protocol Informatives: ColorsOld, FontsOld {
     func getTipLabel(with text: String, detail: String, labelType: InformativeType) -> UILabel
     func getInfoPop() -> UILabel
     func getActivityIndicator() -> UIActivityIndicatorView

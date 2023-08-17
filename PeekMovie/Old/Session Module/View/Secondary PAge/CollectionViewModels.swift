@@ -8,7 +8,7 @@
 import UIKit
 
 
-class CollectionViewModels: Interactives, Informatives, Colors, Fonts, MovieInfoViews {
+class CollectionViewModels: Interactives, Informatives, ColorsOld, FontsOld, MovieInfoViews {
     
     lazy var quitButton: UIButton = getTeritaryButton(with: "Quit")
     lazy var ratingLabel: UILabel = getLabel(font: headerFont, text: "Room ratings")

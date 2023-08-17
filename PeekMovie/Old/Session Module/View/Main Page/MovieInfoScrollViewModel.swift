@@ -8,7 +8,7 @@
 import UIKit
 
 
-class MoviewInfoScrollViewModel: Colors, FadingLayers {
+class MoviewInfoScrollViewModel: ColorsOld, FadingLayers {
     
     lazy var infoStackViewModel: MovieInfoStackViewModel = { MovieInfoStackViewModel() }()
     lazy var whiteFadeScrollBackground: CAGradientLayer = { getFadingLayer3(locations: [0.05, 0.15, 0.4], color: .black) }()

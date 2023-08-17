@@ -14,7 +14,7 @@ protocol PosterViewDelegate: AnyObject {
     func dislikeMovie()
 }
 
-class PosterViewPage: UIViewController, Colors, Informatives {
+class PosterViewPage: UIViewController, ColorsOld, Informatives {
     
     weak var presenter: PosterViewDelegate?
     private var posterViewModels: PosterViewModels

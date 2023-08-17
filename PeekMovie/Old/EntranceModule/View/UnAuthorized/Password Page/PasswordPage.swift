@@ -12,7 +12,7 @@ protocol PasswordPagePresenter: AnyObject {
     func checkPassword(with password: String)
 }
 
-final class PasswordPage: UIViewController, Colors, Informatives {
+final class PasswordPage: UIViewController, ColorsOld, Informatives {
     
     weak var presenter: PasswordPagePresenter?
     private let viewComponents: PasswordViewComponents

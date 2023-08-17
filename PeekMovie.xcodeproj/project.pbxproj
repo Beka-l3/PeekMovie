@@ -34,6 +34,7 @@
 		0779775A2A8E33EA000DAF72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977592A8E33EA000DAF72 /* AppDelegate.swift */; };
 		0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */; };
 		0779775E2A8E3553000DAF72 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779775D2A8E3553000DAF72 /* RootViewController.swift */; };
+		077977632A8E367F000DAF72 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977622A8E367F000DAF72 /* Fonts.swift */; };
 		077B2ECD29069A060087504C /* SessionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ECC29069A060087504C /* SessionModuleBuilder.swift */; };
 		077B2ED229069A4B0087504C /* SessionModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ED129069A4B0087504C /* SessionModulePresenter.swift */; };
 		077B2ED629069ADC0087504C /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ED529069ADC0087504C /* PosterView.swift */; };
@@ -110,6 +111,25 @@
 		077977592A8E33EA000DAF72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0779775D2A8E3553000DAF72 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		077977622A8E367F000DAF72 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		077977892A8E3839000DAF72 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		0779778A2A8E3839000DAF72 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		0779778B2A8E383A000DAF72 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		0779778C2A8E383A000DAF72 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		0779778D2A8E383A000DAF72 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		0779778E2A8E383A000DAF72 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		0779778F2A8E383A000DAF72 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		077977902A8E383A000DAF72 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		077977912A8E383A000DAF72 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		077977922A8E383A000DAF72 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		077977932A8E383B000DAF72 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		077977942A8E383B000DAF72 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		077977952A8E383B000DAF72 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		077977962A8E383B000DAF72 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		077977972A8E383B000DAF72 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		077977982A8E383B000DAF72 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		077977992A8E383C000DAF72 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		0779779A2A8E383C000DAF72 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
 		077B2ECC29069A060087504C /* SessionModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModuleBuilder.swift; sourceTree = "<group>"; };
 		077B2ED129069A4B0087504C /* SessionModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModulePresenter.swift; sourceTree = "<group>"; };
 		077B2ED529069ADC0087504C /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
@@ -304,6 +324,55 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		077977602A8E3662000DAF72 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		077977612A8E3674000DAF72 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				077977882A8E382D000DAF72 /* Fonts */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		077977882A8E382D000DAF72 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				077977622A8E367F000DAF72 /* Fonts.swift */,
+				0779779B2A8E3851000DAF72 /* ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0779779B2A8E3851000DAF72 /* ttf */ = {
+			isa = PBXGroup;
+			children = (
+				0779778A2A8E3839000DAF72 /* Poppins-Black.ttf */,
+				0779779A2A8E383C000DAF72 /* Poppins-BlackItalic.ttf */,
+				077977932A8E383B000DAF72 /* Poppins-Bold.ttf */,
+				0779778F2A8E383A000DAF72 /* Poppins-BoldItalic.ttf */,
+				0779778E2A8E383A000DAF72 /* Poppins-ExtraBold.ttf */,
+				077977952A8E383B000DAF72 /* Poppins-ExtraBoldItalic.ttf */,
+				077977982A8E383B000DAF72 /* Poppins-ExtraLight.ttf */,
+				077977962A8E383B000DAF72 /* Poppins-ExtraLightItalic.ttf */,
+				077977942A8E383B000DAF72 /* Poppins-Italic.ttf */,
+				077977972A8E383B000DAF72 /* Poppins-Light.ttf */,
+				077977892A8E3839000DAF72 /* Poppins-LightItalic.ttf */,
+				077977992A8E383C000DAF72 /* Poppins-Medium.ttf */,
+				0779778B2A8E383A000DAF72 /* Poppins-MediumItalic.ttf */,
+				077977922A8E383A000DAF72 /* Poppins-Regular.ttf */,
+				0779778D2A8E383A000DAF72 /* Poppins-SemiBold.ttf */,
+				077977902A8E383A000DAF72 /* Poppins-SemiBoldItalic.ttf */,
+				0779778C2A8E383A000DAF72 /* Poppins-Thin.ttf */,
+				077977912A8E383A000DAF72 /* Poppins-ThinItalic.ttf */,
+			);
+			path = ttf;
+			sourceTree = "<group>";
+		};
 		077B2ECB290699F00087504C /* Session Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +508,8 @@
 		07DBA83D28F3F734000A1312 /* PeekMovie */ = {
 			isa = PBXGroup;
 			children = (
+				077977612A8E3674000DAF72 /* Utils */,
+				077977602A8E3662000DAF72 /* ViewComponents */,
 				0779775F2A8E3567000DAF72 /* App */,
 				077977582A8E33B6000DAF72 /* Old */,
 				07DBA85728F55E07000A1312 /* Storyboard */,
@@ -602,6 +673,7 @@
 				0758C2E82911752200E48140 /* NetworkServiceImplementation.swift in Sources */,
 				0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */,
 				077B2ED629069ADC0087504C /* PosterView.swift in Sources */,
+				077977632A8E367F000DAF72 /* Fonts.swift in Sources */,
 				07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */,
 				07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */,
 				073B584D28F97B20000EE21F /* RegisterPage.swift in Sources */,
@@ -804,8 +876,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -813,6 +885,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ezpzbaby.PeekMovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -833,8 +908,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -842,6 +917,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ezpzbaby.PeekMovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

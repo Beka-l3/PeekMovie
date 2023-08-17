@@ -15,7 +15,7 @@ enum GradientDirectionFrom {
     case top, bottom, left, right
 }
 
-protocol FadingLayers: Colors {
+protocol FadingLayers: ColorsOld {
     func getFadingLayer2(from: GradientDirectionFrom, locations: [NSNumber], color: ColorForFade, zPos: CGFloat) -> CAGradientLayer
     func getFadingLayer3(from: GradientDirectionFrom, locations: [NSNumber], color: ColorForFade, zPos: CGFloat) -> CAGradientLayer
 }
@@ -64,7 +64,7 @@ extension FadingLayers {
     }
 }
 
-protocol MovieInfoViews: Colors {
+protocol MovieInfoViews: ColorsOld {
     func getLabel(font: UIFont, text: String, color: UIColor, lines: Int) -> UILabel
     func getStack(views: [UIView], axis: NSLayoutConstraint.Axis, spacing: CGFloat, isEqual: Bool) -> UIStackView
 }

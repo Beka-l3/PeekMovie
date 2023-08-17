@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class PasswordViewComponents: Colors, Fonts, Interactives, Informatives {
+final class PasswordViewComponents: ColorsOld, FontsOld, Interactives, Informatives {
     
     lazy var continueButton: UIButton = {
         getFocusButton(with: EPConstants.continueButtonTitle)

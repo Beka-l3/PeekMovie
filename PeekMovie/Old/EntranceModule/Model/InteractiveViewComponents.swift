@@ -6,7 +6,7 @@
 //
 import UIKit
 
-protocol Interactives: Colors, Fonts {
+protocol Interactives: ColorsOld, FontsOld {
     func getFocusButton(with title: String) -> UIButton
     func getSecondaryButton(with title: String) -> UIButton
     func getTeritaryButton(with title: String, isBold: Bool) -> UIButton

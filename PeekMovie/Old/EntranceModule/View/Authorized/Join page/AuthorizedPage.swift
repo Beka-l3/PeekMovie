@@ -13,7 +13,7 @@ protocol AuthorizedPagePresenter: AnyObject {
     func logOut()
 }
 
-final class AuthorizedPage: UIViewController, Colors, Informatives {
+final class AuthorizedPage: UIViewController, ColorsOld, Informatives {
 
     weak var presenter: AuthorizedPagePresenter?
     var isAdminOut: Bool

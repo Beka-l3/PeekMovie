@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieCollectionCell: UICollectionViewCell, Colors, Informatives, FadingLayers {
+class MovieCollectionCell: UICollectionViewCell, ColorsOld, Informatives, FadingLayers {
     static let identifier = "CellId"
     
     private lazy var activityIndicator: UIActivityIndicatorView = { getActivityIndicator() }()

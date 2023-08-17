@@ -15,7 +15,7 @@ protocol WaitingRoomPresenter: AnyObject {
     func getRoomMembers() -> [String]
 }
 
-final class WaitingPage: UIViewController, Colors, Informatives {
+final class WaitingPage: UIViewController, ColorsOld, Informatives {
     
     weak var presenter: WaitingRoomPresenter?
     

@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class PosterViewModels: Colors, Fonts, MovieInfoViews, FadingLayers {
+final class PosterViewModels: ColorsOld, FontsOld, MovieInfoViews, FadingLayers {
     lazy var movieRatingLabel: UILabel = { getLabel(font: titleFont, text: "0.0", color: yellow) }()
     lazy var movieInfoView: MoviewInfoScrollViewModel = { MoviewInfoScrollViewModel() }()
     lazy var darkFadeTop: CAGradientLayer = { getFadingLayer3(from: .top, locations: [0.1, 0.55, 1], color: .black) }()

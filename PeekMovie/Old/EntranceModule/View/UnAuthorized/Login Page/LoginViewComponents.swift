@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class LoginViewComponents: Colors, Fonts, Interactives, Informatives {
+final class LoginViewComponents: ColorsOld, FontsOld, Interactives, Informatives {
     
     lazy var loginButton: UIButton = {
         getFocusButton(with: EPConstants.loginButtonTitle)

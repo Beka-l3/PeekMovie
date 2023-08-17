@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class WaitingRoomViewComponents: Colors, Fonts, Interactives, Informatives {
+final class WaitingRoomViewComponents: ColorsOld, FontsOld, Interactives, Informatives {
     lazy var logoImage: UIImageView = {
         let i = UIImageView()
         i.image = EPConstants.logoImage

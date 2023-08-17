@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class RegisterPageViewComponents: Colors, Fonts, Interactives, Informatives {
+final class RegisterPageViewComponents: ColorsOld, FontsOld, Interactives, Informatives {
     
     lazy var registerButton: UIButton = {
         getFocusButton(with: EPConstants.registerButtonTitle)

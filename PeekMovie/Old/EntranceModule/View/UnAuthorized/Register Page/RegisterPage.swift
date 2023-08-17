@@ -11,7 +11,7 @@ protocol RegisterPagePresenter: AnyObject {
     func checkRegistrationData(with id: RegistrationFormDTO)
 }
 
-final class RegisterPage: UIViewController, Colors, Informatives {
+final class RegisterPage: UIViewController, ColorsOld, Informatives {
     
     weak var presenter: RegisterPagePresenter?
     private var viewComponents: RegisterPageViewComponents

@@ -12,7 +12,7 @@ protocol LoginPagePresenter: AnyObject {
     func openRegisterPage()
 }
 
-final class LoginPage: UIViewController, Colors, Informatives {
+final class LoginPage: UIViewController, ColorsOld, Informatives {
     
     weak var presenter: LoginPagePresenter?
     private let viewComponents: LoginViewComponents

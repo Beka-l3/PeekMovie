@@ -14,7 +14,7 @@ protocol CollectionViewDelegate: AnyObject {
     func quitFromRoom()
 }
 
-class CollectionViewPage: UIViewController, Colors, Informatives {
+class CollectionViewPage: UIViewController, ColorsOld, Informatives {
     
     weak var presenter: CollectionViewDelegate?
     internal var collectionViewModels: CollectionViewModels
