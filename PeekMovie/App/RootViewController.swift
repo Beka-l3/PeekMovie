@@ -13,28 +13,31 @@ final class RootViewController: UIViewController {
     
     lazy var someLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hello World"
-        label.font = Fonts.regular12
+        label.text = lorem[currentColorIndex]
+        label.font = Fonts.thin24
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    var lorem = ["Hello World!", "Privet Beka!", "Salem Kamil!", "Hola Senior!"]
+    var currentColorIndex = 0
+    var didAnimationStart = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         setupViews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-            
-        startAnimation()
+        
+        if !didAnimationStart {
+            didAnimationStart = true
+            startAnimation()
+        }
     }
-    
-    
     
     private func setupViews() {
         view.backgroundColor = .black
@@ -54,7 +57,13 @@ final class RootViewController: UIViewController {
             UIView.animate(withDuration: 0.6, delay: 1.8, options: [.transitionCrossDissolve, .curveEaseInOut]) {
                 self.view.backgroundColor = .black
             } completion: { done in
-                self.appCoordinator?.launchScreenDidFinishAnimation = true
+                if let appCoordinator = self.appCoordinator, !appCoordinator.launchScreenDidFinishAnimation {
+                    appCoordinator.launchScreenDidFinishAnimation = true
+                }
+                
+                self.currentColorIndex = (self.currentColorIndex + 1) % self.lorem.count
+                self.someLabel.text = self.lorem[self.currentColorIndex]
+                self.startAnimation()
             }
         }
     }
