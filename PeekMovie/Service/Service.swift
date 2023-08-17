@@ -11,4 +11,6 @@ enum Service {
     
     static let api = APIService()
     
+    static let user = UserService()
+    
 }

@@ -57,6 +57,7 @@
 		077977DA2A8E6D3C000DAF72 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977D92A8E6D3C000DAF72 /* APIService.swift */; };
 		077977DC2A8E717B000DAF72 /* UINavigationController+FadeTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977DB2A8E717B000DAF72 /* UINavigationController+FadeTo.swift */; };
 		077977E02A8E7253000DAF72 /* Service+KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977DF2A8E7253000DAF72 /* Service+KeyChain.swift */; };
+		077977E32A8E789F000DAF72 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977E22A8E789F000DAF72 /* UserService.swift */; };
 		077B2ECD29069A060087504C /* SessionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ECC29069A060087504C /* SessionModuleBuilder.swift */; };
 		077B2ED229069A4B0087504C /* SessionModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ED129069A4B0087504C /* SessionModulePresenter.swift */; };
 		077B2ED629069ADC0087504C /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ED529069ADC0087504C /* PosterView.swift */; };
@@ -156,6 +157,7 @@
 		077977D92A8E6D3C000DAF72 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		077977DB2A8E717B000DAF72 /* UINavigationController+FadeTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+FadeTo.swift"; sourceTree = "<group>"; };
 		077977DF2A8E7253000DAF72 /* Service+KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service+KeyChain.swift"; sourceTree = "<group>"; };
+		077977E22A8E789F000DAF72 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		077B2ECC29069A060087504C /* SessionModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModuleBuilder.swift; sourceTree = "<group>"; };
 		077B2ED129069A4B0087504C /* SessionModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModulePresenter.swift; sourceTree = "<group>"; };
 		077B2ED529069ADC0087504C /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				074B8A632A8C239200EB39C2 /* Service.swift */,
 				077977DE2A8E7237000DAF72 /* Extension */,
 				074B8A612A8C237200EB39C2 /* Network */,
+				077977E12A8E788A000DAF72 /* User */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -415,6 +418,14 @@
 				077977DF2A8E7253000DAF72 /* Service+KeyChain.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		077977E12A8E788A000DAF72 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				077977E22A8E789F000DAF72 /* UserService.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		077B2ECB290699F00087504C /* Session Module */ = {
@@ -749,6 +760,7 @@
 				074B8A732A8C260800EB39C2 /* JoinRoomNSE.swift in Sources */,
 				077B2EE029080E970087504C /* SMViewModels.swift in Sources */,
 				07832A2529248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift in Sources */,
+				077977E32A8E789F000DAF72 /* UserService.swift in Sources */,
 				073B585228F97C30000EE21F /* RegisterPageViewComponents.swift in Sources */,
 				07EB1CBB28FD47C90031598A /* NrtworkClientProtocol.swift in Sources */,
 				079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */,

@@ -57,8 +57,8 @@ final class RootViewController: UIViewController {
             UIView.animate(withDuration: 0.6, delay: 1.8, options: [.transitionCrossDissolve, .curveEaseInOut]) {
                 self.view.backgroundColor = .black
             } completion: { done in
-                if let appCoordinator = self.appCoordinator, !appCoordinator.launchScreenDidFinishAnimation {
-                    appCoordinator.launchScreenDidFinishAnimation = true
+                if let appCoordinator = self.appCoordinator, !appCoordinator.didlaunchScreenFinishAnimation {
+                    appCoordinator.didlaunchScreenFinishAnimation = true
                 }
                 
                 self.currentColorIndex = (self.currentColorIndex + 1) % self.lorem.count
