@@ -15,5 +15,4 @@ final class NetworkServiceImplementation: NetworkService {
     init(networkClient: NetworkClient) {
         self.networkClient = networkClient
     }
-    
 }

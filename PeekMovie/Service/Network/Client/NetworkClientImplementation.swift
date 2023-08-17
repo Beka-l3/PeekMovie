@@ -11,6 +11,7 @@ struct NetworkClientImplementation: NetworkClient {
 
     init(urlSession: URLSession) {
         self.urlSession = urlSession
+        
     }
 
     @discardableResult
@@ -31,9 +32,15 @@ struct NetworkClientImplementation: NetworkClient {
                 switch handledResult {
                 case .success:
                     let jsonDecoder = JSONDecoder()
-
+                    
                     jsonDecoder.keyDecodingStrategy = request.keyDecodingStrategy
                     jsonDecoder.dateDecodingStrategy = request.dateDecodingStrategy
+
+                    if T.self == Empty.self && unwrappedData.isEmpty {
+                        completion(.success(Empty() as! T))
+                        return
+                    }
+                    
                     guard let result = try? jsonDecoder.decode(T.self, from: unwrappedData) else {
                         NetworkClientImplementation.executeCompletionOnMainThread {
                             completion(.failure(HTTPError.decodingFailed))
@@ -46,7 +53,7 @@ struct NetworkClientImplementation: NetworkClient {
                     }
                 case .failure:
                     NetworkClientImplementation.executeCompletionOnMainThread {
-                        completion(.failure(HTTPError.decodingFailed))
+                        completion(.failure(HTTPError.failed))
                     }
                 }
             }
@@ -80,7 +87,7 @@ struct NetworkClientImplementation: NetworkClient {
         generatedRequest.httpBody = request.body
 
         request.headers.forEach {
-            generatedRequest.addValue($0.key, forHTTPHeaderField: $0.value)
+            generatedRequest.addValue($0.value, forHTTPHeaderField: $0.key)
         }
         return generatedRequest
     }

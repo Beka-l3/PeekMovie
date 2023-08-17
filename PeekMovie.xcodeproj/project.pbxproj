@@ -53,6 +53,8 @@
 		077977AB2A8E3F4C000DAF72 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0779778F2A8E383A000DAF72 /* Poppins-BoldItalic.ttf */; };
 		077977AC2A8E3F4C000DAF72 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 077977942A8E383B000DAF72 /* Poppins-Italic.ttf */; };
 		077977AD2A8E3F4C000DAF72 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 077977972A8E383B000DAF72 /* Poppins-Light.ttf */; };
+		077977D82A8E6C0B000DAF72 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977D72A8E6C0B000DAF72 /* Empty.swift */; };
+		077977DA2A8E6D3C000DAF72 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977D92A8E6D3C000DAF72 /* APIService.swift */; };
 		077B2ECD29069A060087504C /* SessionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ECC29069A060087504C /* SessionModuleBuilder.swift */; };
 		077B2ED229069A4B0087504C /* SessionModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ED129069A4B0087504C /* SessionModulePresenter.swift */; };
 		077B2ED629069ADC0087504C /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ED529069ADC0087504C /* PosterView.swift */; };
@@ -148,6 +150,8 @@
 		077977982A8E383B000DAF72 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		077977992A8E383C000DAF72 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		0779779A2A8E383C000DAF72 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		077977D72A8E6C0B000DAF72 /* Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Empty.swift; path = ../../../../../../_Components/NetworkClient/Model/Empty.swift; sourceTree = "<group>"; };
+		077977D92A8E6D3C000DAF72 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		077B2ECC29069A060087504C /* SessionModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModuleBuilder.swift; sourceTree = "<group>"; };
 		077B2ED129069A4B0087504C /* SessionModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModulePresenter.swift; sourceTree = "<group>"; };
 		077B2ED529069ADC0087504C /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 		074B8A612A8C237200EB39C2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				077977D92A8E6D3C000DAF72 /* APIService.swift */,
 				07EB1CB728FD47740031598A /* Client */,
 				074B8A622A8C237A00EB39C2 /* Service */,
 			);
@@ -296,15 +301,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		0758C2E3291160F900E48140 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				074B8A632A8C239200EB39C2 /* Service.swift */,
-				074B8A612A8C237200EB39C2 /* Network */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		0758C2E42911610100E48140 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,7 +320,6 @@
 			children = (
 				07DBA83E28F3F734000A1312 /* AppDelegateOld.swift */,
 				074B8A662A8C244400EB39C2 /* App */,
-				0758C2E3291160F900E48140 /* Service */,
 				07DBA85628F55E00000A1312 /* Utils */,
 				0788F41B28F82942006F447F /* EntranceModule */,
 				077B2ECB290699F00087504C /* Session Module */,
@@ -389,6 +384,15 @@
 				077977912A8E383A000DAF72 /* Poppins-ThinItalic.ttf */,
 			);
 			path = ttf;
+			sourceTree = "<group>";
+		};
+		077977D42A8E6B47000DAF72 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				074B8A632A8C239200EB39C2 /* Service.swift */,
+				074B8A612A8C237200EB39C2 /* Network */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		077B2ECB290699F00087504C /* Session Module */ = {
@@ -527,6 +531,7 @@
 			isa = PBXGroup;
 			children = (
 				0779775F2A8E3567000DAF72 /* App */,
+				077977D42A8E6B47000DAF72 /* Service */,
 				077977612A8E3674000DAF72 /* Utils */,
 				077977602A8E3662000DAF72 /* ViewComponents */,
 				077977582A8E33B6000DAF72 /* Old */,
@@ -577,6 +582,7 @@
 		07EB1CBC28FD48050031598A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				077977D72A8E6C0B000DAF72 /* Empty.swift */,
 				07EB1CBF28FD48100031598A /* HTTPError.swift */,
 				07EB1CC028FD48100031598A /* HTTPMethod.swift */,
 				07EB1CBD28FD48100031598A /* HTTPNetworkResponse.swift */,
@@ -741,9 +747,11 @@
 				07A66F2B2916CB2F003BB6B9 /* ErrorDTO.swift in Sources */,
 				0779775A2A8E33EA000DAF72 /* AppDelegate.swift in Sources */,
 				077B2ECD29069A060087504C /* SessionModuleBuilder.swift in Sources */,
+				077977DA2A8E6D3C000DAF72 /* APIService.swift in Sources */,
 				074B8A752A8C262C00EB39C2 /* QuitFromRoomNSE.swift in Sources */,
 				073B585428F97CA8000EE21F /* PeekID.swift in Sources */,
 				0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */,
+				077977D82A8E6C0B000DAF72 /* Empty.swift in Sources */,
 				07DBA85D28F55E77000A1312 /* DesignProtocols.swift in Sources */,
 				07ABF65C29193799007C4A52 /* InformativeViewComponents.swift in Sources */,
 				074B8A642A8C239200EB39C2 /* Service.swift in Sources */,
