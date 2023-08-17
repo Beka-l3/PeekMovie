@@ -58,6 +58,7 @@
 		077977DC2A8E717B000DAF72 /* UINavigationController+FadeTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977DB2A8E717B000DAF72 /* UINavigationController+FadeTo.swift */; };
 		077977E02A8E7253000DAF72 /* Service+KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977DF2A8E7253000DAF72 /* Service+KeyChain.swift */; };
 		077977E32A8E789F000DAF72 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977E22A8E789F000DAF72 /* UserService.swift */; };
+		077977E62A8E855D000DAF72 /* EntranceModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977E52A8E855D000DAF72 /* EntranceModuleBuilder.swift */; };
 		077B2ECD29069A060087504C /* SessionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ECC29069A060087504C /* SessionModuleBuilder.swift */; };
 		077B2ED229069A4B0087504C /* SessionModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ED129069A4B0087504C /* SessionModulePresenter.swift */; };
 		077B2ED629069ADC0087504C /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ED529069ADC0087504C /* PosterView.swift */; };
@@ -69,7 +70,7 @@
 		07832A2529248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07832A2429248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift */; };
 		07832A27292668950079E1E9 /* ExtensionPosterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07832A26292668950079E1E9 /* ExtensionPosterViewPresenter.swift */; };
 		0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F41E28F82990006F447F /* EntranceModulePresenter.swift */; };
-		0788F42228F829B5006F447F /* EntranceModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42128F829B5006F447F /* EntranceModuleBuilder.swift */; };
+		0788F42228F829B5006F447F /* EntranceModuleBuilderOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42128F829B5006F447F /* EntranceModuleBuilderOld.swift */; };
 		0788F42428F82B19006F447F /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42328F82B19006F447F /* LoginPage.swift */; };
 		0788F42628F8321F006F447F /* LoginViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42528F8321F006F447F /* LoginViewComponents.swift */; };
 		079E5EB829092EC8006AF238 /* MovieInfoScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5EB729092EC8006AF238 /* MovieInfoScrollViewModel.swift */; };
@@ -158,6 +159,7 @@
 		077977DB2A8E717B000DAF72 /* UINavigationController+FadeTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+FadeTo.swift"; sourceTree = "<group>"; };
 		077977DF2A8E7253000DAF72 /* Service+KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service+KeyChain.swift"; sourceTree = "<group>"; };
 		077977E22A8E789F000DAF72 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		077977E52A8E855D000DAF72 /* EntranceModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModuleBuilder.swift; sourceTree = "<group>"; };
 		077B2ECC29069A060087504C /* SessionModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModuleBuilder.swift; sourceTree = "<group>"; };
 		077B2ED129069A4B0087504C /* SessionModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModulePresenter.swift; sourceTree = "<group>"; };
 		077B2ED529069ADC0087504C /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
@@ -169,7 +171,7 @@
 		07832A2429248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionEntranceWebSocketPresenter.swift; sourceTree = "<group>"; };
 		07832A26292668950079E1E9 /* ExtensionPosterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPosterViewPresenter.swift; sourceTree = "<group>"; };
 		0788F41E28F82990006F447F /* EntranceModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModulePresenter.swift; sourceTree = "<group>"; };
-		0788F42128F829B5006F447F /* EntranceModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModuleBuilder.swift; sourceTree = "<group>"; };
+		0788F42128F829B5006F447F /* EntranceModuleBuilderOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModuleBuilderOld.swift; sourceTree = "<group>"; };
 		0788F42328F82B19006F447F /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		0788F42528F8321F006F447F /* LoginViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewComponents.swift; sourceTree = "<group>"; };
 		079E5EB729092EC8006AF238 /* MovieInfoScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoScrollViewModel.swift; sourceTree = "<group>"; };
@@ -327,7 +329,7 @@
 				07DBA83E28F3F734000A1312 /* AppDelegateOld.swift */,
 				074B8A662A8C244400EB39C2 /* App */,
 				07DBA85628F55E00000A1312 /* Utils */,
-				0788F41B28F82942006F447F /* EntranceModule */,
+				0788F41B28F82942006F447F /* EntranceModuleOld */,
 				077B2ECB290699F00087504C /* Session Module */,
 			);
 			path = Old;
@@ -428,6 +430,14 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		077977E42A8E8512000DAF72 /* EntranceModule */ = {
+			isa = PBXGroup;
+			children = (
+				077977E52A8E855D000DAF72 /* EntranceModuleBuilder.swift */,
+			);
+			path = EntranceModule;
+			sourceTree = "<group>";
+		};
 		077B2ECB290699F00087504C /* Session Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,15 +500,15 @@
 			path = "Secondary PAge";
 			sourceTree = "<group>";
 		};
-		0788F41B28F82942006F447F /* EntranceModule */ = {
+		0788F41B28F82942006F447F /* EntranceModuleOld */ = {
 			isa = PBXGroup;
 			children = (
-				0788F42128F829B5006F447F /* EntranceModuleBuilder.swift */,
+				0788F42128F829B5006F447F /* EntranceModuleBuilderOld.swift */,
 				0788F41C28F82967006F447F /* Model */,
 				07DBA85528F55DFB000A1312 /* View */,
 				0788F41D28F8296F006F447F /* Presenter */,
 			);
-			path = EntranceModule;
+			path = EntranceModuleOld;
 			sourceTree = "<group>";
 		};
 		0788F41C28F82967006F447F /* Model */ = {
@@ -567,6 +577,7 @@
 				077977D42A8E6B47000DAF72 /* Service */,
 				077977612A8E3674000DAF72 /* Utils */,
 				077977602A8E3662000DAF72 /* ViewComponents */,
+				077977E42A8E8512000DAF72 /* EntranceModule */,
 				077977582A8E33B6000DAF72 /* Old */,
 				07DBA85728F55E07000A1312 /* Storyboard */,
 				07DBA84728F3F73A000A1312 /* Assets.xcassets */,
@@ -771,7 +782,7 @@
 				073B585628FA155F000EE21F /* EMConstants.swift in Sources */,
 				07A66F2D2916CB51003BB6B9 /* ResponseDTO.swift in Sources */,
 				073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */,
-				0788F42228F829B5006F447F /* EntranceModuleBuilder.swift in Sources */,
+				0788F42228F829B5006F447F /* EntranceModuleBuilderOld.swift in Sources */,
 				079E5EB829092EC8006AF238 /* MovieInfoScrollViewModel.swift in Sources */,
 				077B2ED229069A4B0087504C /* SessionModulePresenter.swift in Sources */,
 				07EB1CC328FD48100031598A /* HTTPError.swift in Sources */,
@@ -783,6 +794,7 @@
 				077B2ECD29069A060087504C /* SessionModuleBuilder.swift in Sources */,
 				077977DA2A8E6D3C000DAF72 /* APIService.swift in Sources */,
 				074B8A752A8C262C00EB39C2 /* QuitFromRoomNSE.swift in Sources */,
+				077977E62A8E855D000DAF72 /* EntranceModuleBuilder.swift in Sources */,
 				073B585428F97CA8000EE21F /* PeekID.swift in Sources */,
 				0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */,
 				077977D82A8E6C0B000DAF72 /* Empty.swift in Sources */,

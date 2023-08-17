@@ -12,4 +12,6 @@ enum Fonts {
     static let regular12 = UIFont(name: "Poppins-Regular", size: 12)
     
     static let thin24 = UIFont(name: "Poppins-Thin", size: 24)
+    
+    static let bold16 = UIFont(name: "Poppins-Bold", size: 16)
 }

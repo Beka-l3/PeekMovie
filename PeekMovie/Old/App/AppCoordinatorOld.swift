@@ -14,14 +14,14 @@ final class AppCoordinatorOld {
     private let launchPage: LaunchPage
     private let networkClient: NetworkClient
     private let networkService: NetworkService
-    private let entranceModule: EntranceModuleBuilder
+    private let entranceModule: EntranceModuleBuilderOld
     private let sessionModule: SessionModuleBuilder
     
     init(isLoggedIn: Bool, launchPage: LaunchPage, networkClient: NetworkClient, networkService: NetworkService) {
         self.launchPage = launchPage
         self.networkClient = networkClient
         self.networkService = networkService
-        self.entranceModule = EntranceModuleBuilder(isLoggedIn: isLoggedIn, networkService: networkService)
+        self.entranceModule = EntranceModuleBuilderOld(isLoggedIn: isLoggedIn, networkService: networkService)
         self.sessionModule = SessionModuleBuilder(networkService: networkService)
         
         entranceModule.presenter.appCoordinator = self

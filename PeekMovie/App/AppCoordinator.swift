@@ -10,6 +10,7 @@ import Foundation
 final class AppCoordinator {
     
     let rootViewController: RootViewController
+    var entrancemodule: EntranceModuleBuilder?
     
     var didlaunchScreenFinishAnimation: Bool = false {
         didSet {
@@ -32,6 +33,7 @@ final class AppCoordinator {
 //    MARK: - life cycle
     init(rootViewController: RootViewController) {
         self.rootViewController = rootViewController
+        self.entrancemodule = EntranceModuleBuilder()
         self.rootViewController.appCoordinator = self
     }
     
@@ -47,6 +49,15 @@ final class AppCoordinator {
         isViewToShowChosen = true
     }
     
+    public func someButtonTapped(tag: Int) {
+        if tag == 0 {
+            entrancemodule = .init()
+        } else {
+            entrancemodule = nil
+        }
+        
+        print("\n\(tag)")
+    }
     
 //    MARK: - private func
     private func didFinishEntranceAction() {

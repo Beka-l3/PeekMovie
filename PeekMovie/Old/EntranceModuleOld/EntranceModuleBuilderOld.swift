@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-final class EntranceModuleBuilder {
+final class EntranceModuleBuilderOld {
     
     var view: UIViewController
     var presenter: EntranceModulePresenter
