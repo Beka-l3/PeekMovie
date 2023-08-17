@@ -9,4 +9,5 @@ import UIKit
 
 enum Fonts {
     static let regular8 = UIFont(name: "Poppins-Regular", size: 8)
+    static let regular12 = UIFont(name: "Poppins-Thin", size: 36)
 }
