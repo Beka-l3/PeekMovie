@@ -55,6 +55,7 @@
 		077977AD2A8E3F4C000DAF72 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 077977972A8E383B000DAF72 /* Poppins-Light.ttf */; };
 		077977D82A8E6C0B000DAF72 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977D72A8E6C0B000DAF72 /* Empty.swift */; };
 		077977DA2A8E6D3C000DAF72 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977D92A8E6D3C000DAF72 /* APIService.swift */; };
+		077977DC2A8E717B000DAF72 /* UINavigationController+FadeTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977DB2A8E717B000DAF72 /* UINavigationController+FadeTo.swift */; };
 		077B2ECD29069A060087504C /* SessionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ECC29069A060087504C /* SessionModuleBuilder.swift */; };
 		077B2ED229069A4B0087504C /* SessionModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ED129069A4B0087504C /* SessionModulePresenter.swift */; };
 		077B2ED629069ADC0087504C /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2ED529069ADC0087504C /* PosterView.swift */; };
@@ -152,6 +153,7 @@
 		0779779A2A8E383C000DAF72 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
 		077977D72A8E6C0B000DAF72 /* Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Empty.swift; path = ../../../../../../_Components/NetworkClient/Model/Empty.swift; sourceTree = "<group>"; };
 		077977D92A8E6D3C000DAF72 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		077977DB2A8E717B000DAF72 /* UINavigationController+FadeTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+FadeTo.swift"; sourceTree = "<group>"; };
 		077B2ECC29069A060087504C /* SessionModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModuleBuilder.swift; sourceTree = "<group>"; };
 		077B2ED129069A4B0087504C /* SessionModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModulePresenter.swift; sourceTree = "<group>"; };
 		077B2ED529069ADC0087504C /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 		077977612A8E3674000DAF72 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				077977DD2A8E7186000DAF72 /* Extensions */,
 				077977882A8E382D000DAF72 /* Fonts */,
 			);
 			path = Utils;
@@ -393,6 +396,14 @@
 				074B8A612A8C237200EB39C2 /* Network */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		077977DD2A8E7186000DAF72 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				077977DB2A8E717B000DAF72 /* UINavigationController+FadeTo.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		077B2ECB290699F00087504C /* Session Module */ = {
@@ -768,6 +779,7 @@
 				0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */,
 				07EB1CC428FD48100031598A /* HTTPMethod.swift in Sources */,
 				0731BB00292D5BC1004CCE79 /* MovieCollectionCell.swift in Sources */,
+				077977DC2A8E717B000DAF72 /* UINavigationController+FadeTo.swift in Sources */,
 				07D401B928F8641700BF3F55 /* PasswordPage.swift in Sources */,
 				070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */,
 				07D401BB28F8653D00BF3F55 /* PasswordViewComponents.swift in Sources */,
