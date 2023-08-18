@@ -11,6 +11,13 @@ final class RootViewController: UIViewController {
     
     var appCoordinator: AppCoordinator?
     
+    lazy var background: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     lazy var someLabel: UILabel = {
         let label = UILabel()
         label.text = lorem[currentColorIndex]
@@ -69,10 +76,16 @@ final class RootViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .black
         
+        view.addSubview(background)
         view.addSubview(someLabel)
         view.addSubview(someButton)
         
         NSLayoutConstraint.activate([
+            background.topAnchor.constraint(equalTo: view.topAnchor),
+            background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            background.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
             someLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             someLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
             
@@ -85,15 +98,15 @@ final class RootViewController: UIViewController {
     
     private func startAnimation() {
         UIView.animate(withDuration: 0.6, delay: 0, options: [.transitionCrossDissolve, .curveEaseInOut]) {
-            self.view.backgroundColor = .white
+            self.background.backgroundColor = .white
         } completion: { done in
             UIView.animate(withDuration: 0.6, delay: 5, options: [.transitionCrossDissolve, .curveEaseInOut]) {
-                self.view.backgroundColor = .black
+                self.background.backgroundColor = .black
             } completion: { done in
                 if let appCoordinator = self.appCoordinator, !appCoordinator.didlaunchScreenFinishAnimation {
                     appCoordinator.didlaunchScreenFinishAnimation = true
                 }
-                
+
                 self.currentColorIndex = (self.currentColorIndex + 1) % self.lorem.count
                 self.someLabel.text = self.lorem[self.currentColorIndex]
                 self.startAnimation()
