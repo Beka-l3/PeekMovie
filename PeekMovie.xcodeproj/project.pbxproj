@@ -35,6 +35,7 @@
 		077933D52A8FF8C000B0F509 /* LoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933D42A8FF8C000B0F509 /* LoggerProtocol.swift */; };
 		077933D72A8FF8E600B0F509 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933D62A8FF8E600B0F509 /* LogLevel.swift */; };
 		077933D92A8FF90900B0F509 /* LogFormatElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933D82A8FF90900B0F509 /* LogFormatElement.swift */; };
+		077933DB2A8FF93000B0F509 /* LogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933DA2A8FF93000B0F509 /* LogFormat.swift */; };
 		0779775A2A8E33EA000DAF72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977592A8E33EA000DAF72 /* AppDelegate.swift */; };
 		0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */; };
 		0779775E2A8E3553000DAF72 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779775D2A8E3553000DAF72 /* RootViewController.swift */; };
@@ -140,6 +141,7 @@
 		077933D42A8FF8C000B0F509 /* LoggerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerProtocol.swift; sourceTree = "<group>"; };
 		077933D62A8FF8E600B0F509 /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
 		077933D82A8FF90900B0F509 /* LogFormatElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFormatElement.swift; sourceTree = "<group>"; };
+		077933DA2A8FF93000B0F509 /* LogFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFormat.swift; sourceTree = "<group>"; };
 		077977592A8E33EA000DAF72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0779775D2A8E3553000DAF72 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				077933D42A8FF8C000B0F509 /* LoggerProtocol.swift */,
 				077933D62A8FF8E600B0F509 /* LogLevel.swift */,
 				077933D82A8FF90900B0F509 /* LogFormatElement.swift */,
+				077933DA2A8FF93000B0F509 /* LogFormat.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -774,6 +777,7 @@
 				077B2ED829069BAB0087504C /* CollectionView.swift in Sources */,
 				07ABF662291AD4BF007C4A52 /* ExtensionRegisterPagePresenter.swift in Sources */,
 				077933D72A8FF8E600B0F509 /* LogLevel.swift in Sources */,
+				077933DB2A8FF93000B0F509 /* LogFormat.swift in Sources */,
 				0788F42428F82B19006F447F /* LoginPage.swift in Sources */,
 				071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */,
 				0788F42628F8321F006F447F /* LoginViewComponents.swift in Sources */,
