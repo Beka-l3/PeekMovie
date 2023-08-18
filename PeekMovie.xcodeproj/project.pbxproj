@@ -38,6 +38,7 @@
 		077933DB2A8FF93000B0F509 /* LogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933DA2A8FF93000B0F509 /* LogFormat.swift */; };
 		077933DD2A8FF94E00B0F509 /* LogDestinationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933DC2A8FF94E00B0F509 /* LogDestinationProtocol.swift */; };
 		077933DF2A8FF96C00B0F509 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933DE2A8FF96C00B0F509 /* Log.swift */; };
+		077933E12A8FF99100B0F509 /* DefaultLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933E02A8FF99100B0F509 /* DefaultLogger.swift */; };
 		0779775A2A8E33EA000DAF72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977592A8E33EA000DAF72 /* AppDelegate.swift */; };
 		0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */; };
 		0779775E2A8E3553000DAF72 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779775D2A8E3553000DAF72 /* RootViewController.swift */; };
@@ -146,6 +147,7 @@
 		077933DA2A8FF93000B0F509 /* LogFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFormat.swift; sourceTree = "<group>"; };
 		077933DC2A8FF94E00B0F509 /* LogDestinationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDestinationProtocol.swift; sourceTree = "<group>"; };
 		077933DE2A8FF96C00B0F509 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		077933E02A8FF99100B0F509 /* DefaultLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLogger.swift; sourceTree = "<group>"; };
 		077977592A8E33EA000DAF72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0779775D2A8E3553000DAF72 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				077933DA2A8FF93000B0F509 /* LogFormat.swift */,
 				077933DC2A8FF94E00B0F509 /* LogDestinationProtocol.swift */,
 				077933DE2A8FF96C00B0F509 /* Log.swift */,
+				077933E02A8FF99100B0F509 /* DefaultLogger.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -817,6 +820,7 @@
 				077933DF2A8FF96C00B0F509 /* Log.swift in Sources */,
 				073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */,
 				0788F42228F829B5006F447F /* EntranceModuleBuilderOld.swift in Sources */,
+				077933E12A8FF99100B0F509 /* DefaultLogger.swift in Sources */,
 				079E5EB829092EC8006AF238 /* MovieInfoScrollViewModel.swift in Sources */,
 				077B2ED229069A4B0087504C /* SessionModulePresenter.swift in Sources */,
 				07EB1CC328FD48100031598A /* HTTPError.swift in Sources */,
