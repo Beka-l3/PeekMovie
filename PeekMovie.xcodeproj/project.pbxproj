@@ -39,6 +39,7 @@
 		077933DD2A8FF94E00B0F509 /* LogDestinationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933DC2A8FF94E00B0F509 /* LogDestinationProtocol.swift */; };
 		077933DF2A8FF96C00B0F509 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933DE2A8FF96C00B0F509 /* Log.swift */; };
 		077933E12A8FF99100B0F509 /* DefaultLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933E02A8FF99100B0F509 /* DefaultLogger.swift */; };
+		077933E32A8FF9B000B0F509 /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933E22A8FF9B000B0F509 /* ConsoleDestination.swift */; };
 		0779775A2A8E33EA000DAF72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977592A8E33EA000DAF72 /* AppDelegate.swift */; };
 		0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */; };
 		0779775E2A8E3553000DAF72 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779775D2A8E3553000DAF72 /* RootViewController.swift */; };
@@ -148,6 +149,7 @@
 		077933DC2A8FF94E00B0F509 /* LogDestinationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDestinationProtocol.swift; sourceTree = "<group>"; };
 		077933DE2A8FF96C00B0F509 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		077933E02A8FF99100B0F509 /* DefaultLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLogger.swift; sourceTree = "<group>"; };
+		077933E22A8FF9B000B0F509 /* ConsoleDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleDestination.swift; sourceTree = "<group>"; };
 		077977592A8E33EA000DAF72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0779775D2A8E3553000DAF72 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				077933DC2A8FF94E00B0F509 /* LogDestinationProtocol.swift */,
 				077933DE2A8FF96C00B0F509 /* Log.swift */,
 				077933E02A8FF99100B0F509 /* DefaultLogger.swift */,
+				077933E22A8FF9B000B0F509 /* ConsoleDestination.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -838,6 +841,7 @@
 				0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */,
 				077977D82A8E6C0B000DAF72 /* Empty.swift in Sources */,
 				07DBA85D28F55E77000A1312 /* DesignProtocols.swift in Sources */,
+				077933E32A8FF9B000B0F509 /* ConsoleDestination.swift in Sources */,
 				07ABF65C29193799007C4A52 /* InformativeViewComponents.swift in Sources */,
 				074B8A642A8C239200EB39C2 /* Service.swift in Sources */,
 				077B2EDC29080E2C0087504C /* PosterViewModels.swift in Sources */,
