@@ -32,6 +32,7 @@
 		0758C2EC2911777300E48140 /* TokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2EB2911777300E48140 /* TokenDTO.swift */; };
 		0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0763C00A2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift */; };
 		077933D22A8FAE4400B0F509 /* UIColor+InitWithHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933D12A8FAE4300B0F509 /* UIColor+InitWithHex.swift */; };
+		077933D52A8FF8C000B0F509 /* LoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933D42A8FF8C000B0F509 /* LoggerProtocol.swift */; };
 		0779775A2A8E33EA000DAF72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977592A8E33EA000DAF72 /* AppDelegate.swift */; };
 		0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */; };
 		0779775E2A8E3553000DAF72 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779775D2A8E3553000DAF72 /* RootViewController.swift */; };
@@ -134,6 +135,7 @@
 		0758C2EB2911777300E48140 /* TokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDTO.swift; sourceTree = "<group>"; };
 		0763C00A2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSessionWebSocketPresneter.swift; sourceTree = "<group>"; };
 		077933D12A8FAE4300B0F509 /* UIColor+InitWithHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+InitWithHex.swift"; sourceTree = "<group>"; };
+		077933D42A8FF8C000B0F509 /* LoggerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerProtocol.swift; sourceTree = "<group>"; };
 		077977592A8E33EA000DAF72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0779775D2A8E3553000DAF72 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +325,14 @@
 				07A66F2A2916CB2F003BB6B9 /* ErrorDTO.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		077933D32A8FF89C00B0F509 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				077933D42A8FF8C000B0F509 /* LoggerProtocol.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 		077977582A8E33B6000DAF72 /* Old */ = {
@@ -579,6 +589,7 @@
 				0779775F2A8E3567000DAF72 /* App */,
 				077977D42A8E6B47000DAF72 /* Service */,
 				077977612A8E3674000DAF72 /* Utils */,
+				077933D32A8FF89C00B0F509 /* Logger */,
 				077977602A8E3662000DAF72 /* ViewComponents */,
 				077977E42A8E8512000DAF72 /* EntranceModule */,
 				077977582A8E33B6000DAF72 /* Old */,
@@ -747,6 +758,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				074A7696292ACDBB005D3E10 /* CollectionViewModels.swift in Sources */,
+				077933D52A8FF8C000B0F509 /* LoggerProtocol.swift in Sources */,
 				074B8A712A8C25DD00EB39C2 /* CreateRoomNSE.swift in Sources */,
 				07C8212F291019E000B055D0 /* MovieDTO.swift in Sources */,
 				07EB1CCA28FDE6EB0031598A /* WaitingRoomViewComponents.swift in Sources */,
