@@ -26,20 +26,7 @@ final class RootViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    lazy var someButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setTitle("Check It Out", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = Fonts.bold16
-        button.backgroundColor = .systemPurple
-        button.tag = 0
-        button.layer.cornerRadius = 16
-        button.addTarget(self, action: #selector(handleSomeButton), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
+        
     var lorem = ["Hello World!", "Privet Beka!", "Salem Kamil!", "Hola Senior!"]
     var currentColorIndex = 0
     var didAnimationStart = false
@@ -60,15 +47,6 @@ final class RootViewController: UIViewController {
     }
     
 //    MARK: - objc
-    @objc func handleSomeButton() {
-        if someButton.tag == 0 {
-            someButton.tag = 1
-        } else {
-            someButton.tag = 0
-        }
-        
-        appCoordinator?.someButtonTapped(tag: someButton.tag)
-    }
     
 //    MARK: - public func
     
@@ -78,7 +56,6 @@ final class RootViewController: UIViewController {
         
         view.addSubview(background)
         view.addSubview(someLabel)
-        view.addSubview(someButton)
         
         NSLayoutConstraint.activate([
             background.topAnchor.constraint(equalTo: view.topAnchor),
@@ -88,11 +65,6 @@ final class RootViewController: UIViewController {
             
             someLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             someLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-            
-            someButton.heightAnchor.constraint(equalToConstant: 50),
-            someButton.widthAnchor.constraint(equalToConstant: 250),
-            someButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            someButton.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: 120),
         ])
     }
     
