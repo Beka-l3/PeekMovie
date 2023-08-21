@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class SessionModuleBuilder: ColorsOld {
+final class SessionModuleBuilderOld: ColorsOld {
     
     let view: UITabBarController
     let presenter: SessionModulePresenter

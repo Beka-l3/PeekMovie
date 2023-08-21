@@ -33,7 +33,6 @@ final class AppCoordinator {
 //    MARK: - life cycle
     init(rootViewController: RootViewController) {
         self.rootViewController = rootViewController
-        self.entrancemodule = EntranceModuleBuilder()
         self.rootViewController.appCoordinator = self
     }
     
