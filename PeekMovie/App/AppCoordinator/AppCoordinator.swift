@@ -17,7 +17,6 @@ final class AppCoordinator {
     internal var lobbyModule: LobbyModuleBuilder?
     internal var sessionModule: SessionModuleBuilder?
     
-    internal var moduleToHide: ModuleType = .none
     internal var moduleToShow: ModuleType = .none {
         didSet {
             if moduleToShow != .none {
