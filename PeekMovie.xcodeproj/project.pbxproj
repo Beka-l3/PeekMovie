@@ -96,6 +96,7 @@
 		07BD8B722A93E29B0089199E /* SwiftStomp in Frameworks */ = {isa = PBXBuildFile; productRef = 07BD8B712A93E29B0089199E /* SwiftStomp */; };
 		07BD8B772A93EE9E0089199E /* LobbyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B762A93EE9E0089199E /* LobbyModuleBuilder.swift */; };
 		07BD8B792A93EEC50089199E /* SessionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B782A93EEC50089199E /* SessionModuleBuilder.swift */; };
+		07BD8B7F2A93F4C50089199E /* AppCoordinator+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B7E2A93F4C50089199E /* AppCoordinator+Navigation.swift */; };
 		07C8212F291019E000B055D0 /* MovieDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8212E291019E000B055D0 /* MovieDTO.swift */; };
 		07D401B928F8641700BF3F55 /* PasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D401B828F8641700BF3F55 /* PasswordPage.swift */; };
 		07D401BB28F8653D00BF3F55 /* PasswordViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D401BA28F8653D00BF3F55 /* PasswordViewComponents.swift */; };
@@ -208,6 +209,7 @@
 		07BBD947291BE08F00DD13BA /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		07BD8B762A93EE9E0089199E /* LobbyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyModuleBuilder.swift; sourceTree = "<group>"; };
 		07BD8B782A93EEC50089199E /* SessionModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModuleBuilder.swift; sourceTree = "<group>"; };
+		07BD8B7E2A93F4C50089199E /* AppCoordinator+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Navigation.swift"; sourceTree = "<group>"; };
 		07C8212E291019E000B055D0 /* MovieDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDTO.swift; sourceTree = "<group>"; };
 		07D401B828F8641700BF3F55 /* PasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPage.swift; sourceTree = "<group>"; };
 		07D401BA28F8653D00BF3F55 /* PasswordViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewComponents.swift; sourceTree = "<group>"; };
@@ -378,8 +380,8 @@
 			isa = PBXGroup;
 			children = (
 				077977592A8E33EA000DAF72 /* AppDelegate.swift */,
-				0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */,
-				0779775D2A8E3553000DAF72 /* RootViewController.swift */,
+				07BD8B7A2A93F48B0089199E /* AppCoordinator */,
+				07BD8B7B2A93F4950089199E /* RootViewController */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -621,6 +623,31 @@
 			path = Session;
 			sourceTree = "<group>";
 		};
+		07BD8B7A2A93F48B0089199E /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */,
+				07BD8B7C2A93F4A20089199E /* Extension */,
+			);
+			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		07BD8B7B2A93F4950089199E /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0779775D2A8E3553000DAF72 /* RootViewController.swift */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		07BD8B7C2A93F4A20089199E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				07BD8B7E2A93F4C50089199E /* AppCoordinator+Navigation.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		07DBA83228F3F734000A1312 = {
 			isa = PBXGroup;
 			children = (
@@ -832,6 +859,7 @@
 				071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */,
 				0788F42628F8321F006F447F /* LoginViewComponents.swift in Sources */,
 				074B8A6B2A8C254F00EB39C2 /* RegisterNSE.swift in Sources */,
+				07BD8B7F2A93F4C50089199E /* AppCoordinator+Navigation.swift in Sources */,
 				0758C2E82911752200E48140 /* NetworkServiceImplementation.swift in Sources */,
 				0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */,
 				077B2ED629069ADC0087504C /* PosterView.swift in Sources */,

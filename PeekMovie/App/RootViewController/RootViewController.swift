@@ -78,7 +78,7 @@ final class RootViewController: UIViewController {
                 if let appCoordinator = self.appCoordinator, !appCoordinator.didlaunchScreenFinishAnimation {
                     appCoordinator.didlaunchScreenFinishAnimation = true
                 }
-
+                
                 self.currentColorIndex = (self.currentColorIndex + 1) % self.lorem.count
                 self.someLabel.text = self.lorem[self.currentColorIndex]
                 self.startAnimation()
