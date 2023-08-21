@@ -14,4 +14,8 @@ final class LobbyModuleBuilder {
         
     }
     
+    deinit {
+        
+    }
+    
 }

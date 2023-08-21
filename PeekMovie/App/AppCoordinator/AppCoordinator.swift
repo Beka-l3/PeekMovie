@@ -19,9 +19,12 @@ final class AppCoordinator {
     
     internal var moduleToShow: ModuleType = .none {
         didSet {
-            if moduleToShow != .none {
-                print("\nView To Show Is Chosen")
-                isEntranceResolved ? swapModules(moduleToHide: oldValue) : didFinishEntranceAction()
+            if oldValue == .none {
+                print("\nModule To Show Is Chosen")
+                didFinishEntranceAction()
+            } else {
+                print("\nSwap Modules")
+                swapModules(moduleToHide: oldValue)
             }
         }
     }
@@ -34,8 +37,6 @@ final class AppCoordinator {
             }
         }
     }
-    
-    internal var isEntranceResolved: Bool = false
     
 //    MARK: - life cycle
     init(rootViewController: RootViewController) {
@@ -68,7 +69,6 @@ final class AppCoordinator {
                 print("\nNo module is chosen")
             }
             
-            isEntranceResolved = true
         } else {
             print("\nSomething is not ready")
         }
