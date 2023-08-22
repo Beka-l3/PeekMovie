@@ -23,6 +23,7 @@ final class ShimmerGradient: CAGradientLayer {
 //    MARK: - lifecycle
     override init() {
         super.init()
+        isHidden = true
         
         startPoint = CGPoint(x: 0, y: 1)
         endPoint = CGPoint(x: 1, y: 1)
@@ -63,4 +64,9 @@ final class ShimmerGradient: CAGradientLayer {
         add(animationGroup, forKey: animation.keyPath)
     }
     
+    func stopAnimation() {
+        isAnimationRunning = false
+        isHidden = true
+        removeAllAnimations()
+    }
 }
