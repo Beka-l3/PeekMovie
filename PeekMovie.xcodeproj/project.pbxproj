@@ -12,6 +12,8 @@
 		072EE65D2A9535C000CFCC2A /* SignInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE65C2A9535C000CFCC2A /* SignInPageViewController.swift */; };
 		072EE65F2A95370200CFCC2A /* SignInPageViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE65E2A95370200CFCC2A /* SignInPageViewComponents.swift */; };
 		072EE6622A95375E00CFCC2A /* SignInPage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6612A95375E00CFCC2A /* SignInPage+Extension.swift */; };
+		072EE6642A953CCE00CFCC2A /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6632A953CCE00CFCC2A /* InputTextField.swift */; };
+		072EE6662A953DCE00CFCC2A /* ShimmerGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */; };
 		0731BAFE292D5B8F004CCE79 /* ExtensionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BAFD292D5B8F004CCE79 /* ExtensionCollectionView.swift */; };
 		0731BB00292D5BC1004CCE79 /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BAFF292D5BC1004CCE79 /* MovieCollectionCell.swift */; };
 		0731BB22292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BB21292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift */; };
@@ -129,6 +131,8 @@
 		072EE65C2A9535C000CFCC2A /* SignInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewController.swift; sourceTree = "<group>"; };
 		072EE65E2A95370200CFCC2A /* SignInPageViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewComponents.swift; sourceTree = "<group>"; };
 		072EE6612A95375E00CFCC2A /* SignInPage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInPage+Extension.swift"; sourceTree = "<group>"; };
+		072EE6632A953CCE00CFCC2A /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
+		072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerGradient.swift; sourceTree = "<group>"; };
 		0731BAFD292D5B8F004CCE79 /* ExtensionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionView.swift; sourceTree = "<group>"; };
 		0731BAFF292D5BC1004CCE79 /* MovieCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionCell.swift; sourceTree = "<group>"; };
 		0731BB21292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionViewPresenter.swift; sourceTree = "<group>"; };
@@ -420,6 +424,8 @@
 		077977602A8E3662000DAF72 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				072EE6632A953CCE00CFCC2A /* InputTextField.swift */,
+				072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -938,12 +944,14 @@
 				077B2ECD29069A060087504C /* SessionModuleBuilderOld.swift in Sources */,
 				077977DA2A8E6D3C000DAF72 /* APIService.swift in Sources */,
 				074B8A752A8C262C00EB39C2 /* QuitFromRoomNSE.swift in Sources */,
+				072EE6642A953CCE00CFCC2A /* InputTextField.swift in Sources */,
 				077977E62A8E855D000DAF72 /* EntranceModuleBuilder.swift in Sources */,
 				073B585428F97CA8000EE21F /* PeekID.swift in Sources */,
 				077933D92A8FF90900B0F509 /* LogFormatElement.swift in Sources */,
 				0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */,
 				077977D82A8E6C0B000DAF72 /* Empty.swift in Sources */,
 				07DBA85D28F55E77000A1312 /* DesignProtocols.swift in Sources */,
+				072EE6662A953DCE00CFCC2A /* ShimmerGradient.swift in Sources */,
 				077933E32A8FF9B000B0F509 /* ConsoleDestination.swift in Sources */,
 				07ABF65C29193799007C4A52 /* InformativeViewComponents.swift in Sources */,
 				074B8A642A8C239200EB39C2 /* Service.swift in Sources */,

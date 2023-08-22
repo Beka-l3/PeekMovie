@@ -11,7 +11,6 @@ final class SignInPageViewController: UIViewController {
     
     let viewComponents = SignInPageViewComponents()
     
-    
 //    MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,5 +20,9 @@ final class SignInPageViewController: UIViewController {
         .lightContent
     }
     
+//    MARK: - private func
+    private func setupViews() {
+        viewComponents.setupViews(parent: view)
+    }
     
 }

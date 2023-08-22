@@ -9,4 +9,11 @@ import UIKit
 
 final class SignInPageViewComponents {
     
+    enum Constants {
+        
+    }
+    
+    func setupViews(parent: UIView) {
+        
+    }
 }
