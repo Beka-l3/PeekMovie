@@ -62,7 +62,9 @@ final class AppCoordinator {
             case .entrance:
                 print("\nShow entrance")
                 entranceModule = .init()
-                
+                Task {
+                    await setModuleWith(viewController: entranceModule!.signInPage)
+                }
             case .lobby:
                 print("\nShow lobby")
                 lobbyModule = .init()
@@ -76,7 +78,7 @@ final class AppCoordinator {
     }
     
     private func checkIfUserSignedIn() -> Bool {
-        if let token = Service.user.accessToken {
+        if let _ = Service.user.accessToken {
             return true
         } else {
             return false

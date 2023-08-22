@@ -98,7 +98,6 @@
 		07ABF664291AD4DA007C4A52 /* ExtensionAuthorizedPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF663291AD4DA007C4A52 /* ExtensionAuthorizedPagePresenter.swift */; };
 		07ABF666291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF665291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift */; };
 		07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BBD947291BE08F00DD13BA /* MockNetworkService.swift */; };
-		07BD8B722A93E29B0089199E /* SwiftStomp in Frameworks */ = {isa = PBXBuildFile; productRef = 07BD8B712A93E29B0089199E /* SwiftStomp */; };
 		07BD8B772A93EE9E0089199E /* LobbyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B762A93EE9E0089199E /* LobbyModuleBuilder.swift */; };
 		07BD8B792A93EEC50089199E /* SessionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B782A93EEC50089199E /* SessionModuleBuilder.swift */; };
 		07BD8B7F2A93F4C50089199E /* AppCoordinator+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B7E2A93F4C50089199E /* AppCoordinator+Navigation.swift */; };
@@ -250,7 +249,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07BD8B722A93E29B0089199E /* SwiftStomp in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,7 +803,6 @@
 			);
 			name = PeekMovie;
 			packageProductDependencies = (
-				07BD8B712A93E29B0089199E /* SwiftStomp */,
 			);
 			productName = PeekMovie;
 			productReference = 07DBA83B28F3F734000A1312 /* PeekMovie.app */;
@@ -836,7 +833,6 @@
 			);
 			mainGroup = 07DBA83228F3F734000A1312;
 			packageReferences = (
-				07BD8B702A93E29B0089199E /* XCRemoteSwiftPackageReference "SwiftStomp" */,
 			);
 			productRefGroup = 07DBA83C28F3F734000A1312 /* Products */;
 			projectDirPath = "";
@@ -1196,25 +1192,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		07BD8B702A93E29B0089199E /* XCRemoteSwiftPackageReference "SwiftStomp" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Romixery/SwiftStomp.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		07BD8B712A93E29B0089199E /* SwiftStomp */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 07BD8B702A93E29B0089199E /* XCRemoteSwiftPackageReference "SwiftStomp" */;
-			productName = SwiftStomp;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 07DBA83328F3F734000A1312 /* Project object */;
 }

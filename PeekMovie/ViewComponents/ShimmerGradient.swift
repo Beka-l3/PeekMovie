@@ -21,22 +21,26 @@ final class ShimmerGradient: CAGradientLayer {
     }
     
 //    MARK: - lifecycle
-    override init() {
+    override init(layer: Any) {
+        super.init(layer: layer)
+    }
+    
+    init(
+        colors: [CGColor] = [UIColor.lightGray.cgColor, UIColor.white.cgColor, UIColor.lightGray.cgColor],
+        startPoint: CGPoint = CGPoint(x: 0, y: 1),
+        endPoint: CGPoint = CGPoint(x: 1, y: 1))
+    {
         super.init()
-        isHidden = true
         
-        startPoint = CGPoint(x: 0, y: 1)
-        endPoint = CGPoint(x: 1, y: 1)
-        colors = [
-            UIColor.lightGray.cgColor,
-            UIColor.white.cgColor,
-            UIColor.lightGray.cgColor
-        ]
+        isHidden = true
+        self.colors = colors
+        self.startPoint = startPoint
+        self.endPoint = endPoint
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-//        fatalError("init(coder:) has not been implemented")
+//        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
     }
     
 //    MARK: - Exposed func
