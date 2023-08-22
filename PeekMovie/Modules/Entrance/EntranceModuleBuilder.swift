@@ -9,6 +9,8 @@ import UIKit
 
 final class EntranceModuleBuilder {
     
+    let signInPage = SignInPageViewController()
+    
     
     init() {
         

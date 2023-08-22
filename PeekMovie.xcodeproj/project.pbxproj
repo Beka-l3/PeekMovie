@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */; };
 		071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071A3BEF291FC3BE009A7689 /* RoomDTO.swift */; };
+		072EE65D2A9535C000CFCC2A /* SignInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE65C2A9535C000CFCC2A /* SignInPageViewController.swift */; };
+		072EE65F2A95370200CFCC2A /* SignInPageViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE65E2A95370200CFCC2A /* SignInPageViewComponents.swift */; };
+		072EE6622A95375E00CFCC2A /* SignInPage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6612A95375E00CFCC2A /* SignInPage+Extension.swift */; };
 		0731BAFE292D5B8F004CCE79 /* ExtensionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BAFD292D5B8F004CCE79 /* ExtensionCollectionView.swift */; };
 		0731BB00292D5BC1004CCE79 /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BAFF292D5BC1004CCE79 /* MovieCollectionCell.swift */; };
 		0731BB22292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BB21292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift */; };
@@ -123,6 +126,9 @@
 /* Begin PBXFileReference section */
 		070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPagePickerViewExtension.swift; sourceTree = "<group>"; };
 		071A3BEF291FC3BE009A7689 /* RoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDTO.swift; sourceTree = "<group>"; };
+		072EE65C2A9535C000CFCC2A /* SignInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewController.swift; sourceTree = "<group>"; };
+		072EE65E2A95370200CFCC2A /* SignInPageViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewComponents.swift; sourceTree = "<group>"; };
+		072EE6612A95375E00CFCC2A /* SignInPage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInPage+Extension.swift"; sourceTree = "<group>"; };
 		0731BAFD292D5B8F004CCE79 /* ExtensionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionView.swift; sourceTree = "<group>"; };
 		0731BAFF292D5BC1004CCE79 /* MovieCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionCell.swift; sourceTree = "<group>"; };
 		0731BB21292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionViewPresenter.swift; sourceTree = "<group>"; };
@@ -247,6 +253,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		072EE6582A95350100CFCC2A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		072EE65B2A95359C00CFCC2A /* SignInPage */ = {
+			isa = PBXGroup;
+			children = (
+				072EE65C2A9535C000CFCC2A /* SignInPageViewController.swift */,
+				072EE65E2A95370200CFCC2A /* SignInPageViewComponents.swift */,
+				072EE6602A95373600CFCC2A /* Extensions */,
+			);
+			path = SignInPage;
+			sourceTree = "<group>";
+		};
+		072EE6602A95373600CFCC2A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				072EE6612A95375E00CFCC2A /* SignInPage+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		073B584E28F97B37000EE21F /* Login Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				077977E52A8E855D000DAF72 /* EntranceModuleBuilder.swift */,
+				072EE65B2A95359C00CFCC2A /* SignInPage */,
 			);
 			path = Entrance;
 			sourceTree = "<group>";
@@ -670,6 +702,7 @@
 				0779775F2A8E3567000DAF72 /* App */,
 				077977D42A8E6B47000DAF72 /* Service */,
 				077977612A8E3674000DAF72 /* Utils */,
+				072EE6582A95350100CFCC2A /* Models */,
 				077977602A8E3662000DAF72 /* ViewComponents */,
 				07BD8B732A93EE660089199E /* Modules */,
 				077977582A8E33B6000DAF72 /* Old */,
@@ -878,6 +911,7 @@
 				07832A2529248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift in Sources */,
 				077977E32A8E789F000DAF72 /* UserService.swift in Sources */,
 				073B585228F97C30000EE21F /* RegisterPageViewComponents.swift in Sources */,
+				072EE6622A95375E00CFCC2A /* SignInPage+Extension.swift in Sources */,
 				07EB1CBB28FD47C90031598A /* NrtworkClientProtocol.swift in Sources */,
 				079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */,
 				07832A27292668950079E1E9 /* ExtensionPosterViewPresenter.swift in Sources */,
@@ -890,6 +924,7 @@
 				07A66F2D2916CB51003BB6B9 /* ResponseDTO.swift in Sources */,
 				077933DF2A8FF96C00B0F509 /* Log.swift in Sources */,
 				073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */,
+				072EE65F2A95370200CFCC2A /* SignInPageViewComponents.swift in Sources */,
 				0788F42228F829B5006F447F /* EntranceModuleBuilderOld.swift in Sources */,
 				077933E12A8FF99100B0F509 /* DefaultLogger.swift in Sources */,
 				079E5EB829092EC8006AF238 /* MovieInfoScrollViewModel.swift in Sources */,
@@ -923,6 +958,7 @@
 				07EB1CC228FD48100031598A /* HTTPRequest.swift in Sources */,
 				07ABF660291AD4A7007C4A52 /* ExtensionPasswordPagePresenter.swift in Sources */,
 				0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */,
+				072EE65D2A9535C000CFCC2A /* SignInPageViewController.swift in Sources */,
 				07EB1CC428FD48100031598A /* HTTPMethod.swift in Sources */,
 				0731BB00292D5BC1004CCE79 /* MovieCollectionCell.swift in Sources */,
 				077977DC2A8E717B000DAF72 /* UINavigationController+FadeTo.swift in Sources */,

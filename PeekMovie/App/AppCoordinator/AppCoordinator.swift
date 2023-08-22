@@ -62,6 +62,7 @@ final class AppCoordinator {
             case .entrance:
                 print("\nShow entrance")
                 entranceModule = .init()
+                
             case .lobby:
                 print("\nShow lobby")
                 lobbyModule = .init()
