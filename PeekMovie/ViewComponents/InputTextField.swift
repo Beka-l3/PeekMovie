@@ -44,6 +44,9 @@ final class InputTextField: UITextField {
 //    MARK: - private func
     private func setupViews() {
         translatesAutoresizingMaskIntoConstraints = false
+        clipsToBounds = true
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor(hex: "FFFFFF")?.cgColor
         
         layer.addSublayer(shimmer)
     }
