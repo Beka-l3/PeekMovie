@@ -47,6 +47,7 @@ final class InputTextField: UITextField {
         clipsToBounds = true
         layer.borderWidth = 0.5
         layer.borderColor = UIColor(hex: "FFFFFF")?.cgColor
+        layer.cornerRadius = 12
         
         layer.addSublayer(shimmer)
     }
