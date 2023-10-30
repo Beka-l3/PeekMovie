@@ -12,12 +12,12 @@ final class AppCoordinator {
         case entrance, lobby, session, none
     }
     
-    internal let rootViewController: RootViewController
-    internal var entranceModule: EntranceModuleBuilder?
-    internal var lobbyModule: LobbyModuleBuilder?
-    internal var sessionModule: SessionModuleBuilder?
+    let rootViewController: RootViewController
+    var entranceModule: EntranceModuleBuilder?
+    var lobbyModule: LobbyModuleBuilder?
+    var sessionModule: SessionModuleBuilder?
     
-    internal var moduleToShow: ModuleType = .none {
+    var moduleToShow: ModuleType = .none {
         didSet {
             if oldValue == .none {
                 print("\nModule To Show Is Chosen")
@@ -38,13 +38,15 @@ final class AppCoordinator {
         }
     }
     
-//    MARK: - life cycle
+    
+//    MARK:  life cycle
     init(rootViewController: RootViewController) {
         self.rootViewController = rootViewController
         self.rootViewController.appCoordinator = self
     }
     
-//    MARK: - public func
+    
+//    MARK:  public func
     func resolveEntrance() {
         print("\nResolve Entrance")
         if checkIfUserSignedIn() {
@@ -54,7 +56,8 @@ final class AppCoordinator {
         }
     }
     
-//    MARK: - private func
+    
+//    MARK:  private func
     private func didFinishEntranceAction() {
         if didlaunchScreenFinishAnimation, moduleToShow != .none {
             print("\nHello world!")
