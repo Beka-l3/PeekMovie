@@ -13,9 +13,9 @@ final class AppCoordinator {
     }
     
     let rootViewController: RootViewController
-    var entranceModule: EntranceModuleBuilder?
-    var lobbyModule: LobbyModuleBuilder?
-    var sessionModule: SessionModuleBuilder?
+    var entranceModule: EntranceModuleBuilder
+    var lobbyModule: LobbyModuleBuilder
+    var sessionModule: SessionModuleBuilder
     
     var moduleToShow: ModuleType = .none {
         didSet {
@@ -42,6 +42,10 @@ final class AppCoordinator {
 //    MARK:  life cycle
     init(rootViewController: RootViewController) {
         self.rootViewController = rootViewController
+        self.entranceModule = .init()
+        self.sessionModule = .init()
+        self.lobbyModule = .init()
+        
         self.rootViewController.appCoordinator = self
     }
     
@@ -64,13 +68,13 @@ final class AppCoordinator {
             switch moduleToShow {
             case .entrance:
                 print("\nShow entrance")
-                entranceModule = .init()
+//                entranceModule = .init()
                 Task {
-                    await setModuleWith(viewController: entranceModule!.signInPage)
+                    await setModuleWith(viewController: entranceModule.signInPage)
                 }
             case .lobby:
                 print("\nShow lobby")
-                lobbyModule = .init()
+//                lobbyModule = .init()
             default:
                 print("\nNo module is chosen")
             }
