@@ -39,7 +39,7 @@ final class AppCoordinator {
     }
     
     
-//    MARK:  life cycle
+    //    MARK:  life cycle
     init(rootViewController: RootViewController) {
         self.rootViewController = rootViewController
         self.entranceModule = .init()
@@ -50,7 +50,7 @@ final class AppCoordinator {
     }
     
     
-//    MARK:  public func
+    //    MARK:  public func
     func resolveEntrance() {
         print("\nResolve Entrance")
         if checkIfUserSignedIn() {
@@ -59,22 +59,22 @@ final class AppCoordinator {
             moduleToShow = .entrance
         }
     }
-    
-    
-//    MARK:  private func
+}
+
+
+
+extension AppCoordinator {
     private func didFinishEntranceAction() {
         if didlaunchScreenFinishAnimation, moduleToShow != .none {
             print("\nHello world!")
             switch moduleToShow {
             case .entrance:
                 print("\nShow entrance")
-//                entranceModule = .init()
                 Task {
                     await setModuleWith(viewController: entranceModule.signInPage)
                 }
             case .lobby:
                 print("\nShow lobby")
-//                lobbyModule = .init()
             default:
                 print("\nNo module is chosen")
             }
