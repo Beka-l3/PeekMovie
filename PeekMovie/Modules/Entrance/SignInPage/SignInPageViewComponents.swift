@@ -9,15 +9,11 @@ import UIKit
 
 final class SignInPageViewComponents {
     
-    enum Constants {
-        
-    }
-    
     var usernameTextField: InputTextField = .init()
     
     
     func setupViews(parent: UIView) {
-        parent.backgroundColor = .systemPurple
+        parent.backgroundColor = .black
         
         parent.addSubview(usernameTextField)
         
@@ -30,6 +26,13 @@ final class SignInPageViewComponents {
     }
     
     func setupLayers() {
-        usernameTextField.setupLayers(size: .init(width: 250, height: 50))
+//        usernameTextField.setupLayers(size: .init(width: 250, height: 50))
+    }
+}
+
+
+extension SignInPageViewComponents {
+    private enum Constants {
+        
     }
 }

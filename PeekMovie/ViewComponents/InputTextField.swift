@@ -28,7 +28,7 @@ final class InputTextField: UITextField {
     }
     
     
-//    MARK: - Exposed func
+//    MARK: Exposed func
     public func setupLayers(size: CGSize) {
         shimmer.frame = .init(origin: .zero, size: size)
     }
@@ -41,47 +41,14 @@ final class InputTextField: UITextField {
         shimmer.stopAnimation()
     }
     
-//    MARK: - private func
+    
+//    MARK: private func
     private func setupViews() {
         translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true
         layer.borderWidth = 0.5
         layer.borderColor = UIColor(hex: "FFFFFF")?.cgColor
         layer.cornerRadius = 12
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         layer.addSublayer(shimmer)
     }

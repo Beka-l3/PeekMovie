@@ -20,7 +20,8 @@ final class ShimmerGradient: CAGradientLayer {
         }
     }
     
-//    MARK: - lifecycle
+    
+//    MARK: lifecycle
     override init(layer: Any) {
         super.init(layer: layer)
     }
@@ -43,7 +44,8 @@ final class ShimmerGradient: CAGradientLayer {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    MARK: - Exposed func
+    
+//    MARK: Exposed func
     public func startAnimation() {
         guard !isAnimationRunning else {
             return

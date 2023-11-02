@@ -30,19 +30,13 @@ final class SignInPageViewController: UIViewController {
         
         Task {
             do {
-                try await Task.sleep(nanoseconds: 3 * 1000000000)
-                await MainActor.run {
-                    viewComponents.usernameTextField.startAnimation()
-                }
+                try await Task.sleep(nanoseconds: 3 * 1_000_000_000)
+                viewComponents.usernameTextField.startAnimation()
             } catch {
                 print("\nSleep error")
             }
         }
     }
-    
-//    override func viewWillLayoutSubviews() {
-//        super.viewWillLayoutSubviews()
-//    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
