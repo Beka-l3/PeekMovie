@@ -27,15 +27,6 @@ final class SignInPageViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        Task {
-            do {
-                try await Task.sleep(nanoseconds: 3 * 1_000_000_000)
-                viewComponents.usernameTextField.startAnimation()
-            } catch {
-                print("\nSleep error")
-            }
-        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

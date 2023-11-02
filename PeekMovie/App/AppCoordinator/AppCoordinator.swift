@@ -20,10 +20,8 @@ final class AppCoordinator {
     var moduleToShow: ModuleType = .none {
         didSet {
             if oldValue == .none {
-                print("\nModule To Show Is Chosen")
                 didFinishEntranceAction()
             } else {
-                print("\nSwap Modules")
                 swapModules(moduleToHide: oldValue)
             }
         }
@@ -32,7 +30,6 @@ final class AppCoordinator {
     public var didlaunchScreenFinishAnimation: Bool = false {
         didSet {
             if didlaunchScreenFinishAnimation {
-                print("\nLaunch Screen Did Finish Animation")
                 didFinishEntranceAction()
             }
         }
@@ -52,7 +49,6 @@ final class AppCoordinator {
     
     //    MARK:  public func
     func resolveEntrance() async {
-        print("\nResolve Entrance")
         if await checkIfUserSignedIn() {
             await signInPeekID()
         } else {
@@ -66,11 +62,9 @@ final class AppCoordinator {
 extension AppCoordinator {
     private func didFinishEntranceAction() {
         if didlaunchScreenFinishAnimation, moduleToShow != .none {
-            print("\nHello world!")
             
             switch moduleToShow {
             case .entrance:
-                print("\nShow entrance")
                 Task {
                     await setModuleWith(viewController: entranceModule.signInPage)
                 }
@@ -80,8 +74,6 @@ extension AppCoordinator {
                 print("\nNo module is chosen")
             }
             
-        } else {
-            print("\nSomething is not ready")
         }
     }
     

@@ -7,15 +7,17 @@
 
 import UIKit
 
+
 final class InputTextField: UITextField {
     
     private lazy var shimmer: ShimmerGradient = .init()
     
-//    MARK: - lifecycle
+    
+//    MARK: lifecycle
     init() {
         super.init(frame: .zero)
         
-        setupViews()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
@@ -43,7 +45,7 @@ final class InputTextField: UITextField {
     
     
 //    MARK: private func
-    private func setupViews() {
+    private func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true
         layer.borderWidth = 0.5
@@ -57,4 +59,11 @@ final class InputTextField: UITextField {
         shimmer.frame = .init(origin: .zero, size: bounds.size)
     }
     
+}
+
+
+extension InputTextField {
+    private enum Constants {
+        
+    }
 }

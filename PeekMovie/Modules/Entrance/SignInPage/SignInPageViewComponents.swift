@@ -26,7 +26,7 @@ final class SignInPageViewComponents {
     }
     
     func setupLayers() {
-//        usernameTextField.setupLayers(size: .init(width: 250, height: 50))
+        
     }
 }
 
