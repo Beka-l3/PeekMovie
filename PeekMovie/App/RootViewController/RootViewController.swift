@@ -59,13 +59,19 @@ final class RootViewController: UIViewController {
 extension RootViewController {
     private func startAnimation() {
         viewComponents.nvActivityIndicatorView.startAnimating()
-        UIView.animate(withDuration: 1.2, delay: 0, options: [.transitionCrossDissolve, .curveEaseInOut]) {
-            self.viewComponents.nvActivityIndicatorView.startAnimating()
-        } completion: { done in
+        
+        Task {
+            do {
+                try await Task.sleep(nanoseconds: 1_200_000_000)
+            } catch {
+                print("Failed to sleep")
+            }
+            
             if let appCoordinator = self.appCoordinator, !appCoordinator.didlaunchScreenFinishAnimation {
                 appCoordinator.didlaunchScreenFinishAnimation = true
             }
         }
+        
     }
     
     private func stopAnimation() {
