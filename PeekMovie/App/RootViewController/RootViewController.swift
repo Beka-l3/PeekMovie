@@ -20,11 +20,11 @@ final class RootViewController: UIViewController {
         return view
     }()
     
-    lazy var someLabel: UILabel = {
+    lazy var appTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = lorem[currentColorIndex]
-        label.font = Fonts.thin24
-        label.textColor = .black
+        label.text = Constants.appTitle
+        label.font = Fonts.bold24
+        label.textColor = .systemYellow
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -34,8 +34,6 @@ final class RootViewController: UIViewController {
         return view
     }()
     
-    var lorem = ["Hello World!", "Privet Beka!", "Salem Kamil!", "Hola Senior!"]
-    var currentColorIndex = 0
     var didAnimationStart = false
     
     
@@ -71,7 +69,7 @@ final class RootViewController: UIViewController {
         view.backgroundColor = .black
         
         view.addSubview(background)
-        view.addSubview(someLabel)
+        view.addSubview(appTitleLabel)
         view.addSubview(nvActivityIndicatorView)
         
         NSLayoutConstraint.activate([
@@ -80,8 +78,8 @@ final class RootViewController: UIViewController {
             background.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            someLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            someLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            appTitleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            appTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: Constants.appTitleLabelTopAnchorConstant),
         ])
     }
     
@@ -96,25 +94,11 @@ extension RootViewController {
     private func startAnimation() {
         nvActivityIndicatorView.startAnimating()
         UIView.animate(withDuration: 1.2, delay: 0, options: [.transitionCrossDissolve, .curveEaseInOut]) {
-//            self.background.backgroundColor = .white
             self.nvActivityIndicatorView.startAnimating()
         } completion: { done in
-            
             if let appCoordinator = self.appCoordinator, !appCoordinator.didlaunchScreenFinishAnimation {
                 appCoordinator.didlaunchScreenFinishAnimation = true
             }
-            
-//            UIView.animate(withDuration: 0.6, delay: 5, options: [.transitionCrossDissolve, .curveEaseInOut]) {
-//                self.background.backgroundColor = .black
-//            } completion: { done in
-//                if let appCoordinator = self.appCoordinator, !appCoordinator.didlaunchScreenFinishAnimation {
-//                    appCoordinator.didlaunchScreenFinishAnimation = true
-//                }
-//
-//                self.currentColorIndex = (self.currentColorIndex + 1) % self.lorem.count
-//                self.someLabel.text = self.lorem[self.currentColorIndex]
-//                self.startAnimation()
-//            }
         }
     }
     
@@ -127,6 +111,14 @@ extension RootViewController {
 
 extension RootViewController {
     enum Constants {
-        static let nvActivityIndicatorViewFrame: CGRect = .init(origin: .zero, size: .init(width: 100, height: 100))
+        static let nvActivityIndicatorViewSize: CGFloat = 100
+        static let nvActivityIndicatorViewFrame: CGRect = .init(origin: .zero, size: .init(width: 100, height: nvActivityIndicatorViewSize))
+        
+        static let appTitle = "Peek Movie"
+        
+        static let padding: CGFloat = 16
+        
+        static let appTitleLabelTopAnchorConstant: CGFloat = nvActivityIndicatorViewSize / 2 + padding
     }
 }
+
