@@ -54,7 +54,7 @@ final class AppCoordinator {
     func resolveEntrance() async {
         print("\nResolve Entrance")
         if await checkIfUserSignedIn() {
-            signInPeekID()
+            await signInPeekID()
         } else {
             moduleToShow = .entrance
         }
@@ -67,6 +67,7 @@ extension AppCoordinator {
     private func didFinishEntranceAction() {
         if didlaunchScreenFinishAnimation, moduleToShow != .none {
             print("\nHello world!")
+            
             switch moduleToShow {
             case .entrance:
                 print("\nShow entrance")
@@ -98,7 +99,13 @@ extension AppCoordinator {
         }
     }
     
-    private func signInPeekID() {
+    private func signInPeekID() async {
+        do {
+            try await Task.sleep(nanoseconds: .random(in: 1...3) * 1_000_000_000)
+        } catch {
+            print("Failed to sleep")
+        }
+        
         moduleToShow = .lobby
     }
     

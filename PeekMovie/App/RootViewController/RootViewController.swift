@@ -71,7 +71,6 @@ extension RootViewController {
                 appCoordinator.didlaunchScreenFinishAnimation = true
             }
         }
-        
     }
     
     private func stopAnimation() {
