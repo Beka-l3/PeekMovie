@@ -123,6 +123,7 @@
 		07EB1CCC28FE219C0031598A /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CCB28FE219C0031598A /* Animations.swift */; };
 		07F8930E29127B5200E8FDD4 /* RegistrationFormDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */; };
 		07FC950D2AF3D84E002FE0A9 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 07FC950C2AF3D84E002FE0A9 /* NVActivityIndicatorView */; };
+		07FC950F2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC950E2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -243,6 +244,7 @@
 		07EB1CC928FDE6EB0031598A /* WaitingRoomViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomViewComponents.swift; sourceTree = "<group>"; };
 		07EB1CCB28FE219C0031598A /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFormDTO.swift; sourceTree = "<group>"; };
+		07FC950E2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewControllerViewComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -674,6 +676,7 @@
 			isa = PBXGroup;
 			children = (
 				0779775D2A8E3553000DAF72 /* RootViewController.swift */,
+				07FC950E2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift */,
 			);
 			path = RootViewController;
 			sourceTree = "<group>";
@@ -887,6 +890,7 @@
 				074B8A712A8C25DD00EB39C2 /* CreateRoomNSE.swift in Sources */,
 				07C8212F291019E000B055D0 /* MovieDTO.swift in Sources */,
 				07EB1CCA28FDE6EB0031598A /* WaitingRoomViewComponents.swift in Sources */,
+				07FC950F2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift in Sources */,
 				077B2EDE29080E680087504C /* SMConstants.swift in Sources */,
 				07D401BD28F890F400BF3F55 /* LaunchPage.swift in Sources */,
 				07ABF65E291AD436007C4A52 /* ExtensionLoginPagePresenter.swift in Sources */,

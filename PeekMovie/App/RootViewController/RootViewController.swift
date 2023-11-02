@@ -12,27 +12,7 @@ import NVActivityIndicatorView
 final class RootViewController: UIViewController {
     
     var appCoordinator: AppCoordinator?
-    
-    lazy var background: UIView = {
-        let view = UIView()
-        view.backgroundColor = .black
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    lazy var appTitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = Constants.appTitle
-        label.font = Fonts.bold24
-        label.textColor = .systemYellow
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var nvActivityIndicatorView: NVActivityIndicatorView = {
-        let view = NVActivityIndicatorView(frame: Constants.nvActivityIndicatorViewFrame, type: .ballTrianglePath, color: .systemYellow)
-        return view
-    }()
+    private let viewComponents: RootViewControllerViewComponents = .init()
     
     var didAnimationStart = false
     
@@ -66,25 +46,11 @@ final class RootViewController: UIViewController {
     
     //    MARK:  private func
     private func setupViews() {
-        view.backgroundColor = .black
-        
-        view.addSubview(background)
-        view.addSubview(appTitleLabel)
-        view.addSubview(nvActivityIndicatorView)
-        
-        NSLayoutConstraint.activate([
-            background.topAnchor.constraint(equalTo: view.topAnchor),
-            background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            background.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            appTitleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            appTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: Constants.appTitleLabelTopAnchorConstant),
-        ])
+        viewComponents.setupViews(parent: view)
     }
     
     private func setupFrames() {
-        nvActivityIndicatorView.center = view.center
+        viewComponents.setupFrames(parent: view)
     }
     
 }
@@ -92,9 +58,9 @@ final class RootViewController: UIViewController {
 
 extension RootViewController {
     private func startAnimation() {
-        nvActivityIndicatorView.startAnimating()
+        viewComponents.nvActivityIndicatorView.startAnimating()
         UIView.animate(withDuration: 1.2, delay: 0, options: [.transitionCrossDissolve, .curveEaseInOut]) {
-            self.nvActivityIndicatorView.startAnimating()
+            self.viewComponents.nvActivityIndicatorView.startAnimating()
         } completion: { done in
             if let appCoordinator = self.appCoordinator, !appCoordinator.didlaunchScreenFinishAnimation {
                 appCoordinator.didlaunchScreenFinishAnimation = true
@@ -103,22 +69,7 @@ extension RootViewController {
     }
     
     private func stopAnimation() {
-        nvActivityIndicatorView.stopAnimating()
-    }
-    
-}
-
-
-extension RootViewController {
-    enum Constants {
-        static let nvActivityIndicatorViewSize: CGFloat = 100
-        static let nvActivityIndicatorViewFrame: CGRect = .init(origin: .zero, size: .init(width: 100, height: nvActivityIndicatorViewSize))
-        
-        static let appTitle = "Peek Movie"
-        
-        static let padding: CGFloat = 16
-        
-        static let appTitleLabelTopAnchorConstant: CGFloat = nvActivityIndicatorViewSize / 2 + padding
+        viewComponents.nvActivityIndicatorView.stopAnimating()
     }
 }
 
