@@ -51,9 +51,9 @@ final class AppCoordinator {
     
     
     //    MARK:  public func
-    func resolveEntrance() {
+    func resolveEntrance() async {
         print("\nResolve Entrance")
-        if checkIfUserSignedIn() {
+        if await checkIfUserSignedIn() {
             signInPeekID()
         } else {
             moduleToShow = .entrance
@@ -84,7 +84,13 @@ extension AppCoordinator {
         }
     }
     
-    private func checkIfUserSignedIn() -> Bool {
+    private func checkIfUserSignedIn() async -> Bool {
+        do {
+            try await Task.sleep(nanoseconds: .random(in: 1...3) * 1_000_000_000)
+        } catch {
+            print("Failed to sleep")
+        }
+        
         if let _ = Service.user.accessToken {
             return true
         } else {

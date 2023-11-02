@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-//        Task {
-        appCoordinator.resolveEntrance()
-//        }
+        Task {
+            await appCoordinator.resolveEntrance()
+        }
         
         return true
     }

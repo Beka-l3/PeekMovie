@@ -95,9 +95,15 @@ final class RootViewController: UIViewController {
 extension RootViewController {
     private func startAnimation() {
         nvActivityIndicatorView.startAnimating()
-//        UIView.animate(withDuration: 0.6, delay: 0, options: [.transitionCrossDissolve, .curveEaseInOut]) {
+        UIView.animate(withDuration: 1.2, delay: 0, options: [.transitionCrossDissolve, .curveEaseInOut]) {
 //            self.background.backgroundColor = .white
-//        } completion: { done in
+            self.nvActivityIndicatorView.startAnimating()
+        } completion: { done in
+            
+            if let appCoordinator = self.appCoordinator, !appCoordinator.didlaunchScreenFinishAnimation {
+                appCoordinator.didlaunchScreenFinishAnimation = true
+            }
+            
 //            UIView.animate(withDuration: 0.6, delay: 5, options: [.transitionCrossDissolve, .curveEaseInOut]) {
 //                self.background.backgroundColor = .black
 //            } completion: { done in
@@ -109,7 +115,7 @@ extension RootViewController {
 //                self.someLabel.text = self.lorem[self.currentColorIndex]
 //                self.startAnimation()
 //            }
-//        }
+        }
     }
     
     private func stopAnimation() {
