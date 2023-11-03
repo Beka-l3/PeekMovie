@@ -7,10 +7,8 @@
 
 import Foundation
 
+
 final class AppCoordinator {
-    enum ModuleType {
-        case entrance, lobby, session, none
-    }
     
     let rootViewController: RootViewController
     var entranceModule: EntranceModuleBuilder
@@ -36,7 +34,7 @@ final class AppCoordinator {
     }
     
     
-    //    MARK:  life cycle
+//    MARK:  life cycle
     init(rootViewController: RootViewController) {
         self.rootViewController = rootViewController
         self.entranceModule = .init()
@@ -47,7 +45,7 @@ final class AppCoordinator {
     }
     
     
-    //    MARK:  public func
+//    MARK:  public func
     func resolveEntrance() async {
         if await checkIfUserSignedIn() {
             await signInPeekID()
@@ -57,6 +55,12 @@ final class AppCoordinator {
     }
 }
 
+
+extension AppCoordinator {
+    enum ModuleType {
+        case entrance, lobby, session, none
+    }
+}
 
 
 extension AppCoordinator {

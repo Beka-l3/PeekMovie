@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 final class SignInPageViewController: UIViewController {
     
     let viewComponents = SignInPageViewComponents()
