@@ -13,7 +13,7 @@ final class RootViewControllerViewComponents {
     
     lazy var background: UIView = {
         let view = UIView()
-        view.backgroundColor = .black
+        view.backgroundColor = Colors.backgroundPrimary
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -22,20 +22,20 @@ final class RootViewControllerViewComponents {
         let label = UILabel()
         label.text = Constants.appTitle
         label.font = Fonts.bold24
-        label.textColor = .systemYellow
+        label.textColor = Colors.focus
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var nvActivityIndicatorView: NVActivityIndicatorView = {
-        let view = NVActivityIndicatorView(frame: Constants.nvActivityIndicatorViewFrame, type: .ballTrianglePath, color: .systemYellow)
+        let view = NVActivityIndicatorView(frame: Constants.nvActivityIndicatorViewFrame, type: .ballTrianglePath, color: Colors.focus)
         return view
     }()
     
     
     
     public func setupViews(parent: UIView) {
-        parent.backgroundColor = .black
+        parent.backgroundColor = Colors.backgroundPrimary
         
         parent.addSubview(background)
         parent.addSubview(appTitleLabel)

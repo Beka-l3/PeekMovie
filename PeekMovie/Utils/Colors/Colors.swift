@@ -9,10 +9,10 @@ import UIKit
 
 
 enum Colors {
-    static let backgroundPrimary: UIColor = .init(hex: "121212")!
-    static let backgroundSecondary: UIColor = .init(hex: "0B0B0C")!
+    static let backgroundPrimary: UIColor = .init(hex: "121212FF")!
+    static let backgroundSecondary: UIColor = .init(hex: "0B0B0CFF")!
     
-    static let focus: UIColor = .init(hex: "F5FA19")!
+    static let focus: UIColor = .init(hex: "F5FA19FF")!
     
     static let textMain: UIColor = .init(white: 1, alpha: 0.87)
     static let textSecondary: UIColor = .init(white: 1, alpha: 0.6)
