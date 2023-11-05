@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class MainButton: UIButton {
+final class PeekButton: UIButton {
     
     enum ButtonType {
         case main
@@ -17,14 +17,20 @@ final class MainButton: UIButton {
     }
     
 //    MARK: lifecycle
-    init(type: ButtonType, titleText: String, target: Any?, action: Selector) {
+    init(type: ButtonType, titleText: String) {
         super.init(frame: .zero)
         
-        setupView(type: type, titleText: titleText, target: target, action: action)
+        setupView(type: type, titleText: titleText)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    convenience init(type: ButtonType, titleText: String, target: Any?, action: Selector) {
+        self.init(type: type, titleText: titleText)
+        
+        addTarget(target, action: action, for: .touchUpInside)
     }
     
     override func layoutSubviews() {
@@ -33,7 +39,7 @@ final class MainButton: UIButton {
     
     
 //    MARK: private func
-    private func setupView(type: ButtonType, titleText: String, target: Any?, action: Selector) {
+    private func setupView(type: ButtonType, titleText: String) {
         backgroundColor = Colors.clearBlack
         setTitle(titleText, for: .normal)
         
@@ -54,13 +60,11 @@ final class MainButton: UIButton {
         }
         
         translatesAutoresizingMaskIntoConstraints = false
-        
-        addTarget(target, action: action, for: .touchUpInside)
     }
 }
 
 
-extension MainButton {
+extension PeekButton {
     private func getTitleAttributes(font: UIFont?, color: UIColor?) -> [NSAttributedString.Key: Any]? {
         guard let font = font, let color = color else {
             return nil

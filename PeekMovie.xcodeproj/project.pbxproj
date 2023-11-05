@@ -105,7 +105,7 @@
 		07CEA3932AF5661D00E69FAB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CEA3922AF5661D00E69FAB /* Colors.swift */; };
 		07CEA3952AF79ECC00E69FAB /* UserInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CEA3942AF79ECC00E69FAB /* UserInputTextField.swift */; };
 		07CEA3982AF7A8A400E69FAB /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CEA3972AF7A8A400E69FAB /* Images.swift */; };
-		07CEA39B2AF7ABB800E69FAB /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CEA39A2AF7ABB800E69FAB /* MainButton.swift */; };
+		07CEA39B2AF7ABB800E69FAB /* PeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CEA39A2AF7ABB800E69FAB /* PeekButton.swift */; };
 		07D401B928F8641700BF3F55 /* PasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D401B828F8641700BF3F55 /* PasswordPage.swift */; };
 		07D401BB28F8653D00BF3F55 /* PasswordViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D401BA28F8653D00BF3F55 /* PasswordViewComponents.swift */; };
 		07D401BD28F890F400BF3F55 /* LaunchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D401BC28F890F400BF3F55 /* LaunchPage.swift */; };
@@ -229,7 +229,7 @@
 		07CEA3922AF5661D00E69FAB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		07CEA3942AF79ECC00E69FAB /* UserInputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputTextField.swift; sourceTree = "<group>"; };
 		07CEA3972AF7A8A400E69FAB /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
-		07CEA39A2AF7ABB800E69FAB /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		07CEA39A2AF7ABB800E69FAB /* PeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekButton.swift; sourceTree = "<group>"; };
 		07D401B828F8641700BF3F55 /* PasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPage.swift; sourceTree = "<group>"; };
 		07D401BA28F8653D00BF3F55 /* PasswordViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewComponents.swift; sourceTree = "<group>"; };
 		07D401BC28F890F400BF3F55 /* LaunchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPage.swift; sourceTree = "<group>"; };
@@ -437,7 +437,7 @@
 				072EE6632A953CCE00CFCC2A /* InputTextField.swift */,
 				072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */,
 				07CEA3942AF79ECC00E69FAB /* UserInputTextField.swift */,
-				07CEA39A2AF7ABB800E69FAB /* MainButton.swift */,
+				07CEA39A2AF7ABB800E69FAB /* PeekButton.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -917,7 +917,7 @@
 				077933D52A8FF8C000B0F509 /* LoggerProtocol.swift in Sources */,
 				074B8A712A8C25DD00EB39C2 /* CreateRoomNSE.swift in Sources */,
 				07C8212F291019E000B055D0 /* MovieDTO.swift in Sources */,
-				07CEA39B2AF7ABB800E69FAB /* MainButton.swift in Sources */,
+				07CEA39B2AF7ABB800E69FAB /* PeekButton.swift in Sources */,
 				07EB1CCA28FDE6EB0031598A /* WaitingRoomViewComponents.swift in Sources */,
 				07FC950F2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift in Sources */,
 				077B2EDE29080E680087504C /* SMConstants.swift in Sources */,
