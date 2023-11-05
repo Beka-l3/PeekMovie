@@ -7,13 +7,16 @@
 
 import UIKit
 
+
 final class SignInPageViewComponents {
-    
-//    var usernameTextField: InputTextField = .init()
     
     lazy var usernameTextField = UserInputTextField(placeholder: Constants.usernameTextFieldPlaceholder)
     lazy var emailTextField = UserInputTextField(placeholder: Constants.emailTextFieldPlaceholder)
     lazy var passwordTextField = UserInputTextField(placeholder: Constants.passwordTextFieldPlaceholder)
+    
+    lazy var usernameIconView = PeekIconView(image: Images.Icon.Profile.x24)
+    lazy var emailIconView = PeekIconView(image: Images.Icon.Email.x24)
+    lazy var passwordIconView = PeekIconView(image: Images.Icon.Key.x24)
     
     lazy var loginButton = PeekButton(type: .main, titleText: Constants.loginButtonTitleText)
     lazy var SignUpButton = PeekButton(type: .secondary, titleText: Constants.signUpButtonTitleText)
