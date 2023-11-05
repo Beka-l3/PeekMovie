@@ -28,9 +28,11 @@ extension NetworkServiceImplementation {
                 "gzip, deflate": "Accept-Encoding",
                 credentials.token: "X-authentication"
             ],
+            
 //            body: try? JSONSerialization.data(
 //                withJSONObject: []
 //            ),
+            
             httpMethod: .post
         )
 }
