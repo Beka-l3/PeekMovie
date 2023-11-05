@@ -19,10 +19,11 @@ final class UserInputTextField: UITextField {
     
     
 //    MARK: lifecycle
-    init() {
+    init(placeholder: String = "") {
         super.init(frame: .zero)
         
         setupView()
+        setPlaceholder(placeholder)
     }
     
     required init?(coder: NSCoder) {
@@ -31,7 +32,6 @@ final class UserInputTextField: UITextField {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupLayers()
     }
     
     
@@ -52,9 +52,7 @@ final class UserInputTextField: UITextField {
         font = Fonts.regular14
         textColor = Colors.textMain
         translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    private func setupLayers() {
+        
         addSubview(bottomBorderLine)
         
         NSLayoutConstraint.activate([
@@ -64,7 +62,6 @@ final class UserInputTextField: UITextField {
             bottomBorderLine.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
-    
 }
 
 

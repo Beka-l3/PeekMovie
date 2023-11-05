@@ -11,17 +11,9 @@ final class SignInPageViewComponents {
     
 //    var usernameTextField: InputTextField = .init()
     
-    lazy var usernameTextField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = Colors.backgroundSecondary
-        textField.placeholder = "Username"
-        textField.textColor = Colors.textMain
-        textField.font = Fonts.regular12
-        textField.layer.cornerRadius = 12
-        
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
-    }()
+    lazy var usernameTextField = UserInputTextField(placeholder: Constants.usernameTextFieldPlaceholder)
+    lazy var emailTextField = UserInputTextField(placeholder: Constants.emailTextFieldPlaceholder)
+    lazy var passwordTextField = UserInputTextField(placeholder: Constants.passwordTextFieldPlaceholder)
     
     lazy var continueButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -63,6 +55,8 @@ final class SignInPageViewComponents {
 
 extension SignInPageViewComponents {
     private enum Constants {
-        
+        static let usernameTextFieldPlaceholder = "Username"
+        static let emailTextFieldPlaceholder = "Email"
+        static let passwordTextFieldPlaceholder = "Password"
     }
 }
