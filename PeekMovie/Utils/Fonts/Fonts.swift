@@ -8,8 +8,13 @@
 import UIKit
 
 enum Fonts {
+    static let light12 = UIFont(name: "Poppins-Light", size: 12)
+    static let light16 = UIFont(name: "Poppins-Light", size: 16)
+    
     static let regular8 = UIFont(name: "Poppins-Regular", size: 8)
     static let regular12 = UIFont(name: "Poppins-Regular", size: 12)
+    static let regular14 = UIFont(name: "Poppins-Regular", size: 14)
+    static let regular16 = UIFont(name: "Poppins-Regular", size: 16)
     
     static let thin24 = UIFont(name: "Poppins-Thin", size: 24)
     

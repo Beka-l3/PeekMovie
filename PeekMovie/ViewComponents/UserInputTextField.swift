@@ -10,7 +10,7 @@ import UIKit
 
 final class UserInputTextField: UITextField {
     
-    lazy var bottomBorderLine: UIView = {
+    private lazy var bottomBorderLine: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.textTertiary
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -34,14 +34,24 @@ final class UserInputTextField: UITextField {
         setupLayers()
     }
     
+    
+//    MARK: exposed func
+    public func setPlaceholder(_ placeholder: String) {
+        if let font = Fonts.light12 {
+            attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [
+                .foregroundColor: Colors.textTertiary,
+                .font: font
+            ])
+        }
+    }
+    
+    
 //    MARK: private func
     private func setupView() {
+        backgroundColor = Colors.clearBlack
+        font = Fonts.regular14
+        textColor = Colors.textMain
         translatesAutoresizingMaskIntoConstraints = false
-        clipsToBounds = true
-        layer.borderWidth = 0.5
-        layer.borderColor = UIColor(hex: "FFFFFF")?.cgColor
-        layer.cornerRadius = 12
-        
     }
     
     private func setupLayers() {
