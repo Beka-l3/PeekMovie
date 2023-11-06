@@ -25,6 +25,8 @@ final class SignInPageViewComponents {
     lazy var SignInButton = PeekButton(type: .secondary, titleText: Constants.signInButtonTitleText)
     lazy var forgotPasswordButton = PeekButton(type: .tertiary, titleText: Constants.forgotPasswordButtonTitleText)
     
+//    lazy var signUpLabel = PeekLabel()
+    
     
     func setupViews(parent: UIView) {
         parent.backgroundColor = Colors.backgroundPrimary
@@ -92,10 +94,12 @@ extension SignInPageViewComponents {
         static let appLogoIconViewYOrigin: CGFloat = 96
         static let inputBlockYOrigin: CGFloat = 342
         
-        static let paddingXS: CGFloat = 4
-        static let paddingS: CGFloat = 6
+        static let paddingXXS: CGFloat = 4
+        static let paddingXS: CGFloat = 6
+        static let paddingS: CGFloat = 10
         static let padding: CGFloat = 16
         static let paddingL: CGFloat = 36
-        static let paddingXL: CGFloat = 52
+        static let paddingXL: CGFloat = 48
+        static let paddingXXL: CGFloat = 52
     }
 }

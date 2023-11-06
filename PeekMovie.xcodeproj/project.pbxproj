@@ -97,6 +97,7 @@
 		07ABF662291AD4BF007C4A52 /* ExtensionRegisterPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF661291AD4BF007C4A52 /* ExtensionRegisterPagePresenter.swift */; };
 		07ABF664291AD4DA007C4A52 /* ExtensionAuthorizedPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF663291AD4DA007C4A52 /* ExtensionAuthorizedPagePresenter.swift */; };
 		07ABF666291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF665291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift */; };
+		07BB3FD62AF90638001E0E63 /* PeekLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BB3FD52AF90638001E0E63 /* PeekLabel.swift */; };
 		07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BBD947291BE08F00DD13BA /* MockNetworkService.swift */; };
 		07BD8B772A93EE9E0089199E /* LobbyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B762A93EE9E0089199E /* LobbyModuleBuilder.swift */; };
 		07BD8B792A93EEC50089199E /* SessionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B782A93EEC50089199E /* SessionModuleBuilder.swift */; };
@@ -222,6 +223,7 @@
 		07ABF661291AD4BF007C4A52 /* ExtensionRegisterPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionRegisterPagePresenter.swift; sourceTree = "<group>"; };
 		07ABF663291AD4DA007C4A52 /* ExtensionAuthorizedPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAuthorizedPagePresenter.swift; sourceTree = "<group>"; };
 		07ABF665291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionWaitingPagePresenter.swift; sourceTree = "<group>"; };
+		07BB3FD52AF90638001E0E63 /* PeekLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekLabel.swift; sourceTree = "<group>"; };
 		07BBD947291BE08F00DD13BA /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		07BD8B762A93EE9E0089199E /* LobbyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyModuleBuilder.swift; sourceTree = "<group>"; };
 		07BD8B782A93EEC50089199E /* SessionModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModuleBuilder.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 				07CEA3942AF79ECC00E69FAB /* UserInputTextField.swift */,
 				07CEA39A2AF7ABB800E69FAB /* PeekButton.swift */,
 				07CBD4222AF8236300005F63 /* PeekIconView.swift */,
+				07BB3FD52AF90638001E0E63 /* PeekLabel.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -1003,6 +1006,7 @@
 				074B8A6F2A8C25A500EB39C2 /* CheckUsernameNSE.swift in Sources */,
 				07DBA83F28F3F734000A1312 /* AppDelegateOld.swift in Sources */,
 				07EB1CC228FD48100031598A /* HTTPRequest.swift in Sources */,
+				07BB3FD62AF90638001E0E63 /* PeekLabel.swift in Sources */,
 				07ABF660291AD4A7007C4A52 /* ExtensionPasswordPagePresenter.swift in Sources */,
 				0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */,
 				072EE65D2A9535C000CFCC2A /* SignInPageViewController.swift in Sources */,
