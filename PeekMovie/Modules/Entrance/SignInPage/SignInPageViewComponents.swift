@@ -10,7 +10,7 @@ import UIKit
 
 final class SignInPageViewComponents {
     
-    lazy var appLogoIconView = PeekIconView(image: Images.Logo.App.x90, size: .x90)
+    lazy var appLogoIconView = PeekIconView(image: Images.Logo.App.x90png, size: .x90)
     
     lazy var usernameTextField = UserInputTextField(placeholder: Constants.usernameTextFieldPlaceholder)
     lazy var emailTextField = UserInputTextField(placeholder: Constants.emailTextFieldPlaceholder)
@@ -21,14 +21,15 @@ final class SignInPageViewComponents {
     lazy var passwordIconView = PeekIconView(image: Images.Icon.Key.x24)
     
     lazy var loginButton = PeekButton(type: .main, titleText: Constants.loginButtonTitleText)
-    lazy var signUpButton = PeekButton(type: .secondary, titleText: Constants.signUpButtonTitleText)
+    lazy var signUpButton = PeekButton(type: .main, titleText: Constants.signUpButtonTitleText)
+    lazy var signUpButtonSecondary = PeekButton(type: .secondary, titleText: Constants.signUpButtonTitleText)
     lazy var signInButton = PeekButton(type: .secondary, titleText: Constants.signInButtonTitleText)
     lazy var forgotPasswordButton = PeekButton(type: .tertiary, titleText: Constants.forgotPasswordButtonTitleText)
     
     lazy var signUpLabel = PeekLabel(type: .secondary, text: Constants.signUpLabelText, font: .callout)
     lazy var signInLabel = PeekLabel(type: .secondary, text: Constants.signInLabelText, font: .callout)
     
-    lazy var signUpHStack = getButtonHStackView(with: [signUpLabel, signUpButton])
+    lazy var signUpHStack = getButtonHStackView(with: [signUpLabel, signUpButtonSecondary])
     lazy var signInHStack = getButtonHStackView(with: [signInLabel, signInButton])
     
     
@@ -43,7 +44,7 @@ final class SignInPageViewComponents {
         parent.addSubview(emailIconView)
         parent.addSubview(passwordTextField)
         parent.addSubview(passwordIconView)
-        parent.addSubview(loginButton)
+        parent.addSubview(signUpButton)
         parent.addSubview(forgotPasswordButton)
         parent.addSubview(signInHStack)
         
@@ -80,8 +81,8 @@ final class SignInPageViewComponents {
             passwordIconView.heightAnchor.constraint(equalToConstant: passwordIconView.iconSize.rawValue),
             passwordIconView.trailingAnchor.constraint(equalTo: passwordTextField.leadingAnchor, constant: -Constants.paddingL),
             
-            loginButton.leadingAnchor.constraint(equalTo: usernameTextField.leadingAnchor),
-            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constants.paddingXL),
+            signUpButton.leadingAnchor.constraint(equalTo: usernameTextField.leadingAnchor),
+            signUpButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constants.paddingXL),
             
             forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constants.paddingXS),
             forgotPasswordButton.trailingAnchor.constraint(equalTo: parent.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.paddingXS),

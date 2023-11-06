@@ -27,6 +27,7 @@ extension Images {
 extension Images.Logo {
     enum App {
         static let x90 = UIImage(named: "App x90")
+        static let x90png = UIImage(named: "App x90 png")
         static let x1024 = UIImage(named: "App x1024")
     }
 }
