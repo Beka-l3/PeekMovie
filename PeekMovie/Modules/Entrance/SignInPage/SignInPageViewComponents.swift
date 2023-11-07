@@ -13,7 +13,7 @@ final class SignInPageViewComponents {
     lazy var backgroundLinear = BackgroundGradient(type: .linearBottomLeft)
     lazy var backgroundRadial = BackgroundGradient(type: .raidalBottom)
     
-    lazy var appLogoIconView = PeekIconView(image: Images.Logo.App.x90png, size: .x90)
+    lazy var appLogoIconView = PeekIconView(image: Images.Logo.App.x90, size: .x90, cornerRadius: Constants.paddingM / 2)
     
     lazy var usernameTextField = UserInputTextField(placeholder: Constants.usernameTextFieldPlaceholder)
     lazy var emailTextField = UserInputTextField(placeholder: Constants.emailTextFieldPlaceholder)
@@ -29,73 +29,93 @@ final class SignInPageViewComponents {
     lazy var signInButton = PeekButton(type: .secondary, titleText: Constants.signInButtonTitleText)
     lazy var forgotPasswordButton = PeekButton(type: .tertiary, titleText: Constants.forgotPasswordButtonTitleText)
     
-    lazy var signUpLabel = PeekLabel(type: .secondary, text: Constants.signUpLabelText, font: .callout)
-    lazy var signInLabel = PeekLabel(type: .secondary, text: Constants.signInLabelText, font: .callout)
+    lazy var signUpLabel = PeekLabel(type: .secondary, text: Constants.signUpLabelText, font: .caption1)
+    lazy var signInLabel = PeekLabel(type: .secondary, text: Constants.signInLabelText, font: .caption1)
     
     lazy var signUpHStack = getBottomHStackView(with: [signUpLabel, signUpButtonSecondary])
     lazy var signInHStack = getBottomHStackView(with: [signInLabel, signInButton])
     
+    lazy var inputBlock: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = Constants.paddingM
+        view.backgroundColor = Colors.backgroundPrimary
+        
+        view.addSubview(usernameIconView)
+        view.addSubview(usernameTextField)
+        view.addSubview(emailIconView)
+        view.addSubview(emailTextField)
+        view.addSubview(passwordIconView)
+        view.addSubview(passwordTextField)
+        
+        view.addSubview(signUpButton)
+//        view.addSubview(forgotPasswordButton)
+        view.addSubview(signInHStack)
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     
     func setupViews(parent: UIView) {
-        parent.backgroundColor = Colors.backgroundPrimary
+        parent.backgroundColor = Colors.focus
         
         parent.addSubview(appLogoIconView)
-        parent.addSubview(usernameTextField)
-        parent.addSubview(usernameIconView)
-        parent.addSubview(emailTextField)
-        parent.addSubview(emailIconView)
-        parent.addSubview(passwordTextField)
-        parent.addSubview(passwordIconView)
-        parent.addSubview(signUpButton)
-        parent.addSubview(forgotPasswordButton)
-        parent.addSubview(signInHStack)
+        parent.addSubview(inputBlock)
         
         NSLayoutConstraint.activate([
             appLogoIconView.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
-            appLogoIconView.topAnchor.constraint(equalTo: parent.topAnchor, constant: Constants.appLogoIconViewYOrigin),
+            appLogoIconView.topAnchor.constraint(equalTo: parent.topAnchor, constant: Constants.paddingXXXXL),
             appLogoIconView.widthAnchor.constraint(equalToConstant: appLogoIconView.iconSize.rawValue),
             appLogoIconView.heightAnchor.constraint(equalToConstant: appLogoIconView.iconSize.rawValue),
             
-            usernameTextField.topAnchor.constraint(equalTo: appLogoIconView.bottomAnchor, constant: Constants.inputBlockPadding),
-            usernameTextField.leadingAnchor.constraint(equalTo: parent.centerXAnchor, constant: -Constants.paddingXL),
-            usernameTextField.trailingAnchor.constraint(equalTo: parent.safeAreaLayoutGuide.trailingAnchor),
+            inputBlock.topAnchor.constraint(equalTo: appLogoIconView.bottomAnchor, constant: Constants.paddingXXXXL),
+            inputBlock.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
+            inputBlock.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
+            inputBlock.bottomAnchor.constraint(equalTo: parent.bottomAnchor),
             
-            usernameIconView.centerYAnchor.constraint(equalTo: usernameTextField.centerYAnchor),
-            usernameIconView.widthAnchor.constraint(equalToConstant: usernameIconView.iconSize.rawValue),
-            usernameIconView.heightAnchor.constraint(equalToConstant: usernameIconView.iconSize.rawValue),
-            usernameIconView.trailingAnchor.constraint(equalTo: usernameTextField.leadingAnchor, constant: -Constants.paddingL),
+            usernameIconView.topAnchor.constraint(equalTo: inputBlock.topAnchor, constant: Constants.paddingXXXL),
+            usernameIconView.leadingAnchor.constraint(equalTo: inputBlock.leadingAnchor, constant: Constants.paddingXL),
+            usernameIconView.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
-            emailTextField.topAnchor.constraint(equalTo: usernameIconView.bottomAnchor, constant: Constants.paddingL),
-            emailTextField.leadingAnchor.constraint(equalTo: parent.centerXAnchor, constant: -Constants.paddingXL),
-            emailTextField.trailingAnchor.constraint(equalTo: parent.safeAreaLayoutGuide.trailingAnchor),
+            usernameTextField.topAnchor.constraint(equalTo: usernameIconView.topAnchor),
+            usernameTextField.leadingAnchor.constraint(equalTo: usernameIconView.trailingAnchor, constant: Constants.paddingXL),
+            usernameTextField.trailingAnchor.constraint(equalTo: inputBlock.trailingAnchor),
+            usernameTextField.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
-            emailIconView.centerYAnchor.constraint(equalTo: emailTextField.centerYAnchor),
-            emailIconView.widthAnchor.constraint(equalToConstant: emailIconView.iconSize.rawValue),
-            emailIconView.heightAnchor.constraint(equalToConstant: emailIconView.iconSize.rawValue),
-            emailIconView.trailingAnchor.constraint(equalTo: emailTextField.leadingAnchor, constant: -Constants.paddingL),
+            emailIconView.topAnchor.constraint(equalTo: usernameIconView.bottomAnchor, constant: Constants.paddingL),
+            emailIconView.leadingAnchor.constraint(equalTo: inputBlock.leadingAnchor, constant: Constants.paddingXL),
+            emailIconView.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
-            passwordTextField.topAnchor.constraint(equalTo: emailIconView.bottomAnchor, constant: Constants.paddingL),
-            passwordTextField.leadingAnchor.constraint(equalTo: parent.centerXAnchor, constant: -Constants.paddingXL),
-            passwordTextField.trailingAnchor.constraint(equalTo: parent.safeAreaLayoutGuide.trailingAnchor),
+            emailTextField.topAnchor.constraint(equalTo: emailIconView.topAnchor),
+            emailTextField.leadingAnchor.constraint(equalTo: emailIconView.trailingAnchor, constant: Constants.paddingXL),
+            emailTextField.trailingAnchor.constraint(equalTo: inputBlock.trailingAnchor),
+            emailTextField.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
-            passwordIconView.centerYAnchor.constraint(equalTo: passwordTextField.centerYAnchor),
-            passwordIconView.widthAnchor.constraint(equalToConstant: passwordIconView.iconSize.rawValue),
-            passwordIconView.heightAnchor.constraint(equalToConstant: passwordIconView.iconSize.rawValue),
-            passwordIconView.trailingAnchor.constraint(equalTo: passwordTextField.leadingAnchor, constant: -Constants.paddingL),
+            passwordIconView.topAnchor.constraint(equalTo: emailIconView.bottomAnchor, constant: Constants.paddingL),
+            passwordIconView.leadingAnchor.constraint(equalTo: inputBlock.leadingAnchor, constant: Constants.paddingXL),
+            passwordIconView.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
-            signUpButton.leadingAnchor.constraint(equalTo: usernameTextField.leadingAnchor),
+            passwordTextField.topAnchor.constraint(equalTo: passwordIconView.topAnchor),
+            passwordTextField.leadingAnchor.constraint(equalTo: passwordIconView.trailingAnchor, constant: Constants.paddingXL),
+            passwordTextField.trailingAnchor.constraint(equalTo: inputBlock.trailingAnchor),
+            passwordTextField.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
+            
             signUpButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constants.paddingXL),
+            signUpButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
             
-            forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constants.paddingXS),
-            forgotPasswordButton.trailingAnchor.constraint(equalTo: parent.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.paddingXS),
+//            forgotPasswordButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: Constants.paddingS),
+//            forgotPasswordButton.leadingAnchor.constraint(equalTo: signUpButton.leadingAnchor),
             
-            signInHStack.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
-            signInHStack.bottomAnchor.constraint(equalTo: parent.bottomAnchor, constant: -Constants.paddingL),
+            signInHStack.centerXAnchor.constraint(equalTo: inputBlock.centerXAnchor),
+            signInHStack.bottomAnchor.constraint(equalTo: inputBlock.bottomAnchor, constant: -Constants.paddingL),
         ])
     }
     
     func setupLayers(parent: UIView) {
-        parent.layer.addSublayer(backgroundLinear)
+        backgroundLinear.frame.size = .init(width: Constants.screenWidth, height: Constants.inputBlockHeight)
+        backgroundLinear.cornerRadius = Constants.paddingM
+        backgroundLinear.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        inputBlock.layer.addSublayer(backgroundLinear)
     }
 }
 

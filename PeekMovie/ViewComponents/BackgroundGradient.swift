@@ -38,7 +38,7 @@ final class BackgroundGradient: CAGradientLayer {
         self.zPosition = -10
         self.frame = .init(origin: .zero, size: UIScreen.main.bounds.size)
         
-        if let first = Colors.backgroundPrimary, let second = Colors.focusBackgroundDark {
+        if let first = Colors.backgroundPrimary, let second = Colors.backgroundTertiary {
             self.colors = [first.cgColor, second.cgColor]
         }
         

@@ -35,7 +35,6 @@ extension Images.Logo {
 extension Images.Icon {
     enum Email {
         static let x24 = UIImage(named: "Email icon x24")
-        static let x24BW = UIImage(named: "Email icon BW x24")
     }
     
     enum Key {

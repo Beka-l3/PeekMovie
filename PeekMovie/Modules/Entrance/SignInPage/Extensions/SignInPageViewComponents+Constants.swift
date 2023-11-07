@@ -29,9 +29,12 @@ extension SignInPageViewComponents {
         static let paddingXS: CGFloat = 6
         static let paddingS: CGFloat = 10
         static let padding: CGFloat = 16
+        static let paddingM: CGFloat = 24
         static let paddingL: CGFloat = 36
         static let paddingXL: CGFloat = 48
         static let paddingXXL: CGFloat = 52
+        static let paddingXXXL: CGFloat = 96
+        static let paddingXXXXL: CGFloat = 144
         
         static let screenHeight: CGFloat = UIScreen.main.bounds.height
         static let screenWidth: CGFloat = UIScreen.main.bounds.width
@@ -41,6 +44,7 @@ extension SignInPageViewComponents {
         static let mainButtonHeight: CGFloat = Fonts.bold18?.pointSize ?? 19
         
         static let appLogoHeight: CGFloat = 90
+        static let inputFieldHeight: CGFloat = 24
         
         static var signUpBlockHeight: CGFloat {
             3 * userInputFieldHeight + 2 * paddingL + paddingXL + mainButtonHeight
@@ -52,6 +56,10 @@ extension SignInPageViewComponents {
         
         static var inputBlockPadding: CGFloat {
             (inputBlockAvailableSpaceHeight - signUpBlockHeight) / 2
+        }
+        
+        static var inputBlockHeight: CGFloat {
+            UIScreen.main.bounds.height - 2 * paddingXXXL - appLogoHeight
         }
     }
 }
