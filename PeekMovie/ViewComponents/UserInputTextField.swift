@@ -49,7 +49,7 @@ final class UserInputTextField: UITextField {
 //    MARK: private func
     private func setupView() {
         backgroundColor = Colors.clearBlack
-        font = Fonts.regular14
+        font = Fonts.regular15
         textColor = Colors.textMain
         translatesAutoresizingMaskIntoConstraints = false
         

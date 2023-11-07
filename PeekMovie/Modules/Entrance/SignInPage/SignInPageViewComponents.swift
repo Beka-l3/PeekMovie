@@ -29,8 +29,8 @@ final class SignInPageViewComponents {
     lazy var signUpLabel = PeekLabel(type: .secondary, text: Constants.signUpLabelText, font: .callout)
     lazy var signInLabel = PeekLabel(type: .secondary, text: Constants.signInLabelText, font: .callout)
     
-    lazy var signUpHStack = getButtonHStackView(with: [signUpLabel, signUpButtonSecondary])
-    lazy var signInHStack = getButtonHStackView(with: [signInLabel, signInButton])
+    lazy var signUpHStack = getBottomHStackView(with: [signUpLabel, signUpButtonSecondary])
+    lazy var signInHStack = getBottomHStackView(with: [signInLabel, signInButton])
     
     
     
@@ -54,7 +54,7 @@ final class SignInPageViewComponents {
             appLogoIconView.widthAnchor.constraint(equalToConstant: appLogoIconView.iconSize.rawValue),
             appLogoIconView.heightAnchor.constraint(equalToConstant: appLogoIconView.iconSize.rawValue),
             
-            usernameTextField.topAnchor.constraint(equalTo: parent.topAnchor, constant: Constants.inputBlockYOrigin),
+            usernameTextField.topAnchor.constraint(equalTo: appLogoIconView.bottomAnchor, constant: Constants.inputBlockPadding),
             usernameTextField.leadingAnchor.constraint(equalTo: parent.centerXAnchor, constant: -Constants.paddingXL),
             usernameTextField.trailingAnchor.constraint(equalTo: parent.safeAreaLayoutGuide.trailingAnchor),
             
@@ -122,12 +122,33 @@ extension SignInPageViewComponents {
         static let paddingL: CGFloat = 36
         static let paddingXL: CGFloat = 48
         static let paddingXXL: CGFloat = 52
+        
+        static let screenHeight: CGFloat = UIScreen.main.bounds.height
+        static let screenWidth: CGFloat = UIScreen.main.bounds.width
+        
+        static let bottomHStackViewHeight: CGFloat = Fonts.bold14?.pointSize ?? 15
+        static let userInputFieldHeight: CGFloat = Fonts.regular14?.pointSize ?? 15
+        static let mainButtonHeight: CGFloat = Fonts.bold18?.pointSize ?? 19
+        
+        static let appLogoHeight: CGFloat = 90
+        
+        static var signUpBlockHeight: CGFloat {
+            3 * userInputFieldHeight + 2 * paddingL + paddingXL + mainButtonHeight
+        }
+        
+        static var inputBlockAvailableSpaceHeight: CGFloat {
+            screenHeight - (appLogoIconViewYOrigin + appLogoHeight + bottomHStackViewHeight + paddingL)
+        }
+        
+        static var inputBlockPadding: CGFloat {
+            (inputBlockAvailableSpaceHeight - signUpBlockHeight) / 2
+        }
     }
 }
 
 
 extension SignInPageViewComponents {
-    private func getButtonHStackView(with arrangedSubviews: [UIView]) -> UIStackView {
+    private func getBottomHStackView(with arrangedSubviews: [UIView]) -> UIStackView {
         let view = UIStackView()
         view.axis = .horizontal
         view.spacing = Constants.paddingXXS
