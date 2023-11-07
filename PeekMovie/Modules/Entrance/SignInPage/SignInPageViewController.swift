@@ -30,6 +30,11 @@ final class SignInPageViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setupLayers()
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }
@@ -38,6 +43,10 @@ final class SignInPageViewController: UIViewController {
 //    MARK:  private func
     private func setupViews() {
         viewComponents.setupViews(parent: view)
+    }
+    
+    private func setupLayers() {
+        viewComponents.setupLayers(parent: view)
     }
     
 }

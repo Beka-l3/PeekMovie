@@ -94,8 +94,8 @@ final class SignInPageViewComponents {
         ])
     }
     
-    func setupLayers() {
-        
+    func setupLayers(parent: UIView) {
+        parent.layer.addSublayer(backgroundLinear)
     }
 }
 

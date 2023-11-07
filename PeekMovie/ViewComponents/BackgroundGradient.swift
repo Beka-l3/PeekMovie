@@ -35,11 +35,14 @@ final class BackgroundGradient: CAGradientLayer {
     
 //    MARK: private func
     private func setupLayer(type: GradientType) {
+        self.zPosition = -10
         self.frame = .init(origin: .zero, size: UIScreen.main.bounds.size)
         
-        if let first = Colors.backgroundPrimary, let second = Colors.focus {
+        if let first = Colors.backgroundPrimary, let second = Colors.focusBackgroundDark {
             self.colors = [first.cgColor, second.cgColor]
         }
+        
+        self.locations = [0.3, 1]
         
         switch type {
             
