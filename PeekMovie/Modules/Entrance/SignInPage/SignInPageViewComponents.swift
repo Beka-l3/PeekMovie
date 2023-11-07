@@ -64,8 +64,8 @@ final class SignInPageViewComponents {
         parent.addSubview(appLogoIconView)
         parent.addSubview(inputBlock)
         
-        emailIconView.layer.opacity = .zero
-        emailTextField.layer.opacity = .zero
+        usernameIconView.layer.opacity = .zero
+        usernameTextField.layer.opacity = .zero
         signUpButton.layer.opacity = .zero
         signInHStack.layer.opacity = .zero
         
@@ -80,25 +80,25 @@ final class SignInPageViewComponents {
             inputBlock.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
             inputBlock.bottomAnchor.constraint(equalTo: parent.bottomAnchor),
             
-            usernameIconView.topAnchor.constraint(equalTo: inputBlock.topAnchor, constant: Constants.paddingXXXL),
-            usernameIconView.leadingAnchor.constraint(equalTo: inputBlock.leadingAnchor, constant: Constants.paddingXL),
-            usernameIconView.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
-            
-            usernameTextField.topAnchor.constraint(equalTo: usernameIconView.topAnchor),
-            usernameTextField.leadingAnchor.constraint(equalTo: usernameIconView.trailingAnchor, constant: Constants.paddingXL),
-            usernameTextField.trailingAnchor.constraint(equalTo: inputBlock.trailingAnchor),
-            usernameTextField.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
-            
-            emailIconView.topAnchor.constraint(equalTo: usernameIconView.bottomAnchor, constant: Constants.paddingL),
+            emailIconView.topAnchor.constraint(equalTo: inputBlock.topAnchor, constant: Constants.paddingXXXL),
             emailIconView.leadingAnchor.constraint(equalTo: inputBlock.leadingAnchor, constant: Constants.paddingXL),
             emailIconView.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
-
+            
             emailTextField.topAnchor.constraint(equalTo: emailIconView.topAnchor),
             emailTextField.leadingAnchor.constraint(equalTo: emailIconView.trailingAnchor, constant: Constants.paddingXL),
             emailTextField.trailingAnchor.constraint(equalTo: inputBlock.trailingAnchor),
             emailTextField.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
-            passwordIconView.topAnchor.constraint(equalTo: usernameIconView.bottomAnchor, constant: Constants.paddingL),
+            usernameIconView.topAnchor.constraint(equalTo: emailIconView.bottomAnchor, constant: Constants.paddingL),
+            usernameIconView.leadingAnchor.constraint(equalTo: inputBlock.leadingAnchor, constant: Constants.paddingXL),
+            usernameIconView.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
+
+            usernameTextField.topAnchor.constraint(equalTo: usernameIconView.topAnchor),
+            usernameTextField.leadingAnchor.constraint(equalTo: usernameIconView.trailingAnchor, constant: Constants.paddingXL),
+            usernameTextField.trailingAnchor.constraint(equalTo: inputBlock.trailingAnchor),
+            usernameTextField.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
+            
+            passwordIconView.topAnchor.constraint(equalTo: emailIconView.bottomAnchor, constant: Constants.paddingL),
             passwordIconView.leadingAnchor.constraint(equalTo: inputBlock.leadingAnchor, constant: Constants.paddingXL),
             passwordIconView.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
