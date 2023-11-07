@@ -47,8 +47,10 @@ final class SignInPageViewComponents {
         view.addSubview(passwordIconView)
         view.addSubview(passwordTextField)
         
+        view.addSubview(loginButton)
         view.addSubview(signUpButton)
-//        view.addSubview(forgotPasswordButton)
+        view.addSubview(forgotPasswordButton)
+        view.addSubview(signUpHStack)
         view.addSubview(signInHStack)
         
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -61,6 +63,11 @@ final class SignInPageViewComponents {
         
         parent.addSubview(appLogoIconView)
         parent.addSubview(inputBlock)
+        
+        emailIconView.layer.opacity = .zero
+        emailTextField.layer.opacity = .zero
+        signUpButton.layer.opacity = .zero
+        signInHStack.layer.opacity = .zero
         
         NSLayoutConstraint.activate([
             appLogoIconView.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
@@ -85,13 +92,13 @@ final class SignInPageViewComponents {
             emailIconView.topAnchor.constraint(equalTo: usernameIconView.bottomAnchor, constant: Constants.paddingL),
             emailIconView.leadingAnchor.constraint(equalTo: inputBlock.leadingAnchor, constant: Constants.paddingXL),
             emailIconView.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
-            
+
             emailTextField.topAnchor.constraint(equalTo: emailIconView.topAnchor),
             emailTextField.leadingAnchor.constraint(equalTo: emailIconView.trailingAnchor, constant: Constants.paddingXL),
             emailTextField.trailingAnchor.constraint(equalTo: inputBlock.trailingAnchor),
             emailTextField.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
-            passwordIconView.topAnchor.constraint(equalTo: emailIconView.bottomAnchor, constant: Constants.paddingL),
+            passwordIconView.topAnchor.constraint(equalTo: usernameIconView.bottomAnchor, constant: Constants.paddingL),
             passwordIconView.leadingAnchor.constraint(equalTo: inputBlock.leadingAnchor, constant: Constants.paddingXL),
             passwordIconView.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
@@ -100,11 +107,17 @@ final class SignInPageViewComponents {
             passwordTextField.trailingAnchor.constraint(equalTo: inputBlock.trailingAnchor),
             passwordTextField.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
+            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constants.paddingXL),
+            loginButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
+            
             signUpButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constants.paddingXL),
             signUpButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
             
-//            forgotPasswordButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: Constants.paddingS),
-//            forgotPasswordButton.leadingAnchor.constraint(equalTo: signUpButton.leadingAnchor),
+            forgotPasswordButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: Constants.paddingS),
+            forgotPasswordButton.leadingAnchor.constraint(equalTo: loginButton.leadingAnchor),
+            
+            signUpHStack.centerXAnchor.constraint(equalTo: inputBlock.centerXAnchor),
+            signUpHStack.bottomAnchor.constraint(equalTo: inputBlock.bottomAnchor, constant: -Constants.paddingL),
             
             signInHStack.centerXAnchor.constraint(equalTo: inputBlock.centerXAnchor),
             signInHStack.bottomAnchor.constraint(equalTo: inputBlock.bottomAnchor, constant: -Constants.paddingL),
