@@ -83,6 +83,7 @@ final class BackgroundGradient: CAGradientLayer {
     
 }
 
+
 extension BackgroundGradient {
     enum Points {
         static let topLeft: CGPoint = .init(x: 0, y: 0)

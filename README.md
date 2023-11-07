@@ -11,7 +11,8 @@
 **Our product** is the first in it's kind   
 
 ## Design
-[Figma link](https://www.figma.com/file/vF228fret7NdUPPrbk3PWq/Peek?node-id=0%3A1&t=JihehCcHYJvawI3Q-1)
+[Figma link](https://www.figma.com/file/elzWGL9ewqn5caR8ak2YAx/UI-%2F-UIX-Project?type=design&t=IivRiZTbarjp1WFQ-6)
+<!--[Figma link](https://www.figma.com/file/vF228fret7NdUPPrbk3PWq/Peek?node-id=0%3A1&t=JihehCcHYJvawI3Q-1)-->
 
 <!--iPhone 11-->
 <!---->
