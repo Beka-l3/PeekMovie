@@ -59,7 +59,7 @@ final class SignInPageViewComponents {
     
     
     func setupViews(parent: UIView) {
-        parent.backgroundColor = Colors.focus
+        parent.backgroundColor = Colors.backgroundTertiary
         
         parent.addSubview(appLogoIconView)
         parent.addSubview(inputBlock)

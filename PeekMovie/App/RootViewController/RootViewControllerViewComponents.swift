@@ -22,16 +22,15 @@ final class RootViewControllerViewComponents {
         let label = UILabel()
         label.text = Constants.appTitle
         label.font = Fonts.bold24
-        label.textColor = Colors.focus
+        label.textColor = Colors.mainGradientFirst
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var nvActivityIndicatorView: NVActivityIndicatorView = {
-        let view = NVActivityIndicatorView(frame: Constants.nvActivityIndicatorViewFrame, type: .ballTrianglePath, color: Colors.focus)
+        let view = NVActivityIndicatorView(frame: Constants.nvActivityIndicatorViewFrame, type: .ballTrianglePath, color: Colors.mainGradientFirst)
         return view
     }()
-    
     
     
     public func setupViews(parent: UIView) {

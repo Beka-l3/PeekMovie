@@ -45,11 +45,15 @@ final class PeekButton: UIButton {
         
         switch type {
         case .main:
-            setTitleColor(Colors.focus, for: .normal)
-            titleLabel?.font = Fonts.bold18
+            if let first = Colors.mainGradientFirst, let second = Colors.mainGradientSecondary {
+                
+            } else {
+                setTitleColor(Colors.mainGradientFirst, for: .normal)
+                titleLabel?.font = Fonts.bold18
+            }
         
         case .secondary:
-            if let attributeString = getAttributeString(titleText: titleText, font: Fonts.bold14, color: Colors.focus) {
+            if let attributeString = getAttributeString(titleText: titleText, font: Fonts.bold14, color: Colors.mainGradientFirst) {
                 setAttributedTitle(attributeString, for: .normal)
             }
         

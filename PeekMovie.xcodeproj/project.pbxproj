@@ -32,6 +32,7 @@
 		074B8A732A8C260800EB39C2 /* JoinRoomNSE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8A722A8C260800EB39C2 /* JoinRoomNSE.swift */; };
 		074B8A752A8C262C00EB39C2 /* QuitFromRoomNSE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8A742A8C262C00EB39C2 /* QuitFromRoomNSE.swift */; };
 		074B8A782A8C265700EB39C2 /* GetMovieNSE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8A772A8C265700EB39C2 /* GetMovieNSE.swift */; };
+		07517C3B2AFB9EE100751EBB /* Colors+gradientColorPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07517C3A2AFB9EE100751EBB /* Colors+gradientColorPattern.swift */; };
 		0758C2E6291174F800E48140 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2E5291174F800E48140 /* NetworkServiceProtocol.swift */; };
 		0758C2E82911752200E48140 /* NetworkServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2E72911752200E48140 /* NetworkServiceImplementation.swift */; };
 		0758C2EC2911777300E48140 /* TokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2EB2911777300E48140 /* TokenDTO.swift */; };
@@ -160,6 +161,7 @@
 		074B8A722A8C260800EB39C2 /* JoinRoomNSE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoomNSE.swift; sourceTree = "<group>"; };
 		074B8A742A8C262C00EB39C2 /* QuitFromRoomNSE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitFromRoomNSE.swift; sourceTree = "<group>"; };
 		074B8A772A8C265700EB39C2 /* GetMovieNSE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieNSE.swift; sourceTree = "<group>"; };
+		07517C3A2AFB9EE100751EBB /* Colors+gradientColorPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+gradientColorPattern.swift"; sourceTree = "<group>"; };
 		0758C2E5291174F800E48140 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		0758C2E72911752200E48140 /* NetworkServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImplementation.swift; sourceTree = "<group>"; };
 		0758C2EB2911777300E48140 /* TokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDTO.swift; sourceTree = "<group>"; };
@@ -717,6 +719,7 @@
 			isa = PBXGroup;
 			children = (
 				07CEA3922AF5661D00E69FAB /* Colors.swift */,
+				07517C3A2AFB9EE100751EBB /* Colors+gradientColorPattern.swift */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
@@ -947,6 +950,7 @@
 				0758C2E82911752200E48140 /* NetworkServiceImplementation.swift in Sources */,
 				0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */,
 				077B2ED629069ADC0087504C /* PosterView.swift in Sources */,
+				07517C3B2AFB9EE100751EBB /* Colors+gradientColorPattern.swift in Sources */,
 				077977632A8E367F000DAF72 /* Fonts.swift in Sources */,
 				07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */,
 				07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */,

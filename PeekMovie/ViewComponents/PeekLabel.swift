@@ -57,7 +57,7 @@ final class PeekLabel: UILabel {
             textColor = Colors.textTertiary
             
         case .focus:
-            textColor = Colors.focus
+            textColor = Colors.mainGradientFirst
         }
         
         switch font {
