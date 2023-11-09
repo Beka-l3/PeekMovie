@@ -10,6 +10,10 @@ import UIKit
 
 extension Colors {
     
+    enum GradientType {
+        case main
+    }
+    
     static let mainGradientFirst = UIColor(hex: "49E1E1FF")
     static let mainGradientSecondary = UIColor(hex: "3779FAFF")
     
@@ -29,12 +33,23 @@ extension Colors {
         return gradient
     }
     
-    static func gradientColor(bounds: CGRect, gradientLayer: CAGradientLayer) -> UIColor? {
+    static func gradientColor(bounds: CGRect, type: GradientType) -> UIColor? {
+        let gradientLayer = getGradientLayer(bounds: bounds)
+        
         UIGraphicsBeginImageContext(gradientLayer.bounds.size)
-        gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
+        guard let currentContext = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+        
+        gradientLayer.render(in: currentContext)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return UIColor(patternImage: image!)
+        if let result = image {
+            return UIColor(patternImage: result)
+        } else {
+            return nil
+        }
     }
+    
 }

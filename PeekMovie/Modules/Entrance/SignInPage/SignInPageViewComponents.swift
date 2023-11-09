@@ -129,6 +129,9 @@ final class SignInPageViewComponents {
         backgroundLinear.cornerRadius = Constants.paddingM
         backgroundLinear.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         inputBlock.layer.addSublayer(backgroundLinear)
+        
+//        loginButton.setupTitleGradientColor()
+//        signUpButton.setupTitleGradientColor()
     }
 }
 

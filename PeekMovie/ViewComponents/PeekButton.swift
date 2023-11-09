@@ -16,14 +16,31 @@ final class PeekButton: UIButton {
         case tertiary
     }
     
+    let peekButtonType: ButtonType
+    private(set) var titleText: String
+    
+    lazy var underlineView: UIView = {
+        let view = UIView()
+        view.layer.zPosition = -10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    var underlineTopAnchorConstraint: NSLayoutConstraint?
+    
+    
 //    MARK: lifecycle
     init(type: ButtonType, titleText: String) {
+        self.peekButtonType = type
+        self.titleText = titleText
         super.init(frame: .zero)
         
-        setupView(type: type, titleText: titleText)
+        setupView()
     }
     
     required init?(coder: NSCoder) {
+        self.peekButtonType = .main
+        self.titleText = "Peek Button"
         super.init(coder: coder)
     }
     
@@ -35,35 +52,71 @@ final class PeekButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        setupTitleGradientColorIfNeeded()
+    }
+    
+    
+//    MARK: exposed func
+    public func setupTitleGradientColorIfNeeded() {
+        guard bounds.size != .zero, let gradientColor = Colors.gradientColor(bounds: bounds, type: .main) else {
+            return
+        }
+        
+        switch peekButtonType {
+            
+        case .main:
+            setTitleColor(gradientColor, for: .normal)
+            
+        case .secondary:
+            setTitleColor(gradientColor, for: .normal)
+            underlineTopAnchorConstraint?.constant = -4
+            
+        case .tertiary:
+            underlineTopAnchorConstraint?.constant = -3
+            
+        }
+        
     }
     
     
 //    MARK: private func
-    private func setupView(type: ButtonType, titleText: String) {
+    private func setupView() {
+        translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = Colors.clearBlack
         setTitle(titleText, for: .normal)
         
-        switch type {
+        switch peekButtonType {
         case .main:
-            if let first = Colors.mainGradientFirst, let second = Colors.mainGradientSecondary {
-                
-            } else {
-                setTitleColor(Colors.mainGradientFirst, for: .normal)
-                titleLabel?.font = Fonts.bold18
-            }
-        
+            setTitleColor(Colors.mainGradientFirst, for: .normal)
+            titleLabel?.font = Fonts.bold18
+            underlineView.isHidden = true
+
         case .secondary:
-            if let attributeString = getAttributeString(titleText: titleText, font: Fonts.bold14, color: Colors.mainGradientFirst) {
-                setAttributedTitle(attributeString, for: .normal)
-            }
-        
+            setTitleColor(Colors.mainGradientFirst, for: .normal)
+            titleLabel?.font = Fonts.bold14
+            underlineView.isHidden = false
+            underlineView.backgroundColor = Colors.mainGradientFirst
+            underlineView.layer.opacity = 0.6
+
         case .tertiary:
-            if let attributeString = getAttributeString(titleText: titleText, font: Fonts.regular12, color: Colors.textTertiary) {
-                setAttributedTitle(attributeString, for: .normal)
-            }
+            setTitleColor(Colors.textTertiaryOpaque, for: .normal)
+            titleLabel?.font = Fonts.regular12
+            underlineView.isHidden = false
+            underlineView.backgroundColor = Colors.textTertiary
         }
         
-        translatesAutoresizingMaskIntoConstraints = false
+        if let titleLabel = titleLabel {
+            addSubview(underlineView)
+            NSLayoutConstraint.activate([
+                underlineView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+                underlineView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+                underlineView.heightAnchor.constraint(equalToConstant: Constants.underlineHeight),
+            ])
+            
+            underlineTopAnchorConstraint = underlineView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: -Constants.underlineTopAnchorConstant)
+            underlineTopAnchorConstraint?.isActive = true
+        }
     }
 }
 
@@ -90,5 +143,13 @@ extension PeekButton {
             string: titleText,
             attributes: titleAttributes
         )
+    }
+}
+
+
+extension PeekButton {
+    enum Constants {
+        static let underlineHeight: CGFloat = 1
+        static let underlineTopAnchorConstant: CGFloat = 4
     }
 }

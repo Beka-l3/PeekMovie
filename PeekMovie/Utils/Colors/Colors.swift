@@ -21,6 +21,7 @@ enum Colors {
     static let textMain: UIColor = .init(white: 1, alpha: 0.87)
     static let textSecondary: UIColor = .init(white: 1, alpha: 0.6)
     static let textTertiary: UIColor = .init(white: 1, alpha: 0.38)
+    static let textTertiaryOpaque = UIColor(hex: "6E6E6FFF")
     
     static let clearWhite = UIColor(white: 1, alpha: 0)
     static let clearBlack = UIColor(white: 0, alpha: 0)
