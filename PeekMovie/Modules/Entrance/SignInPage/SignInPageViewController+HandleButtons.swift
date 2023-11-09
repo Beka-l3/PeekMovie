@@ -10,7 +10,6 @@ import UIKit
 
 extension SignInPageViewController {
     @objc func handleMainButton() {
-        print("Main button tapped")
         
         switch entranceState {
         
@@ -24,23 +23,24 @@ extension SignInPageViewController {
     }
     
     @objc func handleSecondaryButton() {
-        print("Secondary button tapped")
         
+        // Change entrnace state
         switch entranceState {
         
         case .signIn:
-            viewComponents.changeState(to: .signUp)
             entranceState = .signUp
             
         case .signUp:
-            viewComponents.changeState(to: .signIn)
             entranceState = .signIn
             
         }
+        
+        viewComponents.changeState(to: entranceState)
     }
     
     @objc func handleTertiaryButton() {
         print("Tertiary button tapped")
+        // Forgot password
         
     }
 }
