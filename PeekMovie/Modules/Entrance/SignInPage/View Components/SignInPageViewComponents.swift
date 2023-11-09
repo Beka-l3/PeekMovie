@@ -10,11 +10,6 @@ import UIKit
 
 final class SignInPageViewComponents {
     
-    enum State {
-        case signIn
-        case signUp
-    }
-    
     lazy var backgroundLinear = BackgroundGradient(type: .linearBottomLeft)
     lazy var backgroundRadial = BackgroundGradient(type: .raidalBottom)
     
@@ -29,16 +24,12 @@ final class SignInPageViewComponents {
     lazy var passwordIconView = PeekIconView(image: Images.Icon.Key.x24)
     
     lazy var mainButton = PeekButton(type: .main, titleText: Constants.loginButtonTitleText)
-//    lazy var signUpButton = PeekButton(type: .main, titleText: Constants.signUpButtonTitleText)
     lazy var secondaryButton = PeekButton(type: .secondary, titleText: Constants.signUpButtonTitleText)
-//    lazy var signInButton = PeekButton(type: .secondary, titleText: Constants.signInButtonTitleText)
     lazy var tertiaryButton = PeekButton(type: .tertiary, titleText: Constants.forgotPasswordButtonTitleText)
     
-    lazy var signUpLabel = PeekLabel(type: .secondary, text: Constants.signUpLabelText, font: .caption1)
-    lazy var signInLabel = PeekLabel(type: .secondary, text: Constants.signInLabelText, font: .caption1)
+    lazy var alternatorLabelLabel = PeekLabel(type: .secondary, text: Constants.signUpLabelText, font: .caption1)
     
-    lazy var signUpHStack = getBottomHStackView(with: [signUpLabel, secondaryButton])
-//    lazy var signInHStack = getBottomHStackView(with: [signInLabel, signInButton])
+    lazy var signUpHStack = getBottomHStackView(with: [alternatorLabelLabel, secondaryButton])
     
     lazy var inputBlock: UIView = {
         let view = UIView()
@@ -48,7 +39,10 @@ final class SignInPageViewComponents {
         return view
     }()
     
+    var passwordIconViewTopConstraint: NSLayoutConstraint?
     
+
+//    MARK: exposed func
     func setupViews(parent: UIView) {
         parent.backgroundColor = Colors.backgroundTertiary
         
@@ -63,15 +57,10 @@ final class SignInPageViewComponents {
         inputBlock.addSubview(passwordTextField)
         
         inputBlock.addSubview(mainButton)
-//        inputBlock.addSubview(signUpButton)
         inputBlock.addSubview(tertiaryButton)
         inputBlock.addSubview(signUpHStack)
-//        inputBlock.addSubview(signInHStack)
         
-        usernameIconView.layer.opacity = .zero
-        usernameTextField.layer.opacity = .zero
-//        signUpButton.layer.opacity = .zero
-//        signInHStack.layer.opacity = .zero
+        changeState(to: .signIn, isSetup: true)
         
         setupConstraints(parent: parent)
     }
@@ -83,16 +72,5 @@ final class SignInPageViewComponents {
         inputBlock.layer.addSublayer(backgroundLinear)
     }
     
-    func changeState(_ state: State) {
-        switch state {
-            
-        case .signIn:
-            break
-            
-        case .signUp:
-            break
-            
-        }
-    }
 }
 

@@ -40,7 +40,6 @@ extension SignInPageViewComponents {
             usernameTextField.trailingAnchor.constraint(equalTo: inputBlock.trailingAnchor),
             usernameTextField.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
-            passwordIconView.topAnchor.constraint(equalTo: emailIconView.bottomAnchor, constant: Constants.paddingL),
             passwordIconView.leadingAnchor.constraint(equalTo: inputBlock.leadingAnchor, constant: Constants.paddingXL),
             passwordIconView.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
@@ -52,25 +51,22 @@ extension SignInPageViewComponents {
             mainButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constants.paddingXL),
             mainButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
             
-//            signUpButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constants.paddingXL),
-//            signUpButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
-            
             tertiaryButton.topAnchor.constraint(equalTo: mainButton.bottomAnchor, constant: Constants.paddingS),
             tertiaryButton.leadingAnchor.constraint(equalTo: mainButton.leadingAnchor),
             
             signUpHStack.centerXAnchor.constraint(equalTo: inputBlock.centerXAnchor),
             signUpHStack.bottomAnchor.constraint(equalTo: inputBlock.bottomAnchor, constant: -Constants.paddingL),
-            
-//            signInHStack.centerXAnchor.constraint(equalTo: inputBlock.centerXAnchor),
-//            signInHStack.bottomAnchor.constraint(equalTo: inputBlock.bottomAnchor, constant: -Constants.paddingL),
         ])
+        
+        passwordIconViewTopConstraint = passwordIconView.topAnchor.constraint(equalTo: emailIconView.bottomAnchor, constant: Constants.paddingL)
+        passwordIconViewTopConstraint?.isActive = true
     }
     
     func changeConstraintsToSignUp() {
-        
+        passwordIconViewTopConstraint?.constant = 2 * Constants.paddingL + Constants.inputFieldHeight
     }
     
     func changeConstraintsToSignIn() {
-        
+        passwordIconViewTopConstraint?.constant = Constants.paddingL
     }
 }

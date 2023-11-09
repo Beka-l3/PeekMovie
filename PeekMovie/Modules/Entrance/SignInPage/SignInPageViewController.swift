@@ -11,6 +11,7 @@ import UIKit
 final class SignInPageViewController: UIViewController {
     
     let viewComponents = SignInPageViewComponents()
+    var entranceState: State = .signIn
     
     
 //    MARK: lifecycle
@@ -51,6 +52,16 @@ final class SignInPageViewController: UIViewController {
     
     private func setupLayers() {
         viewComponents.setupLayers(parent: view)
+    }
+    
+}
+
+
+extension SignInPageViewController {
+    
+    enum State {
+        case signIn
+        case signUp
     }
     
 }

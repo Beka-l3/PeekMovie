@@ -100,6 +100,7 @@
 		07ABF666291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF665291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift */; };
 		07ACBA982AFD29F400D07487 /* SignInPageViewController+HandleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACBA972AFD29F400D07487 /* SignInPageViewController+HandleButtons.swift */; };
 		07ACBA9B2AFD32E800D07487 /* SignInPageViewComponents+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACBA9A2AFD32E800D07487 /* SignInPageViewComponents+Constraints.swift */; };
+		07ACBA9D2AFD3B1200D07487 /* SignInPageViewComponents+changeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACBA9C2AFD3B1200D07487 /* SignInPageViewComponents+changeState.swift */; };
 		07BB3FD62AF90638001E0E63 /* PeekLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BB3FD52AF90638001E0E63 /* PeekLabel.swift */; };
 		07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BBD947291BE08F00DD13BA /* MockNetworkService.swift */; };
 		07BD8B772A93EE9E0089199E /* LobbyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B762A93EE9E0089199E /* LobbyModuleBuilder.swift */; };
@@ -231,6 +232,7 @@
 		07ABF665291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionWaitingPagePresenter.swift; sourceTree = "<group>"; };
 		07ACBA972AFD29F400D07487 /* SignInPageViewController+HandleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInPageViewController+HandleButtons.swift"; sourceTree = "<group>"; };
 		07ACBA9A2AFD32E800D07487 /* SignInPageViewComponents+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInPageViewComponents+Constraints.swift"; sourceTree = "<group>"; };
+		07ACBA9C2AFD3B1200D07487 /* SignInPageViewComponents+changeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInPageViewComponents+changeState.swift"; sourceTree = "<group>"; };
 		07BB3FD52AF90638001E0E63 /* PeekLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekLabel.swift; sourceTree = "<group>"; };
 		07BBD947291BE08F00DD13BA /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		07BD8B762A93EE9E0089199E /* LobbyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyModuleBuilder.swift; sourceTree = "<group>"; };
@@ -672,6 +674,7 @@
 			isa = PBXGroup;
 			children = (
 				072EE65E2A95370200CFCC2A /* SignInPageViewComponents.swift */,
+				07ACBA9C2AFD3B1200D07487 /* SignInPageViewComponents+changeState.swift */,
 				07ACBA9A2AFD32E800D07487 /* SignInPageViewComponents+Constraints.swift */,
 			);
 			path = "View Components";
@@ -1039,6 +1042,7 @@
 				0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */,
 				072EE65D2A9535C000CFCC2A /* SignInPageViewController.swift in Sources */,
 				07EB1CC428FD48100031598A /* HTTPMethod.swift in Sources */,
+				07ACBA9D2AFD3B1200D07487 /* SignInPageViewComponents+changeState.swift in Sources */,
 				0731BB00292D5BC1004CCE79 /* MovieCollectionCell.swift in Sources */,
 				077977DC2A8E717B000DAF72 /* UINavigationController+FadeTo.swift in Sources */,
 				077933DD2A8FF94E00B0F509 /* LogDestinationProtocol.swift in Sources */,
