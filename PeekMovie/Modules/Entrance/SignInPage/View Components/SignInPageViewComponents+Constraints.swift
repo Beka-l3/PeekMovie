@@ -55,14 +55,14 @@ extension SignInPageViewComponents {
 //            signUpButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constants.paddingXL),
 //            signUpButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
             
-            forgotPasswordButton.topAnchor.constraint(equalTo: mainButton.bottomAnchor, constant: Constants.paddingS),
-            forgotPasswordButton.leadingAnchor.constraint(equalTo: mainButton.leadingAnchor),
+            tertiaryButton.topAnchor.constraint(equalTo: mainButton.bottomAnchor, constant: Constants.paddingS),
+            tertiaryButton.leadingAnchor.constraint(equalTo: mainButton.leadingAnchor),
             
             signUpHStack.centerXAnchor.constraint(equalTo: inputBlock.centerXAnchor),
             signUpHStack.bottomAnchor.constraint(equalTo: inputBlock.bottomAnchor, constant: -Constants.paddingL),
             
-            signInHStack.centerXAnchor.constraint(equalTo: inputBlock.centerXAnchor),
-            signInHStack.bottomAnchor.constraint(equalTo: inputBlock.bottomAnchor, constant: -Constants.paddingL),
+//            signInHStack.centerXAnchor.constraint(equalTo: inputBlock.centerXAnchor),
+//            signInHStack.bottomAnchor.constraint(equalTo: inputBlock.bottomAnchor, constant: -Constants.paddingL),
         ])
     }
     

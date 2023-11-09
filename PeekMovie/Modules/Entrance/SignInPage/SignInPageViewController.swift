@@ -43,7 +43,10 @@ final class SignInPageViewController: UIViewController {
 //    MARK:  private func
     private func setupViews() {
         viewComponents.setupViews(parent: view)
-        viewComponents.signUpButtonSecondary.addTarget(self, action: #selector(handleMainButton), for: .touchUpInside)
+        
+        viewComponents.mainButton.addTarget(self, action: #selector(handleMainButton), for: .touchUpInside)
+        viewComponents.secondaryButton.addTarget(self, action: #selector(handleSecondaryButton), for: .touchUpInside)
+        viewComponents.tertiaryButton.addTarget(self, action: #selector(handleTertiaryButton), for: .touchUpInside)
     }
     
     private func setupLayers() {

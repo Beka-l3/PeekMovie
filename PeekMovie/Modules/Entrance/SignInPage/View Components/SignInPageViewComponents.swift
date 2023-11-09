@@ -30,15 +30,15 @@ final class SignInPageViewComponents {
     
     lazy var mainButton = PeekButton(type: .main, titleText: Constants.loginButtonTitleText)
 //    lazy var signUpButton = PeekButton(type: .main, titleText: Constants.signUpButtonTitleText)
-    lazy var signUpButtonSecondary = PeekButton(type: .secondary, titleText: Constants.signUpButtonTitleText)
-    lazy var signInButton = PeekButton(type: .secondary, titleText: Constants.signInButtonTitleText)
-    lazy var forgotPasswordButton = PeekButton(type: .tertiary, titleText: Constants.forgotPasswordButtonTitleText)
+    lazy var secondaryButton = PeekButton(type: .secondary, titleText: Constants.signUpButtonTitleText)
+//    lazy var signInButton = PeekButton(type: .secondary, titleText: Constants.signInButtonTitleText)
+    lazy var tertiaryButton = PeekButton(type: .tertiary, titleText: Constants.forgotPasswordButtonTitleText)
     
     lazy var signUpLabel = PeekLabel(type: .secondary, text: Constants.signUpLabelText, font: .caption1)
     lazy var signInLabel = PeekLabel(type: .secondary, text: Constants.signInLabelText, font: .caption1)
     
-    lazy var signUpHStack = getBottomHStackView(with: [signUpLabel, signUpButtonSecondary])
-    lazy var signInHStack = getBottomHStackView(with: [signInLabel, signInButton])
+    lazy var signUpHStack = getBottomHStackView(with: [signUpLabel, secondaryButton])
+//    lazy var signInHStack = getBottomHStackView(with: [signInLabel, signInButton])
     
     lazy var inputBlock: UIView = {
         let view = UIView()
@@ -64,14 +64,14 @@ final class SignInPageViewComponents {
         
         inputBlock.addSubview(mainButton)
 //        inputBlock.addSubview(signUpButton)
-        inputBlock.addSubview(forgotPasswordButton)
+        inputBlock.addSubview(tertiaryButton)
         inputBlock.addSubview(signUpHStack)
-        inputBlock.addSubview(signInHStack)
+//        inputBlock.addSubview(signInHStack)
         
         usernameIconView.layer.opacity = .zero
         usernameTextField.layer.opacity = .zero
 //        signUpButton.layer.opacity = .zero
-        signInHStack.layer.opacity = .zero
+//        signInHStack.layer.opacity = .zero
         
         setupConstraints(parent: parent)
     }
