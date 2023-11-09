@@ -98,6 +98,8 @@
 		07ABF662291AD4BF007C4A52 /* ExtensionRegisterPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF661291AD4BF007C4A52 /* ExtensionRegisterPagePresenter.swift */; };
 		07ABF664291AD4DA007C4A52 /* ExtensionAuthorizedPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF663291AD4DA007C4A52 /* ExtensionAuthorizedPagePresenter.swift */; };
 		07ABF666291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF665291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift */; };
+		07ACBA982AFD29F400D07487 /* SignInPageViewController+HandleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACBA972AFD29F400D07487 /* SignInPageViewController+HandleButtons.swift */; };
+		07ACBA9B2AFD32E800D07487 /* SignInPageViewComponents+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACBA9A2AFD32E800D07487 /* SignInPageViewComponents+Constraints.swift */; };
 		07BB3FD62AF90638001E0E63 /* PeekLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BB3FD52AF90638001E0E63 /* PeekLabel.swift */; };
 		07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BBD947291BE08F00DD13BA /* MockNetworkService.swift */; };
 		07BD8B772A93EE9E0089199E /* LobbyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B762A93EE9E0089199E /* LobbyModuleBuilder.swift */; };
@@ -227,6 +229,8 @@
 		07ABF661291AD4BF007C4A52 /* ExtensionRegisterPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionRegisterPagePresenter.swift; sourceTree = "<group>"; };
 		07ABF663291AD4DA007C4A52 /* ExtensionAuthorizedPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAuthorizedPagePresenter.swift; sourceTree = "<group>"; };
 		07ABF665291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionWaitingPagePresenter.swift; sourceTree = "<group>"; };
+		07ACBA972AFD29F400D07487 /* SignInPageViewController+HandleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInPageViewController+HandleButtons.swift"; sourceTree = "<group>"; };
+		07ACBA9A2AFD32E800D07487 /* SignInPageViewComponents+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInPageViewComponents+Constraints.swift"; sourceTree = "<group>"; };
 		07BB3FD52AF90638001E0E63 /* PeekLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekLabel.swift; sourceTree = "<group>"; };
 		07BBD947291BE08F00DD13BA /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		07BD8B762A93EE9E0089199E /* LobbyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyModuleBuilder.swift; sourceTree = "<group>"; };
@@ -288,7 +292,8 @@
 			isa = PBXGroup;
 			children = (
 				072EE65C2A9535C000CFCC2A /* SignInPageViewController.swift */,
-				072EE65E2A95370200CFCC2A /* SignInPageViewComponents.swift */,
+				07ACBA972AFD29F400D07487 /* SignInPageViewController+HandleButtons.swift */,
+				07ACBA992AFD32CD00D07487 /* View Components */,
 				072EE6602A95373600CFCC2A /* Extensions */,
 			);
 			path = SignInPage;
@@ -663,6 +668,15 @@
 			path = Authorized;
 			sourceTree = "<group>";
 		};
+		07ACBA992AFD32CD00D07487 /* View Components */ = {
+			isa = PBXGroup;
+			children = (
+				072EE65E2A95370200CFCC2A /* SignInPageViewComponents.swift */,
+				07ACBA9A2AFD32E800D07487 /* SignInPageViewComponents+Constraints.swift */,
+			);
+			path = "View Components";
+			sourceTree = "<group>";
+		};
 		07BD8B732A93EE660089199E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -955,6 +969,7 @@
 				07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */,
 				07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */,
 				073B584D28F97B20000EE21F /* RegisterPage.swift in Sources */,
+				07ACBA982AFD29F400D07487 /* SignInPageViewController+HandleButtons.swift in Sources */,
 				0758C2E6291174F800E48140 /* NetworkServiceProtocol.swift in Sources */,
 				07BD8B772A93EE9E0089199E /* LobbyModuleBuilder.swift in Sources */,
 				07EB1CB928FD47950031598A /* NetworkClientImplementation.swift in Sources */,
@@ -979,6 +994,7 @@
 				073B585628FA155F000EE21F /* EMConstants.swift in Sources */,
 				07A66F2D2916CB51003BB6B9 /* ResponseDTO.swift in Sources */,
 				07FC65C92AFA4189001C039D /* BackgroundGradient.swift in Sources */,
+				07ACBA9B2AFD32E800D07487 /* SignInPageViewComponents+Constraints.swift in Sources */,
 				077933DF2A8FF96C00B0F509 /* Log.swift in Sources */,
 				073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */,
 				072EE65F2A95370200CFCC2A /* SignInPageViewComponents.swift in Sources */,
