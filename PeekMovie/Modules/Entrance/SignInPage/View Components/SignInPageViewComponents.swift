@@ -36,6 +36,12 @@ final class SignInPageViewComponents {
         view.layer.cornerRadius = Constants.paddingM
         view.backgroundColor = Colors.backgroundPrimary
         view.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.layer.shadowOffset = .init(width: .zero, height: -8)
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowRadius = 48
+        view.layer.shadowOpacity = 1
+        
         return view
     }()
     
