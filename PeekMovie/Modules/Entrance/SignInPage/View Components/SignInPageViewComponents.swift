@@ -35,6 +35,7 @@ final class SignInPageViewComponents {
         let view = UIImageView()
         view.image = Images.Static.entranceBackground
         view.contentMode = .scaleAspectFill
+        view.layer.opacity = 0.6
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -66,7 +67,7 @@ final class SignInPageViewComponents {
 
 //    MARK: exposed func
     func setupViews(parent: UIView) {
-        parent.backgroundColor = Colors.backgroundTertiary
+        parent.backgroundColor = Colors.backgroundPrimary
         
         parent.addSubview(backgroundImage)
         parent.addSubview(backgroundImageCover)
@@ -86,6 +87,9 @@ final class SignInPageViewComponents {
         inputBlock.addSubview(signUpHStack)
         
         changeState(to: .signIn, isSetup: true)
+        
+        appLogoIconView.layer.shadowRadius = 16
+        appLogoIconView.layer.shadowOpacity = 0.38
         
         setupConstraints(parent: parent)
     }
