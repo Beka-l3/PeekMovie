@@ -31,15 +31,29 @@ final class SignInPageViewComponents {
     
     lazy var signUpHStack = getBottomHStackView(with: [alternatorLabelLabel, secondaryButton])
     
+    lazy var backgroundImage: UIImageView = {
+        let view = UIImageView()
+        view.image = Images.Static.entranceBackground
+        view.contentMode = .scaleAspectFill
+        return view
+    }()
+    
+    lazy var backgroundImageCover: UIView = {
+        let view = UIView()
+        view.backgroundColor = Colors.backgroundCoverGray
+        view.layer.opacity = 0.6
+        return view
+    }()
+    
     lazy var inputBlock: UIView = {
         let view = UIView()
         view.layer.cornerRadius = Constants.paddingM
         view.backgroundColor = Colors.backgroundPrimary
         view.translatesAutoresizingMaskIntoConstraints = false
         
-        view.layer.shadowOffset = .init(width: .zero, height: -8)
+        view.layer.shadowOffset = .zero
         view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowRadius = 48
+        view.layer.shadowRadius = 64
         view.layer.shadowOpacity = 1
         
         return view
@@ -51,6 +65,9 @@ final class SignInPageViewComponents {
 //    MARK: exposed func
     func setupViews(parent: UIView) {
         parent.backgroundColor = Colors.backgroundTertiary
+        
+        parent.addSubview(backgroundImage)
+        parent.addSubview(backgroundImageCover)
         
         parent.addSubview(appLogoIconView)
         parent.addSubview(inputBlock)

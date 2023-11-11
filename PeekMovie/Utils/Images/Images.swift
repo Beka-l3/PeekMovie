@@ -21,6 +21,10 @@ extension Images {
     enum Icon {
         
     }
+    
+    enum Static {
+        static let entranceBackground = UIImage(named: "Entarnce Background Image")
+    }
 }
 
 
