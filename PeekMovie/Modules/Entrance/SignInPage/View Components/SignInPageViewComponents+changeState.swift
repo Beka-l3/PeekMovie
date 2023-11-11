@@ -41,7 +41,6 @@ extension SignInPageViewComponents {
             alternatorLabelLabel.text = Constants.signInLabelText
             
             changeConstraintsToSignUp()
-            
         }
     }
 }

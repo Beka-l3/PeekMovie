@@ -14,9 +14,9 @@ extension SignInPageViewComponents {
         static let emailTextFieldPlaceholder = "Email"
         static let passwordTextFieldPlaceholder = "Password"
         
-        static let loginButtonTitleText = "Login"
-        static let signUpButtonTitleText = "Sign Up"
-        static let signInButtonTitleText = "Sign In"
+        static let loginButtonTitleText = "LOGIN"
+        static let signUpButtonTitleText = "SIGN UP"
+        static let signInButtonTitleText = "SIGN IN"
         static let forgotPasswordButtonTitleText = "forgot password?"
         
         static let signUpLabelText = "If you do not have a peek id"
