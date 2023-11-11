@@ -35,6 +35,7 @@ final class SignInPageViewComponents {
         let view = UIImageView()
         view.image = Images.Static.entranceBackground
         view.contentMode = .scaleAspectFill
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -42,6 +43,7 @@ final class SignInPageViewComponents {
         let view = UIView()
         view.backgroundColor = Colors.backgroundCoverGray
         view.layer.opacity = 0.6
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     

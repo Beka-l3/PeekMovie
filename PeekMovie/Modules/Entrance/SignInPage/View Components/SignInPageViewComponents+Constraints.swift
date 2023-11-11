@@ -17,8 +17,10 @@ extension SignInPageViewComponents {
             appLogoIconView.widthAnchor.constraint(equalToConstant: appLogoIconView.iconSize.rawValue),
             appLogoIconView.heightAnchor.constraint(equalToConstant: appLogoIconView.iconSize.rawValue),
             
-            backgroundImage.centerXAnchor.constraint(equalTo: appLogoIconView.centerXAnchor),
-            backgroundImage.centerYAnchor.constraint(equalTo: appLogoIconView.centerYAnchor),
+            backgroundImage.topAnchor.constraint(equalTo: parent.topAnchor),
+            backgroundImage.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
+            backgroundImage.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: parent.centerYAnchor),
             
             backgroundImageCover.topAnchor.constraint(equalTo: backgroundImage.topAnchor),
             backgroundImageCover.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor),
