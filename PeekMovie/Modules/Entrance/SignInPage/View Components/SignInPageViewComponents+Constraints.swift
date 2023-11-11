@@ -22,6 +22,11 @@ extension SignInPageViewComponents {
             backgroundImage.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
             backgroundImage.bottomAnchor.constraint(equalTo: parent.centerYAnchor),
             
+            backgroundImageBW.topAnchor.constraint(equalTo: parent.topAnchor),
+            backgroundImageBW.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
+            backgroundImageBW.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
+            backgroundImageBW.bottomAnchor.constraint(equalTo: parent.centerYAnchor),
+            
             backgroundImageCover.topAnchor.constraint(equalTo: backgroundImage.topAnchor),
             backgroundImageCover.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor),
             backgroundImageCover.trailingAnchor.constraint(equalTo: backgroundImage.trailingAnchor),

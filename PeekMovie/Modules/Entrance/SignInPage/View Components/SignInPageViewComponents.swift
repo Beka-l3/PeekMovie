@@ -33,12 +33,22 @@ final class SignInPageViewComponents {
     
     lazy var backgroundImage: UIImageView = {
         let view = UIImageView()
-        view.image = Images.Static.entranceBackground
+        view.image = Images.Static.EntranceBackground.normal
         view.contentMode = .scaleAspectFill
         view.layer.opacity = 0.6
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    lazy var backgroundImageBW: UIImageView = {
+        let view = UIImageView()
+        view.image = Images.Static.EntranceBackground.unsaturated
+        view.contentMode = .scaleAspectFill
+        view.layer.opacity = 0.6
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     
     lazy var backgroundImageCover: UIView = {
         let view = UIView()
@@ -70,6 +80,7 @@ final class SignInPageViewComponents {
         parent.backgroundColor = Colors.backgroundPrimary
         
         parent.addSubview(backgroundImage)
+        parent.addSubview(backgroundImageBW)
         parent.addSubview(backgroundImageCover)
         
         parent.addSubview(appLogoIconView)

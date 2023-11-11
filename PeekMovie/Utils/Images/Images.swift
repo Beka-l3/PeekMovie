@@ -23,7 +23,7 @@ extension Images {
     }
     
     enum Static {
-        static let entranceBackground = UIImage(named: "Entarnce Background Image")
+        
     }
 }
 
@@ -47,5 +47,12 @@ extension Images.Icon {
     
     enum Profile {
         static let x24 = UIImage(named: "Profile icon x24")
+    }
+}
+
+extension Images.Static {
+    enum EntranceBackground {
+        static let normal = UIImage(named: "Entarnce Background Image")
+        static let unsaturated = UIImage(named: "Entarnce Background Image BW")
     }
 }

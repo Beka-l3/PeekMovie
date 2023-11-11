@@ -17,6 +17,9 @@ extension SignInPageViewComponents {
             usernameTextField.layer.opacity = .zero
             tertiaryButton.layer.opacity = 1
             
+            backgroundImage.layer.opacity = 1
+            backgroundImageBW.layer.opacity = 0
+            
             mainButton.setTitle(Constants.loginButtonTitleText, for: .normal)
             secondaryButton.setTitle(Constants.signUpButtonTitleText, for: .normal)
             alternatorLabelLabel.text = Constants.signUpLabelText
@@ -29,6 +32,9 @@ extension SignInPageViewComponents {
             usernameIconView.layer.opacity = 1
             usernameTextField.layer.opacity = 1
             tertiaryButton.layer.opacity = .zero
+            
+            backgroundImage.layer.opacity = 0
+            backgroundImageBW.layer.opacity = 1
             
             mainButton.setTitle(Constants.signUpButtonTitleText, for: .normal)
             secondaryButton.setTitle(Constants.signInButtonTitleText, for: .normal)
