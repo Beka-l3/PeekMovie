@@ -65,6 +65,8 @@ extension SignInPageViewComponents {
             
             mainButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constants.paddingXL),
             mainButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
+            mainButton.widthAnchor.constraint(equalToConstant:  Constants.mainButtonMaxWidth),
+            mainButton.heightAnchor.constraint(equalToConstant:  Constants.mainButtonMaxHeight),
             
             tertiaryButton.topAnchor.constraint(equalTo: mainButton.bottomAnchor, constant: Constants.paddingS),
             tertiaryButton.leadingAnchor.constraint(equalTo: mainButton.leadingAnchor),
@@ -103,16 +105,22 @@ extension SignInPageViewComponents {
     func changeConstraintsToSignIn(parent: UIView?) {
         if let parent = parent {
             
-            self.passwordIconViewTopConstraint?.constant = Constants.paddingL
             self.alternatingHStackBottomConstraint?.constant = Constants.paddingL
             UIView.animate(withDuration: 0.2) {
                 parent.layoutIfNeeded()
                 
             } completion: { isDone in
                 
-                self.alternatingHStackBottomConstraint?.constant = -Constants.paddingL
-                UIView.animate(withDuration: 0.2, delay: 0.2) {
+                self.passwordIconViewTopConstraint?.constant = Constants.paddingL
+                UIView.animate(withDuration: 0.2) {
                     parent.layoutIfNeeded()
+                    
+                } completion: { _ in
+                    
+                    self.alternatingHStackBottomConstraint?.constant = -Constants.paddingL
+                    UIView.animate(withDuration: 0.2) {
+                        parent.layoutIfNeeded()
+                    }
                 }
             }
             

@@ -84,6 +84,7 @@ final class PeekButton: UIButton {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = Colors.clearBlack
         setTitle(titleText, for: .normal)
+        contentHorizontalAlignment = .leading
         
         switch peekButtonType {
         case .main:

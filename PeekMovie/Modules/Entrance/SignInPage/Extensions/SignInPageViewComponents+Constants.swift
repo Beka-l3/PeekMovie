@@ -51,6 +51,9 @@ extension SignInPageViewComponents {
         static let inputBlockShadowRadius: CGFloat = 64
         static let inputBlockShadowOpacity: Float = 1
         
+        static let mainButtonMaxWidth: CGFloat = 75
+        static let mainButtonMaxHeight: CGFloat = 30
+        
         static var signUpBlockHeight: CGFloat {
             3 * userInputFieldHeight + 2 * paddingL + paddingXL + mainButtonHeight
         }
