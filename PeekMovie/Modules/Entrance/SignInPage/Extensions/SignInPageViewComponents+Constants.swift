@@ -46,6 +46,11 @@ extension SignInPageViewComponents {
         static let appLogoHeight: CGFloat = 90
         static let inputFieldHeight: CGFloat = 24
         
+        static let inputBlockShadowOffset: CGSize = .zero
+        static let inputBlockShadowColor: CGColor = UIColor.black.cgColor
+        static let inputBlockShadowRadius: CGFloat = 64
+        static let inputBlockShadowOpacity: Float = 1
+        
         static var signUpBlockHeight: CGFloat {
             3 * userInputFieldHeight + 2 * paddingL + paddingXL + mainButtonHeight
         }

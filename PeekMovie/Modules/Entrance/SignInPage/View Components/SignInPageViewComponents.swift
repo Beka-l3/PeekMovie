@@ -42,10 +42,10 @@ final class SignInPageViewComponents {
         view.backgroundColor = Colors.backgroundPrimary
         view.translatesAutoresizingMaskIntoConstraints = false
         
-        view.layer.shadowOffset = .zero
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowRadius = 64
-        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = Constants.inputBlockShadowOffset
+        view.layer.shadowColor = Constants.inputBlockShadowColor
+        view.layer.shadowRadius = Constants.inputBlockShadowRadius
+        view.layer.shadowOpacity = Constants.inputBlockShadowOpacity
         
         return view
     }()
