@@ -8,8 +8,8 @@
 import UIKit
 
 
-extension SignInPageViewComponents {
-    func changeState(to state: SignInPageViewController.State, parent: UIView? = nil, isSetup: Bool = false) {
+extension AuthorizationPageViewComponents {
+    func changeState(to state: AuthorizationPageViewController.State, parent: UIView? = nil, isSetup: Bool = false) {
         switch state {
             
         case .signIn:

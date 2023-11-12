@@ -8,7 +8,8 @@
 import UIKit
 
 
-extension SignInPageViewController {
+extension AuthorizationPageViewController {
+    
     @objc func handleMainButton() {
         
         switch entranceState {
@@ -43,4 +44,5 @@ extension SignInPageViewController {
         // Forgot password
         
     }
+    
 }
