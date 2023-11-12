@@ -31,24 +31,8 @@ final class SignInPageViewComponents {
     
     lazy var signUpHStack = getBottomHStackView(with: [alternatorLabelLabel, secondaryButton])
     
-    lazy var backgroundImage: UIImageView = {
-        let view = UIImageView()
-        view.image = Images.Static.EntranceBackground.normal
-        view.contentMode = .scaleAspectFill
-        view.layer.opacity = 0.6
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    lazy var backgroundImageBW: UIImageView = {
-        let view = UIImageView()
-        view.image = Images.Static.EntranceBackground.unsaturated
-        view.contentMode = .scaleAspectFill
-        view.layer.opacity = 0.6
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
+    lazy var backgroundImage = PeekBackgroundImageView(image: Images.Static.EntranceBackground.normal)
+    lazy var backgroundImageBW = PeekBackgroundImageView(image: Images.Static.EntranceBackground.unsaturated)
     
     lazy var backgroundImageCover: UIView = {
         let view = UIView()
