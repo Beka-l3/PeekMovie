@@ -86,13 +86,13 @@ extension SignInPageViewComponents {
             
             self.passwordIconViewTopConstraint?.constant = 2 * Constants.paddingL + Constants.inputFieldHeight
             self.alternatingHStackBottomConstraint?.constant = Constants.paddingL
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: Constants.ChangeState.animationDurationPart1) {
                 parent.layoutIfNeeded()
                 
             } completion: { isDone in
                 
                 self.alternatingHStackBottomConstraint?.constant = -Constants.paddingL
-                UIView.animate(withDuration: 0.2, delay: 0.2) {
+                UIView.animate(withDuration: Constants.ChangeState.animationDurationPart2, delay: Constants.ChangeState.animationDurationPart3) {
                     parent.layoutIfNeeded()
                 }
             }
@@ -106,19 +106,19 @@ extension SignInPageViewComponents {
         if let parent = parent {
             
             self.alternatingHStackBottomConstraint?.constant = Constants.paddingL
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: Constants.ChangeState.animationDurationPart1) {
                 parent.layoutIfNeeded()
                 
             } completion: { isDone in
                 
                 self.passwordIconViewTopConstraint?.constant = Constants.paddingL
-                UIView.animate(withDuration: 0.2) {
+                UIView.animate(withDuration: Constants.ChangeState.animationDurationPart2) {
                     parent.layoutIfNeeded()
                     
                 } completion: { _ in
                     
                     self.alternatingHStackBottomConstraint?.constant = -Constants.paddingL
-                    UIView.animate(withDuration: 0.2) {
+                    UIView.animate(withDuration: Constants.ChangeState.animationDurationPart3) {
                         parent.layoutIfNeeded()
                     }
                 }

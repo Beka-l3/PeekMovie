@@ -14,14 +14,14 @@ extension SignInPageViewComponents {
             
         case .signIn:
             if !isSetup {
-                UIView.animate(withDuration: 0.6) {
-                    self.backgroundImage.layer.opacity = 1
-                    self.backgroundImageBW.layer.opacity = 0
+                UIView.animate(withDuration: Constants.ChangeState.animationDuration) {
+                    self.backgroundImage.layer.opacity = Constants.ChangeState.fullOpacity
+                    self.backgroundImageBW.layer.opacity = Constants.ChangeState.zeroOpacity
                 }
                 
-                UIView.animate(withDuration: 0.2) {
-                    self.mainButton.layer.opacity = 0
-                    self.alternatingHStack.layer.opacity = 0
+                UIView.animate(withDuration: Constants.ChangeState.animationDurationPart1) {
+                    self.mainButton.layer.opacity = Constants.ChangeState.zeroOpacity
+                    self.alternatingHStack.layer.opacity = Constants.ChangeState.zeroOpacity
                     
                 } completion: { _ in
                     
@@ -29,16 +29,16 @@ extension SignInPageViewComponents {
                     self.secondaryButton.setTitle(Constants.signUpButtonTitleText, for: .normal)
                     self.alternatorLabelLabel.text = Constants.signUpLabelText
                     
-                    UIView.animate(withDuration: 0.2) {
-                        self.usernameIconView.layer.opacity = .zero
-                        self.usernameTextField.layer.opacity = .zero
+                    UIView.animate(withDuration: Constants.ChangeState.animationDurationPart2) {
+                        self.usernameIconView.layer.opacity = Constants.ChangeState.zeroOpacity
+                        self.usernameTextField.layer.opacity = Constants.ChangeState.zeroOpacity
                         
                     } completion: { _ in
                         
-                        UIView.animate(withDuration: 0.2, delay: 0.2) {
-                            self.mainButton.layer.opacity = 1
-                            self.alternatingHStack.layer.opacity = 1
-                            self.tertiaryButton.layer.opacity = 1
+                        UIView.animate(withDuration: Constants.ChangeState.animationDurationPart3, delay: Constants.ChangeState.animationDurationDelay) {
+                            self.mainButton.layer.opacity = Constants.ChangeState.fullOpacity
+                            self.alternatingHStack.layer.opacity = Constants.ChangeState.fullOpacity
+                            self.tertiaryButton.layer.opacity = Constants.ChangeState.fullOpacity
                         }
                     }
                 }
@@ -47,15 +47,15 @@ extension SignInPageViewComponents {
             }
             
         case .signUp:
-            UIView.animate(withDuration: 0.6) {
-                self.backgroundImage.layer.opacity = 0
-                self.backgroundImageBW.layer.opacity = 1
+            UIView.animate(withDuration: Constants.ChangeState.animationDuration) {
+                self.backgroundImage.layer.opacity = Constants.ChangeState.zeroOpacity
+                self.backgroundImageBW.layer.opacity = Constants.ChangeState.fullOpacity
             }
             
-            UIView.animate(withDuration: 0.2) {
-                self.mainButton.layer.opacity = 0
-                self.alternatingHStack.layer.opacity = 0
-                self.tertiaryButton.layer.opacity = 0
+            UIView.animate(withDuration: Constants.ChangeState.animationDurationPart1) {
+                self.mainButton.layer.opacity = Constants.ChangeState.zeroOpacity
+                self.alternatingHStack.layer.opacity = Constants.ChangeState.zeroOpacity
+                self.tertiaryButton.layer.opacity = Constants.ChangeState.zeroOpacity
                 
             } completion: { _ in
                 
@@ -63,15 +63,15 @@ extension SignInPageViewComponents {
                 self.secondaryButton.setTitle(Constants.signInButtonTitleText, for: .normal)
                 self.alternatorLabelLabel.text = Constants.signInLabelText
                 
-                UIView.animate(withDuration: 0.2) {
-                    self.usernameIconView.layer.opacity = 1
-                    self.usernameTextField.layer.opacity = 1
+                UIView.animate(withDuration: Constants.ChangeState.animationDurationPart2) {
+                    self.usernameIconView.layer.opacity = Constants.ChangeState.fullOpacity
+                    self.usernameTextField.layer.opacity = Constants.ChangeState.fullOpacity
                     
                 } completion: { _ in
                     
-                    UIView.animate(withDuration: 0.2, delay: 0.2) {
-                        self.mainButton.layer.opacity = 1
-                        self.alternatingHStack.layer.opacity = 1
+                    UIView.animate(withDuration: Constants.ChangeState.animationDurationPart3, delay: Constants.ChangeState.animationDurationDelay) {
+                        self.mainButton.layer.opacity = Constants.ChangeState.fullOpacity
+                        self.alternatingHStack.layer.opacity = Constants.ChangeState.fullOpacity
                     }
                 }
             }
