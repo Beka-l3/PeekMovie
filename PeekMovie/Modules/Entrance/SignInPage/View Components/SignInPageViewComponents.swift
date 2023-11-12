@@ -76,7 +76,7 @@ final class SignInPageViewComponents {
         inputBlock.addSubview(tertiaryButton)
         inputBlock.addSubview(alternatingHStack)
         
-        changeState(to: .signIn, isSetup: true)
+        changeState(to: .signIn, parent: parent, isSetup: true)
         
         setupConstraints(parent: parent)
     }
