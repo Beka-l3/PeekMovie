@@ -13,7 +13,7 @@ final class SignInPageViewComponents {
     lazy var backgroundLinear = BackgroundGradient(type: .linearBottomLeft)
     lazy var backgroundRadial = BackgroundGradient(type: .raidalBottom)
     
-    lazy var appLogoIconView = PeekIconView(image: Images.Logo.App.x90, size: .x90, cornerRadius: Constants.paddingM / 2)
+    lazy var appLogoIconView = PeekIconView(image: Images.Logo.App.x90, size: .x90, cornerRadius: Constants.paddingM / 2, withShadow: true)
     
     lazy var usernameTextField = UserInputTextField(placeholder: Constants.usernameTextFieldPlaceholder)
     lazy var emailTextField = UserInputTextField(placeholder: Constants.emailTextFieldPlaceholder)
@@ -98,9 +98,6 @@ final class SignInPageViewComponents {
         inputBlock.addSubview(signUpHStack)
         
         changeState(to: .signIn, isSetup: true)
-        
-        appLogoIconView.layer.shadowRadius = 16
-        appLogoIconView.layer.shadowOpacity = 0.38
         
         setupConstraints(parent: parent)
     }

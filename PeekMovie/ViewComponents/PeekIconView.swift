@@ -18,11 +18,11 @@ final class PeekIconView: UIImageView {
     let iconSize: IconSize
     
 //    MARK: lifecycle
-    init(image: UIImage?, size: IconSize = .x24, cornerRadius: CGFloat? = nil) {
+    init(image: UIImage?, size: IconSize = .x24, cornerRadius: CGFloat? = nil, withShadow: Bool = false) {
         self.iconSize = size
         super.init(frame: .zero)
         
-        setupView(image: image, size: size, cornerRadius: cornerRadius ?? .zero)
+        setupView(image: image, size: size, cornerRadius: cornerRadius ?? .zero, withShadow: withShadow)
     }
     
     required init?(coder: NSCoder) {
@@ -37,11 +37,23 @@ final class PeekIconView: UIImageView {
     
     
 //    MARK: private func
-    private func setupView(image: UIImage?, size: IconSize, cornerRadius: CGFloat) {
+    private func setupView(image: UIImage?, size: IconSize, cornerRadius: CGFloat, withShadow: Bool) {
         self.image = image
         self.layer.cornerRadius = cornerRadius
+        
+        if withShadow {
+            layer.shadowRadius = Constants.shadowRadius
+            layer.shadowOpacity = Constants.shadowOpacity
+        }
         
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
 
+
+extension PeekIconView {
+    enum Constants {
+        static let shadowRadius: CGFloat = 16
+        static let shadowOpacity: Float = 0.38
+    }
+}

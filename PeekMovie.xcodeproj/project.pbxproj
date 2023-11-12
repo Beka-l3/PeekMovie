@@ -14,6 +14,7 @@
 		072EE6622A95375E00CFCC2A /* SignInPageViewComponents+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6612A95375E00CFCC2A /* SignInPageViewComponents+Constants.swift */; };
 		072EE6642A953CCE00CFCC2A /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6632A953CCE00CFCC2A /* InputTextField.swift */; };
 		072EE6662A953DCE00CFCC2A /* ShimmerGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */; };
+		0731B0602B00ED2C006162D7 /* PeekBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */; };
 		0731BAFE292D5B8F004CCE79 /* ExtensionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BAFD292D5B8F004CCE79 /* ExtensionCollectionView.swift */; };
 		0731BB00292D5BC1004CCE79 /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BAFF292D5BC1004CCE79 /* MovieCollectionCell.swift */; };
 		0731BB22292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BB21292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift */; };
@@ -146,6 +147,7 @@
 		072EE6612A95375E00CFCC2A /* SignInPageViewComponents+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInPageViewComponents+Constants.swift"; sourceTree = "<group>"; };
 		072EE6632A953CCE00CFCC2A /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerGradient.swift; sourceTree = "<group>"; };
+		0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBackgroundImageView.swift; sourceTree = "<group>"; };
 		0731BAFD292D5B8F004CCE79 /* ExtensionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionView.swift; sourceTree = "<group>"; };
 		0731BAFF292D5BC1004CCE79 /* MovieCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionCell.swift; sourceTree = "<group>"; };
 		0731BB21292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionViewPresenter.swift; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 				07CBD4222AF8236300005F63 /* PeekIconView.swift */,
 				07BB3FD52AF90638001E0E63 /* PeekLabel.swift */,
 				07FC65C82AFA4189001C039D /* BackgroundGradient.swift */,
+				0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -970,6 +973,7 @@
 				07517C3B2AFB9EE100751EBB /* Colors+gradientColorPattern.swift in Sources */,
 				077977632A8E367F000DAF72 /* Fonts.swift in Sources */,
 				07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */,
+				0731B0602B00ED2C006162D7 /* PeekBackgroundImageView.swift in Sources */,
 				07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */,
 				073B584D28F97B20000EE21F /* RegisterPage.swift in Sources */,
 				07ACBA982AFD29F400D07487 /* SignInPageViewController+HandleButtons.swift in Sources */,
