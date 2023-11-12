@@ -34,13 +34,7 @@ final class SignInPageViewComponents {
     lazy var backgroundImage = PeekBackgroundImageView(image: Images.Static.EntranceBackground.normal)
     lazy var backgroundImageBW = PeekBackgroundImageView(image: Images.Static.EntranceBackground.unsaturated)
     
-    lazy var backgroundImageCover: UIView = {
-        let view = UIView()
-        view.backgroundColor = Colors.backgroundCoverGray
-        view.layer.opacity = 0.6
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    lazy var backgroundImageCover = PeekCoverView()
     
     lazy var inputBlock: UIView = {
         let view = UIView()
