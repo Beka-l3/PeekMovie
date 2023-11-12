@@ -15,9 +15,9 @@ final class SignInPageViewComponents {
     
     lazy var appLogoIconView = PeekIconView(image: Images.Logo.App.x90, size: .x90, cornerRadius: Constants.paddingM / 2, withShadow: true)
     
-    lazy var usernameTextField = UserInputTextField(placeholder: Constants.usernameTextFieldPlaceholder)
-    lazy var emailTextField = UserInputTextField(placeholder: Constants.emailTextFieldPlaceholder)
-    lazy var passwordTextField = UserInputTextField(placeholder: Constants.passwordTextFieldPlaceholder)
+    lazy var usernameTextField = PeekInputTextField(placeholder: Constants.usernameTextFieldPlaceholder)
+    lazy var emailTextField = PeekInputTextField(placeholder: Constants.emailTextFieldPlaceholder)
+    lazy var passwordTextField = PeekInputTextField(placeholder: Constants.passwordTextFieldPlaceholder)
     
     lazy var usernameIconView = PeekIconView(image: Images.Icon.Profile.x24)
     lazy var emailIconView = PeekIconView(image: Images.Icon.Email.x24)

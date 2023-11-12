@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class UserInputTextField: UITextField {
+final class PeekInputTextField: UITextField {
     
     private lazy var bottomBorderLine: UIView = {
         let view = UIView()
@@ -66,7 +66,7 @@ final class UserInputTextField: UITextField {
 
 
 
-extension UserInputTextField {
+extension PeekInputTextField {
     private enum Constants {
         static let bottomBorderLineHeight: CGFloat = 1
     }

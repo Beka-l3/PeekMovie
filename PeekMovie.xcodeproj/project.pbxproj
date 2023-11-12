@@ -15,6 +15,7 @@
 		072EE6642A953CCE00CFCC2A /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6632A953CCE00CFCC2A /* InputTextField.swift */; };
 		072EE6662A953DCE00CFCC2A /* ShimmerGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */; };
 		0731B0602B00ED2C006162D7 /* PeekBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */; };
+		0731B0622B00EE89006162D7 /* PeekCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731B0612B00EE89006162D7 /* PeekCoverView.swift */; };
 		0731BAFE292D5B8F004CCE79 /* ExtensionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BAFD292D5B8F004CCE79 /* ExtensionCollectionView.swift */; };
 		0731BB00292D5BC1004CCE79 /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BAFF292D5BC1004CCE79 /* MovieCollectionCell.swift */; };
 		0731BB22292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BB21292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift */; };
@@ -110,7 +111,7 @@
 		07C8212F291019E000B055D0 /* MovieDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8212E291019E000B055D0 /* MovieDTO.swift */; };
 		07CBD4232AF8236300005F63 /* PeekIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CBD4222AF8236300005F63 /* PeekIconView.swift */; };
 		07CEA3932AF5661D00E69FAB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CEA3922AF5661D00E69FAB /* Colors.swift */; };
-		07CEA3952AF79ECC00E69FAB /* UserInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CEA3942AF79ECC00E69FAB /* UserInputTextField.swift */; };
+		07CEA3952AF79ECC00E69FAB /* PeekInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CEA3942AF79ECC00E69FAB /* PeekInputTextField.swift */; };
 		07CEA3982AF7A8A400E69FAB /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CEA3972AF7A8A400E69FAB /* Images.swift */; };
 		07CEA39B2AF7ABB800E69FAB /* PeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CEA39A2AF7ABB800E69FAB /* PeekButton.swift */; };
 		07D401B928F8641700BF3F55 /* PasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D401B828F8641700BF3F55 /* PasswordPage.swift */; };
@@ -148,6 +149,7 @@
 		072EE6632A953CCE00CFCC2A /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerGradient.swift; sourceTree = "<group>"; };
 		0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBackgroundImageView.swift; sourceTree = "<group>"; };
+		0731B0612B00EE89006162D7 /* PeekCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekCoverView.swift; sourceTree = "<group>"; };
 		0731BAFD292D5B8F004CCE79 /* ExtensionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionView.swift; sourceTree = "<group>"; };
 		0731BAFF292D5BC1004CCE79 /* MovieCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionCell.swift; sourceTree = "<group>"; };
 		0731BB21292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionViewPresenter.swift; sourceTree = "<group>"; };
@@ -243,7 +245,7 @@
 		07C8212E291019E000B055D0 /* MovieDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDTO.swift; sourceTree = "<group>"; };
 		07CBD4222AF8236300005F63 /* PeekIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekIconView.swift; sourceTree = "<group>"; };
 		07CEA3922AF5661D00E69FAB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		07CEA3942AF79ECC00E69FAB /* UserInputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputTextField.swift; sourceTree = "<group>"; };
+		07CEA3942AF79ECC00E69FAB /* PeekInputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekInputTextField.swift; sourceTree = "<group>"; };
 		07CEA3972AF7A8A400E69FAB /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		07CEA39A2AF7ABB800E69FAB /* PeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekButton.swift; sourceTree = "<group>"; };
 		07D401B828F8641700BF3F55 /* PasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPage.swift; sourceTree = "<group>"; };
@@ -456,12 +458,13 @@
 			children = (
 				072EE6632A953CCE00CFCC2A /* InputTextField.swift */,
 				072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */,
-				07CEA3942AF79ECC00E69FAB /* UserInputTextField.swift */,
+				07CEA3942AF79ECC00E69FAB /* PeekInputTextField.swift */,
 				07CEA39A2AF7ABB800E69FAB /* PeekButton.swift */,
 				07CBD4222AF8236300005F63 /* PeekIconView.swift */,
 				07BB3FD52AF90638001E0E63 /* PeekLabel.swift */,
 				07FC65C82AFA4189001C039D /* BackgroundGradient.swift */,
 				0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */,
+				0731B0612B00EE89006162D7 /* PeekCoverView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -975,6 +978,7 @@
 				07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */,
 				0731B0602B00ED2C006162D7 /* PeekBackgroundImageView.swift in Sources */,
 				07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */,
+				0731B0622B00EE89006162D7 /* PeekCoverView.swift in Sources */,
 				073B584D28F97B20000EE21F /* RegisterPage.swift in Sources */,
 				07ACBA982AFD29F400D07487 /* SignInPageViewController+HandleButtons.swift in Sources */,
 				0758C2E6291174F800E48140 /* NetworkServiceProtocol.swift in Sources */,
@@ -1037,7 +1041,7 @@
 				07EB1CCC28FE219C0031598A /* Animations.swift in Sources */,
 				0731BB22292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift in Sources */,
 				0779775E2A8E3553000DAF72 /* RootViewController.swift in Sources */,
-				07CEA3952AF79ECC00E69FAB /* UserInputTextField.swift in Sources */,
+				07CEA3952AF79ECC00E69FAB /* PeekInputTextField.swift in Sources */,
 				074B8A6F2A8C25A500EB39C2 /* CheckUsernameNSE.swift in Sources */,
 				07DBA83F28F3F734000A1312 /* AppDelegateOld.swift in Sources */,
 				07EB1CC228FD48100031598A /* HTTPRequest.swift in Sources */,
