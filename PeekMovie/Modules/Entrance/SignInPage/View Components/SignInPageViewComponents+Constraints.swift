@@ -69,19 +69,55 @@ extension SignInPageViewComponents {
             tertiaryButton.topAnchor.constraint(equalTo: mainButton.bottomAnchor, constant: Constants.paddingS),
             tertiaryButton.leadingAnchor.constraint(equalTo: mainButton.leadingAnchor),
             
-            signUpHStack.centerXAnchor.constraint(equalTo: inputBlock.centerXAnchor),
-            signUpHStack.bottomAnchor.constraint(equalTo: inputBlock.bottomAnchor, constant: -Constants.paddingL),
+            alternatingHStack.centerXAnchor.constraint(equalTo: inputBlock.centerXAnchor),
         ])
         
         passwordIconViewTopConstraint = passwordIconView.topAnchor.constraint(equalTo: emailIconView.bottomAnchor, constant: Constants.paddingL)
         passwordIconViewTopConstraint?.isActive = true
+        
+        alternatingHStackBottomConstraint = alternatingHStack.bottomAnchor.constraint(equalTo: inputBlock.bottomAnchor, constant: -Constants.paddingL)
+        alternatingHStackBottomConstraint?.isActive = true
     }
     
-    func changeConstraintsToSignUp() {
-        passwordIconViewTopConstraint?.constant = 2 * Constants.paddingL + Constants.inputFieldHeight
+    func changeConstraintsToSignUp(parent: UIView?) {
+        if let parent = parent {
+            
+            self.passwordIconViewTopConstraint?.constant = 2 * Constants.paddingL + Constants.inputFieldHeight
+            self.alternatingHStackBottomConstraint?.constant = Constants.paddingL
+            UIView.animate(withDuration: 0.2) {
+                parent.layoutIfNeeded()
+                
+            } completion: { isDone in
+                
+                self.alternatingHStackBottomConstraint?.constant = -Constants.paddingL
+                UIView.animate(withDuration: 0.2, delay: 0.2) {
+                    parent.layoutIfNeeded()
+                }
+            }
+            
+        } else {
+            self.passwordIconViewTopConstraint?.constant = 2 * Constants.paddingL + Constants.inputFieldHeight
+        }
     }
     
-    func changeConstraintsToSignIn() {
-        passwordIconViewTopConstraint?.constant = Constants.paddingL
+    func changeConstraintsToSignIn(parent: UIView?) {
+        if let parent = parent {
+            
+            self.passwordIconViewTopConstraint?.constant = Constants.paddingL
+            self.alternatingHStackBottomConstraint?.constant = Constants.paddingL
+            UIView.animate(withDuration: 0.2) {
+                parent.layoutIfNeeded()
+                
+            } completion: { isDone in
+                
+                self.alternatingHStackBottomConstraint?.constant = -Constants.paddingL
+                UIView.animate(withDuration: 0.2, delay: 0.2) {
+                    parent.layoutIfNeeded()
+                }
+            }
+            
+        } else {
+            self.passwordIconViewTopConstraint?.constant = Constants.paddingL
+        }
     }
 }

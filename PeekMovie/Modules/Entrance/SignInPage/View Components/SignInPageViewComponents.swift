@@ -29,7 +29,7 @@ final class SignInPageViewComponents {
     
     lazy var alternatorLabelLabel = PeekLabel(type: .secondary, text: Constants.signUpLabelText, font: .caption1)
     
-    lazy var signUpHStack = getBottomHStackView(with: [alternatorLabelLabel, secondaryButton])
+    lazy var alternatingHStack = getBottomHStackView(with: [alternatorLabelLabel, secondaryButton])
     
     lazy var backgroundImage = PeekBackgroundImageView(image: Images.Static.EntranceBackground.normal)
     lazy var backgroundImageBW = PeekBackgroundImageView(image: Images.Static.EntranceBackground.unsaturated)
@@ -51,6 +51,7 @@ final class SignInPageViewComponents {
     }()
     
     var passwordIconViewTopConstraint: NSLayoutConstraint?
+    var alternatingHStackBottomConstraint: NSLayoutConstraint?
     
 
 //    MARK: exposed func
@@ -73,7 +74,7 @@ final class SignInPageViewComponents {
         
         inputBlock.addSubview(mainButton)
         inputBlock.addSubview(tertiaryButton)
-        inputBlock.addSubview(signUpHStack)
+        inputBlock.addSubview(alternatingHStack)
         
         changeState(to: .signIn, isSetup: true)
         

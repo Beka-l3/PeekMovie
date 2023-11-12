@@ -16,6 +16,7 @@
 		072EE6662A953DCE00CFCC2A /* ShimmerGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */; };
 		0731B0602B00ED2C006162D7 /* PeekBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */; };
 		0731B0622B00EE89006162D7 /* PeekCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731B0612B00EE89006162D7 /* PeekCoverView.swift */; };
+		0731B0642B00F6A5006162D7 /* SignInPageViewComponents+Constants+ChangeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731B0632B00F6A4006162D7 /* SignInPageViewComponents+Constants+ChangeState.swift */; };
 		0731BAFE292D5B8F004CCE79 /* ExtensionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BAFD292D5B8F004CCE79 /* ExtensionCollectionView.swift */; };
 		0731BB00292D5BC1004CCE79 /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BAFF292D5BC1004CCE79 /* MovieCollectionCell.swift */; };
 		0731BB22292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731BB21292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift */; };
@@ -150,6 +151,7 @@
 		072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerGradient.swift; sourceTree = "<group>"; };
 		0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBackgroundImageView.swift; sourceTree = "<group>"; };
 		0731B0612B00EE89006162D7 /* PeekCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekCoverView.swift; sourceTree = "<group>"; };
+		0731B0632B00F6A4006162D7 /* SignInPageViewComponents+Constants+ChangeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInPageViewComponents+Constants+ChangeState.swift"; sourceTree = "<group>"; };
 		0731BAFD292D5B8F004CCE79 /* ExtensionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionView.swift; sourceTree = "<group>"; };
 		0731BAFF292D5BC1004CCE79 /* MovieCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionCell.swift; sourceTree = "<group>"; };
 		0731BB21292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionViewPresenter.swift; sourceTree = "<group>"; };
@@ -298,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				072EE65C2A9535C000CFCC2A /* SignInPageViewController.swift */,
-				07ACBA972AFD29F400D07487 /* SignInPageViewController+HandleButtons.swift */,
 				07ACBA992AFD32CD00D07487 /* View Components */,
 				072EE6602A95373600CFCC2A /* Extensions */,
 			);
@@ -308,6 +309,8 @@
 		072EE6602A95373600CFCC2A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				07ACBA972AFD29F400D07487 /* SignInPageViewController+HandleButtons.swift */,
+				0731B0632B00F6A4006162D7 /* SignInPageViewComponents+Constants+ChangeState.swift */,
 				072EE6612A95375E00CFCC2A /* SignInPageViewComponents+Constants.swift */,
 				07FC65C62AFA4089001C039D /* SignInPageViewComponents+BottomHStackView.swift */,
 			);
@@ -1047,6 +1050,7 @@
 				07EB1CC228FD48100031598A /* HTTPRequest.swift in Sources */,
 				07BB3FD62AF90638001E0E63 /* PeekLabel.swift in Sources */,
 				07ABF660291AD4A7007C4A52 /* ExtensionPasswordPagePresenter.swift in Sources */,
+				0731B0642B00F6A5006162D7 /* SignInPageViewComponents+Constants+ChangeState.swift in Sources */,
 				0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */,
 				072EE65D2A9535C000CFCC2A /* SignInPageViewController.swift in Sources */,
 				07EB1CC428FD48100031598A /* HTTPMethod.swift in Sources */,

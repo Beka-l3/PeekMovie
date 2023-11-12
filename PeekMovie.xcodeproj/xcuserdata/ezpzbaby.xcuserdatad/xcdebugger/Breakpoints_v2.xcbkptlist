@@ -3,4 +3,54 @@
    uuid = "C35C039F-1FCF-4294-9D56-B4CAD2817C97"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3AF14177-5D51-446C-A9EF-B5225E68B99F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeekMovie/Modules/Entrance/SignInPage/Extensions/SignInPageViewComponents+Constants.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "Constants"
+            landmarkType = "13">
+            <Locations>
+               <Location
+                  uuid = "3AF14177-5D51-446C-A9EF-B5225E68B99F - f73a539b50e43fb6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "one-time initialization function for mainButtonHeight"
+                  moduleName = "PeekMovie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezpzbaby/pet%20projects/PeekMovie/PeekMovie/Modules/Entrance/SignInPage/Extensions/SignInPageViewComponents+Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  uuid = "3AF14177-5D51-446C-A9EF-B5225E68B99F - 4280e7d9236894a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeekMovie.SignInPageViewComponents.Constants.mainButtonHeight.unsafeMutableAddressor : CoreGraphics.CGFloat"
+                  moduleName = "PeekMovie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezpzbaby/pet%20projects/PeekMovie/PeekMovie/Modules/Entrance/SignInPage/Extensions/SignInPageViewComponents+Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

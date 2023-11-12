@@ -35,7 +35,7 @@ extension SignInPageViewController {
             
         }
         
-        viewComponents.changeState(to: entranceState)
+        viewComponents.changeState(to: entranceState, parent: view)
     }
     
     @objc func handleTertiaryButton() {
