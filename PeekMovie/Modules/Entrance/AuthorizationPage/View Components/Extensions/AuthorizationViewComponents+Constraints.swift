@@ -8,7 +8,7 @@
 import UIKit
 
 
-extension AuthorizationPageViewComponents {
+extension AuthorizationViewComponents {
     
     func setupConstraints(parent: UIView) {
         NSLayoutConstraint.activate([

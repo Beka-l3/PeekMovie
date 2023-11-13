@@ -9,7 +9,7 @@ import UIKit
 
 final class EntranceModuleBuilder {
     
-    let signInPage = AuthorizationPageViewController()
+    let signInPage = AuthorizationViewController()
     
     
     init() {

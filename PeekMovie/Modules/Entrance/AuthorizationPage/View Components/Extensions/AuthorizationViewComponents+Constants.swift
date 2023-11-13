@@ -8,7 +8,7 @@
 import UIKit
 
 
-extension AuthorizationPageViewComponents {
+extension AuthorizationViewComponents {
     enum Constants {
         static let usernameTextFieldPlaceholder = "Username"
         static let emailTextFieldPlaceholder = "Email"

@@ -8,7 +8,7 @@
 import UIKit
 
 
-extension AuthorizationPageViewComponents.Constants {
+extension AuthorizationViewComponents.Constants {
     enum ChangeState {
         static let animationDuration: TimeInterval = 0.7
         static let animationDurationPart1: TimeInterval = 0.2
@@ -21,7 +21,7 @@ extension AuthorizationPageViewComponents.Constants {
     }
 }
 
-extension AuthorizationPageViewComponents.Constants.ChangeState {
+extension AuthorizationViewComponents.Constants.ChangeState {
     enum SignIn {
         
     }

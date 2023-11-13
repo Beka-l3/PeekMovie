@@ -8,7 +8,7 @@
 import UIKit
 
 
-extension AuthorizationPageViewComponents {
+extension AuthorizationViewComponents {
     func getBottomHStackView(with arrangedSubviews: [UIView]) -> UIStackView {
         let view = UIStackView()
         view.axis = .horizontal

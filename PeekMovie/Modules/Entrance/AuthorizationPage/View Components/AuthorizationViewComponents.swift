@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class AuthorizationPageViewComponents {
+final class AuthorizationViewComponents {
     
     lazy var backgroundLinear = BackgroundGradient(type: .linearBottomLeft)
     lazy var backgroundRadial = BackgroundGradient(type: .raidalBottom)

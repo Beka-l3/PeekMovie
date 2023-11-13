@@ -8,9 +8,9 @@
 import UIKit
 
 
-final class AuthorizationPageViewController: UIViewController {
+final class AuthorizationViewController: UIViewController {
     
-    let viewComponents = AuthorizationPageViewComponents()
+    let viewComponents = AuthorizationViewComponents()
     var entranceState: State = .signIn
     
     
@@ -57,7 +57,7 @@ final class AuthorizationPageViewController: UIViewController {
 }
 
 
-extension AuthorizationPageViewController {
+extension AuthorizationViewController {
     
     enum State {
         case signIn

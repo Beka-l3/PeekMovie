@@ -8,7 +8,7 @@
 import UIKit
 
 
-extension AuthorizationPageViewController {
+extension AuthorizationViewController {
     
     @objc func handleMainButton() {
         
