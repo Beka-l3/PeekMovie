@@ -24,7 +24,7 @@ final class BackgroundGradient: CAGradientLayer {
     
 //    MARK: lifecycle
     init(type: GradientType) {
-        super.init(layer: CALayer())
+        super.init()
         setupLayer(type: type)
     }
     

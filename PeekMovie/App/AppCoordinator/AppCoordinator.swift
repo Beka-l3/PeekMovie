@@ -70,7 +70,7 @@ extension AppCoordinator {
             switch moduleToShow {
             case .entrance:
                 Task {
-                    await setModuleWith(viewController: entranceModule.signInPage)
+                    await setModuleWith(viewController: entranceModule.authorizationPage)
                 }
             case .lobby:
                 print("\nShow lobby")

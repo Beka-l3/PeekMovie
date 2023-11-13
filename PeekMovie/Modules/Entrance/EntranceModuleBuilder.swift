@@ -9,11 +9,13 @@ import UIKit
 
 final class EntranceModuleBuilder {
     
-    let signInPage = AuthorizationViewController()
+    let passwordRestorationPage: PasswordRestorationViewController
+    let authorizationPage: AuthorizationViewController
     
     
     init() {
-        
+        self.passwordRestorationPage = .init()
+        self.authorizationPage = .init(passwordRestorationPage: passwordRestorationPage)
     }
     
     deinit {

@@ -13,8 +13,19 @@ final class AuthorizationViewController: UIViewController {
     let viewComponents = AuthorizationViewComponents()
     var entranceState: State = .signIn
     
+    let passwordRestorationPage: PasswordRestorationViewController
     
 //    MARK: lifecycle
+    init(passwordRestorationPage: PasswordRestorationViewController) {
+        self.passwordRestorationPage = passwordRestorationPage
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        self.passwordRestorationPage = .init()
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

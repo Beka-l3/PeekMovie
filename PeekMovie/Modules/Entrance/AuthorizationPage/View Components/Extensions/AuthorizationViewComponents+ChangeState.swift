@@ -44,6 +44,12 @@ extension AuthorizationViewComponents {
                 }
             
                 changeConstraintsToSignIn(parent: parent)
+                
+            } else {
+                
+                usernameIconView.layer.opacity = Constants.ChangeState.zeroOpacity
+                usernameTextField.layer.opacity = Constants.ChangeState.zeroOpacity
+                
             }
             
         case .signUp:
