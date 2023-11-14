@@ -14,12 +14,18 @@ final class PasswordRestorationViewComponents {
     lazy var draggerView = PeekBottomSheetDraggerView()
     
     lazy var captionLabel = PeekLabel(type: .secondary, text: Constants.weSendCodeText, font: .caption1)
+    lazy var emailLabel = PeekLabel(type: .main, text: Constants.emailDefaultText, font: .body)
+    
     lazy var emailTextField = PeekInputTextField(placeholder: Constants.emailTextFieldPlaceholder)
+    lazy var passwordTextField = PeekInputTextField(placeholder: Constants.passwordTextFieldPlaceholder)
     
     lazy var emailIconView = PeekIconView(image: Images.Icon.Email.x24)
+    lazy var passwordIconView = PeekIconView(image: Images.Icon.Key.x24)
     
     lazy var mainButton = PeekButton(type: .main, titleText: Constants.getCodeButtonText)
+    lazy var secondaryButton = PeekButton(type: .secondary, titleText: Constants.resendCodeButtonText)
     
+    lazy var timerLabel = PeekLabel(type: .secondary, text: Constants.timerLabelDefault, font: .caption1)
     
     var captionLabelHeightConstraint: NSLayoutConstraint?
     
@@ -28,18 +34,24 @@ final class PasswordRestorationViewComponents {
         parent.addSubview(draggerView)
         parent.addSubview(captionLabel)
         parent.addSubview(emailIconView)
+        parent.addSubview(passwordIconView)
         parent.addSubview(emailTextField)
+        parent.addSubview(passwordTextField)
         parent.addSubview(mainButton)
         
         captionLabel.numberOfLines = .zero
         captionLabel.textAlignment = .center
+        
+        passwordIconView.layer.opacity = .zero
+        passwordTextField.layer.opacity = .zero
+        
+        emailTextField.layer.opacity = .zero
         
         setupConstraints(parent: parent)
     }
     
     
     func setupLayers(parent: UIView) {
-//        backgroundLinear.frame.size = .init(width: Constants.screenWidth, height: Constants.inputBlockHeight)
         backgroundLinear.frame.size = parent.frame.size
         backgroundLinear.cornerRadius = Constants.paddingM
         backgroundLinear.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
@@ -51,24 +63,11 @@ final class PasswordRestorationViewComponents {
 
 
 extension PasswordRestorationViewComponents {
-    enum Constants {
-        static let weSendCodeText = "We will send 4-digit conformation code to your email"
-        static let emailTextFieldPlaceholder = "Email"
-        static let getCodeButtonText = "GET CODE"
-        
-        static let paddingXXS: CGFloat = 4
-        static let paddingXS: CGFloat = 6
-        static let paddingS: CGFloat = 10
-        static let padding: CGFloat = 16
-        static let paddingM: CGFloat = 24
-        static let paddingL: CGFloat = 36
-        static let paddingXL: CGFloat = 48
-        static let paddingXXL: CGFloat = 64
-        static let paddingXXXL: CGFloat = 96
-        static let paddingXXXXL: CGFloat = 144
-        
-        static let inputFieldHeight: CGFloat = 24
-        
-        
+    
+    enum State {
+        case sendCode
+        case verifyCode
+        case resetPassword
     }
+    
 }

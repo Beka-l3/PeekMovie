@@ -86,6 +86,7 @@
 		077B2EDE29080E680087504C /* SMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2EDD29080E680087504C /* SMConstants.swift */; };
 		077B2EE029080E970087504C /* SMViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2EDF29080E970087504C /* SMViewModels.swift */; };
 		077FD1EA2B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */; };
+		077FD1EC2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FD1EB2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift */; };
 		07832A2529248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07832A2429248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift */; };
 		07832A27292668950079E1E9 /* ExtensionPosterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07832A26292668950079E1E9 /* ExtensionPosterViewPresenter.swift */; };
 		0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F41E28F82990006F447F /* EntranceModulePresenter.swift */; };
@@ -226,6 +227,7 @@
 		077B2EDD29080E680087504C /* SMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMConstants.swift; sourceTree = "<group>"; };
 		077B2EDF29080E970087504C /* SMViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMViewModels.swift; sourceTree = "<group>"; };
 		077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBottomSheetDraggerView.swift; sourceTree = "<group>"; };
+		077FD1EB2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewComponents+Constants.swift"; sourceTree = "<group>"; };
 		07832A2429248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionEntranceWebSocketPresenter.swift; sourceTree = "<group>"; };
 		07832A26292668950079E1E9 /* ExtensionPosterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPosterViewPresenter.swift; sourceTree = "<group>"; };
 		0788F41E28F82990006F447F /* EntranceModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModulePresenter.swift; sourceTree = "<group>"; };
@@ -792,6 +794,7 @@
 			isa = PBXGroup;
 			children = (
 				07BE23212B023B5A00E70299 /* PasswordRestorationViewComponents+Constraints.swift */,
+				077FD1EB2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1047,6 +1050,7 @@
 				07FC65C72AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift in Sources */,
 				074B8A782A8C265700EB39C2 /* GetMovieNSE.swift in Sources */,
 				07DBA85A28F55E3B000A1312 /* AuthorizedPageViewComponents.swift in Sources */,
+				077FD1EC2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift in Sources */,
 				074B8A732A8C260800EB39C2 /* JoinRoomNSE.swift in Sources */,
 				077B2EE029080E970087504C /* SMViewModels.swift in Sources */,
 				07832A2529248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift in Sources */,
