@@ -10,13 +10,29 @@ import UIKit
 
 final class PasswordRestorationViewComponents {
     
+    lazy var backgroundLinear = PeekBackgroundGradient(type: .linearTop)
+    lazy var draggerView = PeekBottomSheetDraggerView()
     
-    lazy var backgroundLinear = BackgroundGradient(type: .linearTop)
+    lazy var captionLabel = PeekLabel(type: .secondary, text: Constants.weSendCodeText, font: .caption1)
+    lazy var emailTextField = PeekInputTextField(placeholder: Constants.emailTextFieldPlaceholder)
+    
+    lazy var emailIconView = PeekIconView(image: Images.Icon.Email.x24)
+    
+    lazy var mainButton = PeekButton(type: .main, titleText: Constants.getCodeButtonText)
+    
+    
+    var captionLabelHeightConstraint: NSLayoutConstraint?
     
     
     func setupViews(parent: UIView) {
+        parent.addSubview(draggerView)
+        parent.addSubview(captionLabel)
+        parent.addSubview(emailIconView)
+        parent.addSubview(emailTextField)
+        parent.addSubview(mainButton)
         
-        
+        captionLabel.numberOfLines = .zero
+        captionLabel.textAlignment = .center
         
         setupConstraints(parent: parent)
     }
@@ -36,7 +52,9 @@ final class PasswordRestorationViewComponents {
 
 extension PasswordRestorationViewComponents {
     enum Constants {
-        
+        static let weSendCodeText = "We will send 4-digit conformation code to your email"
+        static let emailTextFieldPlaceholder = "Email"
+        static let getCodeButtonText = "GET CODE"
         
         static let paddingXXS: CGFloat = 4
         static let paddingXS: CGFloat = 6
@@ -45,9 +63,11 @@ extension PasswordRestorationViewComponents {
         static let paddingM: CGFloat = 24
         static let paddingL: CGFloat = 36
         static let paddingXL: CGFloat = 48
-        static let paddingXXL: CGFloat = 52
+        static let paddingXXL: CGFloat = 64
         static let paddingXXXL: CGFloat = 96
         static let paddingXXXXL: CGFloat = 144
+        
+        static let inputFieldHeight: CGFloat = 24
         
         
     }

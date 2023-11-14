@@ -10,8 +10,8 @@ import UIKit
 
 final class AuthorizationViewComponents {
     
-    lazy var backgroundLinear = BackgroundGradient(type: .linearBottomLeft)
-    lazy var backgroundRadial = BackgroundGradient(type: .raidalBottom)
+    lazy var backgroundLinear = PeekBackgroundGradient(type: .linearBottomLeft)
+    lazy var backgroundRadial = PeekBackgroundGradient(type: .raidalBottom)
     
     lazy var appLogoIconView = PeekIconView(image: Images.Logo.App.x90, size: .x90, cornerRadius: Constants.paddingM / 2, withShadow: true)
     

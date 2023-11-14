@@ -85,6 +85,7 @@
 		077B2EDC29080E2C0087504C /* PosterViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2EDB29080E2C0087504C /* PosterViewModels.swift */; };
 		077B2EDE29080E680087504C /* SMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2EDD29080E680087504C /* SMConstants.swift */; };
 		077B2EE029080E970087504C /* SMViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2EDF29080E970087504C /* SMViewModels.swift */; };
+		077FD1EA2B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */; };
 		07832A2529248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07832A2429248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift */; };
 		07832A27292668950079E1E9 /* ExtensionPosterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07832A26292668950079E1E9 /* ExtensionPosterViewPresenter.swift */; };
 		0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F41E28F82990006F447F /* EntranceModulePresenter.swift */; };
@@ -140,7 +141,7 @@
 		07EB1CCC28FE219C0031598A /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CCB28FE219C0031598A /* Animations.swift */; };
 		07F8930E29127B5200E8FDD4 /* RegistrationFormDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */; };
 		07FC65C72AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC65C62AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift */; };
-		07FC65C92AFA4189001C039D /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC65C82AFA4189001C039D /* BackgroundGradient.swift */; };
+		07FC65C92AFA4189001C039D /* PeekBackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC65C82AFA4189001C039D /* PeekBackgroundGradient.swift */; };
 		07FC950D2AF3D84E002FE0A9 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 07FC950C2AF3D84E002FE0A9 /* NVActivityIndicatorView */; };
 		07FC950F2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC950E2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift */; };
 /* End PBXBuildFile section */
@@ -224,6 +225,7 @@
 		077B2EDB29080E2C0087504C /* PosterViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewModels.swift; sourceTree = "<group>"; };
 		077B2EDD29080E680087504C /* SMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMConstants.swift; sourceTree = "<group>"; };
 		077B2EDF29080E970087504C /* SMViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMViewModels.swift; sourceTree = "<group>"; };
+		077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBottomSheetDraggerView.swift; sourceTree = "<group>"; };
 		07832A2429248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionEntranceWebSocketPresenter.swift; sourceTree = "<group>"; };
 		07832A26292668950079E1E9 /* ExtensionPosterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPosterViewPresenter.swift; sourceTree = "<group>"; };
 		0788F41E28F82990006F447F /* EntranceModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModulePresenter.swift; sourceTree = "<group>"; };
@@ -281,7 +283,7 @@
 		07EB1CCB28FE219C0031598A /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFormDTO.swift; sourceTree = "<group>"; };
 		07FC65C62AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+BottomHStackView.swift"; sourceTree = "<group>"; };
-		07FC65C82AFA4189001C039D /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
+		07FC65C82AFA4189001C039D /* PeekBackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBackgroundGradient.swift; sourceTree = "<group>"; };
 		07FC950E2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewControllerViewComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -482,9 +484,10 @@
 				07CEA39A2AF7ABB800E69FAB /* PeekButton.swift */,
 				07CBD4222AF8236300005F63 /* PeekIconView.swift */,
 				07BB3FD52AF90638001E0E63 /* PeekLabel.swift */,
-				07FC65C82AFA4189001C039D /* BackgroundGradient.swift */,
+				07FC65C82AFA4189001C039D /* PeekBackgroundGradient.swift */,
 				0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */,
 				0731B0612B00EE89006162D7 /* PeekCoverView.swift */,
+				077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -1060,7 +1063,7 @@
 				07EB1CC128FD48100031598A /* HTTPNetworkResponse.swift in Sources */,
 				073B585628FA155F000EE21F /* EMConstants.swift in Sources */,
 				07A66F2D2916CB51003BB6B9 /* ResponseDTO.swift in Sources */,
-				07FC65C92AFA4189001C039D /* BackgroundGradient.swift in Sources */,
+				07FC65C92AFA4189001C039D /* PeekBackgroundGradient.swift in Sources */,
 				07ACBA9B2AFD32E800D07487 /* AuthorizationViewComponents+Constraints.swift in Sources */,
 				077933DF2A8FF96C00B0F509 /* Log.swift in Sources */,
 				073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */,
@@ -1104,6 +1107,7 @@
 				07DBA83F28F3F734000A1312 /* AppDelegateOld.swift in Sources */,
 				07EB1CC228FD48100031598A /* HTTPRequest.swift in Sources */,
 				07BB3FD62AF90638001E0E63 /* PeekLabel.swift in Sources */,
+				077FD1EA2B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift in Sources */,
 				07ABF660291AD4A7007C4A52 /* ExtensionPasswordPagePresenter.swift in Sources */,
 				0731B0642B00F6A5006162D7 /* AuthorizationViewComponents+Constants+ChangeState.swift in Sources */,
 				0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */,

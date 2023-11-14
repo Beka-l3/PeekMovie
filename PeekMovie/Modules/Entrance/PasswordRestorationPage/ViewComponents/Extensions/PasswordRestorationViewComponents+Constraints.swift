@@ -12,10 +12,31 @@ extension PasswordRestorationViewComponents {
     
     func setupConstraints(parent: UIView) {
         
-        
         NSLayoutConstraint.activate([
+            draggerView.topAnchor.constraint(equalTo: parent.topAnchor, constant: Constants.padding / 2),
+            draggerView.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
+            
+            captionLabel.topAnchor.constraint(equalTo: draggerView.bottomAnchor, constant: Constants.paddingXL),
+            captionLabel.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: Constants.paddingXXL),
+            captionLabel.trailingAnchor.constraint(equalTo: parent.trailingAnchor, constant: -Constants.paddingXXL),
+            
+            emailIconView.topAnchor.constraint(equalTo: captionLabel.bottomAnchor, constant: Constants.paddingL),
+            emailIconView.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: Constants.paddingXL),
+            emailIconView.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
+            
+            emailTextField.topAnchor.constraint(equalTo: emailIconView.topAnchor),
+            emailTextField.leadingAnchor.constraint(equalTo: emailIconView.trailingAnchor, constant: Constants.paddingXL),
+            emailTextField.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
+            emailTextField.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
+            
+            mainButton.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
+            mainButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: Constants.paddingXL),
             
         ])
+        
+        captionLabelHeightConstraint = captionLabel.heightAnchor.constraint(equalToConstant: Constants.paddingL)
+        captionLabelHeightConstraint?.isActive = true
+        
         
     }
     
