@@ -53,7 +53,6 @@ final class PasswordRestorationViewController: UIViewController {
         viewComponents.setupLayers(parent: view)
     }
 
-    
 }
 
 

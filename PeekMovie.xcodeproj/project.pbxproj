@@ -88,6 +88,7 @@
 		077FD1EA2B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */; };
 		077FD1EC2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FD1EB2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift */; };
 		077FD1EE2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FD1ED2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift */; };
+		077FD1F02B03D8EC000C7A73 /* PasswordRestorationViewComponents+HStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FD1EF2B03D8EC000C7A73 /* PasswordRestorationViewComponents+HStackView.swift */; };
 		07832A2529248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07832A2429248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift */; };
 		07832A27292668950079E1E9 /* ExtensionPosterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07832A26292668950079E1E9 /* ExtensionPosterViewPresenter.swift */; };
 		0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F41E28F82990006F447F /* EntranceModulePresenter.swift */; };
@@ -230,6 +231,7 @@
 		077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBottomSheetDraggerView.swift; sourceTree = "<group>"; };
 		077FD1EB2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewComponents+Constants.swift"; sourceTree = "<group>"; };
 		077FD1ED2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewComponents+ChangeState.swift"; sourceTree = "<group>"; };
+		077FD1EF2B03D8EC000C7A73 /* PasswordRestorationViewComponents+HStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewComponents+HStackView.swift"; sourceTree = "<group>"; };
 		07832A2429248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionEntranceWebSocketPresenter.swift; sourceTree = "<group>"; };
 		07832A26292668950079E1E9 /* ExtensionPosterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPosterViewPresenter.swift; sourceTree = "<group>"; };
 		0788F41E28F82990006F447F /* EntranceModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModulePresenter.swift; sourceTree = "<group>"; };
@@ -798,6 +800,7 @@
 				07BE23212B023B5A00E70299 /* PasswordRestorationViewComponents+Constraints.swift */,
 				077FD1EB2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift */,
 				077FD1ED2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift */,
+				077FD1EF2B03D8EC000C7A73 /* PasswordRestorationViewComponents+HStackView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1113,6 +1116,7 @@
 				07CEA3952AF79ECC00E69FAB /* PeekInputTextField.swift in Sources */,
 				074B8A6F2A8C25A500EB39C2 /* CheckUsernameNSE.swift in Sources */,
 				07DBA83F28F3F734000A1312 /* AppDelegateOld.swift in Sources */,
+				077FD1F02B03D8EC000C7A73 /* PasswordRestorationViewComponents+HStackView.swift in Sources */,
 				07EB1CC228FD48100031598A /* HTTPRequest.swift in Sources */,
 				07BB3FD62AF90638001E0E63 /* PeekLabel.swift in Sources */,
 				077FD1EA2B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift in Sources */,

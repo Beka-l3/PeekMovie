@@ -38,6 +38,7 @@ final class PasswordRestorationViewComponents {
     lazy var timerHStack = getBottomHStackView(with: [secondaryButton, timerLabel])
     
     
+//    MARK: exposed func
     func setupViews(parent: UIView) {
         parent.addSubview(draggerView)
         parent.addSubview(captionLabel)
@@ -76,19 +77,3 @@ final class PasswordRestorationViewComponents {
     }
 }
 
-
-extension PasswordRestorationViewComponents {
-    func getBottomHStackView(with arrangedSubviews: [UIView]) -> UIStackView {
-        let view = UIStackView()
-        view.axis = .horizontal
-        view.spacing = Constants.paddingXXS
-        view.backgroundColor = Colors.clearBlack
-        
-        for subview in arrangedSubviews {
-            view.addArrangedSubview(subview)
-        }
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }
-}

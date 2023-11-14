@@ -11,6 +11,7 @@ import UIKit
 
 extension PasswordRestorationViewComponents {
     enum Constants {
+        
         static let weSendCodeText = "We will send 4-digit conformation code to your email"
         static let enterCodeText = "Enter the confirmation code we sent to"
         static let resetCodeText = "Set new password for peek id"
