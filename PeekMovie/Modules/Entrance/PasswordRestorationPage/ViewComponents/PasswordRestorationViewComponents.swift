@@ -27,6 +27,15 @@ final class PasswordRestorationViewComponents {
     
     lazy var timerLabel = PeekLabel(type: .secondary, text: Constants.timerLabelDefault, font: .caption1)
     
+    lazy var verificationCodeView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Colors.backgroundCoverGray
+        view.layer.opacity = 0.6
+        view.layer.cornerRadius = 8
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     var captionLabelHeightConstraint: NSLayoutConstraint?
     
     
@@ -37,6 +46,7 @@ final class PasswordRestorationViewComponents {
         parent.addSubview(passwordIconView)
         parent.addSubview(emailTextField)
         parent.addSubview(passwordTextField)
+        parent.addSubview(verificationCodeView)
         parent.addSubview(mainButton)
         
         captionLabel.numberOfLines = .zero
@@ -57,17 +67,6 @@ final class PasswordRestorationViewComponents {
         backgroundLinear.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         parent.layer.addSublayer(backgroundLinear)
-    }
-    
-}
-
-
-extension PasswordRestorationViewComponents {
-    
-    enum State {
-        case sendCode
-        case verifyCode
-        case resetPassword
     }
     
 }

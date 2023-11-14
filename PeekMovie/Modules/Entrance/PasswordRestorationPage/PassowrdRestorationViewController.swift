@@ -12,6 +12,8 @@ final class PasswordRestorationViewController: UIViewController {
     
     private let viewComponents: PasswordRestorationViewComponents = .init()
     
+    private(set) var passwordRestorationState: State = .sendCode
+    
     
 //    MARK: lifecycle
     override func viewDidLoad() {
@@ -49,5 +51,16 @@ final class PasswordRestorationViewController: UIViewController {
         viewComponents.setupLayers(parent: view)
     }
 
+    
+}
+
+
+extension PasswordRestorationViewController {
+    
+    enum State {
+        case sendCode
+        case verifyCode
+        case resetPassword
+    }
     
 }

@@ -12,6 +12,7 @@ import UIKit
 extension PasswordRestorationViewComponents {
     enum Constants {
         static let weSendCodeText = "We will send 4-digit conformation code to your email"
+        static let enterCodeText = "Enter the confirmation code we sent to"
         static let emailDefaultText = "example@mail.com"
         static let emailTextFieldPlaceholder = "Email"
         static let passwordTextFieldPlaceholder = "New password"
@@ -32,6 +33,7 @@ extension PasswordRestorationViewComponents {
         
         static let inputFieldHeight: CGFloat = 24
         
+        static let verificationCodeViewHeight: CGFloat = 80
         
     }
 }

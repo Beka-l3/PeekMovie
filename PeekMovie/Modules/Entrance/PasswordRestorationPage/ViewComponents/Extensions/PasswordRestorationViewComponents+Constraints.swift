@@ -38,6 +38,11 @@ extension PasswordRestorationViewComponents {
             passwordTextField.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
             passwordTextField.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
+            verificationCodeView.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: Constants.paddingXL),
+            verificationCodeView.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: Constants.paddingL),
+            verificationCodeView.trailingAnchor.constraint(equalTo: parent.trailingAnchor, constant: -Constants.paddingL),
+            verificationCodeView.heightAnchor.constraint(equalToConstant: Constants.verificationCodeViewHeight),
+            
             mainButton.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
             mainButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: Constants.paddingXL),
             
@@ -45,7 +50,6 @@ extension PasswordRestorationViewComponents {
         
         captionLabelHeightConstraint = captionLabel.heightAnchor.constraint(equalToConstant: Constants.paddingL)
         captionLabelHeightConstraint?.isActive = true
-        
         
     }
     
