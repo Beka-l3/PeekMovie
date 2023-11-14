@@ -87,6 +87,7 @@
 		077B2EE029080E970087504C /* SMViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2EDF29080E970087504C /* SMViewModels.swift */; };
 		077FD1EA2B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */; };
 		077FD1EC2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FD1EB2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift */; };
+		077FD1EE2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FD1ED2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift */; };
 		07832A2529248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07832A2429248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift */; };
 		07832A27292668950079E1E9 /* ExtensionPosterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07832A26292668950079E1E9 /* ExtensionPosterViewPresenter.swift */; };
 		0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F41E28F82990006F447F /* EntranceModulePresenter.swift */; };
@@ -228,6 +229,7 @@
 		077B2EDF29080E970087504C /* SMViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMViewModels.swift; sourceTree = "<group>"; };
 		077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBottomSheetDraggerView.swift; sourceTree = "<group>"; };
 		077FD1EB2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewComponents+Constants.swift"; sourceTree = "<group>"; };
+		077FD1ED2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewComponents+ChangeState.swift"; sourceTree = "<group>"; };
 		07832A2429248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionEntranceWebSocketPresenter.swift; sourceTree = "<group>"; };
 		07832A26292668950079E1E9 /* ExtensionPosterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPosterViewPresenter.swift; sourceTree = "<group>"; };
 		0788F41E28F82990006F447F /* EntranceModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModulePresenter.swift; sourceTree = "<group>"; };
@@ -795,6 +797,7 @@
 			children = (
 				07BE23212B023B5A00E70299 /* PasswordRestorationViewComponents+Constraints.swift */,
 				077FD1EB2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift */,
+				077FD1ED2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1092,6 +1095,7 @@
 				073B585428F97CA8000EE21F /* PeekID.swift in Sources */,
 				077933D92A8FF90900B0F509 /* LogFormatElement.swift in Sources */,
 				0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */,
+				077FD1EE2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift in Sources */,
 				07BE23192B0239A600E70299 /* PassowrdRestorationViewController.swift in Sources */,
 				07BE23222B023B5A00E70299 /* PasswordRestorationViewComponents+Constraints.swift in Sources */,
 				077977D82A8E6C0B000DAF72 /* Empty.swift in Sources */,

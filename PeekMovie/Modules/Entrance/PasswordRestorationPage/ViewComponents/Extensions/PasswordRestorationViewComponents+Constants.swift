@@ -13,11 +13,16 @@ extension PasswordRestorationViewComponents {
     enum Constants {
         static let weSendCodeText = "We will send 4-digit conformation code to your email"
         static let enterCodeText = "Enter the confirmation code we sent to"
+        static let resetCodeText = "Set new password for peek id"
+        
         static let emailDefaultText = "example@mail.com"
+        
         static let emailTextFieldPlaceholder = "Email"
         static let passwordTextFieldPlaceholder = "New password"
         static let getCodeButtonText = "GET CODE"
         static let resendCodeButtonText = "RESEND CODE"
+        static let resetPasswordButtonText = "REST"
+        
         static let timerLabelDefault = "in __ sec"
         
         static let paddingXXS: CGFloat = 4

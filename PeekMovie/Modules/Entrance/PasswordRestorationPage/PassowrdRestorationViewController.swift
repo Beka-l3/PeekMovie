@@ -10,9 +10,8 @@ import UIKit
 
 final class PasswordRestorationViewController: UIViewController {
     
-    private let viewComponents: PasswordRestorationViewComponents = .init()
-    
-    private(set) var passwordRestorationState: State = .sendCode
+    let viewComponents: PasswordRestorationViewComponents = .init()
+    var passwordRestorationState: State = .enterEmail
     
     
 //    MARK: lifecycle
@@ -45,6 +44,9 @@ final class PasswordRestorationViewController: UIViewController {
 //    MARK:  private func
     private func setupViews() {
         viewComponents.setupViews(parent: view)
+        
+        viewComponents.mainButton.addTarget(self, action: #selector(handleMainButton), for: .touchUpInside)
+        viewComponents.secondaryButton.addTarget(self, action: #selector(handleSecondaryButton), for: .touchUpInside)
     }
     
     private func setupLayers() {
@@ -58,8 +60,8 @@ final class PasswordRestorationViewController: UIViewController {
 extension PasswordRestorationViewController {
     
     enum State {
-        case sendCode
-        case verifyCode
+        case enterEmail
+        case sendVerificationCode
         case resetPassword
     }
     

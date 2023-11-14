@@ -23,9 +23,6 @@ final class PasswordRestorationViewComponents {
     lazy var passwordIconView = PeekIconView(image: Images.Icon.Key.x24)
     
     lazy var mainButton = PeekButton(type: .main, titleText: Constants.getCodeButtonText)
-    lazy var secondaryButton = PeekButton(type: .secondary, titleText: Constants.resendCodeButtonText)
-    
-    lazy var timerLabel = PeekLabel(type: .secondary, text: Constants.timerLabelDefault, font: .caption1)
     
     lazy var verificationCodeView: UIView = {
         let view = UIView()
@@ -36,26 +33,26 @@ final class PasswordRestorationViewComponents {
         return view
     }()
     
-    var captionLabelHeightConstraint: NSLayoutConstraint?
+    lazy var secondaryButton = PeekButton(type: .secondary, titleText: Constants.resendCodeButtonText)
+    lazy var timerLabel = PeekLabel(type: .secondary, text: Constants.timerLabelDefault, font: .caption1)
+    lazy var timerHStack = getBottomHStackView(with: [secondaryButton, timerLabel])
     
     
     func setupViews(parent: UIView) {
         parent.addSubview(draggerView)
         parent.addSubview(captionLabel)
+        parent.addSubview(emailLabel)
         parent.addSubview(emailIconView)
         parent.addSubview(passwordIconView)
         parent.addSubview(emailTextField)
         parent.addSubview(passwordTextField)
         parent.addSubview(verificationCodeView)
         parent.addSubview(mainButton)
+        parent.addSubview(timerHStack)
         
-        captionLabel.numberOfLines = .zero
-        captionLabel.textAlignment = .center
+        addAdjustment()
         
-        passwordIconView.layer.opacity = .zero
-        passwordTextField.layer.opacity = .zero
-        
-        emailTextField.layer.opacity = .zero
+        changeState(to: .enterEmail, parent: parent, isSetup: true)
         
         setupConstraints(parent: parent)
     }
@@ -69,4 +66,29 @@ final class PasswordRestorationViewComponents {
         parent.layer.addSublayer(backgroundLinear)
     }
     
+    
+//    MARK: private func
+    private func addAdjustment() {
+        captionLabel.numberOfLines = .zero
+        captionLabel.textAlignment = .center
+        
+        emailLabel.textAlignment = .center
+    }
+}
+
+
+extension PasswordRestorationViewComponents {
+    func getBottomHStackView(with arrangedSubviews: [UIView]) -> UIStackView {
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.spacing = Constants.paddingXXS
+        view.backgroundColor = Colors.clearBlack
+        
+        for subview in arrangedSubviews {
+            view.addArrangedSubview(subview)
+        }
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }
 }
