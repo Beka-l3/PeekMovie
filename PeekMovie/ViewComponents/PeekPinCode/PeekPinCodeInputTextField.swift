@@ -57,6 +57,8 @@ final class PeekPinCodeInputTextField: UITextField {
         layer.cornerRadius = Constants.cornerRadius
         textAlignment = .center
         
+        
+        
         addSubview(underlineView)
         
         NSLayoutConstraint.activate([
@@ -88,6 +90,7 @@ extension PeekPinCodeInputTextField {
         
         static let underlineViewHeight: CGFloat = 5
         static let underlineViewCornerRadius: CGFloat = 2
+        
         static let underlineViewFullAlpha: CGFloat = 1
         static let underlineViewEmptyAlpha: CGFloat = 0.38
         

@@ -11,10 +11,10 @@ import UIKit
 /// 4 digit `OPT` pin code input block
 final class PeekPinCodeBlock: UIView {
     
-    private lazy var digit1: PeekPinCodeInputTextField = .init()
-    private lazy var digit2: PeekPinCodeInputTextField = .init()
-    private lazy var digit3: PeekPinCodeInputTextField = .init()
-    private lazy var digit4: PeekPinCodeInputTextField = .init()
+    private(set) lazy var digit1: PeekPinCodeInputTextField = .init()
+    private(set) lazy var digit2: PeekPinCodeInputTextField = .init()
+    private(set) lazy var digit3: PeekPinCodeInputTextField = .init()
+    private(set) lazy var digit4: PeekPinCodeInputTextField = .init()
     
     private lazy var digitsStackView: UIStackView = {
         let view = UIStackView()
@@ -30,7 +30,7 @@ final class PeekPinCodeBlock: UIView {
         return view
     }()
     
-    private(set) var pinCodeTex: String = ""
+    private(set) var pinCodeText: String = ""
     
     
     init() {
@@ -44,6 +44,16 @@ final class PeekPinCodeBlock: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+    }
+    
+    
+//    MARK: exposed func
+    func removeDigit() {
+        pinCodeText.removeLast()
+    }
+    
+    func addDigit(digit: String) {
+        pinCodeText += digit
     }
     
     
@@ -69,6 +79,11 @@ final class PeekPinCodeBlock: UIView {
             digit4.widthAnchor.constraint(equalToConstant: Constants.pinCodeTextFieldMinWidth),
             digit4.heightAnchor.constraint(equalToConstant: Constants.pinCodeTextFieldMinHeight),
         ])
+        
+        digit1.delegate = self
+        digit2.delegate = self
+        digit3.delegate = self
+        digit4.delegate = self
         
         translatesAutoresizingMaskIntoConstraints = false
     }
