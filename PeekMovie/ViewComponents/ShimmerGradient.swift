@@ -22,9 +22,9 @@ final class ShimmerGradient: CAGradientLayer {
     
     
 //    MARK: lifecycle
-    override init(layer: Any) {
-        super.init(layer: layer)
-    }
+//    override init(layer: Any) {
+//        super.init(layer: layer)
+//    }
     
     init(
         colors: [CGColor] = [UIColor.lightGray.cgColor, UIColor.white.cgColor, UIColor.lightGray.cgColor],

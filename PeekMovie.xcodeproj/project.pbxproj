@@ -14,6 +14,7 @@
 		072EE6622A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6612A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift */; };
 		072EE6642A953CCE00CFCC2A /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6632A953CCE00CFCC2A /* InputTextField.swift */; };
 		072EE6662A953DCE00CFCC2A /* ShimmerGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */; };
+		072F8FA62B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F8FA52B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift */; };
 		0731B0602B00ED2C006162D7 /* PeekBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */; };
 		0731B0622B00EE89006162D7 /* PeekCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731B0612B00EE89006162D7 /* PeekCoverView.swift */; };
 		0731B0642B00F6A5006162D7 /* AuthorizationViewComponents+Constants+ChangeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731B0632B00F6A4006162D7 /* AuthorizationViewComponents+Constants+ChangeState.swift */; };
@@ -144,7 +145,6 @@
 		07EB1CCC28FE219C0031598A /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CCB28FE219C0031598A /* Animations.swift */; };
 		07F8930E29127B5200E8FDD4 /* RegistrationFormDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */; };
 		07FC65C72AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC65C62AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift */; };
-		07FC65C92AFA4189001C039D /* PeekBackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC65C82AFA4189001C039D /* PeekBackgroundGradient.swift */; };
 		07FC950D2AF3D84E002FE0A9 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 07FC950C2AF3D84E002FE0A9 /* NVActivityIndicatorView */; };
 		07FC950F2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC950E2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift */; };
 /* End PBXBuildFile section */
@@ -157,6 +157,7 @@
 		072EE6612A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+Constants.swift"; sourceTree = "<group>"; };
 		072EE6632A953CCE00CFCC2A /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerGradient.swift; sourceTree = "<group>"; };
+		072F8FA52B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBackgroundGradientGenerator.swift; sourceTree = "<group>"; };
 		0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBackgroundImageView.swift; sourceTree = "<group>"; };
 		0731B0612B00EE89006162D7 /* PeekCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekCoverView.swift; sourceTree = "<group>"; };
 		0731B0632B00F6A4006162D7 /* AuthorizationViewComponents+Constants+ChangeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+Constants+ChangeState.swift"; sourceTree = "<group>"; };
@@ -289,7 +290,6 @@
 		07EB1CCB28FE219C0031598A /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFormDTO.swift; sourceTree = "<group>"; };
 		07FC65C62AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+BottomHStackView.swift"; sourceTree = "<group>"; };
-		07FC65C82AFA4189001C039D /* PeekBackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBackgroundGradient.swift; sourceTree = "<group>"; };
 		07FC950E2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewControllerViewComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -490,10 +490,10 @@
 				07CEA39A2AF7ABB800E69FAB /* PeekButton.swift */,
 				07CBD4222AF8236300005F63 /* PeekIconView.swift */,
 				07BB3FD52AF90638001E0E63 /* PeekLabel.swift */,
-				07FC65C82AFA4189001C039D /* PeekBackgroundGradient.swift */,
 				0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */,
 				0731B0612B00EE89006162D7 /* PeekCoverView.swift */,
 				077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */,
+				072F8FA52B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -1060,6 +1060,7 @@
 				074B8A732A8C260800EB39C2 /* JoinRoomNSE.swift in Sources */,
 				077B2EE029080E970087504C /* SMViewModels.swift in Sources */,
 				07832A2529248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift in Sources */,
+				072F8FA62B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift in Sources */,
 				077977E32A8E789F000DAF72 /* UserService.swift in Sources */,
 				073B585228F97C30000EE21F /* RegisterPageViewComponents.swift in Sources */,
 				072EE6622A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift in Sources */,
@@ -1073,7 +1074,6 @@
 				07EB1CC128FD48100031598A /* HTTPNetworkResponse.swift in Sources */,
 				073B585628FA155F000EE21F /* EMConstants.swift in Sources */,
 				07A66F2D2916CB51003BB6B9 /* ResponseDTO.swift in Sources */,
-				07FC65C92AFA4189001C039D /* PeekBackgroundGradient.swift in Sources */,
 				07ACBA9B2AFD32E800D07487 /* AuthorizationViewComponents+Constraints.swift in Sources */,
 				077933DF2A8FF96C00B0F509 /* Log.swift in Sources */,
 				073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */,
