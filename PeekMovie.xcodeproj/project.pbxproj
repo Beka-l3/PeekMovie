@@ -12,8 +12,6 @@
 		072EE65D2A9535C000CFCC2A /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE65C2A9535C000CFCC2A /* AuthorizationViewController.swift */; };
 		072EE65F2A95370200CFCC2A /* AuthorizationViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE65E2A95370200CFCC2A /* AuthorizationViewComponents.swift */; };
 		072EE6622A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6612A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift */; };
-		072EE6642A953CCE00CFCC2A /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6632A953CCE00CFCC2A /* InputTextField.swift */; };
-		072EE6662A953DCE00CFCC2A /* ShimmerGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */; };
 		072F8FA62B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F8FA52B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift */; };
 		0731B0602B00ED2C006162D7 /* PeekBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */; };
 		0731B0622B00EE89006162D7 /* PeekCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731B0612B00EE89006162D7 /* PeekCoverView.swift */; };
@@ -155,8 +153,6 @@
 		072EE65C2A9535C000CFCC2A /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		072EE65E2A95370200CFCC2A /* AuthorizationViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewComponents.swift; sourceTree = "<group>"; };
 		072EE6612A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+Constants.swift"; sourceTree = "<group>"; };
-		072EE6632A953CCE00CFCC2A /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
-		072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerGradient.swift; sourceTree = "<group>"; };
 		072F8FA52B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBackgroundGradientGenerator.swift; sourceTree = "<group>"; };
 		0731B05F2B00ED2C006162D7 /* PeekBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBackgroundImageView.swift; sourceTree = "<group>"; };
 		0731B0612B00EE89006162D7 /* PeekCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekCoverView.swift; sourceTree = "<group>"; };
@@ -484,8 +480,6 @@
 		077977602A8E3662000DAF72 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
-				072EE6632A953CCE00CFCC2A /* InputTextField.swift */,
-				072EE6652A953DCE00CFCC2A /* ShimmerGradient.swift */,
 				07CEA3942AF79ECC00E69FAB /* PeekInputTextField.swift */,
 				07CEA39A2AF7ABB800E69FAB /* PeekButton.swift */,
 				07CBD4222AF8236300005F63 /* PeekIconView.swift */,
@@ -1093,7 +1087,6 @@
 				07CEA3932AF5661D00E69FAB /* Colors.swift in Sources */,
 				077977DA2A8E6D3C000DAF72 /* APIService.swift in Sources */,
 				074B8A752A8C262C00EB39C2 /* QuitFromRoomNSE.swift in Sources */,
-				072EE6642A953CCE00CFCC2A /* InputTextField.swift in Sources */,
 				077977E62A8E855D000DAF72 /* EntranceModuleBuilder.swift in Sources */,
 				073B585428F97CA8000EE21F /* PeekID.swift in Sources */,
 				077933D92A8FF90900B0F509 /* LogFormatElement.swift in Sources */,
@@ -1103,7 +1096,6 @@
 				07BE23222B023B5A00E70299 /* PasswordRestorationViewComponents+Constraints.swift in Sources */,
 				077977D82A8E6C0B000DAF72 /* Empty.swift in Sources */,
 				07DBA85D28F55E77000A1312 /* DesignProtocols.swift in Sources */,
-				072EE6662A953DCE00CFCC2A /* ShimmerGradient.swift in Sources */,
 				077933E32A8FF9B000B0F509 /* ConsoleDestination.swift in Sources */,
 				07ABF65C29193799007C4A52 /* InformativeViewComponents.swift in Sources */,
 				074B8A642A8C239200EB39C2 /* Service.swift in Sources */,
