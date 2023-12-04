@@ -24,14 +24,16 @@ final class PasswordRestorationViewComponents {
     
     lazy var mainButton = PeekButton(type: .main, titleText: Constants.getCodeButtonText)
     
-    lazy var verificationCodeView: UIView = {
-        let view = UIView()
-        view.backgroundColor = Colors.backgroundCoverGray
-        view.layer.opacity = 0.6
-        view.layer.cornerRadius = 8
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+//    lazy var verificationCodeView: UIView = {
+//        let view = UIView()
+//        view.backgroundColor = Colors.backgroundCoverGray
+//        view.layer.opacity = 0.6
+//        view.layer.cornerRadius = 8
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        return view
+//    }()
+    
+    lazy var pinCodeBlockView: PeekPinCodeBlock = .init()
     
     lazy var secondaryButton = PeekButton(type: .secondary, titleText: Constants.resendCodeButtonText)
     lazy var timerLabel = PeekLabel(type: .secondary, text: Constants.timerLabelDefault, font: .caption1)
@@ -47,7 +49,7 @@ final class PasswordRestorationViewComponents {
         parent.addSubview(passwordIconView)
         parent.addSubview(emailTextField)
         parent.addSubview(passwordTextField)
-        parent.addSubview(verificationCodeView)
+        parent.addSubview(pinCodeBlockView)
         parent.addSubview(mainButton)
         parent.addSubview(timerHStack)
         

@@ -40,6 +40,7 @@
 		0758C2E82911752200E48140 /* NetworkServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2E72911752200E48140 /* NetworkServiceImplementation.swift */; };
 		0758C2EC2911777300E48140 /* TokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2EB2911777300E48140 /* TokenDTO.swift */; };
 		0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0763C00A2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift */; };
+		07761B482B1E701200718491 /* PeekPinCodeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07761B472B1E701200718491 /* PeekPinCodeBlock.swift */; };
 		077933D22A8FAE4400B0F509 /* UIColor+InitWithHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933D12A8FAE4300B0F509 /* UIColor+InitWithHex.swift */; };
 		077933D52A8FF8C000B0F509 /* LoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933D42A8FF8C000B0F509 /* LoggerProtocol.swift */; };
 		077933D72A8FF8E600B0F509 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933D62A8FF8E600B0F509 /* LogLevel.swift */; };
@@ -182,6 +183,7 @@
 		0758C2E72911752200E48140 /* NetworkServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImplementation.swift; sourceTree = "<group>"; };
 		0758C2EB2911777300E48140 /* TokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDTO.swift; sourceTree = "<group>"; };
 		0763C00A2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSessionWebSocketPresneter.swift; sourceTree = "<group>"; };
+		07761B472B1E701200718491 /* PeekPinCodeBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekPinCodeBlock.swift; sourceTree = "<group>"; };
 		077933D12A8FAE4300B0F509 /* UIColor+InitWithHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+InitWithHex.swift"; sourceTree = "<group>"; };
 		077933D42A8FF8C000B0F509 /* LoggerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerProtocol.swift; sourceTree = "<group>"; };
 		077933D62A8FF8E600B0F509 /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */,
 				072F8FA52B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift */,
 				072F8FA72B1E13FB00CBA022 /* PeekPinCodeInputTextField.swift */,
+				07761B472B1E701200718491 /* PeekPinCodeBlock.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -1093,6 +1096,7 @@
 				074B8A752A8C262C00EB39C2 /* QuitFromRoomNSE.swift in Sources */,
 				077977E62A8E855D000DAF72 /* EntranceModuleBuilder.swift in Sources */,
 				073B585428F97CA8000EE21F /* PeekID.swift in Sources */,
+				07761B482B1E701200718491 /* PeekPinCodeBlock.swift in Sources */,
 				077933D92A8FF90900B0F509 /* LogFormatElement.swift in Sources */,
 				0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */,
 				077FD1EE2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift in Sources */,
