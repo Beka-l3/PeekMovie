@@ -10,6 +10,7 @@ import UIKit
 
 extension AuthorizationViewComponents {
     func changeState(to state: AuthorizationViewController.State, parent: UIView? = nil, isSetup: Bool = false) {
+        
         switch state {
             
         case .signIn:
@@ -49,6 +50,7 @@ extension AuthorizationViewComponents {
                 
                 usernameIconView.layer.opacity = Constants.ChangeState.zeroOpacity
                 usernameTextField.layer.opacity = Constants.ChangeState.zeroOpacity
+                backgroundImageBW.layer.opacity = Constants.ChangeState.zeroOpacity
                 
             }
             
@@ -84,5 +86,6 @@ extension AuthorizationViewComponents {
             
             changeConstraintsToSignUp(parent: parent)
         }
+        
     }
 }

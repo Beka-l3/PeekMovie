@@ -10,7 +10,7 @@ import UIKit
 
 final class PasswordRestorationViewComponents {
     
-    lazy var backgroundLinear = PeekBackgroundGradient(type: .linearTop)
+    lazy var backgroundLinear = PeekBackgroundGradientGenerator.shared.getGradient(type: .linearTop)
     lazy var draggerView = PeekBottomSheetDraggerView()
     
     lazy var captionLabel = PeekLabel(type: .secondary, text: Constants.weSendCodeText, font: .caption1)

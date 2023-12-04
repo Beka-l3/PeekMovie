@@ -1,14 +1,16 @@
 //
-//  BackgroundGradient.swift
+//  PeekBackgroundGradientGenerator.swift
 //  PeekMovie
 //
-//  Created by Bekzhan Talgat on 07.11.2023.
+//  Created by Bekzhan Talgat on 04.12.2023.
 //
 
 import UIKit
 
 
-final class PeekBackgroundGradient: CAGradientLayer {
+final class PeekBackgroundGradientGenerator {
+    
+    static let shared: PeekBackgroundGradientGenerator = .init()
     
     enum GradientType {
         case linearBottom
@@ -22,69 +24,67 @@ final class PeekBackgroundGradient: CAGradientLayer {
         case raidalRight
     }
     
-//    MARK: lifecycle
-    init(type: GradientType) {
-        super.init()
-        setupLayer(type: type)
-    }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    init() {
+        
     }
     
     
-//    MARK: private func
-    private func setupLayer(type: GradientType) {
-        self.zPosition = -10
-        self.frame = .init(origin: .zero, size: UIScreen.main.bounds.size)
+    func getGradient(type: GradientType) -> CAGradientLayer {
+        let layer = CAGradientLayer()
+        
+        layer.zPosition = -10
+        layer.frame = .init(origin: .zero, size: UIScreen.main.bounds.size)
         
         if let first = Colors.backgroundPrimary, let second = Colors.backgroundTertiary {
-            self.colors = [first.cgColor, second.cgColor]
+            layer.colors = [first.cgColor, second.cgColor]
         }
         
-        self.locations = [0.3, 1]
+        layer.locations = [0.3, 1]
         
         switch type {
             
         case .linearBottom:
-            self.type = .axial
-            self.startPoint = Points.top
-            self.endPoint = Points.bottom
+            layer.type = .axial
+            layer.startPoint = Points.top
+            layer.endPoint = Points.bottom
             
         case .linearTop:
-            self.type = .axial
-            self.startPoint = Points.bottom
-            self.endPoint = Points.top
+            layer.type = .axial
+            layer.startPoint = Points.bottom
+            layer.endPoint = Points.top
             
         case .linearBottomLeft:
-            self.type = .axial
-            self.startPoint = Points.topRight
-            self.endPoint = Points.bottomLeft
+            layer.type = .axial
+            layer.startPoint = Points.topRight
+            layer.endPoint = Points.bottomLeft
             
         case .linearBottomRight:
-            self.type = .axial
-            self.startPoint = Points.topLeft
-            self.endPoint = Points.bottomRight
+            layer.type = .axial
+            layer.startPoint = Points.topLeft
+            layer.endPoint = Points.bottomRight
             
         case .raidalBottom:
-            self.type = .radial
+            layer.type = .radial
             
         case .raidalTop:
-            self.type = .radial
+            layer.type = .radial
 
         case .raidalLeft:
-            self.type = .radial
+            layer.type = .radial
             
         case .raidalRight:
-            self.type = .radial
+            layer.type = .radial
             
         }
+        
+        return layer
     }
     
 }
 
 
-extension PeekBackgroundGradient {
+extension PeekBackgroundGradientGenerator {
     enum Points {
         static let topLeft: CGPoint = .init(x: 0, y: 0)
         static let top: CGPoint = .init(x: 0.5, y: 0)
