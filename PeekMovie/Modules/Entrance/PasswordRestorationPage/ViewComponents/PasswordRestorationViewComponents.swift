@@ -24,15 +24,6 @@ final class PasswordRestorationViewComponents {
     
     lazy var mainButton = PeekButton(type: .main, titleText: Constants.getCodeButtonText)
     
-//    lazy var verificationCodeView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = Colors.backgroundCoverGray
-//        view.layer.opacity = 0.6
-//        view.layer.cornerRadius = 8
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
-    
     lazy var pinCodeBlockView: PeekPinCodeBlock = .init()
     
     lazy var secondaryButton = PeekButton(type: .secondary, titleText: Constants.resendCodeButtonText)

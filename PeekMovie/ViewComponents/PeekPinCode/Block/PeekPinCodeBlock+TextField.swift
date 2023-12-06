@@ -9,7 +9,7 @@ import UIKit
 
 
 extension PeekPinCodeBlock: UITextFieldDelegate {
-        
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print("Did begin")
         
@@ -20,18 +20,21 @@ extension PeekPinCodeBlock: UITextFieldDelegate {
         print("Did change")
         
         if let text = textField.text, let textField = textField as? PeekPinCodeInputTextField {
-            
+
             if text.isEmpty {
-                
+
                 removeDigit()
-                textField.empty()
-                
+//                textField.empty()
+
             } else {
-                
+
                 addDigit(digit: text)
-                textField.filled()
+//                textField.filled()
             }
         }
+        
+        textField.resignFirstResponder()
+        chooseFirstResponder()
         
     }
     
@@ -39,8 +42,10 @@ extension PeekPinCodeBlock: UITextFieldDelegate {
         let existingText = textField.text ?? ""
         let isNotAtLimit = existingText.count + string.count <= 1
         
+        print(existingText, string)
+        
         if !isNotAtLimit {
-            print("limited")
+            
         }
         
         return isNotAtLimit
@@ -51,13 +56,13 @@ extension PeekPinCodeBlock: UITextFieldDelegate {
         
         switch pinCodeText.count {
             
-        case 0 ... 1:
+        case 0:
             digit1.becomeFirstResponder()
             
-        case 2:
+        case 1:
             digit2.becomeFirstResponder()
             
-        case 3:
+        case 2:
             digit3.becomeFirstResponder()
             
         default:
@@ -66,5 +71,4 @@ extension PeekPinCodeBlock: UITextFieldDelegate {
         }
         
     }
-    
 }

@@ -11,10 +11,12 @@ import UIKit
 /// 4 digit `OPT` pin code input block
 final class PeekPinCodeBlock: UIView {
     
-    private(set) lazy var digit1: PeekPinCodeInputTextField = .init()
-    private(set) lazy var digit2: PeekPinCodeInputTextField = .init()
-    private(set) lazy var digit3: PeekPinCodeInputTextField = .init()
-    private(set) lazy var digit4: PeekPinCodeInputTextField = .init()
+    private(set) lazy var digit1: PeekPinCodeDigitLabel = .init(with: 0)
+    private(set) lazy var digit2: PeekPinCodeDigitLabel = .init(with: 1)
+    private(set) lazy var digit3: PeekPinCodeDigitLabel = .init(with: 2)
+    private(set) lazy var digit4: PeekPinCodeDigitLabel = .init(with: 3)
+    
+    private(set) lazy var inputTextField: PeekPinCodeInputTextField = .init()
     
     private lazy var digitsStackView: UIStackView = {
         let view = UIStackView()
@@ -80,10 +82,7 @@ final class PeekPinCodeBlock: UIView {
             digit4.heightAnchor.constraint(equalToConstant: Constants.pinCodeTextFieldMinHeight),
         ])
         
-        digit1.delegate = self
-        digit2.delegate = self
-        digit3.delegate = self
-        digit4.delegate = self
+        inputTextField.delegate = self
         
         translatesAutoresizingMaskIntoConstraints = false
     }

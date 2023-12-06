@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */; };
 		071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071A3BEF291FC3BE009A7689 /* RoomDTO.swift */; };
+		072500822B20BC60003EC872 /* PeekPinCodeDigitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */; };
+		072500842B20BE4A003EC872 /* PeekTapHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */; };
 		072EE65D2A9535C000CFCC2A /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE65C2A9535C000CFCC2A /* AuthorizationViewController.swift */; };
 		072EE65F2A95370200CFCC2A /* AuthorizationViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE65E2A95370200CFCC2A /* AuthorizationViewComponents.swift */; };
 		072EE6622A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6612A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift */; };
@@ -153,6 +155,8 @@
 /* Begin PBXFileReference section */
 		070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPagePickerViewExtension.swift; sourceTree = "<group>"; };
 		071A3BEF291FC3BE009A7689 /* RoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDTO.swift; sourceTree = "<group>"; };
+		072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekPinCodeDigitLabel.swift; sourceTree = "<group>"; };
+		072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekTapHandlerView.swift; sourceTree = "<group>"; };
 		072EE65C2A9535C000CFCC2A /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		072EE65E2A95370200CFCC2A /* AuthorizationViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewComponents.swift; sourceTree = "<group>"; };
 		072EE6612A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+Constants.swift"; sourceTree = "<group>"; };
@@ -451,6 +455,7 @@
 			children = (
 				072F8FA72B1E13FB00CBA022 /* PeekPinCodeInputTextField.swift */,
 				07761B4A2B1E77CB00718491 /* Block */,
+				072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */,
 			);
 			path = PeekPinCode;
 			sourceTree = "<group>";
@@ -512,6 +517,7 @@
 				0731B0612B00EE89006162D7 /* PeekCoverView.swift */,
 				077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */,
 				072F8FA52B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift */,
+				072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */,
 				07761B492B1E77B000718491 /* PeekPinCode */,
 			);
 			path = ViewComponents;
@@ -1061,6 +1067,7 @@
 				077B2ED629069ADC0087504C /* PosterView.swift in Sources */,
 				07517C3B2AFB9EE100751EBB /* Colors+gradientColorPattern.swift in Sources */,
 				077977632A8E367F000DAF72 /* Fonts.swift in Sources */,
+				072500842B20BE4A003EC872 /* PeekTapHandlerView.swift in Sources */,
 				07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */,
 				0731B0602B00ED2C006162D7 /* PeekBackgroundImageView.swift in Sources */,
 				07761B4C2B1E77E700718491 /* PeekPinCodeBlock+TextField.swift in Sources */,
@@ -1115,6 +1122,7 @@
 				077977DA2A8E6D3C000DAF72 /* APIService.swift in Sources */,
 				074B8A752A8C262C00EB39C2 /* QuitFromRoomNSE.swift in Sources */,
 				077977E62A8E855D000DAF72 /* EntranceModuleBuilder.swift in Sources */,
+				072500822B20BC60003EC872 /* PeekPinCodeDigitLabel.swift in Sources */,
 				073B585428F97CA8000EE21F /* PeekID.swift in Sources */,
 				07761B482B1E701200718491 /* PeekPinCodeBlock.swift in Sources */,
 				077933D92A8FF90900B0F509 /* LogFormatElement.swift in Sources */,
