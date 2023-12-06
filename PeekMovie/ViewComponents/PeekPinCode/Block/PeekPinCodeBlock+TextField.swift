@@ -10,23 +10,17 @@ import UIKit
 
 extension PeekPinCodeBlock: UITextFieldDelegate {
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("Did begin")
-        
-    }
-    
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        print("Did change")
         
         if let text = textField.text {
 
-            if text.isEmpty {
+            if text.count < pinCodeText.count {
 
                 removeDigit()
                 
             } else {
 
-                addDigit(digit: text)
+                addDigit()
             }
         }
         

@@ -40,12 +40,14 @@ final class PeekPinCodeDigitLabel: UILabel {
     
     
 //    MARK: exposed func
-    func filled() {
+    func fill(with digitString: String) {
+        text = digitString
         underlineView.alpha = Constants.underlineViewFullAlpha
         isFilled = true
     }
     
     func empty() {
+        text = ""
         underlineView.alpha = Constants.underlineViewEmptyAlpha
         isFilled = false
     }
@@ -79,7 +81,11 @@ final class PeekPinCodeDigitLabel: UILabel {
         
         underlineView.backgroundColor = gradientColor
         
-        isFilled ? filled() : empty()
+        if let text = text, isFilled {
+            fill(with: text)
+        } else {
+            empty()
+        }
     }
 }
 

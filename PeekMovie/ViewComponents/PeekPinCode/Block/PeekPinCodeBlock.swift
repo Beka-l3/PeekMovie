@@ -56,11 +56,49 @@ final class PeekPinCodeBlock: UIView {
     
 //    MARK: exposed func
     func removeDigit() {
+        
+        switch pinCodeText.count {
+            
+        case 1:
+            digit1.empty()
+            
+        case 2:
+            digit2.empty()
+            
+        case 3:
+            digit3.empty()
+            
+        default:
+            digit4.empty()
+            
+        }
+        
         pinCodeText.removeLast()
     }
     
-    func addDigit(digit: String) {
-        pinCodeText += digit
+    func addDigit() {
+        
+        if let text = inputTextField.text, !text.isEmpty {
+            let newDigitString = "\(text[text.index(before: text.endIndex)])"
+            
+            pinCodeText += newDigitString
+            
+            switch pinCodeText.count {
+                
+            case 1:
+                digit1.fill(with: newDigitString)
+                
+            case 2:
+                digit2.fill(with: newDigitString)
+                
+            case 3:
+                digit3.fill(with: newDigitString)
+                
+            default:
+                digit4.fill(with: newDigitString)
+                
+            }
+        }
     }
     
     
