@@ -18,15 +18,19 @@ final class PeekPinCodeBlock: UIView {
     
     private(set) lazy var inputTextField: PeekPinCodeInputTextField = .init()
     
+    private lazy var tapHandlerView: PeekTapHandlerView = .init()
+    
     private lazy var digitsStackView: UIStackView = {
         let view = UIStackView()
+        
+        view.backgroundColor = .clear
+        view.distribution = .fillEqually
+        view.spacing = Constants.paddingM
+        
         view.addArrangedSubview(digit1)
         view.addArrangedSubview(digit2)
         view.addArrangedSubview(digit3)
         view.addArrangedSubview(digit4)
-        view.backgroundColor = .clear
-        
-        view.distribution = .equalCentering
         
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -34,7 +38,8 @@ final class PeekPinCodeBlock: UIView {
     
     private(set) var pinCodeText: String = ""
     
-    
+
+//    MARK: lifecycle
     init() {
         super.init(frame: .zero)
         setupView()
@@ -61,28 +66,29 @@ final class PeekPinCodeBlock: UIView {
     
 //    MARK: private func
     private func setupView() {
+        addSubview(inputTextField)
         addSubview(digitsStackView)
+        addSubview(tapHandlerView)
         
         NSLayoutConstraint.activate([
+            inputTextField.topAnchor.constraint(equalTo: topAnchor),
+            inputTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            inputTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
+            inputTextField.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
             digitsStackView.topAnchor.constraint(equalTo: topAnchor),
             digitsStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             digitsStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             digitsStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            digit1.widthAnchor.constraint(equalToConstant: Constants.pinCodeTextFieldMinWidth),
-            digit1.heightAnchor.constraint(equalToConstant: Constants.pinCodeTextFieldMinHeight),
-            
-            digit2.widthAnchor.constraint(equalToConstant: Constants.pinCodeTextFieldMinWidth),
-            digit2.heightAnchor.constraint(equalToConstant: Constants.pinCodeTextFieldMinHeight),
-            
-            digit3.widthAnchor.constraint(equalToConstant: Constants.pinCodeTextFieldMinWidth),
-            digit3.heightAnchor.constraint(equalToConstant: Constants.pinCodeTextFieldMinHeight),
-            
-            digit4.widthAnchor.constraint(equalToConstant: Constants.pinCodeTextFieldMinWidth),
-            digit4.heightAnchor.constraint(equalToConstant: Constants.pinCodeTextFieldMinHeight),
+            tapHandlerView.topAnchor.constraint(equalTo: topAnchor),
+            tapHandlerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tapHandlerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tapHandlerView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
         
         inputTextField.delegate = self
+        tapHandlerView.delegate = self
         
         translatesAutoresizingMaskIntoConstraints = false
     }
@@ -93,10 +99,21 @@ final class PeekPinCodeBlock: UIView {
 extension PeekPinCodeBlock {
     enum Constants {
         
-        static let pinCodeTextFieldMinWidth: CGFloat = 60
-        static let pinCodeTextFieldMinHeight: CGFloat = 80
+        static let pinCodeDigitLabelMinWidth: CGFloat = 60
+        static let pinCodeDigitLabelMinHeight: CGFloat = 80
         
         static let padding: CGFloat = 12
+        static let paddingM: CGFloat = 18
         
+        static let maxDigitAmount = 4
+        
+    }
+}
+
+
+extension PeekPinCodeBlock: PeekTapHandlerViewDelegate {
+    func tapped() {
+        print("Handle tap")
+        inputTextField.becomeFirstResponder()
     }
 }

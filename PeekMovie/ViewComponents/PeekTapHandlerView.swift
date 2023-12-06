@@ -25,6 +25,7 @@ final class PeekTapHandlerView: UIView {
 //    MARK: lifecycle
     init() {
         super.init(frame: .zero)
+        setupView()
     }
     
     required init?(coder: NSCoder) {
@@ -42,6 +43,7 @@ final class PeekTapHandlerView: UIView {
     private func setupView() {
         backgroundColor = .clear
         addGestureRecognizer(tapGestureRecognizer)
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
 }
