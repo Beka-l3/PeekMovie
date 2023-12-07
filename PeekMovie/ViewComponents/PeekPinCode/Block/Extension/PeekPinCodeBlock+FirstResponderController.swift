@@ -24,5 +24,6 @@ extension PeekPinCodeBlock {
 extension PeekPinCodeBlock {
     func didEnter4Digits() {
         inputTextField.resignFirstResponder()
+        delegate?.didEnter4Digits()
     }
 }
