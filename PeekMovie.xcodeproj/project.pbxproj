@@ -102,6 +102,8 @@
 		0788F42628F8321F006F447F /* LoginViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42528F8321F006F447F /* LoginViewComponents.swift */; };
 		079E5EB829092EC8006AF238 /* MovieInfoScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5EB729092EC8006AF238 /* MovieInfoScrollViewModel.swift */; };
 		079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5EB92909753C006AF238 /* MovieInfoStackViewModel.swift */; };
+		07A130EF2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130EE2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateEmail.swift */; };
+		07A130F12B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130F02B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift */; };
 		07A66F2B2916CB2F003BB6B9 /* ErrorDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A66F2A2916CB2F003BB6B9 /* ErrorDTO.swift */; };
 		07A66F2D2916CB51003BB6B9 /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A66F2C2916CB51003BB6B9 /* ResponseDTO.swift */; };
 		07ABF65C29193799007C4A52 /* InformativeViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF65B29193799007C4A52 /* InformativeViewComponents.swift */; };
@@ -249,6 +251,8 @@
 		0788F42528F8321F006F447F /* LoginViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewComponents.swift; sourceTree = "<group>"; };
 		079E5EB729092EC8006AF238 /* MovieInfoScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoScrollViewModel.swift; sourceTree = "<group>"; };
 		079E5EB92909753C006AF238 /* MovieInfoStackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoStackViewModel.swift; sourceTree = "<group>"; };
+		07A130EE2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewController+ValidateEmail.swift"; sourceTree = "<group>"; };
+		07A130F02B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewComponents+TextField.swift"; sourceTree = "<group>"; };
 		07A66F2A2916CB2F003BB6B9 /* ErrorDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDTO.swift; sourceTree = "<group>"; };
 		07A66F2C2916CB51003BB6B9 /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
 		07ABF65B29193799007C4A52 /* InformativeViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformativeViewComponents.swift; sourceTree = "<group>"; };
@@ -733,6 +737,14 @@
 			path = Authorized;
 			sourceTree = "<group>";
 		};
+		07A130ED2B221E1400E2EFF5 /* EnterEmail */ = {
+			isa = PBXGroup;
+			children = (
+				07A130EE2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateEmail.swift */,
+			);
+			path = EnterEmail;
+			sourceTree = "<group>";
+		};
 		07ACBA992AFD32CD00D07487 /* View Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -818,6 +830,8 @@
 			children = (
 				07BE231F2B023B1300E70299 /* PasswordRestorationViewController+HandleButtons.swift */,
 				072500852B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift */,
+				07A130F02B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift */,
+				07A130ED2B221E1400E2EFF5 /* EnterEmail */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1047,6 +1061,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				074A7696292ACDBB005D3E10 /* CollectionViewModels.swift in Sources */,
+				07A130EF2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateEmail.swift in Sources */,
 				077933D52A8FF8C000B0F509 /* LoggerProtocol.swift in Sources */,
 				074B8A712A8C25DD00EB39C2 /* CreateRoomNSE.swift in Sources */,
 				07C8212F291019E000B055D0 /* MovieDTO.swift in Sources */,
@@ -1087,6 +1102,7 @@
 				074B8A782A8C265700EB39C2 /* GetMovieNSE.swift in Sources */,
 				07DBA85A28F55E3B000A1312 /* AuthorizedPageViewComponents.swift in Sources */,
 				072F8FA82B1E13FB00CBA022 /* PeekPinCodeInputTextField.swift in Sources */,
+				07A130F12B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift in Sources */,
 				077FD1EC2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift in Sources */,
 				074B8A732A8C260800EB39C2 /* JoinRoomNSE.swift in Sources */,
 				077B2EE029080E970087504C /* SMViewModels.swift in Sources */,

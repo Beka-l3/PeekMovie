@@ -195,3 +195,10 @@ extension PeekPinCodeBlock {
         inputTextField.resignFirstResponder()
     }
 }
+
+
+extension PeekPinCodeBlock {
+    func didEnter4Digits() {
+        inputTextField.resignFirstResponder()
+    }
+}
