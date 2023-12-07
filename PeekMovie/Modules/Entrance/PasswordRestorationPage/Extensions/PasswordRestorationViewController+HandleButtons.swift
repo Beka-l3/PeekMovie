@@ -28,8 +28,11 @@ extension PasswordRestorationViewController {
     }
     
     @objc func handleSecondaryButton() {
-        viewComponents.changeState(to: .resetPassword, parent: view)
-        passwordRestorationState = .resetPassword
+        // state = validate code  // after timer resend code LOGIC
+        
+        /// temporary logic to change state
+//        viewComponents.changeState(to: .resetPassword, parent: view)
+//        passwordRestorationState = .resetPassword
     }
     
     @objc func handleDoneFromKeyboard() {

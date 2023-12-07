@@ -118,6 +118,9 @@ final class PeekButton: UIButton {
             underlineTopAnchorConstraint = underlineView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor)
             underlineTopAnchorConstraint?.isActive = true
         }
+        
+        setTitleColor(Colors.buttonDisabled, for: .disabled)
+        setTitleColor(Colors.buttonSelected, for: .selected)
     }
 }
 

@@ -29,6 +29,7 @@ final class PasswordRestorationViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -49,6 +50,10 @@ final class PasswordRestorationViewController: UIViewController {
         viewComponents.secondaryButton.addTarget(self, action: #selector(handleSecondaryButton), for: .touchUpInside)
         
         viewComponents.tapHandlerView.delegate = self
+        viewComponents.pinCodeBlockView.delegate = self
+        
+        viewComponents.emailTextField.delegate = self
+        viewComponents.passwordTextField.delegate = self
     }
     
     private func setupLayers() {

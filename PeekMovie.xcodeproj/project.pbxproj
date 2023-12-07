@@ -104,6 +104,12 @@
 		079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5EB92909753C006AF238 /* MovieInfoStackViewModel.swift */; };
 		07A130EF2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130EE2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateEmail.swift */; };
 		07A130F12B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130F02B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift */; };
+		07A130F32B22290600E2EFF5 /* PasswordRestorationViewController+GetCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130F22B22290600E2EFF5 /* PasswordRestorationViewController+GetCode.swift */; };
+		07A130F62B222A2700E2EFF5 /* PeekPinCodeBlock+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130F52B222A2700E2EFF5 /* PeekPinCodeBlock+Constants.swift */; };
+		07A130FA2B222AAE00E2EFF5 /* PeekPinCodeBlock+AddDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130F92B222AAE00E2EFF5 /* PeekPinCodeBlock+AddDoneButton.swift */; };
+		07A130FC2B222AE400E2EFF5 /* PeekPinCodeBlock+FirstResponderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130FB2B222AE400E2EFF5 /* PeekPinCodeBlock+FirstResponderController.swift */; };
+		07A130FE2B222BE100E2EFF5 /* PasswordRestorationViewController+PeekPinCodeBlockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130FD2B222BE100E2EFF5 /* PasswordRestorationViewController+PeekPinCodeBlockDelegate.swift */; };
+		07A131002B22310000E2EFF5 /* PasswordRestorationViewComponents+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130FF2B22310000E2EFF5 /* PasswordRestorationViewComponents+Reset.swift */; };
 		07A66F2B2916CB2F003BB6B9 /* ErrorDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A66F2A2916CB2F003BB6B9 /* ErrorDTO.swift */; };
 		07A66F2D2916CB51003BB6B9 /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A66F2C2916CB51003BB6B9 /* ResponseDTO.swift */; };
 		07ABF65C29193799007C4A52 /* InformativeViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF65B29193799007C4A52 /* InformativeViewComponents.swift */; };
@@ -253,6 +259,12 @@
 		079E5EB92909753C006AF238 /* MovieInfoStackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoStackViewModel.swift; sourceTree = "<group>"; };
 		07A130EE2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewController+ValidateEmail.swift"; sourceTree = "<group>"; };
 		07A130F02B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewComponents+TextField.swift"; sourceTree = "<group>"; };
+		07A130F22B22290600E2EFF5 /* PasswordRestorationViewController+GetCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewController+GetCode.swift"; sourceTree = "<group>"; };
+		07A130F52B222A2700E2EFF5 /* PeekPinCodeBlock+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekPinCodeBlock+Constants.swift"; sourceTree = "<group>"; };
+		07A130F92B222AAE00E2EFF5 /* PeekPinCodeBlock+AddDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekPinCodeBlock+AddDoneButton.swift"; sourceTree = "<group>"; };
+		07A130FB2B222AE400E2EFF5 /* PeekPinCodeBlock+FirstResponderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekPinCodeBlock+FirstResponderController.swift"; sourceTree = "<group>"; };
+		07A130FD2B222BE100E2EFF5 /* PasswordRestorationViewController+PeekPinCodeBlockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewController+PeekPinCodeBlockDelegate.swift"; sourceTree = "<group>"; };
+		07A130FF2B22310000E2EFF5 /* PasswordRestorationViewComponents+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewComponents+Reset.swift"; sourceTree = "<group>"; };
 		07A66F2A2916CB2F003BB6B9 /* ErrorDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDTO.swift; sourceTree = "<group>"; };
 		07A66F2C2916CB51003BB6B9 /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
 		07ABF65B29193799007C4A52 /* InformativeViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformativeViewComponents.swift; sourceTree = "<group>"; };
@@ -470,7 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				07761B472B1E701200718491 /* PeekPinCodeBlock.swift */,
-				07761B4B2B1E77E700718491 /* PeekPinCodeBlock+TextField.swift */,
+				07A130F42B222A1600E2EFF5 /* Extension */,
 			);
 			path = Block;
 			sourceTree = "<group>";
@@ -745,6 +757,17 @@
 			path = EnterEmail;
 			sourceTree = "<group>";
 		};
+		07A130F42B222A1600E2EFF5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				07761B4B2B1E77E700718491 /* PeekPinCodeBlock+TextField.swift */,
+				07A130F52B222A2700E2EFF5 /* PeekPinCodeBlock+Constants.swift */,
+				07A130F92B222AAE00E2EFF5 /* PeekPinCodeBlock+AddDoneButton.swift */,
+				07A130FB2B222AE400E2EFF5 /* PeekPinCodeBlock+FirstResponderController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		07ACBA992AFD32CD00D07487 /* View Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -832,6 +855,7 @@
 				072500852B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift */,
 				07A130F02B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift */,
 				07A130ED2B221E1400E2EFF5 /* EnterEmail */,
+				07A130FD2B222BE100E2EFF5 /* PasswordRestorationViewController+PeekPinCodeBlockDelegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -843,6 +867,8 @@
 				077FD1EB2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift */,
 				077FD1ED2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift */,
 				077FD1EF2B03D8EC000C7A73 /* PasswordRestorationViewComponents+HStackView.swift */,
+				07A130F22B22290600E2EFF5 /* PasswordRestorationViewController+GetCode.swift */,
+				07A130FF2B22310000E2EFF5 /* PasswordRestorationViewComponents+Reset.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1078,6 +1104,7 @@
 				0788F42428F82B19006F447F /* LoginPage.swift in Sources */,
 				071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */,
 				0788F42628F8321F006F447F /* LoginViewComponents.swift in Sources */,
+				07A130F62B222A2700E2EFF5 /* PeekPinCodeBlock+Constants.swift in Sources */,
 				074B8A6B2A8C254F00EB39C2 /* RegisterNSE.swift in Sources */,
 				07BD8B7F2A93F4C50089199E /* AppCoordinator+Navigation.swift in Sources */,
 				0758C2E82911752200E48140 /* NetworkServiceImplementation.swift in Sources */,
@@ -1094,6 +1121,7 @@
 				0731B0622B00EE89006162D7 /* PeekCoverView.swift in Sources */,
 				073B584D28F97B20000EE21F /* RegisterPage.swift in Sources */,
 				07ACBA982AFD29F400D07487 /* AuthorizationViewController+HandleButtons.swift in Sources */,
+				07A131002B22310000E2EFF5 /* PasswordRestorationViewComponents+Reset.swift in Sources */,
 				0758C2E6291174F800E48140 /* NetworkServiceProtocol.swift in Sources */,
 				07BD8B772A93EE9E0089199E /* LobbyModuleBuilder.swift in Sources */,
 				07EB1CB928FD47950031598A /* NetworkClientImplementation.swift in Sources */,
@@ -1114,6 +1142,8 @@
 				07EB1CBB28FD47C90031598A /* NrtworkClientProtocol.swift in Sources */,
 				079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */,
 				07832A27292668950079E1E9 /* ExtensionPosterViewPresenter.swift in Sources */,
+				07A130FA2B222AAE00E2EFF5 /* PeekPinCodeBlock+AddDoneButton.swift in Sources */,
+				07A130FE2B222BE100E2EFF5 /* PasswordRestorationViewController+PeekPinCodeBlockDelegate.swift in Sources */,
 				077933D22A8FAE4400B0F509 /* UIColor+InitWithHex.swift in Sources */,
 				072500862B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift in Sources */,
 				07BD8B792A93EEC50089199E /* SessionModuleBuilder.swift in Sources */,
@@ -1126,6 +1156,7 @@
 				077933DF2A8FF96C00B0F509 /* Log.swift in Sources */,
 				073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */,
 				072EE65F2A95370200CFCC2A /* AuthorizationViewComponents.swift in Sources */,
+				07A130FC2B222AE400E2EFF5 /* PeekPinCodeBlock+FirstResponderController.swift in Sources */,
 				0788F42228F829B5006F447F /* EntranceModuleBuilderOld.swift in Sources */,
 				077933E12A8FF99100B0F509 /* DefaultLogger.swift in Sources */,
 				079E5EB829092EC8006AF238 /* MovieInfoScrollViewModel.swift in Sources */,
@@ -1158,6 +1189,7 @@
 				077B2EDC29080E2C0087504C /* PosterViewModels.swift in Sources */,
 				07DBA84328F3F734000A1312 /* AuthorizedPage.swift in Sources */,
 				074B8A6D2A8C257E00EB39C2 /* loginNSE.swift in Sources */,
+				07A130F32B22290600E2EFF5 /* PasswordRestorationViewController+GetCode.swift in Sources */,
 				07EB1CCC28FE219C0031598A /* Animations.swift in Sources */,
 				0731BB22292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift in Sources */,
 				0779775E2A8E3553000DAF72 /* RootViewController.swift in Sources */,
