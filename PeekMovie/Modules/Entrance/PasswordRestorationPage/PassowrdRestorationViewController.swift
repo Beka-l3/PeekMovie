@@ -47,6 +47,8 @@ final class PasswordRestorationViewController: UIViewController {
         
         viewComponents.mainButton.addTarget(self, action: #selector(handleMainButton), for: .touchUpInside)
         viewComponents.secondaryButton.addTarget(self, action: #selector(handleSecondaryButton), for: .touchUpInside)
+        
+        viewComponents.tapHandlerView.delegate = self
     }
     
     private func setupLayers() {

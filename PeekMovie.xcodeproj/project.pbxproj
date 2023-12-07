@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */; };
 		071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071A3BEF291FC3BE009A7689 /* RoomDTO.swift */; };
+		072500822B20BC60003EC872 /* PeekPinCodeDigitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */; };
+		072500842B20BE4A003EC872 /* PeekTapHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */; };
+		072500862B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500852B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift */; };
 		072EE65D2A9535C000CFCC2A /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE65C2A9535C000CFCC2A /* AuthorizationViewController.swift */; };
 		072EE65F2A95370200CFCC2A /* AuthorizationViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE65E2A95370200CFCC2A /* AuthorizationViewComponents.swift */; };
 		072EE6622A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6612A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift */; };
@@ -40,6 +43,8 @@
 		0758C2E82911752200E48140 /* NetworkServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2E72911752200E48140 /* NetworkServiceImplementation.swift */; };
 		0758C2EC2911777300E48140 /* TokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758C2EB2911777300E48140 /* TokenDTO.swift */; };
 		0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0763C00A2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift */; };
+		07761B482B1E701200718491 /* PeekPinCodeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07761B472B1E701200718491 /* PeekPinCodeBlock.swift */; };
+		07761B4C2B1E77E700718491 /* PeekPinCodeBlock+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07761B4B2B1E77E700718491 /* PeekPinCodeBlock+TextField.swift */; };
 		077933D22A8FAE4400B0F509 /* UIColor+InitWithHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933D12A8FAE4300B0F509 /* UIColor+InitWithHex.swift */; };
 		077933D52A8FF8C000B0F509 /* LoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933D42A8FF8C000B0F509 /* LoggerProtocol.swift */; };
 		077933D72A8FF8E600B0F509 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933D62A8FF8E600B0F509 /* LogLevel.swift */; };
@@ -151,6 +156,9 @@
 /* Begin PBXFileReference section */
 		070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPagePickerViewExtension.swift; sourceTree = "<group>"; };
 		071A3BEF291FC3BE009A7689 /* RoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDTO.swift; sourceTree = "<group>"; };
+		072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekPinCodeDigitLabel.swift; sourceTree = "<group>"; };
+		072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekTapHandlerView.swift; sourceTree = "<group>"; };
+		072500852B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewController+HandleTap.swift"; sourceTree = "<group>"; };
 		072EE65C2A9535C000CFCC2A /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		072EE65E2A95370200CFCC2A /* AuthorizationViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewComponents.swift; sourceTree = "<group>"; };
 		072EE6612A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+Constants.swift"; sourceTree = "<group>"; };
@@ -182,6 +190,8 @@
 		0758C2E72911752200E48140 /* NetworkServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImplementation.swift; sourceTree = "<group>"; };
 		0758C2EB2911777300E48140 /* TokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDTO.swift; sourceTree = "<group>"; };
 		0763C00A2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSessionWebSocketPresneter.swift; sourceTree = "<group>"; };
+		07761B472B1E701200718491 /* PeekPinCodeBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekPinCodeBlock.swift; sourceTree = "<group>"; };
+		07761B4B2B1E77E700718491 /* PeekPinCodeBlock+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekPinCodeBlock+TextField.swift"; sourceTree = "<group>"; };
 		077933D12A8FAE4300B0F509 /* UIColor+InitWithHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+InitWithHex.swift"; sourceTree = "<group>"; };
 		077933D42A8FF8C000B0F509 /* LoggerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerProtocol.swift; sourceTree = "<group>"; };
 		077933D62A8FF8E600B0F509 /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
@@ -442,6 +452,25 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		07761B492B1E77B000718491 /* PeekPinCode */ = {
+			isa = PBXGroup;
+			children = (
+				072F8FA72B1E13FB00CBA022 /* PeekPinCodeInputTextField.swift */,
+				07761B4A2B1E77CB00718491 /* Block */,
+				072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */,
+			);
+			path = PeekPinCode;
+			sourceTree = "<group>";
+		};
+		07761B4A2B1E77CB00718491 /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				07761B472B1E701200718491 /* PeekPinCodeBlock.swift */,
+				07761B4B2B1E77E700718491 /* PeekPinCodeBlock+TextField.swift */,
+			);
+			path = Block;
+			sourceTree = "<group>";
+		};
 		077933D32A8FF89C00B0F509 /* Logger */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,7 +519,8 @@
 				0731B0612B00EE89006162D7 /* PeekCoverView.swift */,
 				077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */,
 				072F8FA52B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift */,
-				072F8FA72B1E13FB00CBA022 /* PeekPinCodeInputTextField.swift */,
+				072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */,
+				07761B492B1E77B000718491 /* PeekPinCode */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -787,6 +817,7 @@
 			isa = PBXGroup;
 			children = (
 				07BE231F2B023B1300E70299 /* PasswordRestorationViewController+HandleButtons.swift */,
+				072500852B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1039,8 +1070,10 @@
 				077B2ED629069ADC0087504C /* PosterView.swift in Sources */,
 				07517C3B2AFB9EE100751EBB /* Colors+gradientColorPattern.swift in Sources */,
 				077977632A8E367F000DAF72 /* Fonts.swift in Sources */,
+				072500842B20BE4A003EC872 /* PeekTapHandlerView.swift in Sources */,
 				07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */,
 				0731B0602B00ED2C006162D7 /* PeekBackgroundImageView.swift in Sources */,
+				07761B4C2B1E77E700718491 /* PeekPinCodeBlock+TextField.swift in Sources */,
 				07BE231D2B023A7C00E70299 /* PasswordRestorationViewComponents.swift in Sources */,
 				07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */,
 				0731B0622B00EE89006162D7 /* PeekCoverView.swift in Sources */,
@@ -1066,6 +1099,7 @@
 				079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */,
 				07832A27292668950079E1E9 /* ExtensionPosterViewPresenter.swift in Sources */,
 				077933D22A8FAE4400B0F509 /* UIColor+InitWithHex.swift in Sources */,
+				072500862B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift in Sources */,
 				07BD8B792A93EEC50089199E /* SessionModuleBuilder.swift in Sources */,
 				0758C2EC2911777300E48140 /* TokenDTO.swift in Sources */,
 				07F8930E29127B5200E8FDD4 /* RegistrationFormDTO.swift in Sources */,
@@ -1092,7 +1126,9 @@
 				077977DA2A8E6D3C000DAF72 /* APIService.swift in Sources */,
 				074B8A752A8C262C00EB39C2 /* QuitFromRoomNSE.swift in Sources */,
 				077977E62A8E855D000DAF72 /* EntranceModuleBuilder.swift in Sources */,
+				072500822B20BC60003EC872 /* PeekPinCodeDigitLabel.swift in Sources */,
 				073B585428F97CA8000EE21F /* PeekID.swift in Sources */,
+				07761B482B1E701200718491 /* PeekPinCodeBlock.swift in Sources */,
 				077933D92A8FF90900B0F509 /* LogFormatElement.swift in Sources */,
 				0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */,
 				077FD1EE2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift in Sources */,

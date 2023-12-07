@@ -21,7 +21,7 @@ extension PasswordRestorationViewComponents {
             emailLabel.layer.opacity = 0
             passwordIconView.layer.opacity = 0
             passwordTextField.layer.opacity = 0
-            verificationCodeView.layer.opacity = 0
+            pinCodeBlockView.layer.opacity = 0
             mainButton.layer.opacity = 1
             secondaryButton.layer.opacity = 0
             timerLabel.layer.opacity = 0
@@ -33,7 +33,7 @@ extension PasswordRestorationViewComponents {
             emailLabel.layer.opacity = 1
             passwordIconView.layer.opacity = 0
             passwordTextField.layer.opacity = 0
-            verificationCodeView.layer.opacity = 1
+            pinCodeBlockView.layer.opacity = 1
             mainButton.layer.opacity = 0
             secondaryButton.layer.opacity = 1
             timerLabel.layer.opacity = 1
@@ -46,7 +46,7 @@ extension PasswordRestorationViewComponents {
             emailLabel.layer.opacity = 1
             passwordIconView.layer.opacity = 1
             passwordTextField.layer.opacity = 1
-            verificationCodeView.layer.opacity = 0
+            pinCodeBlockView.layer.opacity = 0
             mainButton.layer.opacity = 1
             secondaryButton.layer.opacity = 0
             timerLabel.layer.opacity = 0

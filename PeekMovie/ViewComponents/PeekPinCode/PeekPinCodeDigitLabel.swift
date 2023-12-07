@@ -1,14 +1,14 @@
 //
-//  PeekPinCodeInputTextField.swift
+//  PeekPinCodeDigitLabel.swift
 //  PeekMovie
 //
-//  Created by Bekzhan Talgat on 04.12.2023.
+//  Created by Bekzhan Talgat on 06.12.2023.
 //
 
 import UIKit
 
 
-final class PeekPinCodeInputTextField: UITextField {
+final class PeekPinCodeDigitLabel: UILabel {
     
     private lazy var underlineView: UIView = {
         let view = UIView()
@@ -20,10 +20,12 @@ final class PeekPinCodeInputTextField: UITextField {
     
     private var isFilled: Bool = false
     
-    
+        
 //    MARK: lifecycle
-    init() {
+    init(with tag: Int) {
         super.init(frame: .zero)
+        
+        self.tag = tag
         setupView()
     }
     
@@ -38,12 +40,14 @@ final class PeekPinCodeInputTextField: UITextField {
     
     
 //    MARK: exposed func
-    func filled() {
+    func fill(with digitString: String) {
+        text = digitString
         underlineView.alpha = Constants.underlineViewFullAlpha
         isFilled = true
     }
     
     func empty() {
+        text = ""
         underlineView.alpha = Constants.underlineViewEmptyAlpha
         isFilled = false
     }
@@ -51,9 +55,12 @@ final class PeekPinCodeInputTextField: UITextField {
     
 //    MARK: private func
     private func setupView() {
-        backgroundColor = Colors.backgroundPrimary
+        backgroundColor = Colors.backgroundSecondary?.withAlphaComponent(Constants.underlineViewEmptyAlpha)
         font = Constants.font
         textColor = Colors.textMain
+        layer.cornerRadius = Constants.cornerRadius
+        textAlignment = .center
+        tintColor = Colors.backgroundTertiary
         
         addSubview(underlineView)
         
@@ -63,6 +70,8 @@ final class PeekPinCodeInputTextField: UITextField {
             underlineView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.underlinePadding),
             underlineView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.underlinePadding),
         ])
+        
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func setUnderlineViewColor() {
@@ -72,24 +81,27 @@ final class PeekPinCodeInputTextField: UITextField {
         
         underlineView.backgroundColor = gradientColor
         
-        isFilled ? filled() : empty()
+        if let text = text, isFilled {
+            fill(with: text)
+        } else {
+            empty()
+        }
     }
 }
 
 
-extension PeekPinCodeInputTextField {
+extension PeekPinCodeDigitLabel {
     
     enum Constants {
+        static let font: UIFont? = Fonts.regular34
         
-        static let font: UIFont? = Fonts.medium48
+        static let underlineViewHeight: CGFloat = 5
+        static let underlineViewCornerRadius: CGFloat = 2
         
-        static let underlineViewHeight: CGFloat = 4
-        static let underlineViewCornerRadius: CGFloat = 1
         static let underlineViewFullAlpha: CGFloat = 1
-        static let underlineViewEmptyAlpha: CGFloat = 0.3
+        static let underlineViewEmptyAlpha: CGFloat = 0.38
         
         static let underlinePadding: CGFloat = 4
+        static let cornerRadius: CGFloat = 8
     }
-    
 }
-

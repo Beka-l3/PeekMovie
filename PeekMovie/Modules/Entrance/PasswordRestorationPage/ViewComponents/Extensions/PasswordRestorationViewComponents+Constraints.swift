@@ -44,17 +44,16 @@ extension PasswordRestorationViewComponents {
             passwordTextField.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
             passwordTextField.heightAnchor.constraint(equalToConstant: Constants.inputFieldHeight),
             
-            verificationCodeView.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: Constants.paddingXL),
-            verificationCodeView.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: Constants.paddingL),
-            verificationCodeView.trailingAnchor.constraint(equalTo: parent.trailingAnchor, constant: -Constants.paddingL),
-            verificationCodeView.heightAnchor.constraint(equalToConstant: Constants.verificationCodeViewHeight),
+            pinCodeBlockView.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: Constants.paddingXL),
+            pinCodeBlockView.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: Constants.paddingL),
+            pinCodeBlockView.trailingAnchor.constraint(equalTo: parent.trailingAnchor, constant: -Constants.paddingL),
+            pinCodeBlockView.heightAnchor.constraint(equalToConstant: Constants.verificationCodeViewHeight),
             
             mainButton.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
             mainButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: Constants.paddingXL),
             
-            timerHStack.topAnchor.constraint(equalTo: verificationCodeView.bottomAnchor, constant: Constants.paddingXL),
+            timerHStack.topAnchor.constraint(equalTo: pinCodeBlockView.bottomAnchor, constant: Constants.paddingXL),
             timerHStack.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
-            
         ])
         
     }

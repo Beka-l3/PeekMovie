@@ -32,4 +32,7 @@ extension PasswordRestorationViewController {
         passwordRestorationState = .resetPassword
     }
     
+    @objc func handleDoneFromKeyboard() {
+        
+    }
 }
