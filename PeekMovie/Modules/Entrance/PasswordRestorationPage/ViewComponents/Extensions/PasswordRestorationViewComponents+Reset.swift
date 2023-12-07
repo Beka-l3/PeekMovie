@@ -9,5 +9,12 @@ import UIKit
 
 
 extension PasswordRestorationViewComponents {
-    
+    func reset() {
+        
+        emailTextField.text = ""
+        passwordTextField.text = ""
+        
+        disableMainButton()
+        
+    }
 }

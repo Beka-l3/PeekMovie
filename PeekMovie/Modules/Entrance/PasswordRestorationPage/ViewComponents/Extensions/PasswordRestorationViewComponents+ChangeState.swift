@@ -55,10 +55,18 @@ extension PasswordRestorationViewComponents {
     }
     
     func checkGetCodeStateComponents(withValidation isValid: Bool) {
-        if !isMainButtonEnabled && isValid {
+        
+        switch (isMainButtonEnabled, isValid) {
+            
+        case (false, true):
             enableMainButton()
-        } else if isMainButtonEnabled && isValid {
+            
+        case (true, false):
             disableMainButton()
+            
+        default:
+            break
         }
+        
     }
 }
