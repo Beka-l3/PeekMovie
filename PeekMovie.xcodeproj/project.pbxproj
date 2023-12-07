@@ -11,6 +11,7 @@
 		071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071A3BEF291FC3BE009A7689 /* RoomDTO.swift */; };
 		072500822B20BC60003EC872 /* PeekPinCodeDigitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */; };
 		072500842B20BE4A003EC872 /* PeekTapHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */; };
+		072500862B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500852B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift */; };
 		072EE65D2A9535C000CFCC2A /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE65C2A9535C000CFCC2A /* AuthorizationViewController.swift */; };
 		072EE65F2A95370200CFCC2A /* AuthorizationViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE65E2A95370200CFCC2A /* AuthorizationViewComponents.swift */; };
 		072EE6622A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EE6612A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift */; };
@@ -157,6 +158,7 @@
 		071A3BEF291FC3BE009A7689 /* RoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDTO.swift; sourceTree = "<group>"; };
 		072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekPinCodeDigitLabel.swift; sourceTree = "<group>"; };
 		072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekTapHandlerView.swift; sourceTree = "<group>"; };
+		072500852B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewController+HandleTap.swift"; sourceTree = "<group>"; };
 		072EE65C2A9535C000CFCC2A /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		072EE65E2A95370200CFCC2A /* AuthorizationViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewComponents.swift; sourceTree = "<group>"; };
 		072EE6612A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+Constants.swift"; sourceTree = "<group>"; };
@@ -815,6 +817,7 @@
 			isa = PBXGroup;
 			children = (
 				07BE231F2B023B1300E70299 /* PasswordRestorationViewController+HandleButtons.swift */,
+				072500852B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1096,6 +1099,7 @@
 				079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */,
 				07832A27292668950079E1E9 /* ExtensionPosterViewPresenter.swift in Sources */,
 				077933D22A8FAE4400B0F509 /* UIColor+InitWithHex.swift in Sources */,
+				072500862B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift in Sources */,
 				07BD8B792A93EEC50089199E /* SessionModuleBuilder.swift in Sources */,
 				0758C2EC2911777300E48140 /* TokenDTO.swift in Sources */,
 				07F8930E29127B5200E8FDD4 /* RegistrationFormDTO.swift in Sources */,

@@ -54,7 +54,6 @@ extension PasswordRestorationViewComponents {
             
             timerHStack.topAnchor.constraint(equalTo: pinCodeBlockView.bottomAnchor, constant: Constants.paddingXL),
             timerHStack.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
-            
         ])
         
     }

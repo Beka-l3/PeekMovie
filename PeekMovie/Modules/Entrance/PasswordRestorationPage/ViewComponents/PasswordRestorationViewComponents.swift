@@ -30,9 +30,12 @@ final class PasswordRestorationViewComponents {
     lazy var timerLabel = PeekLabel(type: .secondary, text: Constants.timerLabelDefault, font: .caption1)
     lazy var timerHStack = getBottomHStackView(with: [secondaryButton, timerLabel])
     
+    lazy var tapHandlerView = PeekTapHandlerView()
+    
     
 //    MARK: exposed func
     func setupViews(parent: UIView) {
+        parent.addSubview(tapHandlerView)
         parent.addSubview(draggerView)
         parent.addSubview(captionLabel)
         parent.addSubview(emailLabel)
