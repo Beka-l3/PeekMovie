@@ -145,7 +145,7 @@ final class PeekPinCodeBlock: UIView {
         doneToolbar.barStyle = .default
 
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(handleDoneButtonFromKeyboard))
+        let done: UIBarButtonItem = UIBarButtonItem(title: Constants.doneButtonText, style: .done, target: self, action: #selector(handleDoneButtonFromKeyboard))
 
         let items = [flexSpace, done]
         doneToolbar.items = items
@@ -167,6 +167,8 @@ extension PeekPinCodeBlock {
         static let paddingM: CGFloat = 18
         
         static let maxDigitAmount = 4
+        
+        static let doneButtonText = "Done"
         
     }
 }
