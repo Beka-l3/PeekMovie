@@ -54,13 +54,66 @@ final class PeekPinCodeBlock: UIView {
     }
     
     
-//    MARK: @objc
-    @objc func handleDoneButtonFromKeyboard() {
-        inputTextField.resignFirstResponder()
+//    MARK: private func
+    private func setupView() {
+        addSubview(inputTextField)
+        addSubview(digitsStackView)
+        addSubview(tapHandlerView)
+        
+        NSLayoutConstraint.activate([
+            inputTextField.topAnchor.constraint(equalTo: topAnchor),
+            inputTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            inputTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
+            inputTextField.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            digitsStackView.topAnchor.constraint(equalTo: topAnchor),
+            digitsStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            digitsStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            digitsStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            tapHandlerView.topAnchor.constraint(equalTo: topAnchor),
+            tapHandlerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tapHandlerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tapHandlerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+        ])
+        
+        inputTextField.delegate = self
+        tapHandlerView.delegate = self
+        
+        addDoneButtonOnKeyboard()
+        
+        translatesAutoresizingMaskIntoConstraints = false
     }
+}
+
+
+extension PeekPinCodeBlock {
+    enum Constants {
+        
+        static let pinCodeDigitLabelMinWidth: CGFloat = 60
+        static let pinCodeDigitLabelMinHeight: CGFloat = 80
+        
+        static let padding: CGFloat = 12
+        static let paddingM: CGFloat = 18
+        
+        static let maxDigitAmount = 4
+        
+        static let doneButtonText = "Done"
+        static let doneButtonToolBarHeight: CGFloat = 50
+    }
+}
+
+
+extension PeekPinCodeBlock: PeekTapHandlerViewDelegate {
+    func tapped() {
+        print("Handle tap")
+        inputTextField.becomeFirstResponder()
+    }
+}
+
+
+extension PeekPinCodeBlock {
     
-    
-//    MARK: exposed func
     func removeDigit() {
         
         switch pinCodeText.count {
@@ -107,45 +160,26 @@ final class PeekPinCodeBlock: UIView {
         }
     }
     
-    
-//    MARK: private func
-    private func setupView() {
-        addSubview(inputTextField)
-        addSubview(digitsStackView)
-        addSubview(tapHandlerView)
-        
-        NSLayoutConstraint.activate([
-            inputTextField.topAnchor.constraint(equalTo: topAnchor),
-            inputTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
-            inputTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
-            inputTextField.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            digitsStackView.topAnchor.constraint(equalTo: topAnchor),
-            digitsStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            digitsStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            digitsStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            tapHandlerView.topAnchor.constraint(equalTo: topAnchor),
-            tapHandlerView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tapHandlerView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tapHandlerView.bottomAnchor.constraint(equalTo: bottomAnchor),
-        ])
-        
-        inputTextField.delegate = self
-        tapHandlerView.delegate = self
-        
-        addDoneButtonOnKeyboard()
-        
-        translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    
-    func addDoneButtonOnKeyboard(){
-        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+}
+
+
+extension PeekPinCodeBlock {
+    private func addDoneButtonOnKeyboard(){
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(
+            x: .zero,
+            y: .zero,
+            width: UIScreen.main.bounds.width,
+            height: Constants.doneButtonToolBarHeight)
+        )
         doneToolbar.barStyle = .default
 
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: Constants.doneButtonText, style: .done, target: self, action: #selector(handleDoneButtonFromKeyboard))
+        let done: UIBarButtonItem = UIBarButtonItem(
+            title: Constants.doneButtonText,
+            style: .done,
+            target: self,
+            action: #selector(handleDoneButtonFromKeyboard)
+        )
 
         let items = [flexSpace, done]
         doneToolbar.items = items
@@ -153,30 +187,11 @@ final class PeekPinCodeBlock: UIView {
 
         inputTextField.inputAccessoryView = doneToolbar
     }
-    
 }
 
 
 extension PeekPinCodeBlock {
-    enum Constants {
-        
-        static let pinCodeDigitLabelMinWidth: CGFloat = 60
-        static let pinCodeDigitLabelMinHeight: CGFloat = 80
-        
-        static let padding: CGFloat = 12
-        static let paddingM: CGFloat = 18
-        
-        static let maxDigitAmount = 4
-        
-        static let doneButtonText = "Done"
-        
-    }
-}
-
-
-extension PeekPinCodeBlock: PeekTapHandlerViewDelegate {
-    func tapped() {
-        print("Handle tap")
-        inputTextField.becomeFirstResponder()
+    @objc func handleDoneButtonFromKeyboard() {
+        inputTextField.resignFirstResponder()
     }
 }
