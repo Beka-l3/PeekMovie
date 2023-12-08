@@ -69,4 +69,10 @@ extension PasswordRestorationViewComponents {
         }
         
     }
+    
+    func prepareSendVerificationCodeComponents() {
+        let emailText = emailTextField.text ?? Constants.emailDefaultText
+        emailLabel.text = emailText
+        
+    }
 }

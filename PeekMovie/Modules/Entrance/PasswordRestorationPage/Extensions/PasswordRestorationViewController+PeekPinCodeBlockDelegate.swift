@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 extension PasswordRestorationViewController: PeekPinCodeBlockDelegate {
     func didEnter4Digits() {
         Task {
