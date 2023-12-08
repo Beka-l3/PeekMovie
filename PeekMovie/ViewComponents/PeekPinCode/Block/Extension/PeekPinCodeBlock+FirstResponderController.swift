@@ -10,7 +10,7 @@ import UIKit
 
 extension PeekPinCodeBlock: PeekTapHandlerViewDelegate {
     func tapped() {
-        print("Handle tap")
+        print("PeekPinCodeBlock: Handle tap from tap handler view")
         inputTextField.becomeFirstResponder()
     }
 }
