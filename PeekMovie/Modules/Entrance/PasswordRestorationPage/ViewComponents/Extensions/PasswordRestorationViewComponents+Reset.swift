@@ -12,11 +12,10 @@ extension PasswordRestorationViewComponents {
     func reset() {
         
         emailTextField.text = ""
+        pinCodeBlockView.clearAll()
         passwordTextField.text = ""
         
         disableMainButton()
-        
-        pinCodeBlockView.clearAll()
         
     }
 }

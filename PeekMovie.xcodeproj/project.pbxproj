@@ -112,6 +112,7 @@
 		07A131002B22310000E2EFF5 /* PasswordRestorationViewComponents+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130FF2B22310000E2EFF5 /* PasswordRestorationViewComponents+Reset.swift */; };
 		07A66F2B2916CB2F003BB6B9 /* ErrorDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A66F2A2916CB2F003BB6B9 /* ErrorDTO.swift */; };
 		07A66F2D2916CB51003BB6B9 /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A66F2C2916CB51003BB6B9 /* ResponseDTO.swift */; };
+		07A7B26A2B2375EF0088BC30 /* PeekCountDownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7B2692B2375EF0088BC30 /* PeekCountDownTimerView.swift */; };
 		07ABF65C29193799007C4A52 /* InformativeViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF65B29193799007C4A52 /* InformativeViewComponents.swift */; };
 		07ABF65E291AD436007C4A52 /* ExtensionLoginPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF65D291AD436007C4A52 /* ExtensionLoginPagePresenter.swift */; };
 		07ABF660291AD4A7007C4A52 /* ExtensionPasswordPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABF65F291AD4A7007C4A52 /* ExtensionPasswordPagePresenter.swift */; };
@@ -267,6 +268,7 @@
 		07A130FF2B22310000E2EFF5 /* PasswordRestorationViewComponents+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewComponents+Reset.swift"; sourceTree = "<group>"; };
 		07A66F2A2916CB2F003BB6B9 /* ErrorDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDTO.swift; sourceTree = "<group>"; };
 		07A66F2C2916CB51003BB6B9 /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
+		07A7B2692B2375EF0088BC30 /* PeekCountDownTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekCountDownTimerView.swift; sourceTree = "<group>"; };
 		07ABF65B29193799007C4A52 /* InformativeViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformativeViewComponents.swift; sourceTree = "<group>"; };
 		07ABF65D291AD436007C4A52 /* ExtensionLoginPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionLoginPagePresenter.swift; sourceTree = "<group>"; };
 		07ABF65F291AD4A7007C4A52 /* ExtensionPasswordPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPasswordPagePresenter.swift; sourceTree = "<group>"; };
@@ -537,6 +539,7 @@
 				072F8FA52B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift */,
 				072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */,
 				07761B492B1E77B000718491 /* PeekPinCode */,
+				07A7B2682B2375C00088BC30 /* PeekCountDownTimer */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -766,6 +769,14 @@
 				07A130FB2B222AE400E2EFF5 /* PeekPinCodeBlock+FirstResponderController.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		07A7B2682B2375C00088BC30 /* PeekCountDownTimer */ = {
+			isa = PBXGroup;
+			children = (
+				07A7B2692B2375EF0088BC30 /* PeekCountDownTimerView.swift */,
+			);
+			path = PeekCountDownTimer;
 			sourceTree = "<group>";
 		};
 		07ACBA992AFD32CD00D07487 /* View Components */ = {
@@ -1207,6 +1218,7 @@
 				07EB1CC428FD48100031598A /* HTTPMethod.swift in Sources */,
 				07ACBA9D2AFD3B1200D07487 /* AuthorizationViewComponents+ChangeState.swift in Sources */,
 				0731BB00292D5BC1004CCE79 /* MovieCollectionCell.swift in Sources */,
+				07A7B26A2B2375EF0088BC30 /* PeekCountDownTimerView.swift in Sources */,
 				077977DC2A8E717B000DAF72 /* UINavigationController+FadeTo.swift in Sources */,
 				077933DD2A8FF94E00B0F509 /* LogDestinationProtocol.swift in Sources */,
 				07D401B928F8641700BF3F55 /* PasswordPage.swift in Sources */,

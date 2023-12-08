@@ -9,6 +9,7 @@ import UIKit
 
 
 extension PasswordRestorationViewController: PeekTapHandlerViewDelegate {
+    
     func tapped() {
         switch passwordRestorationState {
             
@@ -29,4 +30,5 @@ extension PasswordRestorationViewController: PeekTapHandlerViewDelegate {
             
         }
     }
+    
 }
