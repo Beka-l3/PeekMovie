@@ -117,6 +117,15 @@ extension PeekPinCodeBlock {
         pinCodeText.removeLast()
     }
     
+    func clearAll() {
+        pinCodeText = ""
+        
+        digit1.empty()
+        digit2.empty()
+        digit3.empty()
+        digit4.empty()
+    }
+    
     func addDigit() {
         
         if let text = inputTextField.text, !text.isEmpty {

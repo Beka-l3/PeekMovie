@@ -16,5 +16,7 @@ extension PasswordRestorationViewComponents {
         
         disableMainButton()
         
+        pinCodeBlockView.clearAll()
+        
     }
 }
