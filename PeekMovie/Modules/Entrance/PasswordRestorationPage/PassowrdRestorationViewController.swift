@@ -54,6 +54,7 @@ final class PasswordRestorationViewController: UIViewController {
         
         viewComponents.emailTextField.delegate = self
         viewComponents.passwordTextField.delegate = self
+        viewComponents.timerLabel.delegate = self
     }
     
     private func setupLayers() {

@@ -122,6 +122,7 @@
 		07ACBA982AFD29F400D07487 /* AuthorizationViewController+HandleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACBA972AFD29F400D07487 /* AuthorizationViewController+HandleButtons.swift */; };
 		07ACBA9B2AFD32E800D07487 /* AuthorizationViewComponents+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACBA9A2AFD32E800D07487 /* AuthorizationViewComponents+Constraints.swift */; };
 		07ACBA9D2AFD3B1200D07487 /* AuthorizationViewComponents+ChangeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACBA9C2AFD3B1200D07487 /* AuthorizationViewComponents+ChangeState.swift */; };
+		07B09C972B24FCE70015B422 /* PasswordRestorationViewController+CountDownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B09C962B24FCE70015B422 /* PasswordRestorationViewController+CountDownTimerView.swift */; };
 		07BB3FD62AF90638001E0E63 /* PeekLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BB3FD52AF90638001E0E63 /* PeekLabel.swift */; };
 		07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BBD947291BE08F00DD13BA /* MockNetworkService.swift */; };
 		07BD8B772A93EE9E0089199E /* LobbyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B762A93EE9E0089199E /* LobbyModuleBuilder.swift */; };
@@ -278,6 +279,7 @@
 		07ACBA972AFD29F400D07487 /* AuthorizationViewController+HandleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewController+HandleButtons.swift"; sourceTree = "<group>"; };
 		07ACBA9A2AFD32E800D07487 /* AuthorizationViewComponents+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+Constraints.swift"; sourceTree = "<group>"; };
 		07ACBA9C2AFD3B1200D07487 /* AuthorizationViewComponents+ChangeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+ChangeState.swift"; sourceTree = "<group>"; };
+		07B09C962B24FCE70015B422 /* PasswordRestorationViewController+CountDownTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewController+CountDownTimerView.swift"; sourceTree = "<group>"; };
 		07BB3FD52AF90638001E0E63 /* PeekLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekLabel.swift; sourceTree = "<group>"; };
 		07BBD947291BE08F00DD13BA /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		07BD8B762A93EE9E0089199E /* LobbyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyModuleBuilder.swift; sourceTree = "<group>"; };
@@ -867,6 +869,7 @@
 				07A130F02B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift */,
 				07A130ED2B221E1400E2EFF5 /* EnterEmail */,
 				07A130FD2B222BE100E2EFF5 /* PasswordRestorationViewController+PeekPinCodeBlockDelegate.swift */,
+				07B09C962B24FCE70015B422 /* PasswordRestorationViewController+CountDownTimerView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1213,6 +1216,7 @@
 				077FD1EA2B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift in Sources */,
 				07ABF660291AD4A7007C4A52 /* ExtensionPasswordPagePresenter.swift in Sources */,
 				0731B0642B00F6A5006162D7 /* AuthorizationViewComponents+Constants+ChangeState.swift in Sources */,
+				07B09C972B24FCE70015B422 /* PasswordRestorationViewController+CountDownTimerView.swift in Sources */,
 				0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */,
 				072EE65D2A9535C000CFCC2A /* AuthorizationViewController.swift in Sources */,
 				07EB1CC428FD48100031598A /* HTTPMethod.swift in Sources */,

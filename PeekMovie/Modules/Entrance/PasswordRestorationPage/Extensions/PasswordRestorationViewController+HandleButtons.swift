@@ -37,6 +37,9 @@ extension PasswordRestorationViewController {
         /// temporary logic to change state
 //        viewComponents.changeState(to: .resetPassword, parent: view)
 //        passwordRestorationState = .resetPassword
+        
+        viewComponents.pinCodeBlockView.clearAll()
+        viewComponents.startCountDown()
     }
     
     @objc func handleDoneFromKeyboard() {
