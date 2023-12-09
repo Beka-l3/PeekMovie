@@ -14,8 +14,10 @@ extension PasswordRestorationViewController {
         switch passwordRestorationState {
             
         case .enterEmail:
+            viewComponents.prepareSendVerificationCodeComponents()
             viewComponents.changeState(to: .sendVerificationCode, parent: view)
             passwordRestorationState = .sendVerificationCode
+            viewComponents.emailTextField.resignFirstResponder()
             
         case .sendVerificationCode:
             break
@@ -23,13 +25,18 @@ extension PasswordRestorationViewController {
         case .resetPassword:
             viewComponents.changeState(to: .enterEmail, parent: view)
             passwordRestorationState = .enterEmail
+            viewComponents.passwordTextField.resignFirstResponder()
             
         }
+        
     }
     
     @objc func handleSecondaryButton() {
-        viewComponents.changeState(to: .resetPassword, parent: view)
-        passwordRestorationState = .resetPassword
+        // state = validate code  // after timer resend code LOGIC
+        
+        /// temporary logic to change state
+//        viewComponents.changeState(to: .resetPassword, parent: view)
+//        passwordRestorationState = .resetPassword
     }
     
     @objc func handleDoneFromKeyboard() {

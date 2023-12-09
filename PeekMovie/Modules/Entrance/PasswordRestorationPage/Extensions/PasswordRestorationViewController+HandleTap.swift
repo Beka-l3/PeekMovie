@@ -9,22 +9,26 @@ import UIKit
 
 
 extension PasswordRestorationViewController: PeekTapHandlerViewDelegate {
+    
     func tapped() {
-        print("Hola")
-        
         switch passwordRestorationState {
             
         case .enterEmail:
-            break
+            if viewComponents.emailTextField.isFirstResponder {
+                viewComponents.emailTextField.resignFirstResponder()
+            }
             
         case .sendVerificationCode:
-            print("Hola b")
-            viewComponents.pinCodeBlockView.inputTextField.resignFirstResponder()
-            break
+            if viewComponents.pinCodeBlockView.inputTextField.isFirstResponder {
+                viewComponents.pinCodeBlockView.inputTextField.resignFirstResponder()
+            }
             
         case .resetPassword:
-            break
+            if viewComponents.passwordTextField.isFirstResponder {
+                viewComponents.passwordTextField.resignFirstResponder()
+            }
             
         }
     }
+    
 }

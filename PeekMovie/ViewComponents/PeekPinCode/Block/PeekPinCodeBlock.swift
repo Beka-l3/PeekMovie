@@ -8,8 +8,15 @@
 import UIKit
 
 
+protocol PeekPinCodeBlockDelegate: AnyObject {
+    func didEnter4Digits()
+}
+
+
 /// 4 digit `OPT` pin code input block
 final class PeekPinCodeBlock: UIView {
+    
+    weak var delegate: PeekPinCodeBlockDelegate?
     
     private(set) lazy var digit1: PeekPinCodeDigitLabel = .init(with: 0)
     private(set) lazy var digit2: PeekPinCodeDigitLabel = .init(with: 1)
@@ -54,60 +61,6 @@ final class PeekPinCodeBlock: UIView {
     }
     
     
-//    MARK: @objc
-    @objc func handleDoneButtonFromKeyboard() {
-        inputTextField.resignFirstResponder()
-    }
-    
-    
-//    MARK: exposed func
-    func removeDigit() {
-        
-        switch pinCodeText.count {
-            
-        case 1:
-            digit1.empty()
-            
-        case 2:
-            digit2.empty()
-            
-        case 3:
-            digit3.empty()
-            
-        default:
-            digit4.empty()
-            
-        }
-        
-        pinCodeText.removeLast()
-    }
-    
-    func addDigit() {
-        
-        if let text = inputTextField.text, !text.isEmpty {
-            let newDigitString = "\(text[text.index(before: text.endIndex)])"
-            
-            pinCodeText += newDigitString
-            
-            switch pinCodeText.count {
-                
-            case 1:
-                digit1.fill(with: newDigitString)
-                
-            case 2:
-                digit2.fill(with: newDigitString)
-                
-            case 3:
-                digit3.fill(with: newDigitString)
-                
-            default:
-                digit4.fill(with: newDigitString)
-                
-            }
-        }
-    }
-    
-    
 //    MARK: private func
     private func setupView() {
         addSubview(inputTextField)
@@ -138,45 +91,65 @@ final class PeekPinCodeBlock: UIView {
         
         translatesAutoresizingMaskIntoConstraints = false
     }
-    
-    
-    func addDoneButtonOnKeyboard(){
-        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
-        doneToolbar.barStyle = .default
-
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: Constants.doneButtonText, style: .done, target: self, action: #selector(handleDoneButtonFromKeyboard))
-
-        let items = [flexSpace, done]
-        doneToolbar.items = items
-        doneToolbar.sizeToFit()
-
-        inputTextField.inputAccessoryView = doneToolbar
-    }
-    
 }
 
 
 extension PeekPinCodeBlock {
-    enum Constants {
+    
+    func removeDigit() {
         
-        static let pinCodeDigitLabelMinWidth: CGFloat = 60
-        static let pinCodeDigitLabelMinHeight: CGFloat = 80
+        switch pinCodeText.count {
+            
+        case 1:
+            digit1.empty()
+            
+        case 2:
+            digit2.empty()
+            
+        case 3:
+            digit3.empty()
+            
+        default:
+            digit4.empty()
+            
+        }
         
-        static let padding: CGFloat = 12
-        static let paddingM: CGFloat = 18
-        
-        static let maxDigitAmount = 4
-        
-        static let doneButtonText = "Done"
-        
+        pinCodeText.removeLast()
     }
+    
+    func clearAll() {
+        pinCodeText = ""
+        
+        digit1.empty()
+        digit2.empty()
+        digit3.empty()
+        digit4.empty()
+    }
+    
+    func addDigit() {
+        
+        if let text = inputTextField.text, !text.isEmpty {
+            let newDigitString = "\(text[text.index(before: text.endIndex)])"
+            
+            pinCodeText += newDigitString
+            
+            switch pinCodeText.count {
+                
+            case 1:
+                digit1.fill(with: newDigitString)
+                
+            case 2:
+                digit2.fill(with: newDigitString)
+                
+            case 3:
+                digit3.fill(with: newDigitString)
+                
+            default:
+                digit4.fill(with: newDigitString)
+                
+            }
+        }
+    }
+    
 }
 
-
-extension PeekPinCodeBlock: PeekTapHandlerViewDelegate {
-    func tapped() {
-        print("Handle tap")
-        inputTextField.becomeFirstResponder()
-    }
-}

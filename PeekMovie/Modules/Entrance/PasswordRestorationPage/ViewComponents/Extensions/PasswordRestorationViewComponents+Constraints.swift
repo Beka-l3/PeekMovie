@@ -13,6 +13,11 @@ extension PasswordRestorationViewComponents {
     func setupConstraints(parent: UIView) {
         
         NSLayoutConstraint.activate([
+            tapHandlerView.topAnchor.constraint(equalTo: parent.topAnchor),
+            tapHandlerView.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
+            tapHandlerView.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
+            tapHandlerView.bottomAnchor.constraint(equalTo: parent.bottomAnchor),
+            
             draggerView.topAnchor.constraint(equalTo: parent.topAnchor, constant: Constants.padding / 2),
             draggerView.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
             

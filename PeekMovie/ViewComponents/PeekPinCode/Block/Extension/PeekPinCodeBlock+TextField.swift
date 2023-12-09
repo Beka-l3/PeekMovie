@@ -21,6 +21,10 @@ extension PeekPinCodeBlock: UITextFieldDelegate {
             } else {
 
                 addDigit()
+                
+                if text.count == Constants.maxDigitAmount {
+                    didEnter4Digits()
+                }
             }
         }
         

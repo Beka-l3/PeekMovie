@@ -54,3 +54,32 @@ extension PasswordRestorationViewComponents {
         }
     }
 }
+
+
+extension PasswordRestorationViewComponents {
+    
+//    MARK: Get Code State
+    func checkGetCodeStateComponents(withValidation isValid: Bool) {
+        
+        switch (isMainButtonEnabled, isValid) {
+            
+        case (false, true):
+            enableMainButton()
+            
+        case (true, false):
+            disableMainButton()
+            
+        default:
+            break
+        }
+        
+    }
+    
+    
+//    MARK: Send Verification Code State
+    func prepareSendVerificationCodeComponents() {
+        let emailText = emailTextField.text ?? Constants.emailDefaultText
+        emailLabel.text = emailText
+        pinCodeBlockView.clearAll()
+    }
+}
