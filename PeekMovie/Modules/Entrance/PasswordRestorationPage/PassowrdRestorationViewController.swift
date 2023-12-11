@@ -26,6 +26,7 @@ final class PasswordRestorationViewController: UIViewController {
         
         navigationController?.isNavigationBarHidden = true
         viewComponents.reset()
+        changeState(to: .enterEmail)
     }
     
     override func viewDidAppear(_ animated: Bool) {

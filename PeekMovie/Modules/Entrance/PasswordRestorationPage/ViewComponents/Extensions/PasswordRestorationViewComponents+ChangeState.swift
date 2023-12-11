@@ -79,7 +79,7 @@ extension PasswordRestorationViewComponents {
     
     
 //    MARK: Send Verification Code State
-    func prepareSendVerificationCodeComponents() {
+    func prepareSendVerificationCodeStateComponents() {
         let emailText = emailTextField.text ?? Constants.emailDefaultText
         emailLabel.text = emailText
         pinCodeBlockView.clearAll()

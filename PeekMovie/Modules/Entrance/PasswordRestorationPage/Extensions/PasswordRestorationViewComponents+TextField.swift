@@ -29,7 +29,7 @@ extension PasswordRestorationViewController: UITextFieldDelegate {
                 break
             }
             
-            viewComponents.checkResetPasswordStateComponents(withValidation: isValidPassword(password: newPasswordString))
+            viewComponents.checkResetPasswordStateComponents(withValidation: isValidPassword(passwordString: newPasswordString))
             
         }
         

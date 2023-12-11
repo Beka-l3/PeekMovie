@@ -15,7 +15,7 @@ extension PasswordRestorationViewController {
         switch passwordRestorationState {
             
         case .enterEmail:
-            viewComponents.prepareSendVerificationCodeComponents()
+            viewComponents.prepareSendVerificationCodeStateComponents()
             changeState(to: .sendVerificationCode)
             viewComponents.emailTextField.resignFirstResponder()
             
