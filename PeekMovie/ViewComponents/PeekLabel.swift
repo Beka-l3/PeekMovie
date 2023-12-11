@@ -96,8 +96,6 @@ final class PeekLabel: UILabel {
             self.font = Fonts.regular11
         }
         
-        
-        
         translatesAutoresizingMaskIntoConstraints = false
     }
     

@@ -37,6 +37,7 @@ extension PasswordRestorationViewComponents {
             mainButton.layer.opacity = 0
             secondaryButton.layer.opacity = 1
             timerLabel.layer.opacity = 1
+//            startCountDown()
             
         case .resetPassword:
             mainButton.setTitle(Constants.resetPasswordButtonText, for: .normal)
@@ -71,15 +72,51 @@ extension PasswordRestorationViewComponents {
             
         default:
             break
+            
         }
         
     }
     
     
 //    MARK: Send Verification Code State
-    func prepareSendVerificationCodeComponents() {
+    func prepareSendVerificationCodeStateComponents() {
         let emailText = emailTextField.text ?? Constants.emailDefaultText
         emailLabel.text = emailText
         pinCodeBlockView.clearAll()
+        
     }
+    
+    func startCountDown() {
+        secondaryButton.isEnabled = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [unowned self] in
+            self.timerLabel.startCountDown()
+        }
+    }
+    
+    func stopCountDown() {
+        secondaryButton.isEnabled = false
+        self.timerLabel.stopCountDown()
+    }
+    
+    
+//    MARK: reset password
+    func checkResetPasswordStateComponents(withValidation isValid: Bool) {
+        
+        switch (isMainButtonEnabled, isValid) {
+            
+        case (false, true):
+            enableMainButton()
+            
+        case (true, false):
+            disableMainButton()
+            
+        default:
+            break
+            
+        }
+        
+    }
+    
 }
+

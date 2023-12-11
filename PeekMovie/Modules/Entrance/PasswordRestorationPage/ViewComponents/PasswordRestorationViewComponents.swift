@@ -27,7 +27,8 @@ final class PasswordRestorationViewComponents {
     lazy var pinCodeBlockView: PeekPinCodeBlock = .init()
     
     lazy var secondaryButton = PeekButton(type: .secondary, titleText: Constants.resendCodeButtonText)
-    lazy var timerLabel = PeekLabel(type: .secondary, text: Constants.timerLabelDefault, font: .caption1)
+//    lazy var timerLabel = PeekLabel(type: .secondary, text: Constants.timerLabelDefault, font: .caption1)
+    lazy var timerLabel = PeekCountDownTimerView()
     lazy var timerHStack = getBottomHStackView(with: [secondaryButton, timerLabel])
     
     lazy var tapHandlerView = PeekTapHandlerView()

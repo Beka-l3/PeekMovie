@@ -15,7 +15,7 @@ extension PasswordRestorationViewController: UITextFieldDelegate {
         switch passwordRestorationState {
             
         case .enterEmail:
-            guard textField === viewComponents.emailTextField, let emailAddressString = viewComponents.emailTextField.text else {
+            guard textField === viewComponents.emailTextField, let emailAddressString = textField.text else {
                 break
             }
             
@@ -25,7 +25,11 @@ extension PasswordRestorationViewController: UITextFieldDelegate {
             break
             
         case .resetPassword:
-            break
+            guard textField === viewComponents.passwordTextField, let newPasswordString = textField.text else {
+                break
+            }
+            
+            viewComponents.checkResetPasswordStateComponents(withValidation: isValidPassword(passwordString: newPasswordString))
             
         }
         

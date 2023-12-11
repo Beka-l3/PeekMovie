@@ -26,6 +26,7 @@ final class PasswordRestorationViewController: UIViewController {
         
         navigationController?.isNavigationBarHidden = true
         viewComponents.reset()
+        changeState(to: .enterEmail)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,6 +55,7 @@ final class PasswordRestorationViewController: UIViewController {
         
         viewComponents.emailTextField.delegate = self
         viewComponents.passwordTextField.delegate = self
+        viewComponents.timerLabel.delegate = self
     }
     
     private func setupLayers() {
