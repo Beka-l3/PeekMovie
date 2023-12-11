@@ -15,15 +15,28 @@ protocol PeekCountDownTimerViewDelegate: AnyObject {
 
 final class PeekCountDownTimerView: UIView {
     
+    enum CountDownType {
+        case contextual
+        case separate
+    }
+    
+    enum CountDownEndingType {
+        case empty
+        case placeholder
+    }
+    
+    
     weak var delegate: PeekCountDownTimerViewDelegate?
     
-    var isContextual: Bool
+//    var isContextual: Bool
     
     private(set) var seconds: Int
+    private(set) var type: CountDownType
+    private(set) var endingType: CountDownEndingType
     
     lazy var timerLabel = PeekLabel(
         type: .secondary,
-        text: isContextual ? Constants.timerLabelContextualDefault : Constants.timerLabelDefault,
+        text: type == .contextual ? Constants.timerLabelContextualDefault : Constants.timerLabelDefault,
         font: .caption1
     )
     
@@ -31,8 +44,10 @@ final class PeekCountDownTimerView: UIView {
     
     
 //    MARK: lifecycle
-    init(isContextual: Bool = true) {
-        self.isContextual = isContextual
+    init(isContextual: Bool = true, type: CountDownType = .contextual, endingType: CountDownEndingType = .empty) {
+//        self.isContextual = isContextual
+        self.type = type
+        self.endingType = endingType
         self.seconds = Constants.defaultSecondsAmount
         self.timer = .init()
         super.init(frame: .zero)
@@ -41,7 +56,9 @@ final class PeekCountDownTimerView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        self.isContextual = true
+//        self.isContextual = true
+        self.type = .contextual
+        self.endingType = .empty
         self.seconds = Constants.defaultSecondsAmount
         self.timer = .init()
         super.init(coder: coder)
@@ -102,7 +119,7 @@ extension PeekCountDownTimerView {
     
     func stopCountDown() {
         seconds = .zero
-        timerLabel.text = (isContextual ? Constants.contextualText + Constants.space : Constants.empty) + "\(seconds)" + Constants.space + Constants.unitText
+        updateLabel(finished: true)
         timer.invalidate()
     }
     
@@ -124,12 +141,44 @@ extension PeekCountDownTimerView {
     }
     
     @objc func updateTimer() {
-        seconds -= 1
-        timerLabel.text = (isContextual ? Constants.contextualText + Constants.space : Constants.empty) + "\(seconds)" + Constants.space + Constants.unitText
-        
-        if seconds == .zero {
-            timer.invalidate()
+        if seconds > 0 {
+            seconds -= 1
+            updateLabel()
+        } else if seconds <= .zero {
+            stopCountDown()
             delegate?.finishedCountDown()
+        }
+    }
+    
+    private func updateLabel(finished: Bool = false) {
+        if finished {
+            
+            switch (endingType, type) {
+                
+            case (.empty, _):
+                timerLabel.text = Constants.empty
+                
+            case (.placeholder, .contextual):
+                timerLabel.text = Constants.timerLabelContextualDefault
+                
+            case (.placeholder, .separate):
+                timerLabel.text = Constants.timerLabelDefault
+                
+            }
+            
+        } else {
+//            timerLabel.text = (type == .contextual ? Constants.contextualText + Constants.space : Constants.empty) + "\(seconds)" + Constants.space + Constants.unitText
+            
+            switch (type, endingType) {
+                
+            case (.contextual, _):
+                timerLabel.text = Constants.contextualText + Constants.space + "\(seconds)" + Constants.space + Constants.unitText
+                
+            case (.separate, _):
+                timerLabel.text = Constants.empty + "\(seconds)" + Constants.space + Constants.unitText
+                
+            }
+            
         }
     }
     
