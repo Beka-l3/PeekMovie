@@ -25,7 +25,8 @@ extension PasswordRestorationViewController {
             }
             
         case .sendVerificationCode:
-            break
+            viewComponents.prepareSendVerificationCodeStateComponents()
+            viewComponents.startCountDown()
             
         case .resetPassword:
             if let passwordString = viewComponents.passwordTextField.text {

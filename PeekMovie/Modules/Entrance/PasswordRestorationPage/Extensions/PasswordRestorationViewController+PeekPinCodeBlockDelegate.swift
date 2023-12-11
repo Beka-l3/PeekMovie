@@ -23,6 +23,7 @@ extension PasswordRestorationViewController: PeekPinCodeBlockDelegate {
     }
     
     @MainActor private func sendVerificationCode() {
+        viewComponents.stopCountDown()
         changeState(to: .resetPassword)
     }
 }
