@@ -18,12 +18,11 @@ extension PasswordRestorationViewController: PeekPinCodeBlockDelegate {
                 print("oops task sleep failed")
             }
             
-            changeState()
+            sendVerificationCode()
         }
     }
     
-    @MainActor private func changeState() {
-        viewComponents.changeState(to: .resetPassword, parent: view)
-        passwordRestorationState = .resetPassword
+    @MainActor private func sendVerificationCode() {
+        changeState(to: .resetPassword)
     }
 }

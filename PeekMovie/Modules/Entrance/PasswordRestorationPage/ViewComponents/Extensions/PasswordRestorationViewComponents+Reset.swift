@@ -11,6 +11,8 @@ import UIKit
 extension PasswordRestorationViewComponents {
     func reset() {
         
+        changeState(to: .enterEmail)
+        
         emailTextField.text = ""
         pinCodeBlockView.clearAll()
         passwordTextField.text = ""

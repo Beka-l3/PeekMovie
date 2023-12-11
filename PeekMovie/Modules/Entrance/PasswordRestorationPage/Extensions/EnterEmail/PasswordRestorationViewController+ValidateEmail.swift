@@ -31,4 +31,10 @@ extension PasswordRestorationViewController {
         
         return  returnValue
     }
+    
+    func isValidPassword(password: String) -> Bool {
+        
+        return true
+        
+    }
 }

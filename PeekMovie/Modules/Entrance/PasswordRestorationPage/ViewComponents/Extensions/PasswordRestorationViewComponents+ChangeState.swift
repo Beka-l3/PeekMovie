@@ -72,6 +72,7 @@ extension PasswordRestorationViewComponents {
             
         default:
             break
+            
         }
         
     }
@@ -92,5 +93,25 @@ extension PasswordRestorationViewComponents {
             self.timerLabel.startCountDown()
         }
     }
+    
+    
+//    MARK: reset password
+    func checkResetPasswordStateComponents(withValidation isValid: Bool) {
+        
+        switch (isMainButtonEnabled, isValid) {
+            
+        case (false, true):
+            enableMainButton()
+            
+        case (true, false):
+            disableMainButton()
+            
+        default:
+            break
+            
+        }
+        
+    }
+    
 }
 

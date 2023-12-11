@@ -11,20 +11,19 @@ import UIKit
 extension PasswordRestorationViewController {
     
     @objc func handleMainButton() {
+        
         switch passwordRestorationState {
             
         case .enterEmail:
             viewComponents.prepareSendVerificationCodeComponents()
-            viewComponents.changeState(to: .sendVerificationCode, parent: view)
-            passwordRestorationState = .sendVerificationCode
+            changeState(to: .sendVerificationCode)
             viewComponents.emailTextField.resignFirstResponder()
             
         case .sendVerificationCode:
             break
             
         case .resetPassword:
-            viewComponents.changeState(to: .enterEmail, parent: view)
-            passwordRestorationState = .enterEmail
+            dismiss(animated: true)
             viewComponents.passwordTextField.resignFirstResponder()
             
         }
@@ -32,17 +31,21 @@ extension PasswordRestorationViewController {
     }
     
     @objc func handleSecondaryButton() {
-        // state = validate code  // after timer resend code LOGIC
         
-        /// temporary logic to change state
-//        viewComponents.changeState(to: .resetPassword, parent: view)
-//        passwordRestorationState = .resetPassword
+        switch passwordRestorationState {
         
-        viewComponents.pinCodeBlockView.clearAll()
-        viewComponents.startCountDown()
+        case .enterEmail:
+            break
+            
+        case .sendVerificationCode:
+            viewComponents.pinCodeBlockView.clearAll()
+            viewComponents.startCountDown()
+        
+        case .resetPassword:
+            break
+            
+        }
+        
     }
     
-    @objc func handleDoneFromKeyboard() {
-        
-    }
 }
