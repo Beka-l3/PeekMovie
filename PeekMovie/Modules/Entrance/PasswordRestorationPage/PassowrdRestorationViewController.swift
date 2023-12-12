@@ -17,7 +17,6 @@ final class PasswordRestorationViewController: UIViewController {
 //    MARK: lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViews()
     }
     

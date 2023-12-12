@@ -40,8 +40,6 @@ extension AuthorizationViewController {
     }
     
     @objc func handleTertiaryButton() {
-        print("Tertiary button tapped")
-        
         
         present(passwordRestorationPage, animated: true)
         
