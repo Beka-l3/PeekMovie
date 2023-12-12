@@ -10,7 +10,11 @@ import Foundation
 
 protocol NetworkService: AnyObject {
     
-
+    @discardableResult
+    func signIn(
+        credentials: SignInCredentials,
+        completion: @escaping (Result<UserResponse, HTTPError>) -> Void
+    ) -> Cancellable?
     
     
     

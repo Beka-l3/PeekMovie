@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 final class APIService {
     
     public var isMockingAll: Bool = false
@@ -21,6 +22,7 @@ final class APIService {
 //        self.mockingNetworkService = MockingNetworkServiceImplementation()
     }
 }
+
 
 extension APIService {
     public enum ServiceError: Error {
