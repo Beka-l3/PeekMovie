@@ -46,6 +46,8 @@ final class LobbyViewController: UIViewController {
 //    MARK: private func
     private func setupViews() {
         viewComponents.setupView(parent: view)
+        
+        viewComponents.tertiaryButton.addTarget(self, action: #selector(handleTertiaryButton), for: .touchUpInside)
     }
     
     private func setupLayers() {
