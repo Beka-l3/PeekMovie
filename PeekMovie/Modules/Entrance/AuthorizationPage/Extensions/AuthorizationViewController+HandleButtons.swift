@@ -15,6 +15,7 @@ extension AuthorizationViewController {
         switch entranceState {
         
         case .signIn:
+            navigationController?.pushViewController(LobbyViewController(), animated: true)
             break
             
         case .signUp:

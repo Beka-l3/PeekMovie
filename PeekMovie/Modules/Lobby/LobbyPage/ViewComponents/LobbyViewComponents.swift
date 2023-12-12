@@ -14,6 +14,9 @@ final class LobbyViewComponents {
     
     lazy var appLogoIconView = PeekIconView(image: Images.Logo.App.x90, size: .x90, cornerRadius: Constants.paddingM / 2, withShadow: true)
     
+    lazy var usernameIconView = PeekIconView(image: Images.Icon.Profile.x24)
+    lazy var usernameLabel = PeekLabel(type: .main, text: Constants.usernameLabelTextDefault, font: .body)
+    
     lazy var roomIdTextField = PeekInputTextField(placeholder: Constants.roomidTextFieldPlaceholder)
     lazy var roomIdIconView = PeekIconView(image: Images.Icon.MovieRoom.x24)
     
@@ -21,8 +24,8 @@ final class LobbyViewComponents {
     lazy var secondaryButton = PeekButton(type: .secondary, titleText: Constants.createButtonTitleText)
     lazy var tertiaryButton = PeekButton(type: .tertiary, titleText: Constants.logOutButtonTitleText)
     
-    lazy var createRoomLabelLabel = PeekLabel(type: .secondary, text: Constants.createRoomLabelText, font: .caption1)
-    lazy var createRoomHStack = getBottomHStackView(with: [createRoomLabelLabel, secondaryButton])
+    lazy var createRoomLabel = PeekLabel(type: .secondary, text: Constants.createRoomLabelText, font: .caption1)
+    lazy var createRoomHStack = getBottomHStackView(with: [createRoomLabel, secondaryButton])
     
     lazy var backgroundImage = PeekBackgroundImageView(image: Images.Static.EntranceBackground.normal)
     
@@ -45,16 +48,36 @@ final class LobbyViewComponents {
     }()
     
     
+    
+    
     func setupView(parent: UIView) {
+        parent.backgroundColor = Colors.backgroundPrimary
         
+        parent.addSubview(backgroundImage)
+        parent.addSubview(backgroundImageCover)
         
+        parent.addSubview(appLogoIconView)
+        parent.addSubview(inputBlock)
         
+        inputBlock.addSubview(usernameIconView)
+        inputBlock.addSubview(usernameLabel)
+        
+        inputBlock.addSubview(roomIdIconView)
+        inputBlock.addSubview(roomIdTextField)
+        
+        inputBlock.addSubview(mainButton)
+        inputBlock.addSubview(tertiaryButton)
+        
+        inputBlock.addSubview(createRoomHStack)
+        
+        setupConstraints(parent: parent)
     }
     
     func setupLayers(parent: UIView) {
-    
-        
-        
+        backgroundLinear.frame.size = .init(width: Constants.screenWidth, height: Constants.inputBlockHeight)
+        backgroundLinear.cornerRadius = Constants.paddingM
+        backgroundLinear.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        inputBlock.layer.addSublayer(backgroundLinear)
     }
  
     

@@ -99,6 +99,7 @@
 		078843F42B28710100A68EA5 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078843F32B28710100A68EA5 /* LobbyViewController.swift */; };
 		078843F72B28812D00A68EA5 /* LobbyViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078843F62B28812D00A68EA5 /* LobbyViewComponents.swift */; };
 		078843FA2B28846300A68EA5 /* LobbyViewComponents+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078843F92B28846300A68EA5 /* LobbyViewComponents+Constants.swift */; };
+		078843FC2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078843FB2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift */; };
 		0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F41E28F82990006F447F /* EntranceModulePresenter.swift */; };
 		0788F42228F829B5006F447F /* EntranceModuleBuilderOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42128F829B5006F447F /* EntranceModuleBuilderOld.swift */; };
 		0788F42428F82B19006F447F /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42328F82B19006F447F /* LoginPage.swift */; };
@@ -260,6 +261,7 @@
 		078843F32B28710100A68EA5 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		078843F62B28812D00A68EA5 /* LobbyViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewComponents.swift; sourceTree = "<group>"; };
 		078843F92B28846300A68EA5 /* LobbyViewComponents+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LobbyViewComponents+Constants.swift"; sourceTree = "<group>"; };
+		078843FB2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LobbyViewComponents+Constraints.swift"; sourceTree = "<group>"; };
 		0788F41E28F82990006F447F /* EntranceModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModulePresenter.swift; sourceTree = "<group>"; };
 		0788F42128F829B5006F447F /* EntranceModuleBuilderOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModuleBuilderOld.swift; sourceTree = "<group>"; };
 		0788F42328F82B19006F447F /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -737,6 +739,7 @@
 			isa = PBXGroup;
 			children = (
 				078843F92B28846300A68EA5 /* LobbyViewComponents+Constants.swift */,
+				078843FB2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1240,6 +1243,7 @@
 				077933E32A8FF9B000B0F509 /* ConsoleDestination.swift in Sources */,
 				07ABF65C29193799007C4A52 /* InformativeViewComponents.swift in Sources */,
 				074B8A642A8C239200EB39C2 /* Service.swift in Sources */,
+				078843FC2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift in Sources */,
 				077B2EDC29080E2C0087504C /* PosterViewModels.swift in Sources */,
 				07DBA84328F3F734000A1312 /* AuthorizedPage.swift in Sources */,
 				074B8A6D2A8C257E00EB39C2 /* loginNSE.swift in Sources */,
