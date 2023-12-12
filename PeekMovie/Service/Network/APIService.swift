@@ -12,15 +12,13 @@ final class APIService {
     
     public var isMockingAll: Bool = false
     
-    internal let networkClient: NetworkClient
-    internal let networkService: NetworkService
-//    internal let mockingNetworkService: MockingNetworkServiceImplementation
     
+    
+//    MARK: lifecycle
     init() {
-        self.networkClient = NetworkClientImplementation(urlSession: .init(configuration: .default))
-        self.networkService = NetworkServiceImplementation(networkClient: networkClient)
-//        self.mockingNetworkService = MockingNetworkServiceImplementation()
+
     }
+    
 }
 
 
@@ -31,3 +29,4 @@ extension APIService {
         case imageComressionError, jsonEncodingFailed
     }
 }
+
