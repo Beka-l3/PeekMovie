@@ -48,6 +48,10 @@ extension Images.Icon {
     enum Profile {
         static let x24 = UIImage(named: "Profile icon x24")
     }
+    
+    enum MovieRoom {
+        static let x24 = UIImage(named: "Movie Room x24")
+    }
 }
 
 extension Images.Static {
