@@ -10,15 +10,10 @@ import Foundation
 
 protocol NetworkService: AnyObject {
     
-
     
     
     
-    
-    
-    
-    
-    //  MARK: - OLD
+    //  MARK: - OLD -
     @discardableResult
     func register(
         credentials: RegistrationFormDTO,

@@ -100,6 +100,8 @@
 		078843F72B28812D00A68EA5 /* LobbyViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078843F62B28812D00A68EA5 /* LobbyViewComponents.swift */; };
 		078843FA2B28846300A68EA5 /* LobbyViewComponents+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078843F92B28846300A68EA5 /* LobbyViewComponents+Constants.swift */; };
 		078843FC2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078843FB2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift */; };
+		078843FE2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078843FD2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift */; };
+		0788440A2B28972F00A68EA5 /* APIService+SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078844092B28972F00A68EA5 /* APIService+SignIn.swift */; };
 		0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F41E28F82990006F447F /* EntranceModulePresenter.swift */; };
 		0788F42228F829B5006F447F /* EntranceModuleBuilderOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42128F829B5006F447F /* EntranceModuleBuilderOld.swift */; };
 		0788F42428F82B19006F447F /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42328F82B19006F447F /* LoginPage.swift */; };
@@ -262,6 +264,8 @@
 		078843F62B28812D00A68EA5 /* LobbyViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewComponents.swift; sourceTree = "<group>"; };
 		078843F92B28846300A68EA5 /* LobbyViewComponents+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LobbyViewComponents+Constants.swift"; sourceTree = "<group>"; };
 		078843FB2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LobbyViewComponents+Constraints.swift"; sourceTree = "<group>"; };
+		078843FD2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LobbyViewController+HandleButtons.swift"; sourceTree = "<group>"; };
+		078844092B28972F00A68EA5 /* APIService+SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+SignIn.swift"; sourceTree = "<group>"; };
 		0788F41E28F82990006F447F /* EntranceModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModulePresenter.swift; sourceTree = "<group>"; };
 		0788F42128F829B5006F447F /* EntranceModuleBuilderOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModuleBuilderOld.swift; sourceTree = "<group>"; };
 		0788F42328F82B19006F447F /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -411,8 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				077977D92A8E6D3C000DAF72 /* APIService.swift */,
-				07EB1CB728FD47740031598A /* Client */,
-				074B8A622A8C237A00EB39C2 /* Service */,
+				078844082B28971A00A68EA5 /* Extensions */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 		077977582A8E33B6000DAF72 /* Old */ = {
 			isa = PBXGroup;
 			children = (
+				078844102B28A17600A68EA5 /* Service */,
 				07DBA83E28F3F734000A1312 /* AppDelegateOld.swift */,
 				074B8A662A8C244400EB39C2 /* App */,
 				07DBA85628F55E00000A1312 /* Utils */,
@@ -715,6 +719,7 @@
 			children = (
 				078843F32B28710100A68EA5 /* LobbyViewController.swift */,
 				078843F52B28811B00A68EA5 /* ViewComponents */,
+				078843FF2B288EFF00A68EA5 /* Extensions */,
 			);
 			path = LobbyPage;
 			sourceTree = "<group>";
@@ -742,6 +747,39 @@
 				078843FB2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		078843FF2B288EFF00A68EA5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				078843FD2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		078844082B28971A00A68EA5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				078844092B28972F00A68EA5 /* APIService+SignIn.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		078844102B28A17600A68EA5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				078844112B28A1B000A68EA5 /* Network */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		078844112B28A1B000A68EA5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				07EB1CB728FD47740031598A /* Client */,
+				074B8A622A8C237A00EB39C2 /* Service */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		0788F41B28F82942006F447F /* EntranceModuleOld */ = {
@@ -1173,6 +1211,7 @@
 				0731B0602B00ED2C006162D7 /* PeekBackgroundImageView.swift in Sources */,
 				07761B4C2B1E77E700718491 /* PeekPinCodeBlock+TextField.swift in Sources */,
 				07BE231D2B023A7C00E70299 /* PasswordRestorationViewComponents.swift in Sources */,
+				078843FE2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift in Sources */,
 				07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */,
 				0731B0622B00EE89006162D7 /* PeekCoverView.swift in Sources */,
 				073B584D28F97B20000EE21F /* RegisterPage.swift in Sources */,
@@ -1220,6 +1259,7 @@
 				07EB1CC328FD48100031598A /* HTTPError.swift in Sources */,
 				07DBA85328F3F830000A1312 /* AppCoordinatorOld.swift in Sources */,
 				0731BAFE292D5B8F004CCE79 /* ExtensionCollectionView.swift in Sources */,
+				0788440A2B28972F00A68EA5 /* APIService+SignIn.swift in Sources */,
 				073B585828FA1698000EE21F /* InteractiveViewComponents.swift in Sources */,
 				07CEA3982AF7A8A400E69FAB /* Images.swift in Sources */,
 				07A66F2B2916CB2F003BB6B9 /* ErrorDTO.swift in Sources */,
