@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */; };
+		0715518E2B2A0EAA00E7D6B4 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */; };
+		071551902B2A0F4300E7D6B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */; };
 		071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071A3BEF291FC3BE009A7689 /* RoomDTO.swift */; };
 		072500822B20BC60003EC872 /* PeekPinCodeDigitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */; };
 		072500842B20BE4A003EC872 /* PeekTapHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */; };
@@ -101,8 +103,8 @@
 		078843FC2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078843FB2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift */; };
 		078843FE2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078843FD2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift */; };
 		0788440A2B28972F00A68EA5 /* APIService+SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078844092B28972F00A68EA5 /* APIService+SignIn.swift */; };
-		078844162B28A5BD00A68EA5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078844152B28A5BD00A68EA5 /* NetworkService.swift */; };
-		078844182B28A63E00A68EA5 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078844172B28A63E00A68EA5 /* NetworkClient.swift */; };
+		078844162B28A5BD00A68EA5 /* PeekNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078844152B28A5BD00A68EA5 /* PeekNetworkService.swift */; };
+		078844182B28A63E00A68EA5 /* PeekNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078844172B28A63E00A68EA5 /* PeekNetworkClient.swift */; };
 		0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F41E28F82990006F447F /* EntranceModulePresenter.swift */; };
 		0788F42228F829B5006F447F /* EntranceModuleBuilderOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42128F829B5006F447F /* EntranceModuleBuilderOld.swift */; };
 		0788F42428F82B19006F447F /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42328F82B19006F447F /* LoginPage.swift */; };
@@ -173,6 +175,8 @@
 
 /* Begin PBXFileReference section */
 		070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPagePickerViewExtension.swift; sourceTree = "<group>"; };
+		0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		071A3BEF291FC3BE009A7689 /* RoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDTO.swift; sourceTree = "<group>"; };
 		072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekPinCodeDigitLabel.swift; sourceTree = "<group>"; };
 		072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekTapHandlerView.swift; sourceTree = "<group>"; };
@@ -266,8 +270,8 @@
 		078843FB2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LobbyViewComponents+Constraints.swift"; sourceTree = "<group>"; };
 		078843FD2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LobbyViewController+HandleButtons.swift"; sourceTree = "<group>"; };
 		078844092B28972F00A68EA5 /* APIService+SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+SignIn.swift"; sourceTree = "<group>"; };
-		078844152B28A5BD00A68EA5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		078844172B28A63E00A68EA5 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		078844152B28A5BD00A68EA5 /* PeekNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekNetworkService.swift; sourceTree = "<group>"; };
+		078844172B28A63E00A68EA5 /* PeekNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekNetworkClient.swift; sourceTree = "<group>"; };
 		0788F41E28F82990006F447F /* EntranceModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModulePresenter.swift; sourceTree = "<group>"; };
 		0788F42128F829B5006F447F /* EntranceModuleBuilderOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModuleBuilderOld.swift; sourceTree = "<group>"; };
 		0788F42328F82B19006F447F /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -797,8 +801,9 @@
 		078844132B28A59C00A68EA5 /* NetworkClient */ = {
 			isa = PBXGroup;
 			children = (
+				0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */,
+				078844172B28A63E00A68EA5 /* PeekNetworkClient.swift */,
 				07EB1CBC28FD48050031598A /* Model */,
-				078844172B28A63E00A68EA5 /* NetworkClient.swift */,
 			);
 			path = NetworkClient;
 			sourceTree = "<group>";
@@ -806,7 +811,8 @@
 		078844142B28A5A500A68EA5 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				078844152B28A5BD00A68EA5 /* NetworkService.swift */,
+				0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */,
+				078844152B28A5BD00A68EA5 /* PeekNetworkService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -1206,7 +1212,7 @@
 			files = (
 				074A7696292ACDBB005D3E10 /* CollectionViewModels.swift in Sources */,
 				07A130EF2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateString.swift in Sources */,
-				078844182B28A63E00A68EA5 /* NetworkClient.swift in Sources */,
+				078844182B28A63E00A68EA5 /* PeekNetworkClient.swift in Sources */,
 				077933D52A8FF8C000B0F509 /* LoggerProtocol.swift in Sources */,
 				074B8A712A8C25DD00EB39C2 /* CreateRoomNSE.swift in Sources */,
 				07C8212F291019E000B055D0 /* MovieDTO.swift in Sources */,
@@ -1215,6 +1221,7 @@
 				07EB1CCA28FDE6EB0031598A /* WaitingRoomViewComponents.swift in Sources */,
 				07FC950F2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift in Sources */,
 				077B2EDE29080E680087504C /* SMConstants.swift in Sources */,
+				071551902B2A0F4300E7D6B4 /* NetworkService.swift in Sources */,
 				07D401BD28F890F400BF3F55 /* LaunchPage.swift in Sources */,
 				07C295EE2B2732480020F44C /* PasswordRestorationViewController+ChangeState.swift in Sources */,
 				07ABF65E291AD436007C4A52 /* ExtensionLoginPagePresenter.swift in Sources */,
@@ -1291,11 +1298,12 @@
 				073B585828FA1698000EE21F /* InteractiveViewComponents.swift in Sources */,
 				07CEA3982AF7A8A400E69FAB /* Images.swift in Sources */,
 				07A66F2B2916CB2F003BB6B9 /* ErrorDTO.swift in Sources */,
+				0715518E2B2A0EAA00E7D6B4 /* NetworkClient.swift in Sources */,
 				0779775A2A8E33EA000DAF72 /* AppDelegate.swift in Sources */,
 				077B2ECD29069A060087504C /* SessionModuleBuilderOld.swift in Sources */,
 				07CEA3932AF5661D00E69FAB /* Colors.swift in Sources */,
 				077977DA2A8E6D3C000DAF72 /* APIService.swift in Sources */,
-				078844162B28A5BD00A68EA5 /* NetworkService.swift in Sources */,
+				078844162B28A5BD00A68EA5 /* PeekNetworkService.swift in Sources */,
 				074B8A752A8C262C00EB39C2 /* QuitFromRoomNSE.swift in Sources */,
 				077977E62A8E855D000DAF72 /* EntranceModuleBuilder.swift in Sources */,
 				072500822B20BC60003EC872 /* PeekPinCodeDigitLabel.swift in Sources */,
