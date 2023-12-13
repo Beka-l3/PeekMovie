@@ -8,11 +8,11 @@
 import Foundation
 
 
-final class NetworkServiceImplementation: NetworkService {
+final class NetworkServiceImplementation: NetworkServiceOLD {
         
-    internal let networkClient: NetworkClient
+    internal let networkClient: NetworkClientOLD
 
-    init(networkClient: NetworkClient) {
+    init(networkClient: NetworkClientOLD) {
         self.networkClient = networkClient
     }
 }

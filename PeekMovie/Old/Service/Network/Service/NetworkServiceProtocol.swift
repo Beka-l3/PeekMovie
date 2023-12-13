@@ -8,7 +8,7 @@
 import Foundation
 
 
-protocol NetworkService: AnyObject {
+protocol NetworkServiceOLD: AnyObject {
     
     
     

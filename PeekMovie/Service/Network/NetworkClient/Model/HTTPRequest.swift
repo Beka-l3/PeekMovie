@@ -3,6 +3,7 @@ import Foundation
 typealias HTTPRequestQueryItem = (key: String, value: String?)
 
 struct HTTPRequest {
+    
     let route: String
     let headers: [String: String]
     let body: Data?
@@ -29,4 +30,5 @@ struct HTTPRequest {
         self.keyDecodingStrategy = keyDecodingStrategy
         self.dateDecodingStrategy = dateDecodingStrategy
     }
+    
 }

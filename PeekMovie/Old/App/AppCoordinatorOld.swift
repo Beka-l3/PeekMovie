@@ -12,12 +12,12 @@ import UIKit
 final class AppCoordinatorOld {
     
     private let launchPage: LaunchPage
-    private let networkClient: NetworkClient
-    private let networkService: NetworkService
+    private let networkClient: NetworkClientOLD
+    private let networkService: NetworkServiceOLD
     private let entranceModule: EntranceModuleBuilderOld
     private let sessionModule: SessionModuleBuilderOld
     
-    init(isLoggedIn: Bool, launchPage: LaunchPage, networkClient: NetworkClient, networkService: NetworkService) {
+    init(isLoggedIn: Bool, launchPage: LaunchPage, networkClient: NetworkClientOLD, networkService: NetworkServiceOLD) {
         self.launchPage = launchPage
         self.networkClient = networkClient
         self.networkService = networkService

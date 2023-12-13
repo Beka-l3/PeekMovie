@@ -17,7 +17,7 @@ final class SessionModulePresenter: NSObject {
     
     internal var mainPage: PosterViewPage
     internal var secondaryPage: CollectionViewPage
-    internal let networkService: NetworkService
+    internal let networkService: NetworkServiceOLD
     
     internal var currentMovie: MovieDTO?
     internal var currentPosterImage: UIImage?
@@ -29,7 +29,7 @@ final class SessionModulePresenter: NSObject {
     init(
         mainPage: PosterViewPage,
         secondaryPage: CollectionViewPage,
-        networkService: NetworkService
+        networkService: NetworkServiceOLD
     ) {
         self.mainPage = mainPage
         self.secondaryPage = secondaryPage
