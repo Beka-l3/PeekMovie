@@ -10,6 +10,10 @@
 		070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */; };
 		0715518E2B2A0EAA00E7D6B4 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */; };
 		071551902B2A0F4300E7D6B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */; };
+		071551932B2A131800E7D6B4 /* PeekNetworkService+SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071551922B2A131800E7D6B4 /* PeekNetworkService+SignIn.swift */; };
+		071551962B2A137900E7D6B4 /* PeekUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071551952B2A137900E7D6B4 /* PeekUserResponse.swift */; };
+		071551982B2A13AA00E7D6B4 /* PeekUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071551972B2A13AA00E7D6B4 /* PeekUser.swift */; };
+		0715519A2B2A13E300E7D6B4 /* SignInCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071551992B2A13E300E7D6B4 /* SignInCredentials.swift */; };
 		071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071A3BEF291FC3BE009A7689 /* RoomDTO.swift */; };
 		072500822B20BC60003EC872 /* PeekPinCodeDigitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */; };
 		072500842B20BE4A003EC872 /* PeekTapHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */; };
@@ -177,6 +181,10 @@
 		070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPagePickerViewExtension.swift; sourceTree = "<group>"; };
 		0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		071551922B2A131800E7D6B4 /* PeekNetworkService+SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekNetworkService+SignIn.swift"; sourceTree = "<group>"; };
+		071551952B2A137900E7D6B4 /* PeekUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekUserResponse.swift; sourceTree = "<group>"; };
+		071551972B2A13AA00E7D6B4 /* PeekUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekUser.swift; sourceTree = "<group>"; };
+		071551992B2A13E300E7D6B4 /* SignInCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCredentials.swift; sourceTree = "<group>"; };
 		071A3BEF291FC3BE009A7689 /* RoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDTO.swift; sourceTree = "<group>"; };
 		072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekPinCodeDigitLabel.swift; sourceTree = "<group>"; };
 		072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekTapHandlerView.swift; sourceTree = "<group>"; };
@@ -353,11 +361,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		072EE6582A95350100CFCC2A /* Models */ = {
+		071551912B2A130300E7D6B4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				071551922B2A131800E7D6B4 /* PeekNetworkService+SignIn.swift */,
 			);
-			path = Models;
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		071551942B2A134000E7D6B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				071551952B2A137900E7D6B4 /* PeekUserResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		072EE6582A95350100CFCC2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				071551972B2A13AA00E7D6B4 /* PeekUser.swift */,
+				071551992B2A13E300E7D6B4 /* SignInCredentials.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		072EE65B2A95359C00CFCC2A /* AuthorizationPage */ = {
@@ -420,9 +446,10 @@
 		074B8A612A8C237200EB39C2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				078844122B28A58A00A68EA5 /* API */,
+				071551942B2A134000E7D6B4 /* Model */,
 				078844132B28A59C00A68EA5 /* NetworkClient */,
 				078844142B28A5A500A68EA5 /* NetworkService */,
-				078844122B28A58A00A68EA5 /* API */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -813,6 +840,7 @@
 			children = (
 				0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */,
 				078844152B28A5BD00A68EA5 /* PeekNetworkService.swift */,
+				071551912B2A130300E7D6B4 /* Extension */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -1038,7 +1066,7 @@
 				0779775F2A8E3567000DAF72 /* App */,
 				077977D42A8E6B47000DAF72 /* Service */,
 				077977612A8E3674000DAF72 /* Utils */,
-				072EE6582A95350100CFCC2A /* Models */,
+				072EE6582A95350100CFCC2A /* Model */,
 				077977602A8E3662000DAF72 /* ViewComponents */,
 				07BD8B732A93EE660089199E /* Modules */,
 				077977582A8E33B6000DAF72 /* Old */,
@@ -1217,6 +1245,7 @@
 				074B8A712A8C25DD00EB39C2 /* CreateRoomNSE.swift in Sources */,
 				07C8212F291019E000B055D0 /* MovieDTO.swift in Sources */,
 				078843F72B28812D00A68EA5 /* LobbyViewComponents.swift in Sources */,
+				071551982B2A13AA00E7D6B4 /* PeekUser.swift in Sources */,
 				07CEA39B2AF7ABB800E69FAB /* PeekButton.swift in Sources */,
 				07EB1CCA28FDE6EB0031598A /* WaitingRoomViewComponents.swift in Sources */,
 				07FC950F2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift in Sources */,
@@ -1228,6 +1257,8 @@
 				077B2ED829069BAB0087504C /* CollectionView.swift in Sources */,
 				07ABF662291AD4BF007C4A52 /* ExtensionRegisterPagePresenter.swift in Sources */,
 				077933D72A8FF8E600B0F509 /* LogLevel.swift in Sources */,
+				0715519A2B2A13E300E7D6B4 /* SignInCredentials.swift in Sources */,
+				071551962B2A137900E7D6B4 /* PeekUserResponse.swift in Sources */,
 				077933DB2A8FF93000B0F509 /* LogFormat.swift in Sources */,
 				0788F42428F82B19006F447F /* LoginPage.swift in Sources */,
 				071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */,
@@ -1335,6 +1366,7 @@
 				07BB3FD62AF90638001E0E63 /* PeekLabel.swift in Sources */,
 				077FD1EA2B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift in Sources */,
 				07ABF660291AD4A7007C4A52 /* ExtensionPasswordPagePresenter.swift in Sources */,
+				071551932B2A131800E7D6B4 /* PeekNetworkService+SignIn.swift in Sources */,
 				0731B0642B00F6A5006162D7 /* AuthorizationViewComponents+Constants+ChangeState.swift in Sources */,
 				07B09C972B24FCE70015B422 /* PasswordRestorationViewController+CountDownTimerView.swift in Sources */,
 				0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */,

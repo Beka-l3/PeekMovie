@@ -8,20 +8,6 @@
 import Foundation
 
 
-
-struct SignInCredentials: Encodable {
-    
-}
-
-struct PeekUserResponse: Decodable {
-    
-}
-
-struct PeekUser {
-    
-}
-
-
 protocol NetworkService {
     
     @discardableResult
