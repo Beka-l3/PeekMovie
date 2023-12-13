@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */; };
+		0715518E2B2A0EAA00E7D6B4 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */; };
+		071551902B2A0F4300E7D6B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */; };
+		071551932B2A131800E7D6B4 /* PeekNetworkService+SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071551922B2A131800E7D6B4 /* PeekNetworkService+SignIn.swift */; };
+		071551962B2A137900E7D6B4 /* PeekUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071551952B2A137900E7D6B4 /* PeekUserResponse.swift */; };
+		071551982B2A13AA00E7D6B4 /* PeekUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071551972B2A13AA00E7D6B4 /* PeekUser.swift */; };
+		0715519A2B2A13E300E7D6B4 /* SignInCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071551992B2A13E300E7D6B4 /* SignInCredentials.swift */; };
 		071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071A3BEF291FC3BE009A7689 /* RoomDTO.swift */; };
 		072500822B20BC60003EC872 /* PeekPinCodeDigitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */; };
 		072500842B20BE4A003EC872 /* PeekTapHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */; };
@@ -76,7 +82,6 @@
 		077977AB2A8E3F4C000DAF72 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0779778F2A8E383A000DAF72 /* Poppins-BoldItalic.ttf */; };
 		077977AC2A8E3F4C000DAF72 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 077977942A8E383B000DAF72 /* Poppins-Italic.ttf */; };
 		077977AD2A8E3F4C000DAF72 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 077977972A8E383B000DAF72 /* Poppins-Light.ttf */; };
-		077977D82A8E6C0B000DAF72 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977D72A8E6C0B000DAF72 /* Empty.swift */; };
 		077977DA2A8E6D3C000DAF72 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977D92A8E6D3C000DAF72 /* APIService.swift */; };
 		077977DC2A8E717B000DAF72 /* UINavigationController+FadeTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977DB2A8E717B000DAF72 /* UINavigationController+FadeTo.swift */; };
 		077977E02A8E7253000DAF72 /* Service+KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977DF2A8E7253000DAF72 /* Service+KeyChain.swift */; };
@@ -102,6 +107,8 @@
 		078843FC2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078843FB2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift */; };
 		078843FE2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078843FD2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift */; };
 		0788440A2B28972F00A68EA5 /* APIService+SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078844092B28972F00A68EA5 /* APIService+SignIn.swift */; };
+		078844162B28A5BD00A68EA5 /* PeekNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078844152B28A5BD00A68EA5 /* PeekNetworkService.swift */; };
+		078844182B28A63E00A68EA5 /* PeekNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078844172B28A63E00A68EA5 /* PeekNetworkClient.swift */; };
 		0788F41F28F82990006F447F /* EntranceModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F41E28F82990006F447F /* EntranceModulePresenter.swift */; };
 		0788F42228F829B5006F447F /* EntranceModuleBuilderOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42128F829B5006F447F /* EntranceModuleBuilderOld.swift */; };
 		0788F42428F82B19006F447F /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42328F82B19006F447F /* LoginPage.swift */; };
@@ -156,7 +163,7 @@
 		07DBA85A28F55E3B000A1312 /* AuthorizedPageViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DBA85928F55E3B000A1312 /* AuthorizedPageViewComponents.swift */; };
 		07DBA85D28F55E77000A1312 /* DesignProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DBA85C28F55E77000A1312 /* DesignProtocols.swift */; };
 		07EB1CB928FD47950031598A /* NetworkClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CB828FD47950031598A /* NetworkClientImplementation.swift */; };
-		07EB1CBB28FD47C90031598A /* NrtworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CBA28FD47C90031598A /* NrtworkClientProtocol.swift */; };
+		07EB1CBB28FD47C90031598A /* NetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CBA28FD47C90031598A /* NetworkClientProtocol.swift */; };
 		07EB1CC128FD48100031598A /* HTTPNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CBD28FD48100031598A /* HTTPNetworkResponse.swift */; };
 		07EB1CC228FD48100031598A /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CBE28FD48100031598A /* HTTPRequest.swift */; };
 		07EB1CC328FD48100031598A /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CBF28FD48100031598A /* HTTPError.swift */; };
@@ -172,6 +179,12 @@
 
 /* Begin PBXFileReference section */
 		070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPagePickerViewExtension.swift; sourceTree = "<group>"; };
+		0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		071551922B2A131800E7D6B4 /* PeekNetworkService+SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekNetworkService+SignIn.swift"; sourceTree = "<group>"; };
+		071551952B2A137900E7D6B4 /* PeekUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekUserResponse.swift; sourceTree = "<group>"; };
+		071551972B2A13AA00E7D6B4 /* PeekUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekUser.swift; sourceTree = "<group>"; };
+		071551992B2A13E300E7D6B4 /* SignInCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCredentials.swift; sourceTree = "<group>"; };
 		071A3BEF291FC3BE009A7689 /* RoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDTO.swift; sourceTree = "<group>"; };
 		072500812B20BC60003EC872 /* PeekPinCodeDigitLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekPinCodeDigitLabel.swift; sourceTree = "<group>"; };
 		072500832B20BE4A003EC872 /* PeekTapHandlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekTapHandlerView.swift; sourceTree = "<group>"; };
@@ -240,7 +253,6 @@
 		077977982A8E383B000DAF72 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		077977992A8E383C000DAF72 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		0779779A2A8E383C000DAF72 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
-		077977D72A8E6C0B000DAF72 /* Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Empty.swift; path = ../../../../../../_Components/NetworkClient/Model/Empty.swift; sourceTree = "<group>"; };
 		077977D92A8E6D3C000DAF72 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		077977DB2A8E717B000DAF72 /* UINavigationController+FadeTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+FadeTo.swift"; sourceTree = "<group>"; };
 		077977DF2A8E7253000DAF72 /* Service+KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service+KeyChain.swift"; sourceTree = "<group>"; };
@@ -266,6 +278,8 @@
 		078843FB2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LobbyViewComponents+Constraints.swift"; sourceTree = "<group>"; };
 		078843FD2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LobbyViewController+HandleButtons.swift"; sourceTree = "<group>"; };
 		078844092B28972F00A68EA5 /* APIService+SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+SignIn.swift"; sourceTree = "<group>"; };
+		078844152B28A5BD00A68EA5 /* PeekNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekNetworkService.swift; sourceTree = "<group>"; };
+		078844172B28A63E00A68EA5 /* PeekNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekNetworkClient.swift; sourceTree = "<group>"; };
 		0788F41E28F82990006F447F /* EntranceModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModulePresenter.swift; sourceTree = "<group>"; };
 		0788F42128F829B5006F447F /* EntranceModuleBuilderOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModuleBuilderOld.swift; sourceTree = "<group>"; };
 		0788F42328F82B19006F447F /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -322,7 +336,7 @@
 		07DBA85928F55E3B000A1312 /* AuthorizedPageViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedPageViewComponents.swift; sourceTree = "<group>"; };
 		07DBA85C28F55E77000A1312 /* DesignProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignProtocols.swift; sourceTree = "<group>"; };
 		07EB1CB828FD47950031598A /* NetworkClientImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientImplementation.swift; sourceTree = "<group>"; };
-		07EB1CBA28FD47C90031598A /* NrtworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NrtworkClientProtocol.swift; sourceTree = "<group>"; };
+		07EB1CBA28FD47C90031598A /* NetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientProtocol.swift; sourceTree = "<group>"; };
 		07EB1CBD28FD48100031598A /* HTTPNetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPNetworkResponse.swift; sourceTree = "<group>"; };
 		07EB1CBE28FD48100031598A /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		07EB1CBF28FD48100031598A /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
@@ -347,11 +361,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		072EE6582A95350100CFCC2A /* Models */ = {
+		071551912B2A130300E7D6B4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				071551922B2A131800E7D6B4 /* PeekNetworkService+SignIn.swift */,
 			);
-			path = Models;
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		071551942B2A134000E7D6B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				071551952B2A137900E7D6B4 /* PeekUserResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		072EE6582A95350100CFCC2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				071551972B2A13AA00E7D6B4 /* PeekUser.swift */,
+				071551992B2A13E300E7D6B4 /* SignInCredentials.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		072EE65B2A95359C00CFCC2A /* AuthorizationPage */ = {
@@ -414,8 +446,10 @@
 		074B8A612A8C237200EB39C2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				077977D92A8E6D3C000DAF72 /* APIService.swift */,
-				078844082B28971A00A68EA5 /* Extensions */,
+				078844122B28A58A00A68EA5 /* API */,
+				071551942B2A134000E7D6B4 /* Model */,
+				078844132B28A59C00A68EA5 /* NetworkClient */,
+				078844142B28A5A500A68EA5 /* NetworkService */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -782,6 +816,35 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		078844122B28A58A00A68EA5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				077977D92A8E6D3C000DAF72 /* APIService.swift */,
+				078844082B28971A00A68EA5 /* Extensions */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		078844132B28A59C00A68EA5 /* NetworkClient */ = {
+			isa = PBXGroup;
+			children = (
+				0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */,
+				078844172B28A63E00A68EA5 /* PeekNetworkClient.swift */,
+				07EB1CBC28FD48050031598A /* Model */,
+			);
+			path = NetworkClient;
+			sourceTree = "<group>";
+		};
+		078844142B28A5A500A68EA5 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */,
+				078844152B28A5BD00A68EA5 /* PeekNetworkService.swift */,
+				071551912B2A130300E7D6B4 /* Extension */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
 		0788F41B28F82942006F447F /* EntranceModuleOld */ = {
 			isa = PBXGroup;
 			children = (
@@ -1003,7 +1066,7 @@
 				0779775F2A8E3567000DAF72 /* App */,
 				077977D42A8E6B47000DAF72 /* Service */,
 				077977612A8E3674000DAF72 /* Utils */,
-				072EE6582A95350100CFCC2A /* Models */,
+				072EE6582A95350100CFCC2A /* Model */,
 				077977602A8E3662000DAF72 /* ViewComponents */,
 				07BD8B732A93EE660089199E /* Modules */,
 				077977582A8E33B6000DAF72 /* Old */,
@@ -1044,9 +1107,8 @@
 		07EB1CB728FD47740031598A /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				07EB1CBC28FD48050031598A /* Model */,
 				07EB1CB828FD47950031598A /* NetworkClientImplementation.swift */,
-				07EB1CBA28FD47C90031598A /* NrtworkClientProtocol.swift */,
+				07EB1CBA28FD47C90031598A /* NetworkClientProtocol.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -1054,7 +1116,6 @@
 		07EB1CBC28FD48050031598A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				077977D72A8E6C0B000DAF72 /* Empty.swift */,
 				07EB1CBF28FD48100031598A /* HTTPError.swift */,
 				07EB1CC028FD48100031598A /* HTTPMethod.swift */,
 				07EB1CBD28FD48100031598A /* HTTPNetworkResponse.swift */,
@@ -1179,20 +1240,25 @@
 			files = (
 				074A7696292ACDBB005D3E10 /* CollectionViewModels.swift in Sources */,
 				07A130EF2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateString.swift in Sources */,
+				078844182B28A63E00A68EA5 /* PeekNetworkClient.swift in Sources */,
 				077933D52A8FF8C000B0F509 /* LoggerProtocol.swift in Sources */,
 				074B8A712A8C25DD00EB39C2 /* CreateRoomNSE.swift in Sources */,
 				07C8212F291019E000B055D0 /* MovieDTO.swift in Sources */,
 				078843F72B28812D00A68EA5 /* LobbyViewComponents.swift in Sources */,
+				071551982B2A13AA00E7D6B4 /* PeekUser.swift in Sources */,
 				07CEA39B2AF7ABB800E69FAB /* PeekButton.swift in Sources */,
 				07EB1CCA28FDE6EB0031598A /* WaitingRoomViewComponents.swift in Sources */,
 				07FC950F2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift in Sources */,
 				077B2EDE29080E680087504C /* SMConstants.swift in Sources */,
+				071551902B2A0F4300E7D6B4 /* NetworkService.swift in Sources */,
 				07D401BD28F890F400BF3F55 /* LaunchPage.swift in Sources */,
 				07C295EE2B2732480020F44C /* PasswordRestorationViewController+ChangeState.swift in Sources */,
 				07ABF65E291AD436007C4A52 /* ExtensionLoginPagePresenter.swift in Sources */,
 				077B2ED829069BAB0087504C /* CollectionView.swift in Sources */,
 				07ABF662291AD4BF007C4A52 /* ExtensionRegisterPagePresenter.swift in Sources */,
 				077933D72A8FF8E600B0F509 /* LogLevel.swift in Sources */,
+				0715519A2B2A13E300E7D6B4 /* SignInCredentials.swift in Sources */,
+				071551962B2A137900E7D6B4 /* PeekUserResponse.swift in Sources */,
 				077933DB2A8FF93000B0F509 /* LogFormat.swift in Sources */,
 				0788F42428F82B19006F447F /* LoginPage.swift in Sources */,
 				071A3BF0291FC3BE009A7689 /* RoomDTO.swift in Sources */,
@@ -1234,7 +1300,7 @@
 				077977E32A8E789F000DAF72 /* UserService.swift in Sources */,
 				073B585228F97C30000EE21F /* RegisterPageViewComponents.swift in Sources */,
 				072EE6622A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift in Sources */,
-				07EB1CBB28FD47C90031598A /* NrtworkClientProtocol.swift in Sources */,
+				07EB1CBB28FD47C90031598A /* NetworkClientProtocol.swift in Sources */,
 				079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */,
 				07832A27292668950079E1E9 /* ExtensionPosterViewPresenter.swift in Sources */,
 				07A130FA2B222AAE00E2EFF5 /* PeekPinCodeBlock+AddDoneButton.swift in Sources */,
@@ -1263,10 +1329,12 @@
 				073B585828FA1698000EE21F /* InteractiveViewComponents.swift in Sources */,
 				07CEA3982AF7A8A400E69FAB /* Images.swift in Sources */,
 				07A66F2B2916CB2F003BB6B9 /* ErrorDTO.swift in Sources */,
+				0715518E2B2A0EAA00E7D6B4 /* NetworkClient.swift in Sources */,
 				0779775A2A8E33EA000DAF72 /* AppDelegate.swift in Sources */,
 				077B2ECD29069A060087504C /* SessionModuleBuilderOld.swift in Sources */,
 				07CEA3932AF5661D00E69FAB /* Colors.swift in Sources */,
 				077977DA2A8E6D3C000DAF72 /* APIService.swift in Sources */,
+				078844162B28A5BD00A68EA5 /* PeekNetworkService.swift in Sources */,
 				074B8A752A8C262C00EB39C2 /* QuitFromRoomNSE.swift in Sources */,
 				077977E62A8E855D000DAF72 /* EntranceModuleBuilder.swift in Sources */,
 				072500822B20BC60003EC872 /* PeekPinCodeDigitLabel.swift in Sources */,
@@ -1278,7 +1346,6 @@
 				07BE23192B0239A600E70299 /* PassowrdRestorationViewController.swift in Sources */,
 				07BE23222B023B5A00E70299 /* PasswordRestorationViewComponents+Constraints.swift in Sources */,
 				078843F42B28710100A68EA5 /* LobbyViewController.swift in Sources */,
-				077977D82A8E6C0B000DAF72 /* Empty.swift in Sources */,
 				07DBA85D28F55E77000A1312 /* DesignProtocols.swift in Sources */,
 				077933E32A8FF9B000B0F509 /* ConsoleDestination.swift in Sources */,
 				07ABF65C29193799007C4A52 /* InformativeViewComponents.swift in Sources */,
@@ -1299,6 +1366,7 @@
 				07BB3FD62AF90638001E0E63 /* PeekLabel.swift in Sources */,
 				077FD1EA2B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift in Sources */,
 				07ABF660291AD4A7007C4A52 /* ExtensionPasswordPagePresenter.swift in Sources */,
+				071551932B2A131800E7D6B4 /* PeekNetworkService+SignIn.swift in Sources */,
 				0731B0642B00F6A5006162D7 /* AuthorizationViewComponents+Constants+ChangeState.swift in Sources */,
 				07B09C972B24FCE70015B422 /* PasswordRestorationViewController+CountDownTimerView.swift in Sources */,
 				0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */,

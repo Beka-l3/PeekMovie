@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MockNetworkService: NetworkService {
+final class MockNetworkService: NetworkServiceOLD {
     internal static func executeCompletionOnMainThread(_ closure: @escaping () -> Void) {
         DispatchQueue.main.async {
             closure()

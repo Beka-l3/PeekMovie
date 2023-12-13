@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol NetworkClient {
+protocol NetworkClientOLD {
     func processRequest<T: Decodable>(
         request: HTTPRequest,
         completion: @escaping (Result<T, HTTPError>) -> Void

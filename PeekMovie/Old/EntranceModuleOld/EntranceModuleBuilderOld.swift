@@ -23,7 +23,7 @@ final class EntranceModuleBuilderOld {
     private let registerPage: RegisterPage
     private let waitingPage: WaitingPage
     
-    init(isLoggedIn: Bool, networkService: NetworkService) {
+    init(isLoggedIn: Bool, networkService: NetworkServiceOLD) {
         authorizedPage = AuthorizedPage()
         unAuthorizedPage = LoginPage()
         passwordPage = PasswordPage()

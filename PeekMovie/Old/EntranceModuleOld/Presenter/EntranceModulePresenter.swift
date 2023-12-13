@@ -22,7 +22,7 @@ final class EntranceModulePresenter: NSObject {
     internal let passwordPage: PasswordPage
     internal let registerPage: RegisterPage
     internal let waitingPage: WaitingPage
-    internal let networkService: NetworkService
+    internal let networkService: NetworkServiceOLD
     
     internal var isAdmin: Bool
     internal var roomAdmin: String
@@ -36,7 +36,7 @@ final class EntranceModulePresenter: NSObject {
         passwordPage: PasswordPage,
         registerPage: RegisterPage,
         waitingPage: WaitingPage,
-        networkService: NetworkService
+        networkService: NetworkServiceOLD
     ) {
         self.authorizedPage = authorizedPage
         self.unAuthorizedPage = unAuthorizedPage

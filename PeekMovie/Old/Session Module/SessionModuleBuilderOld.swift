@@ -17,7 +17,7 @@ final class SessionModuleBuilderOld: ColorsOld {
     let secondaryPage: CollectionViewPage
     
     
-    init(networkService: NetworkService) {
+    init(networkService: NetworkServiceOLD) {
         self.mainPage = PosterViewPage()
         self.secondaryPage = CollectionViewPage()
         

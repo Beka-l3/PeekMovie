@@ -6,12 +6,12 @@
 //
 import Foundation
 
-struct NetworkClientImplementation: NetworkClient {
+
+struct NetworkClientImplementation: NetworkClientOLD {
     private let urlSession: URLSession
 
     init(urlSession: URLSession) {
         self.urlSession = urlSession
-        
     }
 
     @discardableResult
@@ -19,27 +19,34 @@ struct NetworkClientImplementation: NetworkClient {
         request: HTTPRequest,
         completion: @escaping (Result<T, HTTPError>) -> Void
     ) -> Cancellable? {
+        
         do {
+            
             let configuredURLRequest = try configureRequest(request: request)
+            
             let task = urlSession.dataTask(with: configuredURLRequest) { data, response, _ in
+                
                 guard let response = response as? HTTPURLResponse, let unwrappedData = data else {
                     NetworkClientImplementation.executeCompletionOnMainThread {
                         completion(.failure(HTTPError.decodingFailed))
                     }
                     return
                 }
+                
                 let handledResult = HTTPNetworkResponse.handleNetworkResponse(for: response)
+                
                 switch handledResult {
+                
                 case .success:
                     let jsonDecoder = JSONDecoder()
                     
                     jsonDecoder.keyDecodingStrategy = request.keyDecodingStrategy
                     jsonDecoder.dateDecodingStrategy = request.dateDecodingStrategy
 
-                    if T.self == Empty.self && unwrappedData.isEmpty {
-                        completion(.success(Empty() as! T))
-                        return
-                    }
+//                    if T.self == Empty.self && unwrappedData.isEmpty {
+//                        completion(.success(Empty() as! T))
+//                        return
+//                    }
                     
                     guard let result = try? jsonDecoder.decode(T.self, from: unwrappedData) else {
                         NetworkClientImplementation.executeCompletionOnMainThread {
@@ -51,22 +58,27 @@ struct NetworkClientImplementation: NetworkClient {
                     NetworkClientImplementation.executeCompletionOnMainThread {
                         completion(.success(result))
                     }
+                    
                 case .failure:
                     NetworkClientImplementation.executeCompletionOnMainThread {
                         completion(.failure(HTTPError.failed))
                     }
+                    
                 }
             }
 
             task.resume()
             return task
+            
         } catch {
+            
             NetworkClientImplementation.executeCompletionOnMainThread {
                 completion(.failure(HTTPError.failed))
             }
 
             return nil
         }
+        
     }
 
     private func configureRequest(request: HTTPRequest) throws -> URLRequest {
@@ -89,6 +101,7 @@ struct NetworkClientImplementation: NetworkClient {
         request.headers.forEach {
             generatedRequest.addValue($0.value, forHTTPHeaderField: $0.key)
         }
+        
         return generatedRequest
     }
 
