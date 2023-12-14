@@ -95,6 +95,7 @@
 		077B2EDC29080E2C0087504C /* PosterViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2EDB29080E2C0087504C /* PosterViewModels.swift */; };
 		077B2EDE29080E680087504C /* SMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2EDD29080E680087504C /* SMConstants.swift */; };
 		077B2EE029080E970087504C /* SMViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2EDF29080E970087504C /* SMViewModels.swift */; };
+		077D21972B2B6DB20012BBDF /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D21962B2B6DB20012BBDF /* MockNetworkService.swift */; };
 		077FD1EA2B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */; };
 		077FD1EC2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FD1EB2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift */; };
 		077FD1EE2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FD1ED2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift */; };
@@ -137,7 +138,7 @@
 		07ACBA9D2AFD3B1200D07487 /* AuthorizationViewComponents+ChangeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACBA9C2AFD3B1200D07487 /* AuthorizationViewComponents+ChangeState.swift */; };
 		07B09C972B24FCE70015B422 /* PasswordRestorationViewController+CountDownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B09C962B24FCE70015B422 /* PasswordRestorationViewController+CountDownTimerView.swift */; };
 		07BB3FD62AF90638001E0E63 /* PeekLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BB3FD52AF90638001E0E63 /* PeekLabel.swift */; };
-		07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BBD947291BE08F00DD13BA /* MockNetworkService.swift */; };
+		07BBD948291BE08F00DD13BA /* MockNetworkServiceOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BBD947291BE08F00DD13BA /* MockNetworkServiceOLD.swift */; };
 		07BD8B772A93EE9E0089199E /* LobbyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B762A93EE9E0089199E /* LobbyModuleBuilder.swift */; };
 		07BD8B792A93EEC50089199E /* SessionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B782A93EEC50089199E /* SessionModuleBuilder.swift */; };
 		07BD8B7F2A93F4C50089199E /* AppCoordinator+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD8B7E2A93F4C50089199E /* AppCoordinator+Navigation.swift */; };
@@ -266,6 +267,7 @@
 		077B2EDB29080E2C0087504C /* PosterViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewModels.swift; sourceTree = "<group>"; };
 		077B2EDD29080E680087504C /* SMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMConstants.swift; sourceTree = "<group>"; };
 		077B2EDF29080E970087504C /* SMViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMViewModels.swift; sourceTree = "<group>"; };
+		077D21962B2B6DB20012BBDF /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		077FD1E92B03AA87000C7A73 /* PeekBottomSheetDraggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekBottomSheetDraggerView.swift; sourceTree = "<group>"; };
 		077FD1EB2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewComponents+Constants.swift"; sourceTree = "<group>"; };
 		077FD1ED2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewComponents+ChangeState.swift"; sourceTree = "<group>"; };
@@ -308,7 +310,7 @@
 		07ACBA9C2AFD3B1200D07487 /* AuthorizationViewComponents+ChangeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+ChangeState.swift"; sourceTree = "<group>"; };
 		07B09C962B24FCE70015B422 /* PasswordRestorationViewController+CountDownTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewController+CountDownTimerView.swift"; sourceTree = "<group>"; };
 		07BB3FD52AF90638001E0E63 /* PeekLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekLabel.swift; sourceTree = "<group>"; };
-		07BBD947291BE08F00DD13BA /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		07BBD947291BE08F00DD13BA /* MockNetworkServiceOLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkServiceOLD.swift; sourceTree = "<group>"; };
 		07BD8B762A93EE9E0089199E /* LobbyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyModuleBuilder.swift; sourceTree = "<group>"; };
 		07BD8B782A93EEC50089199E /* SessionModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModuleBuilder.swift; sourceTree = "<group>"; };
 		07BD8B7E2A93F4C50089199E /* AppCoordinator+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Navigation.swift"; sourceTree = "<group>"; };
@@ -477,7 +479,7 @@
 		074B8A672A8C251C00EB39C2 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				07BBD947291BE08F00DD13BA /* MockNetworkService.swift */,
+				07BBD947291BE08F00DD13BA /* MockNetworkServiceOLD.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -748,6 +750,14 @@
 			path = "Secondary PAge";
 			sourceTree = "<group>";
 		};
+		077D21982B2B6DD70012BBDF /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				077D21962B2B6DB20012BBDF /* MockNetworkService.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		078843F12B2870D100A68EA5 /* LobbyPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -841,6 +851,7 @@
 				0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */,
 				078844152B28A5BD00A68EA5 /* PeekNetworkService.swift */,
 				071551912B2A130300E7D6B4 /* Extension */,
+				077D21982B2B6DD70012BBDF /* Mock */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -1258,6 +1269,7 @@
 				07ABF662291AD4BF007C4A52 /* ExtensionRegisterPagePresenter.swift in Sources */,
 				077933D72A8FF8E600B0F509 /* LogLevel.swift in Sources */,
 				0715519A2B2A13E300E7D6B4 /* SignInCredentials.swift in Sources */,
+				077D21972B2B6DB20012BBDF /* MockNetworkService.swift in Sources */,
 				071551962B2A137900E7D6B4 /* PeekUserResponse.swift in Sources */,
 				077933DB2A8FF93000B0F509 /* LogFormat.swift in Sources */,
 				0788F42428F82B19006F447F /* LoginPage.swift in Sources */,
@@ -1273,7 +1285,7 @@
 				077977632A8E367F000DAF72 /* Fonts.swift in Sources */,
 				072500842B20BE4A003EC872 /* PeekTapHandlerView.swift in Sources */,
 				078843FA2B28846300A68EA5 /* LobbyViewComponents+Constants.swift in Sources */,
-				07BBD948291BE08F00DD13BA /* MockNetworkService.swift in Sources */,
+				07BBD948291BE08F00DD13BA /* MockNetworkServiceOLD.swift in Sources */,
 				0731B0602B00ED2C006162D7 /* PeekBackgroundImageView.swift in Sources */,
 				07761B4C2B1E77E700718491 /* PeekPinCodeBlock+TextField.swift in Sources */,
 				07BE231D2B023A7C00E70299 /* PasswordRestorationViewComponents.swift in Sources */,
