@@ -50,6 +50,9 @@ final class AuthorizationViewComponents {
         return view
     }()
     
+    lazy var tapHandlerViewBackground = PeekTapHandlerView()
+    lazy var tapHandlerViewInputBlock = PeekTapHandlerView()
+    
     var passwordIconViewTopConstraint: NSLayoutConstraint?
     var alternatingHStackBottomConstraint: NSLayoutConstraint?
     
@@ -65,8 +68,10 @@ final class AuthorizationViewComponents {
         parent.addSubview(backgroundImageCover)
         
         parent.addSubview(appLogoIconView)
+        parent.addSubview(tapHandlerViewBackground)
         parent.addSubview(inputBlock)
         
+        inputBlock.addSubview(tapHandlerViewInputBlock)
         inputBlock.addSubview(usernameIconView)
         inputBlock.addSubview(usernameTextField)
         inputBlock.addSubview(emailIconView)

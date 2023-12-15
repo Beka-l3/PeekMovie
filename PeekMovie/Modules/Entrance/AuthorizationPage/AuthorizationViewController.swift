@@ -72,6 +72,10 @@ final class AuthorizationViewController: UIViewController {
         viewComponents.emailTextField.delegate = self
         viewComponents.usernameTextField.delegate = self
         viewComponents.passwordTextField.delegate = self
+        
+        viewComponents.tapHandlerViewBackground.delegate = self
+        viewComponents.tapHandlerViewInputBlock.delegate = self
+        
     }
     
     private func setupLayers() {

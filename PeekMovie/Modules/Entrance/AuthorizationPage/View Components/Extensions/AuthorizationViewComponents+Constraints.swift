@@ -32,10 +32,20 @@ extension AuthorizationViewComponents {
             backgroundImageCover.trailingAnchor.constraint(equalTo: backgroundImage.trailingAnchor),
             backgroundImageCover.bottomAnchor.constraint(equalTo: backgroundImage.bottomAnchor),
             
+            tapHandlerViewBackground.topAnchor.constraint(equalTo: parent.topAnchor),
+            tapHandlerViewBackground.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
+            tapHandlerViewBackground.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
+            tapHandlerViewBackground.bottomAnchor.constraint(equalTo: parent.bottomAnchor),
+            
             inputBlock.topAnchor.constraint(equalTo: appLogoIconView.bottomAnchor, constant: Constants.paddingXXXXL),
             inputBlock.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
             inputBlock.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
             inputBlock.bottomAnchor.constraint(equalTo: parent.bottomAnchor),
+            
+            tapHandlerViewInputBlock.topAnchor.constraint(equalTo: inputBlock.topAnchor),
+            tapHandlerViewInputBlock.leadingAnchor.constraint(equalTo: inputBlock.leadingAnchor),
+            tapHandlerViewInputBlock.trailingAnchor.constraint(equalTo: inputBlock.trailingAnchor),
+            tapHandlerViewInputBlock.bottomAnchor.constraint(equalTo: inputBlock.bottomAnchor),
             
             emailIconView.topAnchor.constraint(equalTo: inputBlock.topAnchor, constant: Constants.paddingXXXL),
             emailIconView.leadingAnchor.constraint(equalTo: inputBlock.leadingAnchor, constant: Constants.paddingXL),
