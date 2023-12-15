@@ -1,22 +1,22 @@
 //
-//  APIService+SignIn.swift
+//  APIService+SignUp.swift
 //  PeekMovie
 //
-//  Created by Bekzhan Talgat on 12.12.2023.
+//  Created by Bekzhan Talgat on 15.12.2023.
 //
 
-import Foundation
+import UIKit
 
 
 extension APIService {
     
-    func signIn(credentials: SignInCredentials, isMocking: Bool = false) async throws {
+    func signUp(credentials: SignUpCredentials, isMocking: Bool = false) async throws {
         
         let service: NetworkService = (isMocking || isMockingAll) ? mockNetworkService : networkService
         
         do {
             
-            let response = try await service.signIn(credentials: credentials)
+            let response = try await service.signUp(credentials: credentials)
             let unwrappedResponse = try unwrapResponse(response: response)
             
             Service.user.loggedIn(user: unwrappedResponse)

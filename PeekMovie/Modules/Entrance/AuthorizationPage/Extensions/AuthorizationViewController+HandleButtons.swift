@@ -15,11 +15,48 @@ extension AuthorizationViewController {
         switch entranceState {
         
         case .signIn:
-            navigationController?.pushViewController(LobbyViewController(), animated: true)
-            break
+            if
+                let email = viewComponents.emailTextField.text,
+                let password = viewComponents.passwordTextField.text
+            {
+                let credentials = SignInCredentials(email: email, password: password)
+                
+                Task {
+                    do {
+                        
+                        try await Service.api.signIn(credentials: credentials)
+                        appCoordinator?.loggedIn()
+                        
+                    } catch {
+                        
+                        print("Sign In Error: \(error)")
+                        
+                    }
+                }
+            }
             
         case .signUp:
-            break
+            if
+                let username = viewComponents.usernameTextField.text,
+                let email = viewComponents.emailTextField.text,
+                let password = viewComponents.passwordTextField.text
+            {
+                let credentials = SignUpCredentials(username: username, email: email, password: password)
+                
+                Task {
+                    do {
+                        
+                        try await Service.api.signUp(credentials: credentials)
+                        appCoordinator?.loggedIn()
+                        
+                    } catch {
+                        
+                        print("Sign In Error: \(error)")
+                        
+                    }
+                }
+            }
+            
             
         }
     }
@@ -30,14 +67,13 @@ extension AuthorizationViewController {
         switch entranceState {
         
         case .signIn:
-            entranceState = .signUp
+            changeState(to: .signUp)
             
         case .signUp:
-            entranceState = .signIn
+            changeState(to: .signIn)
             
         }
         
-        viewComponents.changeState(to: entranceState, parent: view)
     }
     
     @objc func handleTertiaryButton() {
@@ -47,3 +83,4 @@ extension AuthorizationViewController {
     }
     
 }
+

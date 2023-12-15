@@ -17,8 +17,8 @@ extension AppCoordinator {
     }
     
     @MainActor func setModuleWith(viewController: UIViewController) {
-        rootViewController.navigationController?.setViewControllers([viewController], animated: true)
-//        rootViewController.navigationController?.popToRootViewController(animated: true)
-//        pushViewController(viewController)
+//        rootViewController.navigationController?.setViewControllers([viewController], animated: true)
+        rootViewController.navigationController?.popToRootViewController(animated: true)
+        pushViewController(viewController)
     }
 }

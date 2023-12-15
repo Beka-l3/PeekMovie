@@ -8,7 +8,10 @@
 import UIKit
 import Security
 
+
 final class UserService {
+    
+    private(set) var user: PeekUser?
     
     enum Constants {
         static let accessTokenKey = "AccessTokenKey"
@@ -29,14 +32,19 @@ final class UserService {
     }
     
     
-    func loggedIn() {
-//        self.user = user
+    func loggedIn(user: PeekUser) {
+        self.user = user
     }
     
     func signOut() {
         accessToken = nil
-//        fcmToken = nil
-//        user = nil
+        user = nil
     }
     
+}
+
+extension UserService {
+    enum ServiceError: Error {
+        case missingUser
+    }
 }

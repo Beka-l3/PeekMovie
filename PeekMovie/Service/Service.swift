@@ -7,7 +7,9 @@
 
 import Foundation
 
-enum Service {
+struct Service {
+    
+    static let shared = Service()
     
     static let api = APIService()
     

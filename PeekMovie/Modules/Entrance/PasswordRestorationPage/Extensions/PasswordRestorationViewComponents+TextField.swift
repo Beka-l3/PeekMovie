@@ -19,7 +19,7 @@ extension PasswordRestorationViewController: UITextFieldDelegate {
                 break
             }
             
-            viewComponents.checkGetCodeStateComponents(withValidation: isValidEmailAddress(emailAddressString: emailAddressString))
+            viewComponents.checkGetCodeStateComponents(with: Service.shared.isValidEmailAddress(emailAddressString))
             
         case .sendVerificationCode:
             break
@@ -29,7 +29,7 @@ extension PasswordRestorationViewController: UITextFieldDelegate {
                 break
             }
             
-            viewComponents.checkResetPasswordStateComponents(withValidation: isValidPassword(passwordString: newPasswordString))
+            viewComponents.checkResetPasswordStateComponents(with: Service.shared.isValidPassword(newPasswordString))
             
         }
         

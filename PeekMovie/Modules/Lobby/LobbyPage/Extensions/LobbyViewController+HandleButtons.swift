@@ -19,7 +19,7 @@ extension LobbyViewController {
     }
     
     @objc func handleTertiaryButton() {
-        navigationController?.popViewController(animated: true)
+//        navigationController?.popViewController(animated: true)
     }
     
 }

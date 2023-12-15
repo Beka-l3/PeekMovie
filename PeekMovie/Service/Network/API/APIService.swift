@@ -8,15 +8,21 @@
 import Foundation
 
 
-final class APIService {
+struct APIService {
     
-    public var isMockingAll: Bool = false
+    var isMockingAll: Bool
+    var networkService: PeekNetworkService
     
+    var mockNetworkService: MockNetworkService
     
     
 //    MARK: lifecycle
+//    init(networkService: PeekNetworkService) {
     init() {
-
+        self.isMockingAll = true
+        self.networkService = .init(networkClient: PeekNetworkClient(urlSession: .init(configuration: .default)))
+        self.mockNetworkService = .init()
+        
     }
     
 }

@@ -8,12 +8,20 @@
 import UIKit
 
 
+protocol AuthorizationDelegate: AnyObject {
+    func loggedIn()
+}
+
+
 final class AuthorizationViewController: UIViewController {
+    
+    weak var appCoordinator: AuthorizationDelegate?
     
     let viewComponents = AuthorizationViewComponents()
     var entranceState: State = .signIn
     
     let passwordRestorationPage: PasswordRestorationViewController
+    
     
 //    MARK: lifecycle
     init(passwordRestorationPage: PasswordRestorationViewController) {
@@ -36,6 +44,7 @@ final class AuthorizationViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.isNavigationBarHidden = true
+        changeState(to: .signIn)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,6 +68,14 @@ final class AuthorizationViewController: UIViewController {
         viewComponents.mainButton.addTarget(self, action: #selector(handleMainButton), for: .touchUpInside)
         viewComponents.secondaryButton.addTarget(self, action: #selector(handleSecondaryButton), for: .touchUpInside)
         viewComponents.tertiaryButton.addTarget(self, action: #selector(handleTertiaryButton), for: .touchUpInside)
+        
+        viewComponents.emailTextField.delegate = self
+        viewComponents.usernameTextField.delegate = self
+        viewComponents.passwordTextField.delegate = self
+        
+        viewComponents.tapHandlerViewBackground.delegate = self
+        viewComponents.tapHandlerViewInputBlock.delegate = self
+        
     }
     
     private func setupLayers() {

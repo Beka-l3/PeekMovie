@@ -19,9 +19,9 @@ extension PasswordRestorationViewController {
             
         case .enterEmail:
             if let emailAddressString = viewComponents.emailTextField.text {
-                viewComponents.checkGetCodeStateComponents(withValidation: isValidEmailAddress(emailAddressString: emailAddressString))
+                viewComponents.checkGetCodeStateComponents(with: Service.shared.isValidEmailAddress(emailAddressString))
             } else {
-                viewComponents.checkGetCodeStateComponents(withValidation: false)
+                viewComponents.checkGetCodeStateComponents(with: false)
             }
             
         case .sendVerificationCode:
@@ -30,9 +30,9 @@ extension PasswordRestorationViewController {
             
         case .resetPassword:
             if let passwordString = viewComponents.passwordTextField.text {
-                viewComponents.checkResetPasswordStateComponents(withValidation: isValidEmailAddress(emailAddressString: passwordString))
+                viewComponents.checkResetPasswordStateComponents(with: Service.shared.isValidEmailAddress(passwordString))
             } else {
-                viewComponents.checkResetPasswordStateComponents(withValidation: false)
+                viewComponents.checkResetPasswordStateComponents(with: false)
             }
             
         }

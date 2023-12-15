@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MockNetworkService: NetworkServiceOLD {
+final class MockNetworkServiceOLD: NetworkServiceOLD {
     internal static func executeCompletionOnMainThread(_ closure: @escaping () -> Void) {
         DispatchQueue.main.async {
             closure()
@@ -15,7 +15,7 @@ final class MockNetworkService: NetworkServiceOLD {
     }
 }
 
-extension MockNetworkService {
+extension MockNetworkServiceOLD {
     func register(
         credentials: RegistrationFormDTO,
         completion: @escaping (Result<ResponseDTO<TokenDTO>, HTTPError>) -> Void
@@ -23,19 +23,19 @@ extension MockNetworkService {
         DispatchQueue.global().async {
             sleep(UInt32.random(in: 0...3))
             if Int.random(in: 0...99) == 0 {
-                MockNetworkService.executeCompletionOnMainThread {
+                MockNetworkServiceOLD.executeCompletionOnMainThread {
                     completion(.failure(.decodingFailed))
                 }
             } else {
                 if Int.random(in: 0...49) == 0 {
                     let error_message = [ErrorMessage.username, ErrorMessage.email, ErrorMessage.password]
                     let error = ErrorDTO(error_message: error_message.randomElement()!)
-                    MockNetworkService.executeCompletionOnMainThread {
+                    MockNetworkServiceOLD.executeCompletionOnMainThread {
                         completion(.success(ResponseDTO(data: nil, error: error)))
                     }
                 } else {
                     let token = TokenDTO(token: UUID().uuidString)
-                    MockNetworkService.executeCompletionOnMainThread {
+                    MockNetworkServiceOLD.executeCompletionOnMainThread {
                         completion(.success(ResponseDTO(data: token, error: nil)))
                     }
                 }
@@ -46,7 +46,7 @@ extension MockNetworkService {
     }
 }
 
-extension MockNetworkService {
+extension MockNetworkServiceOLD {
     
     @discardableResult
     func login(
@@ -56,19 +56,19 @@ extension MockNetworkService {
         DispatchQueue.global().async {
             sleep(UInt32.random(in: 0...3))
             if Int.random(in: 0...99) == 0 {
-                MockNetworkService.executeCompletionOnMainThread {
+                MockNetworkServiceOLD.executeCompletionOnMainThread {
                     completion(.failure(.decodingFailed))
                 }
             } else {
                 if Int.random(in: 0...49) == 0 {
                     let error_message = [ErrorMessage.username, ErrorMessage.password]
                     let error = ErrorDTO(error_message: error_message.randomElement()!)
-                    MockNetworkService.executeCompletionOnMainThread {
+                    MockNetworkServiceOLD.executeCompletionOnMainThread {
                         completion(.success(ResponseDTO(data: nil, error: error)))
                     }
                 } else {
                     let token = TokenDTO(token: UUID().uuidString)
-                    MockNetworkService.executeCompletionOnMainThread {
+                    MockNetworkServiceOLD.executeCompletionOnMainThread {
                         completion(.success(ResponseDTO(data: token, error: nil)))
                     }
                 }
@@ -78,7 +78,7 @@ extension MockNetworkService {
     }
 }
 
-extension MockNetworkService {
+extension MockNetworkServiceOLD {
     
     func checkUsername(
         credentials: PeekID,
@@ -87,17 +87,17 @@ extension MockNetworkService {
         DispatchQueue.global().async {
             sleep(UInt32.random(in: 0...3))
             if Int.random(in: 0...99) == 0 {
-                MockNetworkService.executeCompletionOnMainThread {
+                MockNetworkServiceOLD.executeCompletionOnMainThread {
                     completion(.failure(.decodingFailed))
                 }
             } else {
                 if Int.random(in: 0...49) == 0 {
                     let error = ErrorDTO(error_message: ErrorMessage.username)
-                    MockNetworkService.executeCompletionOnMainThread {
+                    MockNetworkServiceOLD.executeCompletionOnMainThread {
                         completion(.success(ResponseDTO(data: nil, error: error)))
                     }
                 } else {
-                    MockNetworkService.executeCompletionOnMainThread {
+                    MockNetworkServiceOLD.executeCompletionOnMainThread {
                         completion(.success(ResponseDTO(data: "Success", error: nil)))
                     }
                 }
@@ -107,7 +107,7 @@ extension MockNetworkService {
     }
 }
 
-extension MockNetworkService {
+extension MockNetworkServiceOLD {
     
     func createRoom(
         credentials: TokenDTO,
@@ -118,7 +118,7 @@ extension MockNetworkService {
             let alph = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             var roomId = ""
             for _ in 0...5 { roomId.append(alph.randomElement()!) }
-            MockNetworkService.executeCompletionOnMainThread {
+            MockNetworkServiceOLD.executeCompletionOnMainThread {
                 let admin = UserDefaults.standard.string(forKey: GConstants.usernameKey) ?? "ezpzbaby"
                 completion(.success(ResponseDTO(data: RoomDTO(roomId: roomId, admin: admin, users: []), error: nil)))
             }
@@ -127,7 +127,7 @@ extension MockNetworkService {
     }
 }
 
-extension MockNetworkService {
+extension MockNetworkServiceOLD {
     
     func joinRoom(
         credentials: (token: TokenDTO, roomId: String),
@@ -136,13 +136,13 @@ extension MockNetworkService {
         DispatchQueue.global().async {
             sleep(UInt32.random(in: 0...3))
             if Int.random(in: 0...99) == 0 {
-                MockNetworkService.executeCompletionOnMainThread {
+                MockNetworkServiceOLD.executeCompletionOnMainThread {
                     completion(.failure(.decodingFailed))
                 }
             } else {
                 if Int.random(in: 0...49) == 0 {
                     let error = ErrorDTO(error_message: ErrorMessage.username)
-                    MockNetworkService.executeCompletionOnMainThread {
+                    MockNetworkServiceOLD.executeCompletionOnMainThread {
                         completion(.success(ResponseDTO(data: nil, error: error)))
                     }
                 } else {
@@ -154,7 +154,7 @@ extension MockNetworkService {
                     print(admin, users)
                     let roomData = RoomDTO(roomId: credentials.roomId, admin: admin, users: users)
                     
-                    MockNetworkService.executeCompletionOnMainThread {
+                    MockNetworkServiceOLD.executeCompletionOnMainThread {
                         completion(.success(ResponseDTO<RoomDTO>(data: roomData, error: nil)))
                     }
                 }
@@ -165,7 +165,7 @@ extension MockNetworkService {
     }
 }
 
-extension MockNetworkService {
+extension MockNetworkServiceOLD {
     
     @discardableResult
     func getMovie(
@@ -176,19 +176,19 @@ extension MockNetworkService {
         DispatchQueue.global().async {
             sleep(UInt32.random(in: 0...3))
             if Int.random(in: 0...99) == 0 {
-                MockNetworkService.executeCompletionOnMainThread {
+                MockNetworkServiceOLD.executeCompletionOnMainThread {
                     completion(.failure(.decodingFailed))
                 }
             } else {
                 if Int.random(in: 0...49) == 0 {
                     let error = ErrorDTO(error_message: ErrorMessage.username)
-                    MockNetworkService.executeCompletionOnMainThread {
+                    MockNetworkServiceOLD.executeCompletionOnMainThread {
                         completion(.success(ResponseDTO(data: nil, error: error)))
                     }
                 } else {
-                    let movie = MockNetworkService.Movies.getMovie()
-                    MockNetworkService.Movies.increase()
-                    MockNetworkService.executeCompletionOnMainThread {
+                    let movie = MockNetworkServiceOLD.Movies.getMovie()
+                    MockNetworkServiceOLD.Movies.increase()
+                    MockNetworkServiceOLD.executeCompletionOnMainThread {
                         completion(.success(ResponseDTO<MovieDTO>(data: movie, error: nil)))
                     }
                 }
@@ -200,7 +200,7 @@ extension MockNetworkService {
     }
 }
 
-extension MockNetworkService {
+extension MockNetworkServiceOLD {
     
     func quitFromRoom(
         credentials: (token: TokenDTO, roomId: String),
@@ -210,19 +210,19 @@ extension MockNetworkService {
         DispatchQueue.global().async {
             sleep(UInt32.random(in: 0...3))
             if Int.random(in: 0...99) == 0 {
-                MockNetworkService.executeCompletionOnMainThread {
+                MockNetworkServiceOLD.executeCompletionOnMainThread {
                     completion(.failure(.decodingFailed))
                 }
             } else {
                 if Int.random(in: 0...49) == 0 {
                     let error = ErrorDTO(error_message: ErrorMessage.username)
-                    MockNetworkService.executeCompletionOnMainThread {
+                    MockNetworkServiceOLD.executeCompletionOnMainThread {
                         completion(.success(ResponseDTO(data: nil, error: error)))
                     }
                 } else {
-                    let _ = MockNetworkService.Movies.getMovie()
-                    MockNetworkService.Movies.increase()
-                    MockNetworkService.executeCompletionOnMainThread {
+                    let _ = MockNetworkServiceOLD.Movies.getMovie()
+                    MockNetworkServiceOLD.Movies.increase()
+                    MockNetworkServiceOLD.executeCompletionOnMainThread {
                         completion(.success(ResponseDTO<String>(data: "Succeed", error: nil)))
                     }
                 }
@@ -234,7 +234,7 @@ extension MockNetworkService {
     
 }
 
-extension MockNetworkService {
+extension MockNetworkServiceOLD {
     struct Movies {
         static let movies: [MovieDTO] = {
             let m: [MovieDTO] = [
