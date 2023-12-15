@@ -14,6 +14,7 @@
 		07078F7F2B2C884B00B0AB72 /* AuthorizationViewController+ChangeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F7E2B2C884B00B0AB72 /* AuthorizationViewController+ChangeState.swift */; };
 		07078F812B2C8BC200B0AB72 /* Service+StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F802B2C8BC200B0AB72 /* Service+StringValidation.swift */; };
 		07078F832B2C8CC700B0AB72 /* AuthorizationViewComponents+MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F822B2C8CC700B0AB72 /* AuthorizationViewComponents+MainButton.swift */; };
+		07078F852B2CAB9900B0AB72 /* AuthorizationViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F842B2CAB9900B0AB72 /* AuthorizationViewController+TextField.swift */; };
 		070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */; };
 		0715518E2B2A0EAA00E7D6B4 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */; };
 		071551902B2A0F4300E7D6B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */; };
@@ -192,6 +193,7 @@
 		07078F7E2B2C884B00B0AB72 /* AuthorizationViewController+ChangeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewController+ChangeState.swift"; sourceTree = "<group>"; };
 		07078F802B2C8BC200B0AB72 /* Service+StringValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service+StringValidation.swift"; sourceTree = "<group>"; };
 		07078F822B2C8CC700B0AB72 /* AuthorizationViewComponents+MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+MainButton.swift"; sourceTree = "<group>"; };
+		07078F842B2CAB9900B0AB72 /* AuthorizationViewController+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewController+TextField.swift"; sourceTree = "<group>"; };
 		070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPagePickerViewExtension.swift; sourceTree = "<group>"; };
 		0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 			children = (
 				07ACBA972AFD29F400D07487 /* AuthorizationViewController+HandleButtons.swift */,
 				07078F7E2B2C884B00B0AB72 /* AuthorizationViewController+ChangeState.swift */,
+				07078F842B2CAB9900B0AB72 /* AuthorizationViewController+TextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1326,6 +1329,7 @@
 				074B8A732A8C260800EB39C2 /* JoinRoomNSE.swift in Sources */,
 				077B2EE029080E970087504C /* SMViewModels.swift in Sources */,
 				07832A2529248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift in Sources */,
+				07078F852B2CAB9900B0AB72 /* AuthorizationViewController+TextField.swift in Sources */,
 				072F8FA62B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift in Sources */,
 				077977E32A8E789F000DAF72 /* UserService.swift in Sources */,
 				073B585228F97C30000EE21F /* RegisterPageViewComponents.swift in Sources */,

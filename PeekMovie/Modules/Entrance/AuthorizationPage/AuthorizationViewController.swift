@@ -68,6 +68,10 @@ final class AuthorizationViewController: UIViewController {
         viewComponents.mainButton.addTarget(self, action: #selector(handleMainButton), for: .touchUpInside)
         viewComponents.secondaryButton.addTarget(self, action: #selector(handleSecondaryButton), for: .touchUpInside)
         viewComponents.tertiaryButton.addTarget(self, action: #selector(handleTertiaryButton), for: .touchUpInside)
+        
+        viewComponents.emailTextField.delegate = self
+        viewComponents.usernameTextField.delegate = self
+        viewComponents.passwordTextField.delegate = self
     }
     
     private func setupLayers() {

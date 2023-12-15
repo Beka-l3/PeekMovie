@@ -113,34 +113,7 @@ extension AuthorizationViewComponents {
 extension AuthorizationViewComponents {
     
 //    MARK: sign in
-    func checkSignInComponents(with validation: Bool, isStateChange: Bool = false) {
-        
-        switch (isMainButtonEnabled, validation) {
-            
-        case (false, true):
-            if isStateChange {
-                setMainButtonEnabled = true
-            } else {
-                enableMainButton()
-            }
-            
-        case (true, false):
-            if isStateChange {
-                setMainButtonEnabled = false
-            } else {
-                disableMainButton()
-            }
-            
-        default:
-            break
-            
-        }
-        
-    }
-    
-    
-//    MARK: sign up
-    func checkSignUpComponents(with validation: Bool, isStateChange: Bool = false) {
+    func mainButtonAppearance(with validation: Bool, isStateChange: Bool = false) {
         
         switch (isMainButtonEnabled, validation) {
             

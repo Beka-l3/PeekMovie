@@ -15,7 +15,13 @@ extension AuthorizationViewController {
         entranceState = state
         viewComponents.changeState(to: state, parent: view)
         
-        switch state {
+        checkMainButtonAppearance(isStateChange: true)
+        
+    }
+    
+    
+    func checkMainButtonAppearance(isStateChange: Bool = false) {
+        switch entranceState {
             
         case .signIn:
             if
@@ -23,11 +29,11 @@ extension AuthorizationViewController {
                 let passwordString = viewComponents.passwordTextField.text, !passwordString.isEmpty
             {
                 
-                viewComponents.checkSignInComponents(with: true, isStateChange: true)
+                viewComponents.mainButtonAppearance(with: true, isStateChange: isStateChange)
                 
             } else {
                 
-                viewComponents.checkSignInComponents(with: false, isStateChange: true)
+                viewComponents.mainButtonAppearance(with: false, isStateChange: isStateChange)
                 
             }
             
@@ -41,11 +47,11 @@ extension AuthorizationViewController {
             {
                 
                 let validation = Service.shared.isValidEmailAddress(emailString) && Service.shared.isValidPassword(passwordString)
-                viewComponents.checkSignUpComponents(with: validation, isStateChange: true)
+                viewComponents.mainButtonAppearance(with: validation, isStateChange: isStateChange)
                 
             } else {
                 
-                viewComponents.checkSignUpComponents(with: false, isStateChange: true)
+                viewComponents.mainButtonAppearance(with: false, isStateChange: isStateChange)
                 
             }
             
