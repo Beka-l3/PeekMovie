@@ -115,6 +115,19 @@ extension AuthorizationViewComponents {
 //    MARK: sign up
     func checkSignUpComponents(with validation: Bool) {
         
+        switch (isMainButtonEnabled, validation) {
+            
+        case (false, true):
+            enableMainButton()
+            
+        case (true, false):
+            disableMainButton()
+            
+        default:
+            break
+            
+        }
+        
     }
     
 }

@@ -15,14 +15,39 @@ extension AuthorizationViewController {
         entranceState = state
         viewComponents.changeState(to: state, parent: view)
         
-        
         switch state {
             
         case .signIn:
-            break
+            if
+                let emailString = viewComponents.emailTextField.text, !emailString.isEmpty,
+                let passwordString = viewComponents.passwordTextField.text, !passwordString.isEmpty
+            {
+                
+                viewComponents.checkSignInComponents(with: true)
+                
+            } else {
+                
+                viewComponents.checkSignInComponents(with: false)
+                
+            }
+            
             
         case .signUp:
-            break
+            
+            if
+                let emailString = viewComponents.emailTextField.text,
+                let username = viewComponents.usernameTextField.text, !username.isEmpty,
+                let passwordString = viewComponents.passwordTextField.text
+            {
+                
+                let validation = Service.shared.isValidEmailAddress(emailString) && Service.shared.isValidPassword(passwordString)
+                viewComponents.checkSignUpComponents(with: validation)
+                
+            } else {
+                
+                viewComponents.checkSignUpComponents(with: false)
+                
+            }
             
         }
     }

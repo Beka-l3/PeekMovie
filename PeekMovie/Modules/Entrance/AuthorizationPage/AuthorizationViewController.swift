@@ -44,6 +44,7 @@ final class AuthorizationViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.isNavigationBarHidden = true
+        changeState(to: .signIn)
     }
     
     override func viewDidAppear(_ animated: Bool) {

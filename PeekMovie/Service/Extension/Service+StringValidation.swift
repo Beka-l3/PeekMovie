@@ -10,7 +10,7 @@ import Foundation
 
 extension Service {
     
-    func isValidEmailAddress(emailAddressString: String) -> Bool {
+    func isValidEmailAddress(_ emailAddressString: String) -> Bool {
         
         var returnValue = true
         let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
@@ -28,7 +28,7 @@ extension Service {
     
     
     /// Minimum 8 characters at least 1 Alphabet and 1 Number
-    func isValidPassword(passwordString: String) -> Bool {
+    func isValidPassword(_ passwordString: String) -> Bool {
         
         var returnValue = true
         let passwordRegEx = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
