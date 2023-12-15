@@ -13,7 +13,6 @@ extension AuthorizationViewComponents {
     func setupConstraints(parent: UIView) {
         NSLayoutConstraint.activate([
             appLogoIconView.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
-            appLogoIconView.topAnchor.constraint(equalTo: parent.topAnchor, constant: Constants.paddingXXXXL),
             appLogoIconView.widthAnchor.constraint(equalToConstant: appLogoIconView.iconSize.rawValue),
             appLogoIconView.heightAnchor.constraint(equalToConstant: appLogoIconView.iconSize.rawValue),
             
@@ -89,6 +88,9 @@ extension AuthorizationViewComponents {
         
         alternatingHStackBottomConstraint = alternatingHStack.bottomAnchor.constraint(equalTo: inputBlock.bottomAnchor, constant: -Constants.paddingL)
         alternatingHStackBottomConstraint?.isActive = true
+        
+        appLogoTopAnchorConstraint = appLogoIconView.topAnchor.constraint(equalTo: parent.topAnchor, constant: Constants.paddingXXXXL)
+        appLogoTopAnchorConstraint?.isActive = true
     }
     
     func changeConstraintsToSignUp(parent: UIView?) {
@@ -136,6 +138,16 @@ extension AuthorizationViewComponents {
             
         } else {
             self.passwordIconViewTopConstraint?.constant = Constants.paddingL
+        }
+    }
+    
+    func isTextFieldFirstResponder(_ isFirstResponder: Bool, parent: UIView) {
+        let constant = isFirstResponder ? Constants.paddingXL : Constants.paddingXXXXL
+        let duration = isFirstResponder ? Constants.ChangeState.animationDuration : Constants.ChangeState.animationDurationPart1
+        
+        UIView.animate(withDuration: duration) { [unowned self] in
+            self.appLogoTopAnchorConstraint?.constant = constant
+            parent.layoutIfNeeded()
         }
     }
 }

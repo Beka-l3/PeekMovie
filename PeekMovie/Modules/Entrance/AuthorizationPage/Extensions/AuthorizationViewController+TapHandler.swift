@@ -15,14 +15,17 @@ extension AuthorizationViewController: PeekTapHandlerViewDelegate {
         if viewComponents.emailTextField.isFirstResponder {
             
             viewComponents.emailTextField.resignFirstResponder()
+            viewComponents.isTextFieldFirstResponder(false, parent: view)
             
         } else if viewComponents.usernameTextField.isFirstResponder {
             
             viewComponents.usernameTextField.resignFirstResponder()
+            viewComponents.isTextFieldFirstResponder(false, parent: view)
             
         } else if viewComponents.passwordTextField.isFirstResponder {
         
             viewComponents.passwordTextField.resignFirstResponder()
+            viewComponents.isTextFieldFirstResponder(false, parent: view)
             
         }
         

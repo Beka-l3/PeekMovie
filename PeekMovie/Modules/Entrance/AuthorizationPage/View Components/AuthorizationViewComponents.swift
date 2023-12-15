@@ -55,6 +55,7 @@ final class AuthorizationViewComponents {
     
     var passwordIconViewTopConstraint: NSLayoutConstraint?
     var alternatingHStackBottomConstraint: NSLayoutConstraint?
+    var appLogoTopAnchorConstraint: NSLayoutConstraint?
     
     var setMainButtonEnabled: Bool = false
     
@@ -89,7 +90,7 @@ final class AuthorizationViewComponents {
     }
     
     func setupLayers(parent: UIView) {
-        backgroundLinear.frame.size = .init(width: Constants.screenWidth, height: Constants.inputBlockHeight)
+        backgroundLinear.frame.size = .init(width: Constants.screenWidth, height: Constants.inputBlockHeight + Constants.paddingXL)
         backgroundLinear.cornerRadius = Constants.paddingM
         backgroundLinear.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         inputBlock.layer.addSublayer(backgroundLinear)
