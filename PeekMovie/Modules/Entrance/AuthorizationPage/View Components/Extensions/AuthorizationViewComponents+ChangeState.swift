@@ -30,6 +30,12 @@ extension AuthorizationViewComponents {
                     self.secondaryButton.setTitle(Constants.signUpButtonTitleText, for: .normal)
                     self.alternatorLabelLabel.text = Constants.signUpLabelText
                     
+                    if self.setMainButtonEnabled {
+                        self.enableMainButton()
+                    } else {
+                        self.disableMainButton()
+                    }
+                    
                     UIView.animate(withDuration: Constants.ChangeState.animationDurationPart2) {
                         self.usernameIconView.layer.opacity = Constants.ChangeState.zeroOpacity
                         self.usernameTextField.layer.opacity = Constants.ChangeState.zeroOpacity
@@ -52,6 +58,12 @@ extension AuthorizationViewComponents {
                 usernameTextField.layer.opacity = Constants.ChangeState.zeroOpacity
                 backgroundImageBW.layer.opacity = Constants.ChangeState.zeroOpacity
                 
+                if self.setMainButtonEnabled {
+                    self.enableMainButton()
+                } else {
+                    self.disableMainButton()
+                }
+                
             }
             
         case .signUp:
@@ -71,6 +83,12 @@ extension AuthorizationViewComponents {
                 self.secondaryButton.setTitle(Constants.signInButtonTitleText, for: .normal)
                 self.alternatorLabelLabel.text = Constants.signInLabelText
                 
+                if self.setMainButtonEnabled {
+                    self.enableMainButton()
+                } else {
+                    self.disableMainButton()
+                }
+                
                 UIView.animate(withDuration: Constants.ChangeState.animationDurationPart2) {
                     self.usernameIconView.layer.opacity = Constants.ChangeState.fullOpacity
                     self.usernameTextField.layer.opacity = Constants.ChangeState.fullOpacity
@@ -81,6 +99,7 @@ extension AuthorizationViewComponents {
                         self.mainButton.layer.opacity = Constants.ChangeState.fullOpacity
                         self.alternatingHStack.layer.opacity = Constants.ChangeState.fullOpacity
                     }
+                    
                 }
             }
             
@@ -94,15 +113,23 @@ extension AuthorizationViewComponents {
 extension AuthorizationViewComponents {
     
 //    MARK: sign in
-    func checkSignInComponents(with validation: Bool) {
+    func checkSignInComponents(with validation: Bool, isStateChange: Bool = false) {
         
         switch (isMainButtonEnabled, validation) {
             
         case (false, true):
-            enableMainButton()
+            if isStateChange {
+                setMainButtonEnabled = true
+            } else {
+                enableMainButton()
+            }
             
         case (true, false):
-            disableMainButton()
+            if isStateChange {
+                setMainButtonEnabled = false
+            } else {
+                disableMainButton()
+            }
             
         default:
             break
@@ -113,15 +140,23 @@ extension AuthorizationViewComponents {
     
     
 //    MARK: sign up
-    func checkSignUpComponents(with validation: Bool) {
+    func checkSignUpComponents(with validation: Bool, isStateChange: Bool = false) {
         
         switch (isMainButtonEnabled, validation) {
             
         case (false, true):
-            enableMainButton()
+            if isStateChange {
+                setMainButtonEnabled = true
+            } else {
+                enableMainButton()
+            }
             
         case (true, false):
-            disableMainButton()
+            if isStateChange {
+                setMainButtonEnabled = false
+            } else {
+                disableMainButton()
+            }
             
         default:
             break

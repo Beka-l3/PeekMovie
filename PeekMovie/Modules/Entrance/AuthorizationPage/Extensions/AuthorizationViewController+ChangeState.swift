@@ -23,11 +23,11 @@ extension AuthorizationViewController {
                 let passwordString = viewComponents.passwordTextField.text, !passwordString.isEmpty
             {
                 
-                viewComponents.checkSignInComponents(with: true)
+                viewComponents.checkSignInComponents(with: true, isStateChange: true)
                 
             } else {
                 
-                viewComponents.checkSignInComponents(with: false)
+                viewComponents.checkSignInComponents(with: false, isStateChange: true)
                 
             }
             
@@ -41,11 +41,11 @@ extension AuthorizationViewController {
             {
                 
                 let validation = Service.shared.isValidEmailAddress(emailString) && Service.shared.isValidPassword(passwordString)
-                viewComponents.checkSignUpComponents(with: validation)
+                viewComponents.checkSignUpComponents(with: validation, isStateChange: true)
                 
             } else {
                 
-                viewComponents.checkSignUpComponents(with: false)
+                viewComponents.checkSignUpComponents(with: false, isStateChange: true)
                 
             }
             

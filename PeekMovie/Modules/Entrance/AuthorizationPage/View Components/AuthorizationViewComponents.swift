@@ -53,6 +53,8 @@ final class AuthorizationViewComponents {
     var passwordIconViewTopConstraint: NSLayoutConstraint?
     var alternatingHStackBottomConstraint: NSLayoutConstraint?
     
+    var setMainButtonEnabled: Bool = false
+    
 
 //    MARK: exposed func
     func setupViews(parent: UIView) {
