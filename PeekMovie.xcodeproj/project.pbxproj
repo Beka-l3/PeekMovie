@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		07078F772B2C650D00B0AB72 /* AppCoordinator+AuthorizationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F762B2C650D00B0AB72 /* AppCoordinator+AuthorizationDelegate.swift */; };
+		07078F792B2C6B4C00B0AB72 /* SignUpCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F782B2C6B4C00B0AB72 /* SignUpCredentials.swift */; };
+		07078F7B2B2C6B6F00B0AB72 /* PeekNetworkService+SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F7A2B2C6B6F00B0AB72 /* PeekNetworkService+SignUp.swift */; };
+		07078F7D2B2C6CAB00B0AB72 /* APIService+SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F7C2B2C6CAB00B0AB72 /* APIService+SignUp.swift */; };
 		070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */; };
 		0715518E2B2A0EAA00E7D6B4 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */; };
 		071551902B2A0F4300E7D6B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */; };
@@ -181,6 +184,9 @@
 
 /* Begin PBXFileReference section */
 		07078F762B2C650D00B0AB72 /* AppCoordinator+AuthorizationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+AuthorizationDelegate.swift"; sourceTree = "<group>"; };
+		07078F782B2C6B4C00B0AB72 /* SignUpCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCredentials.swift; sourceTree = "<group>"; };
+		07078F7A2B2C6B6F00B0AB72 /* PeekNetworkService+SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekNetworkService+SignUp.swift"; sourceTree = "<group>"; };
+		07078F7C2B2C6CAB00B0AB72 /* APIService+SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+SignUp.swift"; sourceTree = "<group>"; };
 		070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPagePickerViewExtension.swift; sourceTree = "<group>"; };
 		0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -369,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				071551922B2A131800E7D6B4 /* PeekNetworkService+SignIn.swift */,
+				07078F7A2B2C6B6F00B0AB72 /* PeekNetworkService+SignUp.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -386,6 +393,7 @@
 			children = (
 				071551972B2A13AA00E7D6B4 /* PeekUser.swift */,
 				071551992B2A13E300E7D6B4 /* SignInCredentials.swift */,
+				07078F782B2C6B4C00B0AB72 /* SignUpCredentials.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -807,6 +815,7 @@
 			isa = PBXGroup;
 			children = (
 				078844092B28972F00A68EA5 /* APIService+SignIn.swift */,
+				07078F7C2B2C6CAB00B0AB72 /* APIService+SignUp.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1324,8 +1333,10 @@
 				072500862B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift in Sources */,
 				07BD8B792A93EEC50089199E /* SessionModuleBuilder.swift in Sources */,
 				0758C2EC2911777300E48140 /* TokenDTO.swift in Sources */,
+				07078F792B2C6B4C00B0AB72 /* SignUpCredentials.swift in Sources */,
 				07F8930E29127B5200E8FDD4 /* RegistrationFormDTO.swift in Sources */,
 				07EB1CC128FD48100031598A /* HTTPNetworkResponse.swift in Sources */,
+				07078F7B2B2C6B6F00B0AB72 /* PeekNetworkService+SignUp.swift in Sources */,
 				073B585628FA155F000EE21F /* EMConstants.swift in Sources */,
 				07A66F2D2916CB51003BB6B9 /* ResponseDTO.swift in Sources */,
 				07ACBA9B2AFD32E800D07487 /* AuthorizationViewComponents+Constraints.swift in Sources */,
@@ -1400,6 +1411,7 @@
 				077977E02A8E7253000DAF72 /* Service+KeyChain.swift in Sources */,
 				07CBD4232AF8236300005F63 /* PeekIconView.swift in Sources */,
 				077B2EDA2907BB450087504C /* Global Constants.swift in Sources */,
+				07078F7D2B2C6CAB00B0AB72 /* APIService+SignUp.swift in Sources */,
 				07ABF666291AD4F8007C4A52 /* ExtensionWaitingPagePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

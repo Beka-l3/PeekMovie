@@ -21,7 +21,19 @@ struct MockNetworkService: NetworkService {
     }
     
     
+}
+
+
+extension MockNetworkService {
+    
     func signIn(credentials: SignInCredentials) async throws -> PeekUserResponse {
+        await sleep()
+        
+        let response = PeekUserResponse(username: "Example", email: "example@mail.com")
+        return response
+    }
+    
+    func signUp(credentials: SignUpCredentials) async throws -> PeekUserResponse {
         await sleep()
         
         let response = PeekUserResponse(username: "Example", email: "example@mail.com")

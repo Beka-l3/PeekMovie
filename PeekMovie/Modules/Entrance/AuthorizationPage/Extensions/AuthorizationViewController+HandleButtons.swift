@@ -19,12 +19,12 @@ extension AuthorizationViewController {
                 let email = viewComponents.emailTextField.text,
                 let password = viewComponents.passwordTextField.text
             {
-                let signInCredentials = SignInCredentials(email: email, password: password)
+                let credentials = SignInCredentials(email: email, password: password)
                 
                 Task {
                     do {
                         
-                        try await Service.api.signIn(credentials: signInCredentials)
+                        try await Service.api.signIn(credentials: credentials)
                         appCoordinator?.loggedIn()
                         
                     } catch {
@@ -36,7 +36,27 @@ extension AuthorizationViewController {
             }
             
         case .signUp:
-            break
+            if
+                let username = viewComponents.usernameTextField.text,
+                let email = viewComponents.emailTextField.text,
+                let password = viewComponents.passwordTextField.text
+            {
+                let credentials = SignUpCredentials(username: username, email: email, password: password)
+                
+                Task {
+                    do {
+                        
+                        try await Service.api.signUp(credentials: credentials)
+                        appCoordinator?.loggedIn()
+                        
+                    } catch {
+                        
+                        print("Sign In Error: \(error)")
+                        
+                    }
+                }
+            }
+            
             
         }
     }

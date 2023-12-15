@@ -11,7 +11,7 @@ import Security
 
 final class UserService {
     
-    var user: PeekUser?
+    private(set) var user: PeekUser?
     
     enum Constants {
         static let accessTokenKey = "AccessTokenKey"
