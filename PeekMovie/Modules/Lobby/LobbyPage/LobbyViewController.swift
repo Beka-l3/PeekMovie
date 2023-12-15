@@ -11,6 +11,7 @@ import UIKit
 final class LobbyViewController: UIViewController {
     
     private let viewComponents: LobbyViewComponents = .init()
+    private var user: PeekUser?
     
     
 //    MARK: lifecycle
@@ -40,6 +41,17 @@ final class LobbyViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
+    }
+    
+    
+//    MARK: exposed func
+    func prepareLobby() throws {
+        guard let user = Service.user.user else {
+            throw UserService.ServiceError.missingUser
+        }
+        
+        self.user = user
+        viewComponents.usernameLabel.text = user.username
     }
     
     

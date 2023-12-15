@@ -15,8 +15,25 @@ extension AuthorizationViewController {
         switch entranceState {
         
         case .signIn:
-            navigationController?.pushViewController(LobbyViewController(), animated: true)
-            break
+            if
+                let email = viewComponents.emailTextField.text,
+                let password = viewComponents.passwordTextField.text
+            {
+                let signInCredentials = SignInCredentials(email: email, password: password)
+                
+                Task {
+                    do {
+                        
+                        try await Service.api.signIn(credentials: signInCredentials)
+                        appCoordinator?.loggedIn()
+                        
+                    } catch {
+                        
+                        print("Sign In Error: \(error)")
+                        
+                    }
+                }
+            }
             
         case .signUp:
             break

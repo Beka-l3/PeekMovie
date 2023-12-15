@@ -42,3 +42,9 @@ final class UserService {
     }
     
 }
+
+extension UserService {
+    enum ServiceError: Error {
+        case missingUser
+    }
+}

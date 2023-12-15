@@ -10,8 +10,11 @@ import Foundation
 final class LobbyModuleBuilder {
     
     
+    let lobbyPage: LobbyViewController
+    
+    
     init() {
-        
+        self.lobbyPage = LobbyViewController()
     }
     
     deinit {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07078F772B2C650D00B0AB72 /* AppCoordinator+AuthorizationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F762B2C650D00B0AB72 /* AppCoordinator+AuthorizationDelegate.swift */; };
 		070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */; };
 		0715518E2B2A0EAA00E7D6B4 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */; };
 		071551902B2A0F4300E7D6B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */; };
@@ -179,6 +180,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07078F762B2C650D00B0AB72 /* AppCoordinator+AuthorizationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+AuthorizationDelegate.swift"; sourceTree = "<group>"; };
 		070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPagePickerViewExtension.swift; sourceTree = "<group>"; };
 		0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -988,6 +990,7 @@
 			isa = PBXGroup;
 			children = (
 				07BD8B7E2A93F4C50089199E /* AppCoordinator+Navigation.swift */,
+				07078F762B2C650D00B0AB72 /* AppCoordinator+AuthorizationDelegate.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1367,6 +1370,7 @@
 				07DBA84328F3F734000A1312 /* AuthorizedPage.swift in Sources */,
 				074B8A6D2A8C257E00EB39C2 /* loginNSE.swift in Sources */,
 				07A130F32B22290600E2EFF5 /* PasswordRestorationViewController+GetCode.swift in Sources */,
+				07078F772B2C650D00B0AB72 /* AppCoordinator+AuthorizationDelegate.swift in Sources */,
 				07EB1CCC28FE219C0031598A /* Animations.swift in Sources */,
 				0731BB22292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift in Sources */,
 				0779775E2A8E3553000DAF72 /* RootViewController.swift in Sources */,

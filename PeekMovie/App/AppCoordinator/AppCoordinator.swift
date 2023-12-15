@@ -42,6 +42,7 @@ final class AppCoordinator {
         self.lobbyModule = .init()
         
         self.rootViewController.appCoordinator = self
+        self.entranceModule.authorizationPage.appCoordinator = self
     }
     
     
@@ -105,7 +106,29 @@ extension AppCoordinator {
         moduleToShow = .lobby
     }
     
+}
+
+
+extension AppCoordinator {
+    
     private func swapModules(moduleToHide: ModuleType) {
-        
+        switch (moduleToShow, moduleToHide) {
+            
+        case (.entrance, _):
+            break
+            
+        case (.lobby, .entrance):
+            Task {
+                await setModuleWith(viewController: lobbyModule.lobbyPage)
+            }
+            
+        case (.session, _):
+            break
+            
+        default:
+            break
+            
+        }
     }
+    
 }

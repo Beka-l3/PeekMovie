@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 final class EntranceModuleBuilder {
     
     let passwordRestorationPage: PasswordRestorationViewController

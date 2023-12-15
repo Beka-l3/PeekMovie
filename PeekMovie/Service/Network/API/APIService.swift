@@ -17,10 +17,12 @@ struct APIService {
     
     
 //    MARK: lifecycle
-    init(networkService: PeekNetworkService) {
-        self.isMockingAll = false
-        self.networkService = networkService
+//    init(networkService: PeekNetworkService) {
+    init() {
+        self.isMockingAll = true
+        self.networkService = .init(networkClient: PeekNetworkClient(urlSession: .init(configuration: .default)))
         self.mockNetworkService = .init()
+        
     }
     
 }

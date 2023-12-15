@@ -15,13 +15,16 @@ extension APIService {
         let service: NetworkService = (isMocking || isMockingAll) ? mockNetworkService : networkService
         
         do {
+            
             let response = try await service.signIn(credentials: credentials)
             let unwrappedResponse = try unwrapResponse(response: response)
             
             Service.user.loggedIn(user: unwrappedResponse)
             
         } catch {
+            
             throw error
+            
         }
         
     }

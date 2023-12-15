@@ -8,12 +8,20 @@
 import UIKit
 
 
+protocol AuthorizationDelegate: AnyObject {
+    func loggedIn()
+}
+
+
 final class AuthorizationViewController: UIViewController {
+    
+    weak var appCoordinator: AuthorizationDelegate?
     
     let viewComponents = AuthorizationViewComponents()
     var entranceState: State = .signIn
     
     let passwordRestorationPage: PasswordRestorationViewController
+    
     
 //    MARK: lifecycle
     init(passwordRestorationPage: PasswordRestorationViewController) {
