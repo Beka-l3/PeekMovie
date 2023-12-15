@@ -1,14 +1,14 @@
 //
-//  PasswordRestorationViewController+ValidateEmail.swift
+//  Service+StringValidation.swift
 //  PeekMovie
 //
-//  Created by Bekzhan Talgat on 07.12.2023.
+//  Created by Bekzhan Talgat on 15.12.2023.
 //
 
-import UIKit
+import Foundation
 
 
-extension PasswordRestorationViewController {
+extension Service {
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {
         
@@ -25,6 +25,7 @@ extension PasswordRestorationViewController {
         
         return  returnValue
     }
+    
     
     /// Minimum 8 characters at least 1 Alphabet and 1 Number
     func isValidPassword(passwordString: String) -> Bool {
@@ -56,4 +57,6 @@ extension PasswordRestorationViewController {
         
         return true
     }
+
+    
 }

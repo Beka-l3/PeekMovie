@@ -89,3 +89,32 @@ extension AuthorizationViewComponents {
         
     }
 }
+
+
+extension AuthorizationViewComponents {
+    
+//    MARK: sign in
+    func checkSignInComponents(with validation: Bool) {
+        
+        switch (isMainButtonEnabled, validation) {
+            
+        case (false, true):
+            enableMainButton()
+            
+        case (true, false):
+            disableMainButton()
+            
+        default:
+            break
+            
+        }
+        
+    }
+    
+    
+//    MARK: sign up
+    func checkSignUpComponents(with validation: Bool) {
+        
+    }
+    
+}

@@ -67,14 +67,13 @@ extension AuthorizationViewController {
         switch entranceState {
         
         case .signIn:
-            entranceState = .signUp
+            changeState(to: .signUp)
             
         case .signUp:
-            entranceState = .signIn
+            changeState(to: .signIn)
             
         }
         
-        viewComponents.changeState(to: entranceState, parent: view)
     }
     
     @objc func handleTertiaryButton() {
@@ -84,3 +83,4 @@ extension AuthorizationViewController {
     }
     
 }
+

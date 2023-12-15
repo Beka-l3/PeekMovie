@@ -60,9 +60,9 @@ extension PasswordRestorationViewComponents {
 extension PasswordRestorationViewComponents {
     
 //    MARK: Get Code State
-    func checkGetCodeStateComponents(withValidation isValid: Bool) {
+    func checkGetCodeStateComponents(with validation: Bool) {
         
-        switch (isMainButtonEnabled, isValid) {
+        switch (isMainButtonEnabled, validation) {
             
         case (false, true):
             enableMainButton()
@@ -101,9 +101,9 @@ extension PasswordRestorationViewComponents {
     
     
 //    MARK: reset password
-    func checkResetPasswordStateComponents(withValidation isValid: Bool) {
+    func checkResetPasswordStateComponents(with validation: Bool) {
         
-        switch (isMainButtonEnabled, isValid) {
+        switch (isMainButtonEnabled, validation) {
             
         case (false, true):
             enableMainButton()

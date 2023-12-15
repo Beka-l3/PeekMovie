@@ -11,6 +11,9 @@
 		07078F792B2C6B4C00B0AB72 /* SignUpCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F782B2C6B4C00B0AB72 /* SignUpCredentials.swift */; };
 		07078F7B2B2C6B6F00B0AB72 /* PeekNetworkService+SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F7A2B2C6B6F00B0AB72 /* PeekNetworkService+SignUp.swift */; };
 		07078F7D2B2C6CAB00B0AB72 /* APIService+SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F7C2B2C6CAB00B0AB72 /* APIService+SignUp.swift */; };
+		07078F7F2B2C884B00B0AB72 /* AuthorizationViewController+ChangeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F7E2B2C884B00B0AB72 /* AuthorizationViewController+ChangeState.swift */; };
+		07078F812B2C8BC200B0AB72 /* Service+StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F802B2C8BC200B0AB72 /* Service+StringValidation.swift */; };
+		07078F832B2C8CC700B0AB72 /* AuthorizationViewComponents+MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F822B2C8CC700B0AB72 /* AuthorizationViewComponents+MainButton.swift */; };
 		070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */; };
 		0715518E2B2A0EAA00E7D6B4 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */; };
 		071551902B2A0F4300E7D6B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */; };
@@ -120,9 +123,8 @@
 		0788F42628F8321F006F447F /* LoginViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788F42528F8321F006F447F /* LoginViewComponents.swift */; };
 		079E5EB829092EC8006AF238 /* MovieInfoScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5EB729092EC8006AF238 /* MovieInfoScrollViewModel.swift */; };
 		079E5EBA2909753C006AF238 /* MovieInfoStackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5EB92909753C006AF238 /* MovieInfoStackViewModel.swift */; };
-		07A130EF2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130EE2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateString.swift */; };
 		07A130F12B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130F02B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift */; };
-		07A130F32B22290600E2EFF5 /* PasswordRestorationViewController+GetCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130F22B22290600E2EFF5 /* PasswordRestorationViewController+GetCode.swift */; };
+		07A130F32B22290600E2EFF5 /* PasswordRestorationViewController+MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130F22B22290600E2EFF5 /* PasswordRestorationViewController+MainButton.swift */; };
 		07A130F62B222A2700E2EFF5 /* PeekPinCodeBlock+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130F52B222A2700E2EFF5 /* PeekPinCodeBlock+Constants.swift */; };
 		07A130FA2B222AAE00E2EFF5 /* PeekPinCodeBlock+AddDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130F92B222AAE00E2EFF5 /* PeekPinCodeBlock+AddDoneButton.swift */; };
 		07A130FC2B222AE400E2EFF5 /* PeekPinCodeBlock+FirstResponderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A130FB2B222AE400E2EFF5 /* PeekPinCodeBlock+FirstResponderController.swift */; };
@@ -187,6 +189,9 @@
 		07078F782B2C6B4C00B0AB72 /* SignUpCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCredentials.swift; sourceTree = "<group>"; };
 		07078F7A2B2C6B6F00B0AB72 /* PeekNetworkService+SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekNetworkService+SignUp.swift"; sourceTree = "<group>"; };
 		07078F7C2B2C6CAB00B0AB72 /* APIService+SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+SignUp.swift"; sourceTree = "<group>"; };
+		07078F7E2B2C884B00B0AB72 /* AuthorizationViewController+ChangeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewController+ChangeState.swift"; sourceTree = "<group>"; };
+		07078F802B2C8BC200B0AB72 /* Service+StringValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service+StringValidation.swift"; sourceTree = "<group>"; };
+		07078F822B2C8CC700B0AB72 /* AuthorizationViewComponents+MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+MainButton.swift"; sourceTree = "<group>"; };
 		070DF8C82922A668002476AA /* WaitingPagePickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPagePickerViewExtension.swift; sourceTree = "<group>"; };
 		0715518D2B2A0EAA00E7D6B4 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		0715518F2B2A0F4300E7D6B4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -296,9 +301,8 @@
 		0788F42528F8321F006F447F /* LoginViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewComponents.swift; sourceTree = "<group>"; };
 		079E5EB729092EC8006AF238 /* MovieInfoScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoScrollViewModel.swift; sourceTree = "<group>"; };
 		079E5EB92909753C006AF238 /* MovieInfoStackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoStackViewModel.swift; sourceTree = "<group>"; };
-		07A130EE2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewController+ValidateString.swift"; sourceTree = "<group>"; };
 		07A130F02B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewComponents+TextField.swift"; sourceTree = "<group>"; };
-		07A130F22B22290600E2EFF5 /* PasswordRestorationViewController+GetCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewController+GetCode.swift"; sourceTree = "<group>"; };
+		07A130F22B22290600E2EFF5 /* PasswordRestorationViewController+MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordRestorationViewController+MainButton.swift"; sourceTree = "<group>"; };
 		07A130F52B222A2700E2EFF5 /* PeekPinCodeBlock+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekPinCodeBlock+Constants.swift"; sourceTree = "<group>"; };
 		07A130F92B222AAE00E2EFF5 /* PeekPinCodeBlock+AddDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekPinCodeBlock+AddDoneButton.swift"; sourceTree = "<group>"; };
 		07A130FB2B222AE400E2EFF5 /* PeekPinCodeBlock+FirstResponderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekPinCodeBlock+FirstResponderController.swift"; sourceTree = "<group>"; };
@@ -412,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				07ACBA972AFD29F400D07487 /* AuthorizationViewController+HandleButtons.swift */,
+				07078F7E2B2C884B00B0AB72 /* AuthorizationViewController+ChangeState.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 				07FC65C62AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift */,
 				072EE6612A95375E00CFCC2A /* AuthorizationViewComponents+Constants.swift */,
 				0731B0632B00F6A4006162D7 /* AuthorizationViewComponents+Constants+ChangeState.swift */,
+				07078F822B2C8CC700B0AB72 /* AuthorizationViewComponents+MainButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -676,6 +682,7 @@
 			isa = PBXGroup;
 			children = (
 				077977DF2A8E7253000DAF72 /* Service+KeyChain.swift */,
+				07078F802B2C8BC200B0AB72 /* Service+StringValidation.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1029,7 +1036,6 @@
 				07BE231F2B023B1300E70299 /* PasswordRestorationViewController+HandleButtons.swift */,
 				072500852B20CA12003EC872 /* PasswordRestorationViewController+HandleTap.swift */,
 				07A130F02B221E9B00E2EFF5 /* PasswordRestorationViewComponents+TextField.swift */,
-				07A130EE2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateString.swift */,
 				07A130FD2B222BE100E2EFF5 /* PasswordRestorationViewController+PeekPinCodeBlockDelegate.swift */,
 				07B09C962B24FCE70015B422 /* PasswordRestorationViewController+CountDownTimerView.swift */,
 				07C295ED2B2732480020F44C /* PasswordRestorationViewController+ChangeState.swift */,
@@ -1044,7 +1050,7 @@
 				077FD1EB2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift */,
 				077FD1ED2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift */,
 				077FD1EF2B03D8EC000C7A73 /* PasswordRestorationViewComponents+HStackView.swift */,
-				07A130F22B22290600E2EFF5 /* PasswordRestorationViewController+GetCode.swift */,
+				07A130F22B22290600E2EFF5 /* PasswordRestorationViewController+MainButton.swift */,
 				07A130FF2B22310000E2EFF5 /* PasswordRestorationViewComponents+Reset.swift */,
 			);
 			path = Extensions;
@@ -1262,7 +1268,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				074A7696292ACDBB005D3E10 /* CollectionViewModels.swift in Sources */,
-				07A130EF2B221E3B00E2EFF5 /* PasswordRestorationViewController+ValidateString.swift in Sources */,
 				078844182B28A63E00A68EA5 /* PeekNetworkClient.swift in Sources */,
 				077933D52A8FF8C000B0F509 /* LoggerProtocol.swift in Sources */,
 				074B8A712A8C25DD00EB39C2 /* CreateRoomNSE.swift in Sources */,
@@ -1303,6 +1308,7 @@
 				07BE231D2B023A7C00E70299 /* PasswordRestorationViewComponents.swift in Sources */,
 				078843FE2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift in Sources */,
 				07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */,
+				07078F832B2C8CC700B0AB72 /* AuthorizationViewComponents+MainButton.swift in Sources */,
 				0731B0622B00EE89006162D7 /* PeekCoverView.swift in Sources */,
 				073B584D28F97B20000EE21F /* RegisterPage.swift in Sources */,
 				07ACBA982AFD29F400D07487 /* AuthorizationViewController+HandleButtons.swift in Sources */,
@@ -1340,6 +1346,7 @@
 				073B585628FA155F000EE21F /* EMConstants.swift in Sources */,
 				07A66F2D2916CB51003BB6B9 /* ResponseDTO.swift in Sources */,
 				07ACBA9B2AFD32E800D07487 /* AuthorizationViewComponents+Constraints.swift in Sources */,
+				07078F812B2C8BC200B0AB72 /* Service+StringValidation.swift in Sources */,
 				077933DF2A8FF96C00B0F509 /* Log.swift in Sources */,
 				073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */,
 				072EE65F2A95370200CFCC2A /* AuthorizationViewComponents.swift in Sources */,
@@ -1368,6 +1375,7 @@
 				07761B482B1E701200718491 /* PeekPinCodeBlock.swift in Sources */,
 				077933D92A8FF90900B0F509 /* LogFormatElement.swift in Sources */,
 				0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */,
+				07078F7F2B2C884B00B0AB72 /* AuthorizationViewController+ChangeState.swift in Sources */,
 				077FD1EE2B03CD34000C7A73 /* PasswordRestorationViewComponents+ChangeState.swift in Sources */,
 				07BE23192B0239A600E70299 /* PassowrdRestorationViewController.swift in Sources */,
 				07BE23222B023B5A00E70299 /* PasswordRestorationViewComponents+Constraints.swift in Sources */,
@@ -1380,7 +1388,7 @@
 				077B2EDC29080E2C0087504C /* PosterViewModels.swift in Sources */,
 				07DBA84328F3F734000A1312 /* AuthorizedPage.swift in Sources */,
 				074B8A6D2A8C257E00EB39C2 /* loginNSE.swift in Sources */,
-				07A130F32B22290600E2EFF5 /* PasswordRestorationViewController+GetCode.swift in Sources */,
+				07A130F32B22290600E2EFF5 /* PasswordRestorationViewController+MainButton.swift in Sources */,
 				07078F772B2C650D00B0AB72 /* AppCoordinator+AuthorizationDelegate.swift in Sources */,
 				07EB1CCC28FE219C0031598A /* Animations.swift in Sources */,
 				0731BB22292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift in Sources */,
