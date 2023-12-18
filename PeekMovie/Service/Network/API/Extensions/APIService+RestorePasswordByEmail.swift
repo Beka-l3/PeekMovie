@@ -42,4 +42,20 @@ extension APIService {
         
     }
     
+    func restorePassword(credentials: RestorePasswordCredentials, isMocking: Bool = false) async throws {
+        
+        let service: NetworkService = (isMocking || isMockingAll) ? mockNetworkService : networkService
+        
+        do {
+            
+            try await service.restorePassword(credentials: credentials)
+            
+        } catch {
+            
+            throw error
+            
+        }
+        
+    }
+    
 }
