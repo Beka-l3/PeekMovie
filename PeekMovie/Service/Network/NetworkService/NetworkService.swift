@@ -19,6 +19,9 @@ protocol NetworkService {
     @discardableResult
     func restorePasswordByEmail(credentials: RestorePasswordByEmailCredentials) async throws -> EmptyResponse
     
+    @discardableResult
+    func restorePasswordSendVerificationCode(credentials: RestorePasswordSendVerificationCodeCredentials) async throws -> EmptyResponse
+    
 }
 
 

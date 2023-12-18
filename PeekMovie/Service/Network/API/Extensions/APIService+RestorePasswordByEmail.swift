@@ -26,4 +26,20 @@ extension APIService {
         
     }
     
+    func restorePasswordSendVerificationCode(credentials: RestorePasswordSendVerificationCodeCredentials, isMocking: Bool = false) async throws {
+        
+        let service: NetworkService = (isMocking || isMockingAll) ? mockNetworkService : networkService
+        
+        do {
+            
+            try await service.restorePasswordSendVerificationCode(credentials: credentials)
+            
+        } catch {
+            
+            throw error
+            
+        }
+        
+    }
+    
 }

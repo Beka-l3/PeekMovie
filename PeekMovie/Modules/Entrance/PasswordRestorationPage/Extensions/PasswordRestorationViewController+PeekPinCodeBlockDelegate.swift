@@ -9,21 +9,25 @@ import UIKit
 
 
 extension PasswordRestorationViewController: PeekPinCodeBlockDelegate {
+    
     func didEnter4Digits() {
         Task {
             
             do {
-                try await Task.sleep(nanoseconds: 1_000_000_000)
+                
+                let verificationCode = viewComponents.pinCodeBlockView.pinCodeText
+                try await Service.api.restorePasswordSendVerificationCode(credentials: .init(verificationCode: verificationCode))
+                
+                viewComponents.stopCountDown()
+                changeState(to: .resetPassword)
+                
             } catch {
-                print("oops task sleep failed")
+                
+                print("Error while _restorePasswordSendVerificationCode()_ from _PasswordRestorationViewController_", error)
+                
             }
             
-            sendVerificationCode()
         }
     }
     
-    @MainActor private func sendVerificationCode() {
-        viewComponents.stopCountDown()
-        changeState(to: .resetPassword)
-    }
 }

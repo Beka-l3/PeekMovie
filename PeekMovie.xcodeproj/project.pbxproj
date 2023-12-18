@@ -47,6 +47,8 @@
 		073D97312B305B3D00ABBB03 /* APIService+RestorePasswordByEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073D97302B305B3D00ABBB03 /* APIService+RestorePasswordByEmail.swift */; };
 		073D97332B305BA100ABBB03 /* RestorePasswordByEmailCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073D97322B305BA100ABBB03 /* RestorePasswordByEmailCredentials.swift */; };
 		073D97352B305C7F00ABBB03 /* PeekNetworkService+RestorePasswordByEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073D97342B305C7F00ABBB03 /* PeekNetworkService+RestorePasswordByEmail.swift */; };
+		073D97372B3072BF00ABBB03 /* RestorePasswordSendVerificationCodeCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073D97362B3072BF00ABBB03 /* RestorePasswordSendVerificationCodeCredentials.swift */; };
+		073D973B2B30738700ABBB03 /* PeekNetworkService+RestorePasswordSendVerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073D973A2B30738700ABBB03 /* PeekNetworkService+RestorePasswordSendVerificationCode.swift */; };
 		074A7696292ACDBB005D3E10 /* CollectionViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074A7695292ACDBB005D3E10 /* CollectionViewModels.swift */; };
 		074B8A642A8C239200EB39C2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8A632A8C239200EB39C2 /* Service.swift */; };
 		074B8A6B2A8C254F00EB39C2 /* RegisterNSE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8A6A2A8C254F00EB39C2 /* RegisterNSE.swift */; };
@@ -230,6 +232,8 @@
 		073D97302B305B3D00ABBB03 /* APIService+RestorePasswordByEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+RestorePasswordByEmail.swift"; sourceTree = "<group>"; };
 		073D97322B305BA100ABBB03 /* RestorePasswordByEmailCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordByEmailCredentials.swift; sourceTree = "<group>"; };
 		073D97342B305C7F00ABBB03 /* PeekNetworkService+RestorePasswordByEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekNetworkService+RestorePasswordByEmail.swift"; sourceTree = "<group>"; };
+		073D97362B3072BF00ABBB03 /* RestorePasswordSendVerificationCodeCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordSendVerificationCodeCredentials.swift; sourceTree = "<group>"; };
+		073D973A2B30738700ABBB03 /* PeekNetworkService+RestorePasswordSendVerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekNetworkService+RestorePasswordSendVerificationCode.swift"; sourceTree = "<group>"; };
 		074A7695292ACDBB005D3E10 /* CollectionViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModels.swift; sourceTree = "<group>"; };
 		074B8A632A8C239200EB39C2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		074B8A6A2A8C254F00EB39C2 /* RegisterNSE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNSE.swift; sourceTree = "<group>"; };
@@ -390,7 +394,7 @@
 			children = (
 				071551922B2A131800E7D6B4 /* PeekNetworkService+SignIn.swift */,
 				07078F7A2B2C6B6F00B0AB72 /* PeekNetworkService+SignUp.swift */,
-				073D97342B305C7F00ABBB03 /* PeekNetworkService+RestorePasswordByEmail.swift */,
+				073D97392B30736300ABBB03 /* RestorePassword */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -409,7 +413,7 @@
 				071551972B2A13AA00E7D6B4 /* PeekUser.swift */,
 				071551992B2A13E300E7D6B4 /* SignInCredentials.swift */,
 				07078F782B2C6B4C00B0AB72 /* SignUpCredentials.swift */,
-				073D97322B305BA100ABBB03 /* RestorePasswordByEmailCredentials.swift */,
+				073D97382B3072C700ABBB03 /* RestorePassword */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -473,6 +477,24 @@
 				073B585128F97C30000EE21F /* RegisterPageViewComponents.swift */,
 			);
 			path = "Register Page";
+			sourceTree = "<group>";
+		};
+		073D97382B3072C700ABBB03 /* RestorePassword */ = {
+			isa = PBXGroup;
+			children = (
+				073D97322B305BA100ABBB03 /* RestorePasswordByEmailCredentials.swift */,
+				073D97362B3072BF00ABBB03 /* RestorePasswordSendVerificationCodeCredentials.swift */,
+			);
+			path = RestorePassword;
+			sourceTree = "<group>";
+		};
+		073D97392B30736300ABBB03 /* RestorePassword */ = {
+			isa = PBXGroup;
+			children = (
+				073D97342B305C7F00ABBB03 /* PeekNetworkService+RestorePasswordByEmail.swift */,
+				073D973A2B30738700ABBB03 /* PeekNetworkService+RestorePasswordSendVerificationCode.swift */,
+			);
+			path = RestorePassword;
 			sourceTree = "<group>";
 		};
 		074B8A612A8C237200EB39C2 /* Network */ = {
@@ -1342,6 +1364,7 @@
 				077FD1EC2B03CAAA000C7A73 /* PasswordRestorationViewComponents+Constants.swift in Sources */,
 				074B8A732A8C260800EB39C2 /* JoinRoomNSE.swift in Sources */,
 				077B2EE029080E970087504C /* SMViewModels.swift in Sources */,
+				073D97372B3072BF00ABBB03 /* RestorePasswordSendVerificationCodeCredentials.swift in Sources */,
 				07832A2529248C390079E1E9 /* ExtensionEntranceWebSocketPresenter.swift in Sources */,
 				07078F852B2CAB9900B0AB72 /* AuthorizationViewController+TextField.swift in Sources */,
 				072F8FA62B1E118000CBA022 /* PeekBackgroundGradientGenerator.swift in Sources */,
@@ -1415,6 +1438,7 @@
 				0779775E2A8E3553000DAF72 /* RootViewController.swift in Sources */,
 				07CEA3952AF79ECC00E69FAB /* PeekInputTextField.swift in Sources */,
 				074B8A6F2A8C25A500EB39C2 /* CheckUsernameNSE.swift in Sources */,
+				073D973B2B30738700ABBB03 /* PeekNetworkService+RestorePasswordSendVerificationCode.swift in Sources */,
 				07DBA83F28F3F734000A1312 /* AppDelegateOld.swift in Sources */,
 				077FD1F02B03D8EC000C7A73 /* PasswordRestorationViewComponents+HStackView.swift in Sources */,
 				07EB1CC228FD48100031598A /* HTTPRequest.swift in Sources */,

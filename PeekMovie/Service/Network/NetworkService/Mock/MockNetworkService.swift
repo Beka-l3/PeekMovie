@@ -52,4 +52,11 @@ extension MockNetworkService {
         return response
     }
     
+    func restorePasswordSendVerificationCode(credentials: RestorePasswordSendVerificationCodeCredentials) async throws -> EmptyResponse {
+        await sleep()
+        
+        let response = EmptyResponse()
+        return response
+    }
+    
 }

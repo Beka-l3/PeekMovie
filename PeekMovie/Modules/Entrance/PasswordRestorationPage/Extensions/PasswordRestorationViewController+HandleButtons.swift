@@ -23,12 +23,13 @@ extension PasswordRestorationViewController {
                 do {
                     
                     try await Service.api.restorePasswordByEmail(credentials: .init(email: emailString))
+                    
                     changeState(to: .sendVerificationCode)
                     viewComponents.emailTextField.resignFirstResponder()
                     
                 } catch {
                     
-                    print("Error while _restorePasswordByEmail()_ from _PasswordRestorationViewController_")
+                    print("Error while _restorePasswordByEmail()_ from _PasswordRestorationViewController_", error)
                     
                 }
                 
