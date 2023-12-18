@@ -46,6 +46,11 @@ struct PeekNetworkClient: NetworkClient {
                         jsonDecoder.keyDecodingStrategy = request.keyDecodingStrategy
                         jsonDecoder.dateDecodingStrategy = request.dateDecodingStrategy
                         
+                        if T.self == EmptyResponse.self && unwrappedData.isEmpty {
+                            continuation.resume(returning: EmptyResponse() as! T)
+                            return
+                        }
+                        
                         guard let result = try? jsonDecoder.decode(T.self, from: unwrappedData) else {
                             continuation.resume(throwing: HTTPError.decodingFailed)
                             return

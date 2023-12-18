@@ -41,3 +41,29 @@ extension MockNetworkService {
     }
     
 }
+
+
+extension MockNetworkService {
+    
+    func restorePasswordByEmail(credentials: RestorePasswordByEmailCredentials) async throws -> EmptyResponse {
+        await sleep()
+        
+        let response = EmptyResponse()
+        return response
+    }
+    
+    func restorePasswordSendVerificationCode(credentials: RestorePasswordSendVerificationCodeCredentials) async throws -> EmptyResponse {
+        await sleep()
+        
+        let response = EmptyResponse()
+        return response
+    }
+    
+    func restorePassword(credentials: RestorePasswordCredentials) async throws -> EmptyResponse {
+        await sleep()
+        
+        let response = EmptyResponse()
+        return response
+    }
+    
+}

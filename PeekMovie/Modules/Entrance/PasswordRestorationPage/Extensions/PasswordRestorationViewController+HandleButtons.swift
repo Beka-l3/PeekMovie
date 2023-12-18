@@ -15,15 +15,49 @@ extension PasswordRestorationViewController {
         switch passwordRestorationState {
             
         case .enterEmail:
-            changeState(to: .sendVerificationCode)
-            viewComponents.emailTextField.resignFirstResponder()
+            Task {
+                guard let emailString = viewComponents.emailTextField.text else {
+                    return
+                }
+                
+                do {
+                    
+                    try await Service.api.restorePasswordByEmail(credentials: .init(email: emailString))
+                    
+                    changeState(to: .sendVerificationCode)
+                    viewComponents.emailTextField.resignFirstResponder()
+                    
+                } catch {
+                    
+                    print("Error while _restorePasswordByEmail()_ from _PasswordRestorationViewController_", error)
+                    
+                }
+                
+            }
             
         case .sendVerificationCode:
             break
             
         case .resetPassword:
-            dismiss(animated: true)
-            viewComponents.passwordTextField.resignFirstResponder()
+            
+            guard let newPasswordString = viewComponents.passwordTextField.text else {
+                return
+            }
+            
+            Task {
+                do {
+                    
+                    try await Service.api.restorePassword(credentials: .init(newPassword: newPasswordString))
+                    
+                    dismiss(animated: true)
+                    viewComponents.passwordTextField.resignFirstResponder()
+                    
+                } catch {
+                    
+                    print("Error while _restorePassword()_ from _PasswordRestorationViewController_", error)
+                    
+                }
+            }
             
         }
         
