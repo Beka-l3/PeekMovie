@@ -16,5 +16,10 @@ protocol NetworkService {
     @discardableResult
     func signUp(credentials: SignUpCredentials) async throws -> PeekUserResponse
     
+    @discardableResult
+    func restorePasswordByEmail(credentials: RestorePasswordByEmailCredentials) async throws -> EmptyResponse
+    
 }
 
+
+struct EmptyResponse: Decodable { }

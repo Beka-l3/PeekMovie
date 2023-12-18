@@ -44,6 +44,9 @@
 		073B585428F97CA8000EE21F /* PeekID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B585328F97CA8000EE21F /* PeekID.swift */; };
 		073B585628FA155F000EE21F /* EMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B585528FA155F000EE21F /* EMConstants.swift */; };
 		073B585828FA1698000EE21F /* InteractiveViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B585728FA1698000EE21F /* InteractiveViewComponents.swift */; };
+		073D97312B305B3D00ABBB03 /* APIService+RestorePasswordByEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073D97302B305B3D00ABBB03 /* APIService+RestorePasswordByEmail.swift */; };
+		073D97332B305BA100ABBB03 /* RestorePasswordByEmailCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073D97322B305BA100ABBB03 /* RestorePasswordByEmailCredentials.swift */; };
+		073D97352B305C7F00ABBB03 /* PeekNetworkService+RestorePasswordByEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073D97342B305C7F00ABBB03 /* PeekNetworkService+RestorePasswordByEmail.swift */; };
 		074A7696292ACDBB005D3E10 /* CollectionViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074A7695292ACDBB005D3E10 /* CollectionViewModels.swift */; };
 		074B8A642A8C239200EB39C2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8A632A8C239200EB39C2 /* Service.swift */; };
 		074B8A6B2A8C254F00EB39C2 /* RegisterNSE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8A6A2A8C254F00EB39C2 /* RegisterNSE.swift */; };
@@ -224,6 +227,9 @@
 		073B585328F97CA8000EE21F /* PeekID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekID.swift; sourceTree = "<group>"; };
 		073B585528FA155F000EE21F /* EMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMConstants.swift; sourceTree = "<group>"; };
 		073B585728FA1698000EE21F /* InteractiveViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveViewComponents.swift; sourceTree = "<group>"; };
+		073D97302B305B3D00ABBB03 /* APIService+RestorePasswordByEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+RestorePasswordByEmail.swift"; sourceTree = "<group>"; };
+		073D97322B305BA100ABBB03 /* RestorePasswordByEmailCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordByEmailCredentials.swift; sourceTree = "<group>"; };
+		073D97342B305C7F00ABBB03 /* PeekNetworkService+RestorePasswordByEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeekNetworkService+RestorePasswordByEmail.swift"; sourceTree = "<group>"; };
 		074A7695292ACDBB005D3E10 /* CollectionViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModels.swift; sourceTree = "<group>"; };
 		074B8A632A8C239200EB39C2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		074B8A6A2A8C254F00EB39C2 /* RegisterNSE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNSE.swift; sourceTree = "<group>"; };
@@ -384,6 +390,7 @@
 			children = (
 				071551922B2A131800E7D6B4 /* PeekNetworkService+SignIn.swift */,
 				07078F7A2B2C6B6F00B0AB72 /* PeekNetworkService+SignUp.swift */,
+				073D97342B305C7F00ABBB03 /* PeekNetworkService+RestorePasswordByEmail.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -402,6 +409,7 @@
 				071551972B2A13AA00E7D6B4 /* PeekUser.swift */,
 				071551992B2A13E300E7D6B4 /* SignInCredentials.swift */,
 				07078F782B2C6B4C00B0AB72 /* SignUpCredentials.swift */,
+				073D97322B305BA100ABBB03 /* RestorePasswordByEmailCredentials.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -829,6 +837,7 @@
 			children = (
 				078844092B28972F00A68EA5 /* APIService+SignIn.swift */,
 				07078F7C2B2C6CAB00B0AB72 /* APIService+SignUp.swift */,
+				073D97302B305B3D00ABBB03 /* APIService+RestorePasswordByEmail.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1293,6 +1302,7 @@
 				077933D72A8FF8E600B0F509 /* LogLevel.swift in Sources */,
 				0715519A2B2A13E300E7D6B4 /* SignInCredentials.swift in Sources */,
 				077D21972B2B6DB20012BBDF /* MockNetworkService.swift in Sources */,
+				073D97332B305BA100ABBB03 /* RestorePasswordByEmailCredentials.swift in Sources */,
 				071551962B2A137900E7D6B4 /* PeekUserResponse.swift in Sources */,
 				077933DB2A8FF93000B0F509 /* LogFormat.swift in Sources */,
 				0788F42428F82B19006F447F /* LoginPage.swift in Sources */,
@@ -1314,6 +1324,7 @@
 				07BE231D2B023A7C00E70299 /* PasswordRestorationViewComponents.swift in Sources */,
 				078843FE2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift in Sources */,
 				07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */,
+				073D97312B305B3D00ABBB03 /* APIService+RestorePasswordByEmail.swift in Sources */,
 				07078F832B2C8CC700B0AB72 /* AuthorizationViewComponents+MainButton.swift in Sources */,
 				0731B0622B00EE89006162D7 /* PeekCoverView.swift in Sources */,
 				073B584D28F97B20000EE21F /* RegisterPage.swift in Sources */,
@@ -1353,6 +1364,7 @@
 				073B585628FA155F000EE21F /* EMConstants.swift in Sources */,
 				07A66F2D2916CB51003BB6B9 /* ResponseDTO.swift in Sources */,
 				07ACBA9B2AFD32E800D07487 /* AuthorizationViewComponents+Constraints.swift in Sources */,
+				073D97352B305C7F00ABBB03 /* PeekNetworkService+RestorePasswordByEmail.swift in Sources */,
 				07078F812B2C8BC200B0AB72 /* Service+StringValidation.swift in Sources */,
 				077933DF2A8FF96C00B0F509 /* Log.swift in Sources */,
 				073A49322902A77100545946 /* WaitingPageAnimation.swift in Sources */,
