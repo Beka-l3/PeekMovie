@@ -28,7 +28,8 @@ final class RootViewControllerViewComponents {
     }()
     
     lazy var nvActivityIndicatorView: NVActivityIndicatorView = {
-        let view = NVActivityIndicatorView(frame: Constants.nvActivityIndicatorViewFrame, type: .ballTrianglePath, color: Colors.mainGradientFirst)
+        let gradientColor = Colors.gradientColor(bounds: Constants.nvActivityIndicatorViewFrame, type: .main)
+        let view = NVActivityIndicatorView(frame: Constants.nvActivityIndicatorViewFrame, type: .circleStrokeSpin, color: gradientColor)
         return view
     }()
     

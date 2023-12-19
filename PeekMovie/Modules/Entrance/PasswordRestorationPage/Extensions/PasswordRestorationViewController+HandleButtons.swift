@@ -15,10 +15,13 @@ extension PasswordRestorationViewController {
         switch passwordRestorationState {
             
         case .enterEmail:
+            guard let emailString = viewComponents.emailTextField.text else {
+                return
+            }
+            
             Task {
-                guard let emailString = viewComponents.emailTextField.text else {
-                    return
-                }
+                
+                viewComponents.activityLoaderView.startAnimating()
                 
                 do {
                     
@@ -33,6 +36,7 @@ extension PasswordRestorationViewController {
                     
                 }
                 
+                viewComponents.activityLoaderView.stopAnimating()
             }
             
         case .sendVerificationCode:
@@ -45,6 +49,9 @@ extension PasswordRestorationViewController {
             }
             
             Task {
+                
+                viewComponents.activityLoaderView.startAnimating()
+                
                 do {
                     
                     try await Service.api.restorePassword(credentials: .init(newPassword: newPasswordString))
@@ -57,6 +64,9 @@ extension PasswordRestorationViewController {
                     print("Error while _restorePassword()_ from _PasswordRestorationViewController_", error)
                     
                 }
+                
+                viewComponents.activityLoaderView.stopAnimating()
+                
             }
             
         }
