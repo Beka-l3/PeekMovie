@@ -59,6 +59,8 @@ final class AuthorizationViewComponents {
     
     var setMainButtonEnabled: Bool = false
     
+    lazy var activityLoaderView = PeekActivityLoaderView()
+    
 
 //    MARK: exposed func
     func setupViews(parent: UIView) {
@@ -84,9 +86,13 @@ final class AuthorizationViewComponents {
         inputBlock.addSubview(tertiaryButton)
         inputBlock.addSubview(alternatingHStack)
         
+        parent.addSubview(activityLoaderView)
+        
         changeState(to: .signIn, parent: parent, isSetup: true)
         
         setupConstraints(parent: parent)
+        
+        activityLoaderView.stopAnimating()
     }
     
     func setupLayers(parent: UIView) {

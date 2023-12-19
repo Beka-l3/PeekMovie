@@ -81,6 +81,11 @@ extension AuthorizationViewComponents {
             tertiaryButton.leadingAnchor.constraint(equalTo: mainButton.leadingAnchor),
             
             alternatingHStack.centerXAnchor.constraint(equalTo: inputBlock.centerXAnchor),
+            
+            activityLoaderView.topAnchor.constraint(equalTo: parent.topAnchor),
+            activityLoaderView.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
+            activityLoaderView.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
+            activityLoaderView.bottomAnchor.constraint(equalTo: parent.bottomAnchor),
         ])
         
         passwordIconViewTopConstraint = passwordIconView.topAnchor.constraint(equalTo: emailIconView.bottomAnchor, constant: Constants.paddingL)
