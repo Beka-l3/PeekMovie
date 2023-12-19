@@ -59,6 +59,11 @@ extension PasswordRestorationViewComponents {
             
             timerHStack.topAnchor.constraint(equalTo: pinCodeBlockView.bottomAnchor, constant: Constants.paddingXL),
             timerHStack.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
+            
+            activityLoaderView.topAnchor.constraint(equalTo: parent.topAnchor),
+            activityLoaderView.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
+            activityLoaderView.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
+            activityLoaderView.bottomAnchor.constraint(equalTo: parent.bottomAnchor),
         ])
         
     }

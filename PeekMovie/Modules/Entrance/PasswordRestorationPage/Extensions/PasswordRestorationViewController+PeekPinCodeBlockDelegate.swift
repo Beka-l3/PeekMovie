@@ -13,6 +13,8 @@ extension PasswordRestorationViewController: PeekPinCodeBlockDelegate {
     func didEnter4Digits() {
         Task {
             
+            viewComponents.activityLoaderView.startAnimating()
+            
             do {
                 
                 let verificationCode = viewComponents.pinCodeBlockView.pinCodeText
@@ -26,6 +28,8 @@ extension PasswordRestorationViewController: PeekPinCodeBlockDelegate {
                 print("Error while _restorePasswordSendVerificationCode()_ from _PasswordRestorationViewController_", error)
                 
             }
+            
+            viewComponents.activityLoaderView.stopAnimating()
             
         }
     }

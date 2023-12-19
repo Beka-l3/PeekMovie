@@ -11,6 +11,7 @@ import UIKit
 extension AuthorizationViewController {
     
     @objc func handleMainButton() {
+        tapped()
         
         switch entranceState {
         
@@ -19,9 +20,13 @@ extension AuthorizationViewController {
                 let email = viewComponents.emailTextField.text,
                 let password = viewComponents.passwordTextField.text
             {
+                
                 let credentials = SignInCredentials(email: email, password: password)
                 
                 Task {
+                    
+                    viewComponents.activityLoaderView.startAnimating()
+                    
                     do {
                         
                         try await Service.api.signIn(credentials: credentials)
@@ -32,6 +37,8 @@ extension AuthorizationViewController {
                         print("Sign In Error: \(error)")
                         
                     }
+                    
+                    viewComponents.activityLoaderView.stopAnimating()
                 }
             }
             
@@ -44,6 +51,9 @@ extension AuthorizationViewController {
                 let credentials = SignUpCredentials(username: username, email: email, password: password)
                 
                 Task {
+                    
+                    viewComponents.activityLoaderView.startAnimating()
+                    
                     do {
                         
                         try await Service.api.signUp(credentials: credentials)
@@ -54,6 +64,8 @@ extension AuthorizationViewController {
                         print("Sign In Error: \(error)")
                         
                     }
+                    
+                    viewComponents.activityLoaderView.stopAnimating()
                 }
             }
             

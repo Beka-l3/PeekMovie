@@ -11,7 +11,7 @@ import Foundation
 struct MockNetworkService: NetworkService {
     
     func sleep() async {
-        let rndInterval = UInt64.random(in: 0...3)
+        let rndInterval = UInt64.random(in: 2...5)
         
         do {
             try await Task.sleep(nanoseconds: rndInterval * 1_000_000_000)
