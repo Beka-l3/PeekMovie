@@ -11,6 +11,7 @@ import UIKit
 extension PasswordRestorationViewController: PeekPinCodeBlockDelegate {
     
     func didEnter4Digits() {
+        tapped()
         
         viewComponents.activityLoaderView.startAnimating()
         
