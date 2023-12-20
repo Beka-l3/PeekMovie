@@ -11,6 +11,7 @@ import UIKit
 extension PasswordRestorationViewController {
     
     @objc func handleMainButton() {
+        tapped()
         
         switch passwordRestorationState {
             
@@ -19,10 +20,9 @@ extension PasswordRestorationViewController {
                 return
             }
             
+            viewComponents.activityLoaderView.startAnimating()
+            
             Task {
-                
-                viewComponents.activityLoaderView.startAnimating()
-                
                 do {
                     
                     try await Service.api.restorePasswordByEmail(credentials: .init(email: emailString))
@@ -48,10 +48,9 @@ extension PasswordRestorationViewController {
                 return
             }
             
+            viewComponents.activityLoaderView.startAnimating()
+            
             Task {
-                
-                viewComponents.activityLoaderView.startAnimating()
-                
                 do {
                     
                     try await Service.api.restorePassword(credentials: .init(newPassword: newPasswordString))
@@ -66,7 +65,6 @@ extension PasswordRestorationViewController {
                 }
                 
                 viewComponents.activityLoaderView.stopAnimating()
-                
             }
             
         }

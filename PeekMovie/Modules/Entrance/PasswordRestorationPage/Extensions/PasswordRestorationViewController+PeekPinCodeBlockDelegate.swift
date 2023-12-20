@@ -11,10 +11,10 @@ import UIKit
 extension PasswordRestorationViewController: PeekPinCodeBlockDelegate {
     
     func didEnter4Digits() {
+        
+        viewComponents.activityLoaderView.startAnimating()
+        
         Task {
-            
-            viewComponents.activityLoaderView.startAnimating()
-            
             do {
                 
                 let verificationCode = viewComponents.pinCodeBlockView.pinCodeText
@@ -30,8 +30,8 @@ extension PasswordRestorationViewController: PeekPinCodeBlockDelegate {
             }
             
             viewComponents.activityLoaderView.stopAnimating()
-            
         }
+        
     }
     
 }
