@@ -9,10 +9,10 @@ import UIKit
 import NVActivityIndicatorView
 
 
-final class RootViewController: UIViewController {
+final class SplashScreenViewController: UIViewController {
     
     var appCoordinator: AppCoordinator?
-    private let viewComponents: RootViewControllerViewComponents = .init()
+    private let viewComponents: SplashScreenViewControllerComponents = .init()
     
     var didAnimationStart = false
     
@@ -56,7 +56,7 @@ final class RootViewController: UIViewController {
 }
 
 
-extension RootViewController {
+extension SplashScreenViewController {
     private func startAnimation() {
         viewComponents.nvActivityIndicatorView.startAnimating()
         

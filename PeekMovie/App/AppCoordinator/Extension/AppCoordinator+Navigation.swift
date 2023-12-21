@@ -9,16 +9,14 @@ import UIKit
 
 extension AppCoordinator {
     @MainActor func pushViewController(_ vc: UIViewController) {
-        rootViewController.navigationController?.pushViewController(vc, animated: true)
+        navigationController.pushViewController(vc, animated: true)
     }
     
     @MainActor func popViewController() {
-        rootViewController.navigationController?.popViewController(animated: true)
+        navigationController.popViewController(animated: true)
     }
     
     @MainActor func setModuleWith(viewController: UIViewController) {
-//        rootViewController.navigationController?.setViewControllers([viewController], animated: true)
-        rootViewController.navigationController?.popToRootViewController(animated: true)
-        pushViewController(viewController)
+        navigationController.setViewControllers([viewController], animated: false)
     }
 }

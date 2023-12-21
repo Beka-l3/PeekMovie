@@ -5,12 +5,14 @@
 //  Created by Bekzhan Talgat on 17.08.2023.
 //
 
-import Foundation
+import UIKit
 
 
 final class AppCoordinator {
     
-    let rootViewController: RootViewController
+    let navigationController: UINavigationController
+    let splashScreenViewController: SplashScreenViewController
+    
     var entranceModule: EntranceModuleBuilder
     var lobbyModule: LobbyModuleBuilder
     var sessionModule: SessionModuleBuilder
@@ -25,7 +27,7 @@ final class AppCoordinator {
         }
     }
     
-    public var didlaunchScreenFinishAnimation: Bool = false {
+    var didlaunchScreenFinishAnimation: Bool = false {
         didSet {
             if didlaunchScreenFinishAnimation {
                 didFinishEntranceAction()
@@ -34,14 +36,15 @@ final class AppCoordinator {
     }
     
     
-//    MARK:  life cycle
-    init(rootViewController: RootViewController) {
-        self.rootViewController = rootViewController
+//    MARK:  lifecycle
+    init(navigationController: UINavigationController, splashScreenViewController: SplashScreenViewController) {
+        self.navigationController = navigationController
+        self.splashScreenViewController = splashScreenViewController
         self.entranceModule = .init()
         self.sessionModule = .init()
         self.lobbyModule = .init()
         
-        self.rootViewController.appCoordinator = self
+        self.splashScreenViewController.appCoordinator = self
         self.entranceModule.authorizationPage.appCoordinator = self
     }
     

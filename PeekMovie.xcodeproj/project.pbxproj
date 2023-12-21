@@ -79,7 +79,7 @@
 		077933E32A8FF9B000B0F509 /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077933E22A8FF9B000B0F509 /* ConsoleDestination.swift */; };
 		0779775A2A8E33EA000DAF72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977592A8E33EA000DAF72 /* AppDelegate.swift */; };
 		0779775C2A8E34A7000DAF72 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */; };
-		0779775E2A8E3553000DAF72 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779775D2A8E3553000DAF72 /* RootViewController.swift */; };
+		0779775E2A8E3553000DAF72 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779775D2A8E3553000DAF72 /* SplashScreenViewController.swift */; };
 		077977632A8E367F000DAF72 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077977622A8E367F000DAF72 /* Fonts.swift */; };
 		0779779C2A8E3F47000DAF72 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0779778A2A8E3839000DAF72 /* Poppins-Black.ttf */; };
 		0779779D2A8E3F4C000DAF72 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 077977892A8E3839000DAF72 /* Poppins-LightItalic.ttf */; };
@@ -191,7 +191,7 @@
 		07F8930E29127B5200E8FDD4 /* RegistrationFormDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */; };
 		07FC65C72AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC65C62AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift */; };
 		07FC950D2AF3D84E002FE0A9 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 07FC950C2AF3D84E002FE0A9 /* NVActivityIndicatorView */; };
-		07FC950F2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC950E2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift */; };
+		07FC950F2AF3DF2D002FE0A9 /* SplashScreenViewControllerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC950E2AF3DF2D002FE0A9 /* SplashScreenViewControllerComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -267,7 +267,7 @@
 		077933E22A8FF9B000B0F509 /* ConsoleDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleDestination.swift; sourceTree = "<group>"; };
 		077977592A8E33EA000DAF72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0779775B2A8E34A7000DAF72 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		0779775D2A8E3553000DAF72 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		0779775D2A8E3553000DAF72 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		077977622A8E367F000DAF72 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		077977892A8E3839000DAF72 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
 		0779778A2A8E3839000DAF72 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
@@ -380,7 +380,7 @@
 		07EB1CCB28FE219C0031598A /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFormDTO.swift; sourceTree = "<group>"; };
 		07FC65C62AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+BottomHStackView.swift"; sourceTree = "<group>"; };
-		07FC950E2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewControllerViewComponents.swift; sourceTree = "<group>"; };
+		07FC950E2AF3DF2D002FE0A9 /* SplashScreenViewControllerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewControllerComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1042,8 +1042,8 @@
 		07BD8B7B2A93F4950089199E /* RootViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0779775D2A8E3553000DAF72 /* RootViewController.swift */,
-				07FC950E2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift */,
+				0779775D2A8E3553000DAF72 /* SplashScreenViewController.swift */,
+				07FC950E2AF3DF2D002FE0A9 /* SplashScreenViewControllerComponents.swift */,
 			);
 			path = RootViewController;
 			sourceTree = "<group>";
@@ -1322,7 +1322,7 @@
 				071551982B2A13AA00E7D6B4 /* PeekUser.swift in Sources */,
 				07CEA39B2AF7ABB800E69FAB /* PeekButton.swift in Sources */,
 				07EB1CCA28FDE6EB0031598A /* WaitingRoomViewComponents.swift in Sources */,
-				07FC950F2AF3DF2D002FE0A9 /* RootViewControllerViewComponents.swift in Sources */,
+				07FC950F2AF3DF2D002FE0A9 /* SplashScreenViewControllerComponents.swift in Sources */,
 				077B2EDE29080E680087504C /* SMConstants.swift in Sources */,
 				071551902B2A0F4300E7D6B4 /* NetworkService.swift in Sources */,
 				07D401BD28F890F400BF3F55 /* LaunchPage.swift in Sources */,
@@ -1447,7 +1447,7 @@
 				07078F772B2C650D00B0AB72 /* AppCoordinator+AuthorizationDelegate.swift in Sources */,
 				07EB1CCC28FE219C0031598A /* Animations.swift in Sources */,
 				0731BB22292D844A004CCE79 /* ExtensionCollectionViewPresenter.swift in Sources */,
-				0779775E2A8E3553000DAF72 /* RootViewController.swift in Sources */,
+				0779775E2A8E3553000DAF72 /* SplashScreenViewController.swift in Sources */,
 				07CEA3952AF79ECC00E69FAB /* PeekInputTextField.swift in Sources */,
 				074B8A6F2A8C25A500EB39C2 /* CheckUsernameNSE.swift in Sources */,
 				073D973B2B30738700ABBB03 /* PeekNetworkService+RestorePasswordSendVerificationCode.swift in Sources */,

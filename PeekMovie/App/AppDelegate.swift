@@ -13,14 +13,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+//    let navigationContreller: UINavigationController = .init()
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let rootViewController: RootViewController = .init()
-        let appCoordinator: AppCoordinator = .init(rootViewController: rootViewController)
+        let navigationController: UINavigationController = .init()
+        let splashScreenViewController: SplashScreenViewController = .init()
         
-        let navigationController: UINavigationController = .init(rootViewController: rootViewController)
+        navigationController.setViewControllers([splashScreenViewController], animated: false)
+        
+        let appCoordinator: AppCoordinator = .init(navigationController: navigationController, splashScreenViewController: splashScreenViewController)
         
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
