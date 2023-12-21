@@ -72,38 +72,57 @@ extension AppCoordinator {
         if didlaunchScreenFinishAnimation, moduleToShow != .none {
             
             switch moduleToShow {
+                
             case .entrance:
                 Task {
                     await setModuleWith(viewController: entranceModule.authorizationPage)
                 }
+                
             case .lobby:
-                print("\nShow lobby")
+                break
+            
             default:
                 print("\nNo module is chosen")
+                
             }
             
         }
     }
     
     private func checkIfUserSignedIn() async -> Bool {
+        
         do {
+            
             try await Task.sleep(nanoseconds: .random(in: 1...3) * 1_000_000_000)
+            
         } catch {
+            
             print("Failed to sleep")
+            
         }
         
         if let _ = Service.user.accessToken {
+            
             return true
+            
         } else {
+            
             return false
+            
         }
+        
     }
     
     private func signInPeekID() async {
+        
         do {
+            
             try await Task.sleep(nanoseconds: .random(in: 1...3) * 1_000_000_000)
+            
         } catch {
+            
             print("Failed to sleep")
+            
         }
         
         moduleToShow = .lobby
