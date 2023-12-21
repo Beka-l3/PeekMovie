@@ -13,9 +13,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-//    let navigationContreller: UINavigationController = .init()
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -25,10 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         navigationController.setViewControllers([splashScreenViewController], animated: false)
         
-        let appCoordinator: AppCoordinator = .init(navigationController: navigationController, splashScreenViewController: splashScreenViewController)
-        
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        
+        let appCoordinator: AppCoordinator = .init(navigationController: navigationController, splashScreenViewController: splashScreenViewController)
         
         Task {
             await appCoordinator.resolveEntrance()

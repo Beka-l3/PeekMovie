@@ -22,6 +22,8 @@ final class AuthorizationViewController: UIViewController {
     
     let passwordRestorationPage: PasswordRestorationViewController
     
+    var isInNavigationAnimationNeeded: Bool = false
+    
     
 //    MARK: lifecycle
     init(passwordRestorationPage: PasswordRestorationViewController) {
@@ -36,19 +38,18 @@ final class AuthorizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.isNavigationBarHidden = true
         changeState(to: .signIn)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        startInNavigationAnimation()
     }
     
     override func viewWillLayoutSubviews() {
@@ -90,6 +91,61 @@ extension AuthorizationViewController {
     enum State {
         case signIn
         case signUp
+    }
+    
+}
+
+
+extension AuthorizationViewController {
+    
+    func prepareForInNavigationAnimation(from: AppCoordinator.ModuleType) {
+        
+        switch from {
+        
+        case .none:
+            break
+            
+        case .entrance:
+            break
+            
+        case .lobby:
+            break
+            
+        case .session:
+            break
+            
+        }
+        
+    }
+    
+    func startOutNavigationAnimation(destination: AppCoordinator.ModuleType) {
+        
+        switch destination {
+        
+        case .none:
+            break
+            
+        case .entrance:
+            break
+            
+        case .lobby:
+            break
+            
+        case .session:
+            break
+            
+        }
+        
+    }
+    
+    private func startInNavigationAnimation() {
+        
+    }
+    
+    private func resetAfterOutNavigationAnimation() {
+        guard isInNavigationAnimationNeeded else { return }
+        
+        
     }
     
 }
