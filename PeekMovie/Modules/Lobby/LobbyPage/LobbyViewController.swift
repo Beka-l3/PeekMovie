@@ -32,13 +32,14 @@ final class LobbyViewController: UIViewController {
         startInNavigationAnimation()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
-    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         setupLayers()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        resetAfterOutNavigationAnimation()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -93,7 +94,7 @@ extension LobbyViewController {
         
     }
     
-    func startOutNavigationAnimation(destination: AppCoordinator.ModuleType) {
+    func startOutNavigationAnimation(destination: AppCoordinator.ModuleType) async {
         
         switch destination {
         

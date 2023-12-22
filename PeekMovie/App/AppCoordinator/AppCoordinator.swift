@@ -141,6 +141,8 @@ extension AppCoordinator {
             
         case (.lobby, .entrance):
             Task {
+                await lobbyModule.lobbyPage.prepareForInNavigationAnimation(from: .entrance)
+                await entranceModule.authorizationPage.startOutNavigationAnimation(destination: .lobby)
                 await setModuleWith(viewController: lobbyModule.lobbyPage)
             }
             

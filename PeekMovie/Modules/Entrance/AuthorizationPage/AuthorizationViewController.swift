@@ -57,6 +57,11 @@ final class AuthorizationViewController: UIViewController {
         setupLayers()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        resetAfterOutNavigationAnimation()
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }
@@ -118,7 +123,7 @@ extension AuthorizationViewController {
         
     }
     
-    func startOutNavigationAnimation(destination: AppCoordinator.ModuleType) {
+    func startOutNavigationAnimation(destination: AppCoordinator.ModuleType) async {
         
         switch destination {
         
