@@ -9,7 +9,7 @@ import UIKit
 import NVActivityIndicatorView
 
 
-final class RootViewControllerViewComponents {
+final class SplashScreenViewControllerComponents {
     
     lazy var background: UIView = {
         let view = UIView()
@@ -58,7 +58,7 @@ final class RootViewControllerViewComponents {
 }
 
 
-extension RootViewControllerViewComponents {
+extension SplashScreenViewControllerComponents {
     enum Constants {
         static let nvActivityIndicatorViewSize: CGFloat = 100
         static let nvActivityIndicatorViewFrame: CGRect = .init(origin: .zero, size: .init(width: 100, height: nvActivityIndicatorViewSize))

@@ -56,6 +56,7 @@ final class AuthorizationViewComponents {
     var passwordIconViewTopConstraint: NSLayoutConstraint?
     var alternatingHStackBottomConstraint: NSLayoutConstraint?
     var appLogoTopAnchorConstraint: NSLayoutConstraint?
+    var inputBlockTopConstraint: NSLayoutConstraint?
     
     var setMainButtonEnabled: Bool = false
     

@@ -23,10 +23,9 @@ extension AuthorizationViewController {
                 
                 let credentials = SignInCredentials(email: email, password: password)
                 
+                viewComponents.activityLoaderView.startAnimating()
+                
                 Task {
-                    
-                    viewComponents.activityLoaderView.startAnimating()
-                    
                     do {
                         
                         try await Service.api.signIn(credentials: credentials)
@@ -50,10 +49,9 @@ extension AuthorizationViewController {
             {
                 let credentials = SignUpCredentials(username: username, email: email, password: password)
                 
+                viewComponents.activityLoaderView.startAnimating()
+                
                 Task {
-                    
-                    viewComponents.activityLoaderView.startAnimating()
-                    
                     do {
                         
                         try await Service.api.signUp(credentials: credentials)

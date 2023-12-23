@@ -67,8 +67,7 @@ extension AuthorizationViewComponents {
         }
         
         static var inputBlockHeight: CGFloat {
-//            UIScreen.main.bounds.height - 2 * paddingXXXL - appLogoHeight
-            screenHeight - 2 * paddingXXXXL - appLogoHeight
+            screenHeight - 2 * paddingXL - appLogoHeight
         }
     }
 }

@@ -5,12 +5,14 @@
 //  Created by Bekzhan Talgat on 17.08.2023.
 //
 
-import Foundation
+import UIKit
 
 
 final class AppCoordinator {
     
-    let rootViewController: RootViewController
+    let navigationController: UINavigationController
+    let splashScreenViewController: SplashScreenViewController
+    
     var entranceModule: EntranceModuleBuilder
     var lobbyModule: LobbyModuleBuilder
     var sessionModule: SessionModuleBuilder
@@ -25,7 +27,7 @@ final class AppCoordinator {
         }
     }
     
-    public var didlaunchScreenFinishAnimation: Bool = false {
+    var didlaunchScreenFinishAnimation: Bool = false {
         didSet {
             if didlaunchScreenFinishAnimation {
                 didFinishEntranceAction()
@@ -34,14 +36,15 @@ final class AppCoordinator {
     }
     
     
-//    MARK:  life cycle
-    init(rootViewController: RootViewController) {
-        self.rootViewController = rootViewController
+//    MARK:  lifecycle
+    init(navigationController: UINavigationController, splashScreenViewController: SplashScreenViewController) {
+        self.navigationController = navigationController
+        self.splashScreenViewController = splashScreenViewController
         self.entranceModule = .init()
         self.sessionModule = .init()
         self.lobbyModule = .init()
         
-        self.rootViewController.appCoordinator = self
+        self.splashScreenViewController.appCoordinator = self
         self.entranceModule.authorizationPage.appCoordinator = self
     }
     
@@ -69,38 +72,57 @@ extension AppCoordinator {
         if didlaunchScreenFinishAnimation, moduleToShow != .none {
             
             switch moduleToShow {
+                
             case .entrance:
                 Task {
                     await setModuleWith(viewController: entranceModule.authorizationPage)
                 }
+                
             case .lobby:
-                print("\nShow lobby")
+                break
+            
             default:
                 print("\nNo module is chosen")
+                
             }
             
         }
     }
     
     private func checkIfUserSignedIn() async -> Bool {
+        
         do {
+            
             try await Task.sleep(nanoseconds: .random(in: 1...3) * 1_000_000_000)
+            
         } catch {
+            
             print("Failed to sleep")
+            
         }
         
         if let _ = Service.user.accessToken {
+            
             return true
+            
         } else {
+            
             return false
+            
         }
+        
     }
     
     private func signInPeekID() async {
+        
         do {
+            
             try await Task.sleep(nanoseconds: .random(in: 1...3) * 1_000_000_000)
+            
         } catch {
+            
             print("Failed to sleep")
+            
         }
         
         moduleToShow = .lobby
@@ -119,6 +141,8 @@ extension AppCoordinator {
             
         case (.lobby, .entrance):
             Task {
+                await lobbyModule.lobbyPage.prepareForInNavigationAnimation(from: .entrance)
+                await entranceModule.authorizationPage.startOutNavigationAnimation(destination: .lobby)
                 await setModuleWith(viewController: lobbyModule.lobbyPage)
             }
             

@@ -22,6 +22,8 @@ final class AuthorizationViewController: UIViewController {
     
     let passwordRestorationPage: PasswordRestorationViewController
     
+    var isInNavigationAnimationNeeded: Bool = false
+    
     
 //    MARK: lifecycle
     init(passwordRestorationPage: PasswordRestorationViewController) {
@@ -36,24 +38,28 @@ final class AuthorizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.isNavigationBarHidden = true
         changeState(to: .signIn)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        startInNavigationAnimation()
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         setupLayers()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        resetAfterOutNavigationAnimation()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -93,3 +99,4 @@ extension AuthorizationViewController {
     }
     
 }
+
