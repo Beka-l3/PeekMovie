@@ -188,6 +188,8 @@
 		07EB1CC828FDE0680031598A /* WaitingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CC728FDE0680031598A /* WaitingPage.swift */; };
 		07EB1CCA28FDE6EB0031598A /* WaitingRoomViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CC928FDE6EB0031598A /* WaitingRoomViewComponents.swift */; };
 		07EB1CCC28FE219C0031598A /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CCB28FE219C0031598A /* Animations.swift */; };
+		07ECC49B2B3701A800E1EE66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ECC49A2B3701A800E1EE66 /* Constants.swift */; };
+		07ECC49D2B3701EF00E1EE66 /* AuthorizationViewController+NavigationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ECC49C2B3701EF00E1EE66 /* AuthorizationViewController+NavigationAnimation.swift */; };
 		07F8930E29127B5200E8FDD4 /* RegistrationFormDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */; };
 		07FC65C72AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC65C62AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift */; };
 		07FC950D2AF3D84E002FE0A9 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 07FC950C2AF3D84E002FE0A9 /* NVActivityIndicatorView */; };
@@ -378,6 +380,8 @@
 		07EB1CC728FDE0680031598A /* WaitingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPage.swift; sourceTree = "<group>"; };
 		07EB1CC928FDE6EB0031598A /* WaitingRoomViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomViewComponents.swift; sourceTree = "<group>"; };
 		07EB1CCB28FE219C0031598A /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		07ECC49A2B3701A800E1EE66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		07ECC49C2B3701EF00E1EE66 /* AuthorizationViewController+NavigationAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewController+NavigationAnimation.swift"; sourceTree = "<group>"; };
 		07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFormDTO.swift; sourceTree = "<group>"; };
 		07FC65C62AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+BottomHStackView.swift"; sourceTree = "<group>"; };
 		07FC950E2AF3DF2D002FE0A9 /* SplashScreenViewControllerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewControllerComponents.swift; sourceTree = "<group>"; };
@@ -441,6 +445,7 @@
 				07078F7E2B2C884B00B0AB72 /* AuthorizationViewController+ChangeState.swift */,
 				07078F842B2CAB9900B0AB72 /* AuthorizationViewController+TextField.swift */,
 				07078F862B2CAE4100B0AB72 /* AuthorizationViewController+TapHandler.swift */,
+				07ECC49C2B3701EF00E1EE66 /* AuthorizationViewController+NavigationAnimation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -660,6 +665,7 @@
 		077977612A8E3674000DAF72 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				07ECC4992B37019A00E1EE66 /* Constants */,
 				077933D32A8FF89C00B0F509 /* Logger */,
 				077977DD2A8E7186000DAF72 /* Extensions */,
 				077977882A8E382D000DAF72 /* Fonts */,
@@ -1219,6 +1225,14 @@
 			path = "Waiting page";
 			sourceTree = "<group>";
 		};
+		07ECC4992B37019A00E1EE66 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				07ECC49A2B3701A800E1EE66 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1428,6 +1442,7 @@
 				072500822B20BC60003EC872 /* PeekPinCodeDigitLabel.swift in Sources */,
 				073B585428F97CA8000EE21F /* PeekID.swift in Sources */,
 				07761B482B1E701200718491 /* PeekPinCodeBlock.swift in Sources */,
+				07ECC49D2B3701EF00E1EE66 /* AuthorizationViewController+NavigationAnimation.swift in Sources */,
 				077933D92A8FF90900B0F509 /* LogFormatElement.swift in Sources */,
 				0763C00B2934979C00142CC8 /* ExtensionSessionWebSocketPresneter.swift in Sources */,
 				07078F7F2B2C884B00B0AB72 /* AuthorizationViewController+ChangeState.swift in Sources */,
@@ -1468,6 +1483,7 @@
 				07A7B26A2B2375EF0088BC30 /* PeekCountDownTimerView.swift in Sources */,
 				077977DC2A8E717B000DAF72 /* UINavigationController+FadeTo.swift in Sources */,
 				077933DD2A8FF94E00B0F509 /* LogDestinationProtocol.swift in Sources */,
+				07ECC49B2B3701A800E1EE66 /* Constants.swift in Sources */,
 				07D401B928F8641700BF3F55 /* PasswordPage.swift in Sources */,
 				070DF8C92922A668002476AA /* WaitingPagePickerViewExtension.swift in Sources */,
 				07BE23202B023B1300E70299 /* PasswordRestorationViewController+HandleButtons.swift in Sources */,

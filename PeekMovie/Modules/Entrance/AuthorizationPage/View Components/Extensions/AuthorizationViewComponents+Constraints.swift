@@ -36,7 +36,6 @@ extension AuthorizationViewComponents {
             tapHandlerViewBackground.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
             tapHandlerViewBackground.bottomAnchor.constraint(equalTo: parent.bottomAnchor),
             
-            inputBlock.topAnchor.constraint(equalTo: appLogoIconView.bottomAnchor, constant: Constants.paddingXXXXL),
             inputBlock.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
             inputBlock.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
             inputBlock.bottomAnchor.constraint(equalTo: parent.bottomAnchor),
@@ -96,6 +95,9 @@ extension AuthorizationViewComponents {
         
         appLogoTopAnchorConstraint = appLogoIconView.topAnchor.constraint(equalTo: parent.topAnchor, constant: Constants.paddingXXXXL)
         appLogoTopAnchorConstraint?.isActive = true
+        
+        inputBlockTopConstraint = inputBlock.topAnchor.constraint(equalTo: appLogoIconView.bottomAnchor, constant: Constants.paddingXXXXL)
+        inputBlockTopConstraint?.isActive = true
     }
     
     func changeConstraintsToSignUp(parent: UIView?) {

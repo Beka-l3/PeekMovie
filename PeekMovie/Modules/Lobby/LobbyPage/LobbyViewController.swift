@@ -115,12 +115,10 @@ extension LobbyViewController {
     }
     
     private func startInNavigationAnimation() {
-        
+        guard isInNavigationAnimationNeeded else { return }
     }
     
     private func resetAfterOutNavigationAnimation() {
-        guard isInNavigationAnimationNeeded else { return }
-        
         
     }
     
