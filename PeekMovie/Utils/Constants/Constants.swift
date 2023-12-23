@@ -32,3 +32,9 @@ extension Constants {
         
     }
 }
+
+extension Constants {
+    enum Animation {
+        static let durationDefault: TimeInterval = 0.6
+    }
+}

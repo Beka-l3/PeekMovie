@@ -82,7 +82,16 @@ extension LobbyViewController {
             break
             
         case .entrance:
-            break
+            viewComponents.usernameLabel.alpha = 0
+            viewComponents.usernameIconView.alpha = 0
+            viewComponents.roomIdTextField.alpha = 0
+            viewComponents.roomIdIconView.alpha = 0
+            
+            viewComponents.mainButton.alpha = 0
+            viewComponents.secondaryButton.alpha = 0
+            viewComponents.tertiaryButton.alpha = 0
+            
+            viewComponents.createRoomHStack.alpha = 0
             
         case .lobby:
             break
@@ -92,6 +101,7 @@ extension LobbyViewController {
             
         }
         
+        isInNavigationAnimationNeeded = true
     }
     
     func startOutNavigationAnimation(destination: AppCoordinator.ModuleType) async {
@@ -116,6 +126,21 @@ extension LobbyViewController {
     
     private func startInNavigationAnimation() {
         guard isInNavigationAnimationNeeded else { return }
+        
+        UIView.animate(withDuration: Constants.Animation.durationDefault / 2) { [unowned self] in
+            self.viewComponents.usernameLabel.alpha = 1
+            self.viewComponents.usernameIconView.alpha = 1
+            self.viewComponents.roomIdTextField.alpha = 1
+            self.viewComponents.roomIdIconView.alpha = 1
+            
+            self.viewComponents.mainButton.alpha = 1
+            self.viewComponents.secondaryButton.alpha = 1
+            self.viewComponents.tertiaryButton.alpha = 1
+            
+            self.viewComponents.createRoomHStack.alpha = 1
+        }
+        
+        isInNavigationAnimationNeeded = false
     }
     
     private func resetAfterOutNavigationAnimation() {

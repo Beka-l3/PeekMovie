@@ -45,7 +45,7 @@ extension AuthorizationViewController {
                 viewComponents.appLogoTopAnchorConstraint?.constant = Constants.Padding.XL
                 viewComponents.inputBlockTopConstraint?.constant = Constants.Padding.XL
                 
-                UIView.animate(withDuration: 1) { [unowned self] in
+                UIView.animate(withDuration: Constants.Animation.durationDefault / 2) { [unowned self] in
                     
                     self.view.layoutIfNeeded()
                     
@@ -65,8 +65,6 @@ extension AuthorizationViewController {
                 } completion: { _ in
                     continuation.resume()
                 }
-                
-                break
                 
             case .session:
                 break
