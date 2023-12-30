@@ -77,7 +77,6 @@ extension AuthorizationViewController {
     func startInNavigationAnimation() {
         guard isInNavigationAnimationNeeded else { return }
         
-        
     }
     
     func resetAfterOutNavigationAnimation() {

@@ -190,6 +190,7 @@
 		07EB1CCC28FE219C0031598A /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB1CCB28FE219C0031598A /* Animations.swift */; };
 		07ECC49B2B3701A800E1EE66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ECC49A2B3701A800E1EE66 /* Constants.swift */; };
 		07ECC49D2B3701EF00E1EE66 /* AuthorizationViewController+NavigationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ECC49C2B3701EF00E1EE66 /* AuthorizationViewController+NavigationAnimation.swift */; };
+		07ECC49F2B3709E700E1EE66 /* LobbyViewController+NavigationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ECC49E2B3709E600E1EE66 /* LobbyViewController+NavigationAnimation.swift */; };
 		07F8930E29127B5200E8FDD4 /* RegistrationFormDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */; };
 		07FC65C72AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC65C62AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift */; };
 		07FC950D2AF3D84E002FE0A9 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 07FC950C2AF3D84E002FE0A9 /* NVActivityIndicatorView */; };
@@ -382,6 +383,7 @@
 		07EB1CCB28FE219C0031598A /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		07ECC49A2B3701A800E1EE66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		07ECC49C2B3701EF00E1EE66 /* AuthorizationViewController+NavigationAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewController+NavigationAnimation.swift"; sourceTree = "<group>"; };
+		07ECC49E2B3709E600E1EE66 /* LobbyViewController+NavigationAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LobbyViewController+NavigationAnimation.swift"; sourceTree = "<group>"; };
 		07F8930D29127B5200E8FDD4 /* RegistrationFormDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFormDTO.swift; sourceTree = "<group>"; };
 		07FC65C62AFA4089001C039D /* AuthorizationViewComponents+BottomHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewComponents+BottomHStackView.swift"; sourceTree = "<group>"; };
 		07FC950E2AF3DF2D002FE0A9 /* SplashScreenViewControllerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewControllerComponents.swift; sourceTree = "<group>"; };
@@ -865,6 +867,7 @@
 			isa = PBXGroup;
 			children = (
 				078843FD2B288EF800A68EA5 /* LobbyViewController+HandleButtons.swift */,
+				07ECC49E2B3709E600E1EE66 /* LobbyViewController+NavigationAnimation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1457,6 +1460,7 @@
 				078843FC2B28888900A68EA5 /* LobbyViewComponents+Constraints.swift in Sources */,
 				077B2EDC29080E2C0087504C /* PosterViewModels.swift in Sources */,
 				07DBA84328F3F734000A1312 /* AuthorizedPage.swift in Sources */,
+				07ECC49F2B3709E700E1EE66 /* LobbyViewController+NavigationAnimation.swift in Sources */,
 				074B8A6D2A8C257E00EB39C2 /* loginNSE.swift in Sources */,
 				07A130F32B22290600E2EFF5 /* PasswordRestorationViewController+MainButton.swift in Sources */,
 				07078F772B2C650D00B0AB72 /* AppCoordinator+AuthorizationDelegate.swift in Sources */,
